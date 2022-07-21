@@ -1,0 +1,102 @@
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  height: 100vh;
+  background-color: #0b525b;
+  color: var(--text-color);
+}
+
+.contact-header h2 {
+  font-size: 3.5em;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.contact-header p {
+  font-style: oblique;
+  letter-spacing: 1.5px;
+  font-size: 1.2em;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.profiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.profiles div {
+  padding-left: 25px;
+  font-size: 1.5em;
+  color: var(--text-color);
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2),
+    1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.profiles div a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.profiles div:hover {
+  transform: translateY(-5px);
+  color: var(--link-hover-background);
+}
+
+hr {
+  background-color: var(--link-hover-background);
+  height: 5px;
+  border: none;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 1em;
+}
+
+.copyright {
+  padding-top: 30px;
+}
+
+@media (max-width: 640px) {
+  .contact-header h2 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+  
+  .profiles{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  
+  .footer {
+    width: auto;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .contact-header h2 {
+    text-align: center;
+    font-size: 3em;
+  }
+  
+  .profiles {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    font-size: 0.8em;
+  }
+}
