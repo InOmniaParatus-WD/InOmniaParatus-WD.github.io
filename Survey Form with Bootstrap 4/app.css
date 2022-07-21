@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@100;200;400&display=swap");
+
+:root {
+  --dark-blue: #003049;
+  --bright-yellow: #ffb700;
+  --whitesmoke-color: #f5f5f5;
+  --shadow: rgba(204, 219, 232, 0.5) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.3) -3px -3px 6px 1px inset;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9cea9;
+  margin: 40px 0;
+}
+
+h1 {
+  background-color: var(--dark-blue);
+  box-shadow: var(--shadow);
+  color: var(--whitesmoke-color);
+  text-align: center;
+  padding: 5px 0;
+  font-weight: 200;
+  letter-spacing: 1.2px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.mandatory {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.asterisk {
+  color: rgb(173, 10, 10);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  box-shadow: var(--shadow);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border: 1px solid var(--dark-blue);
+}
+
+input[type="radio"]:hover {
+  transform: translateY(-2px);
+}
+
+#user-email {
+  padding: 0;
+}
+
+label {
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: 500;
+  background-color: var(--dark-blue);
+  box-shadow: var(--shadow);
+  color: var(--whitesmoke-color);
+}
+
+.item {
+  width: calc(100% / 6);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.second-item {
+  background-color:#74f3e6;
+}
+.choice {
+  width: calc(100% / 6);
+  font-size: 16px;
+}
+
+.set {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  background-color: #2ec4b6;
+}
+
+.question {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 25px 0 10px 0;
+}
+
+.res-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.form-check {
+  padding: 0;
+  text-align: center;
+}
+
+.textarea {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+button {
+  background-color: var(--dark-blue);
+  color: var(--whitesmoke-color);
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  border: none;
+  padding: 10px 20px;
+}
+
+button:hover {
+  color: var(--dark-blue);
+  background-color: var(--bright-yellow);
+}
+
+hr{
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--dark-blue), rgba(0, 0, 0, 0));
+}
+
+footer {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
+footer a:hover {
+  text-decoration: underline 2px solid var(--bright-yellow);
+  color: var(--dark-blue);
+  border-radius: 5px;
+}
+
+/* Star rating styling (code addapted from CSS-tricks.com) */
+.star-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  font-size: 50px;
+}
+
+.star-rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color: var(--dark-blue);
+  text-align: center;
+}
+.star-rating > span:hover:before,
+.star-rating > span:hover ~ span:before {
+  color: var(--bright-yellow);
+  text-shadow: 3px 3px 3px grey;
+  content: "\2605";
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Overriding the radio buttons' style (code addapted from CSS-tricks.com) */
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -7.8px;
+  left: -1px;
+  position: relative;
+  background-color: var(--bright-yellow);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid var(--whitesmoke-color);
+  box-shadow: 1px 1px 1px var(--whitesmoke-color);
+}
+
+@media (max-width: 750px) {
+  .options {
+    width: 100%;
+  }
+  .choice {
+    font-size: 12px;
+  }
+  .item {
+    font-size: 12px;
+  }
+  .form-check {
+    text-align: center;
+  }
+}

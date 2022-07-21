@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="stylesheet.css" />
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="quote-box">
+            <div class="quote-text">
+                <i class="fa-solid fa-quote-left"></i>
+                <span id="text"></span>
+                <div class="quote-author"> ~
+                    <span id="author"></span>
+                </div>
+            </div>
+
+            <div class="cats">
+                <img src="cat_ears.jpg" class="cat-ears cat-ears-one" alt="cat ears">
+                <img src="cat_ears.jpg" class="cat-ears" alt="cat ears">
+                <img src="black cat.jpg" class="cat" alt="cat photo">
+            </div>
+
+            <div class="buttons">
+                <a href="https://twitter.com/intent/tweet" target="_blank" class="btn btn-sm" id="tweet-quote">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.tumblr.com/login" target="_blank" class="btn btn-sm" id="tumblr-quote">
+                    <i class="fa-brands fa-tumblr"></i>
+                </a>
+
+                <button id="new-quote" alt="get a new quote">New quote</button>
+            </div>
+        </div>
+        <footer class="footer">by
+            <a href="https://codepen.io/ioanapopa">Ioana</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

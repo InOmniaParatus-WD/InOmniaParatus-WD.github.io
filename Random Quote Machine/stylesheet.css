@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
+:root {
+	--elem-color: gray;
+	--shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--elem-color);
+	font-family: "Raleway", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	padding: 20px;
+	transition: background-color 0.5s linear;
+}
+
+#wrapper {
+	width: 550px;
+	max-width: 100%;
+	text-align: center;
+}
+
+#quote-box {
+	border-top-left-radius: 60px;
+	border-bottom-right-radius: 60px;
+	position: relative;
+	padding: 40px 50px;
+	display: table;
+	background-color: white;
+	width: 550px;
+	max-width: 100%;
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+		rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+		rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.quote-text {
+	display: inline-block;
+	text-align: center;
+	height: auto;
+	font-weight: 500;
+	font-size: 1.2em;
+	margin-bottom: 30px;
+	color: var(--elem-color);
+}
+
+.quote-author {
+	text-align: right;
+	margin: 10px 10px;
+	font-size: 0.8em;
+	text-align: end;
+}
+
+.cats {
+	width: 100%;
+	display: inline-flex;
+	align-items: baseline;
+	margin-bottom: 0;
+}
+
+.cat-ears-one {
+	margin-right: 2px;
+}
+
+.cat-ears {
+	width: 40px;
+	margin-left: 0;
+}
+
+.cat {
+	display: flex;
+	align-content: end;
+	width: 100px;
+	margin-left: auto;
+	margin-right: 30px;
+	padding-bottom: 5px;
+	z-index: 0;
+}
+
+.buttons {
+	margin-top: -7px;
+}
+
+#tweet-quote {
+	color: whitesmoke;
+	float: left;
+	cursor: pointer;
+	height: 30px;
+	width: 40px;
+	padding-top: 12px;
+	/* margin-top: -10px; */
+	margin-right: 2px;
+	font-size: 0.8em;
+	border-radius: 10px;
+	/* border-top-left-radius: 15px;
+	border-top-right-radius: 15px; */
+	outline: none;
+	box-shadow: var(--shadow);
+	background-color: var(--elem-color);
+}
+
+#tumblr-quote {
+	color: whitesmoke;
+	float: left;
+	cursor: pointer;
+	height: 30px;
+	width: 40px;
+	padding-top: 12px;
+	/* margin-top: -10px; */
+	font-size: 0.8em;
+	border-radius: 10px;
+	/* border-top-left-radius: 15px;
+	border-top-right-radius: 15px; */
+	outline: none;
+	background-color: var(--elem-color);
+	box-shadow: var(--shadow);
+}
+
+#new-quote {
+	float: right;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	text-align: center;
+	/* text-transform: uppercase; */
+	font-size: 0.8em;
+	letter-spacing: 1.5px;
+	padding: 8px 40px;
+	cursor: pointer;
+	color: whitesmoke;
+	background-color: var(--elem-color);
+	box-shadow: var(--shadow);
+}
+
+.footer {
+	color: whitesmoke;
+	padding: 10px;
+	letter-spacing: 1.5px;
+	max-width: 100%;
+	font-size: 1em;
+}
+
+footer a {
+	color: whitesmoke;
+	text-decoration: none;
+}
+
+.slide *,
+.slide:after {
+	color: white;
+	transition: color 0.5s linear;
+}
+
+#tumblr-quote:hover,
+#tweet-quote:hover,
+#new-quote:hover {
+	color: black;
+	background-color: rgb(250, 240, 148);
+	/* 	border-radius: 50%; */
+}
+
+footer a:hover {
+	text-decoration: underline;
+	color: rgb(251, 255, 6);
+}
