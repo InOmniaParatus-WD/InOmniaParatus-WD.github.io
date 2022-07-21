@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  background-color: #219ebc;
+  position: fixed;
+  min-width: 30px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#navbar header {
+  margin: 10px;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#navbar header h1 {
+  margin-bottom: 0;
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
+#navbar ul {
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+#navbar ul li {
+  padding: 10px 40px 10px 40px;
+  width: 100%;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: #000
+}
+
+#navbar ul li:hover {
+  background-color: #ffb703;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#main-doc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  margin-left: 22rem;
+  width: calc(100% - 22rem);
+  overflow-x: hidden;
+}
+
+.main-section {
+  font-size: 0.9em;
+  width: 100%;
+}
+
+.main-section article p {
+  margin: 0.5rem;
+  line-height: 1.5;
+}
+
+.main-section article pre {
+  margin: 0;
+  padding: 0;
+  margin-right: 0.5rem;
+  line-height: 0.5;
+}
+
+.main-section ul li {
+  margin-bottom: 2px;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  background-color: #024d72;
+  color: whitesmoke;
+  padding: 10px 15px;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width: 800px) {
+   #navbar {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+  }
+  
+  #navbar ul {
+    height: 150px;
+    padding-bottom: 0;
+  } 
+
+  #main-doc {
+    position: relative;
+    margin: 0 20px;
+    margin-top: 270px;
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 400px) {
+  #navbar ul {
+    width: 100%;
+    border-bottom: none;
+  }
+  
+  #main-doc {
+    position: absolute;
+    top: 0;
+    margin-left: 0px;
+    margin-top: 250px;
+  }
+}

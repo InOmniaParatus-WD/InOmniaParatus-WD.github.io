@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+      115deg,
+      rgba(255, 255, 211, 0.8),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("https://images.unsplash.com/photo-1552960562-daf630e9278b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+  margin-top: 0px;
+  color: rgba(32, 33, 34, 0.9);
+}
+
+header p {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 1.2px;
+  color: rgba(32, 33, 34, 0.9);
+}
+
+#survey-form {
+  background-color: rgba(32, 33, 34, 0.9);
+  width: 740px;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+p,
+label {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  padding: 4px;
+}
+
+.select {
+    color: rgba(32, 33, 34, 0.57);
+}
+
+input:hover,
+textarea:hover,
+#dropdown:hover,
+#favourite:hover {
+  box-shadow: 0 4px 8px 0 rgba(255, 251, 0, 0.2),
+    0 6px 20px 0 rgba(255, 230, 2, 0.19);
+  transform: translateY(-0.1em);
+  cursor: pointer;
+}
