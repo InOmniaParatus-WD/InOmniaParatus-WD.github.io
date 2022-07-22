@@ -141,7 +141,8 @@ iframe {
 }
 
 .product-card {
-  background-color: var(--text-color);
+  /* background-color: var(--text-color); */
+  background: url("Vectors/coffee.png") 50%;
   margin: 10px;
   width: calc(100% / 3);
   text-align: center;
@@ -159,9 +160,10 @@ iframe {
   width: 100%;
 }
 
-.product-decritptio h2.price {
+h2.price {
   margin: 10px;
   font-size: 2em;
+  text-shadow: var(--box-text-shadow);
 }
 
 ul.product-details li {
@@ -170,6 +172,11 @@ ul.product-details li {
   list-style-type: none;
 }
 
+ul.product-details img{
+  box-shadow: var(--box-shadow);
+  width: 200px;
+  border-radius: 45%;
+}
 .btn {
   border: none;
   border-radius: 3px;
