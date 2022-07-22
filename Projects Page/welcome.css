@@ -17,8 +17,7 @@
   );
 }
 
-#browsing{
-  position: relative;
+#browsing . vectors {
   width: 700px;
   margin-left: auto;
 }
