@@ -9,6 +9,10 @@
   color: var(--text-color);
 }
 
+#collaborate {
+  width: 400px;
+}
+
 .contact-header h2 {
   font-size: 3.5em;
   letter-spacing: 2px;
@@ -45,6 +49,11 @@
   color: var(--text-color);
 }
 
+#mobile-num {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
 .profiles div:hover {
   transform: translateY(-5px);
   color: var(--link-hover-background);
@@ -62,12 +71,13 @@ hr {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding-top: 50px;
+  margin-top: 50px;
   font-size: 1em;
 }
 
 .copyright {
-  padding-top: 30px;
+  padding-top: 10px;
+  font-size: 0.8em;
 }
 
 @media (max-width: 640px) {
@@ -75,13 +85,13 @@ hr {
     text-align: center;
     font-size: 2.5em;
   }
-  
-  .profiles{
+
+  .profiles {
     display: flex;
     flex-wrap: wrap;
     width: auto;
   }
-  
+
   .footer {
     width: auto;
   }
@@ -92,7 +102,7 @@ hr {
     text-align: center;
     font-size: 3em;
   }
-  
+
   .profiles {
     display: flex;
     flex-wrap: wrap;
