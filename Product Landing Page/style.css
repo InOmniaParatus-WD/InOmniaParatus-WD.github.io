@@ -141,17 +141,16 @@ iframe {
 }
 
 .product-card {
-  /* background-color: var(--text-color); */
-  background: url("Vectors/coffee.png") 50%;
+  background: url("Vectors/coffee.png") 20%;
   margin: 10px;
   width: calc(100% / 3);
   text-align: center;
   border-radius: 3px;
   box-shadow: var(--card-video-shadow);
 }
-
+ 
 .product-name {
-  background-color: #283618;
+  background-color: #282101;
   color: var(--text-color);
   font-weight: bold;
   font-size: 20px;
@@ -162,18 +161,19 @@ iframe {
 
 h2.price {
   margin: 10px;
-  font-size: 2em;
+  font-size: 50px;
   text-shadow: var(--box-text-shadow);
 }
 
 ul.product-details li {
   text-align: center;
+  font-size: 20px;
   padding: 5px;
   list-style-type: none;
+  text-shadow: var(--box-text-shadow);
 }
 
 ul.product-details img{
-  box-shadow: var(--box-shadow);
   width: 200px;
   border-radius: 45%;
 }
