@@ -81,6 +81,9 @@ hr {
 }
 
 @media (max-width: 640px) {
+  #collaborate .vectors {
+    width: 200px;
+  }
   .contact-header h2 {
     text-align: center;
     font-size: 2.5em;
@@ -90,6 +93,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     width: auto;
+    font-size: smaller;
   }
 
   .footer {
