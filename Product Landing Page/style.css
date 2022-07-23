@@ -12,6 +12,7 @@
   --navbar-color: #ee6c4d;
   --input-color: #000;
   --logo-color: #fefae0;
+  --product-name-background:#282101;
 }
 
 * {
@@ -50,7 +51,7 @@ main {
 
 .logo {
   font-family: "Fleur De Leah", cursive;
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--logo-color);
   padding: 15px;
   margin-left: 0;
@@ -86,11 +87,9 @@ nav ul li a.nav-link {
   text-decoration: underline;
 }
 
-
-
 #features {
   width: 100%;
-  padding-top: 115px;
+  padding-top: 120px;
 }
 
 .feature {
@@ -100,8 +99,7 @@ nav ul li a.nav-link {
   align-items: flex-start;
   width: auto;
   font-size: 1.2em;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding: 25px;
 }
 
 .icon img{
@@ -124,7 +122,8 @@ nav ul li a.nav-link {
   align-items: center;
   margin-bottom: 115px;
   width: 100%;
-  margin-top: 115px;
+  padding-top: 300px;
+  padding-bottom: 100px;
 }
 
 iframe {
@@ -137,14 +136,14 @@ iframe {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  margin: 115px auto;
+  margin: auto;
   width: 100%;
   max-width: 1000px;
 }
 
 .product-card {
   background: url("Vectors/coffee.png") 20%;
-  margin: 10px;
+  margin: 25px;
   width: calc(100% / 3);
   text-align: center;
   border-radius: 3px;
@@ -152,7 +151,7 @@ iframe {
 }
  
 .product-name {
-  background-color: #282101;
+  background-color: var(--product-name-background);
   color: var(--text-color);
   font-weight: bold;
   font-size: 20px;
@@ -176,9 +175,9 @@ ul.product-details li {
 }
 
 ul.product-details img{
-  width: 200px;
-  border-radius: 45%;
+  width: 180px;
 }
+
 .btn {
   border: none;
   border-radius: 3px;
@@ -188,7 +187,7 @@ ul.product-details img{
   font-weight: bolder;
   letter-spacing: 1px;
   margin: 10px;
-  background-color: var(--navbar-color);
+  background-color: var(--product-name-background);
   color: var(--text-color);
   box-shadow: var(--box-text-shadow);
 }
@@ -205,6 +204,7 @@ ul.product-details img{
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 20px;
   font-size: 1.5em;
   font-weight: bold;
 }
