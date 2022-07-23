@@ -9,7 +9,7 @@
   color: var(--text-color);
 }
 
-#collaborate .vectors{
+#collaborate .vectors {
   width: 400px;
 }
 
@@ -22,7 +22,7 @@
 .contact-header p {
   font-style: oblique;
   letter-spacing: 1.5px;
-  font-size: 1.2em;
+  font-size: 1.5rem;
   padding-top: 20px;
   text-align: center;
 }
@@ -32,13 +32,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 80px;
+  padding: 3rem 0;
 }
 
 .profiles div {
   padding-left: 25px;
-  font-size: 1.5em;
+  font-size: 1.2rem;
   color: var(--text-color);
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2),
     1px 1px 1px rgba(0, 0, 0, 0.6);
@@ -66,15 +65,18 @@ hr {
   width: 100%;
 }
 
-.footer {
+footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: 1.5em;
-  padding-top: 25px;
+  font-size: 1rem;
+  padding-top: 2rem;
 }
 
+footer .copyright {
+  padding-top: 20px;
+}
 @media (max-width: 640px) {
   #collaborate .vectors {
     width: 200px;
@@ -91,10 +93,6 @@ hr {
     font-size: smaller;
   }
 
-  .footer {
-    width: auto;
-    font-size: 0.8rem;
-  }
 }
 
 @media (min-width: 641px) and (max-width: 1100px) {
