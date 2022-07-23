@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap");
 
 :root {
   --gradient: linear-gradient(
@@ -11,12 +12,19 @@
     rgba(0, 0, 0, 0.6) 75%,
     rgba(0, 0, 0, 0.8) 88%
   );
-  --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --photo-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  --background-color: rgba(251, 209, 209, 0.98);
+  --yellow: rgb(218, 166, 12);
+  --red: rgb(170, 11, 11);
 }
 
 * {
   box-sizing: border-box;
-  margin: auto;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -25,117 +33,145 @@ body {
   background: var(--gradient);
 }
 
-main,
-header,
-footer {
-  background-color: rgba(251, 209, 209, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-}
-
-h1 {
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-}
-
-.second-name {
-  color: #a88007;
-}
-
-.third-name {
-  color: #aa0b0b;
-}
-
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  position: relative;
+  z-index: 99;
+  padding: 5rem 0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: var(--box-shadow);
 }
-
-footer {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 #title {
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 0;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
-
+.second-name {
+  color: var(--yellow);
+}
+.third-name {
+  color: var(--red);
+}
 #subtitle {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: normal;
   text-align: center;
 }
 
-#img-div {
-  background-color: white;
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0 20px;
-  box-shadow: var(--box-shadow);
+  background-color: var(--background-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-#img-div img {
-  margin: 20px;
+#img-div {
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  box-shadow: var(--photo-box-shadow);
+}
+img {
   max-width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
-#img-div figcaption {
-  font-size: small;
-  max-width: 100%;
+figcaption#img-caption {
+  font-size: 16px;
   height: auto;
   text-align: center;
+  max-width: 50rem;
+  margin: auto;
 }
 
 h3 {
-  margin: 3rem 0 1rem 0;
-  font-size: 1.2em;
+  padding: 2rem 0;
+  font-size: 2rem;
 }
 
 #tribute-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-}
-
-#tribute-info ul li {
-  font-size: 18px;
+  font-size: 1.5rem;
   text-align: justify;
   letter-spacing: normal;
-  width: 60vw;
-  padding: 10px;
+  line-height: 2.5rem;
+  width: 70vw;
 }
-
+#tribute-info ul {
+  padding-left: 0;
+}
+#tribute-info ul li {
+  padding-bottom: 1.2rem;
+}
 #tribute-info ul li span {
   font-weight: bold;
 }
 
 #quote {
   text-align: justify;
-  font-style: italic;
-  font-weight: bold;
-  padding: 4rem;
-  font-family: inherit;
-  font-size: 1em;
+  padding: 3rem;
   letter-spacing: 1.2px;
   width: 70vw;
+  font-size: 2rem;
+  font-family: "Edu NSW ACT Foundation", cursive;
 }
 
-#more-info {
-  font-size: 1.5vmin;
-  margin-bottom: 23px;
+figcaption#author {
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline 5px var(--red);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  box-shadow: var(--box-shadow);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media (max-width: 640px) {
+  header {
+    background-color: var(--background-color);
+    padding: 10px;
+  }
+  #title {
+    text-align: center;
+    font-size: 3rem;
+  }
+  #img-div {
+    margin: 10px 5px;
+  }
+  h3 {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+  #tribute-info {
+    font-size: 1rem;
+    line-height: normal;
+  }
+  #quote {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  footer {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  a {
+    color: var(--red);
+  }
 }
