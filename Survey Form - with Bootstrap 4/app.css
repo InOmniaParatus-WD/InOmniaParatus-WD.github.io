@@ -30,8 +30,9 @@ h1 {
   width: 100%;
 }
 
-.mandatory {
-  font-size: 16px;
+.mandatory,
+.star-question {
+  font-size: 18px;
   margin: 20px 0;
 }
 
@@ -148,7 +149,7 @@ hr{
 }
 
 footer {
-  font-size: 14px;
+  font-size: 1.2rem;
   width: 100%;
   text-align: center;
 }
@@ -201,7 +202,6 @@ input[type="radio"]:checked:after {
   display: inline-block;
   visibility: visible;
   border: 1px solid var(--whitesmoke-color);
-  box-shadow: 1px 1px 1px var(--whitesmoke-color);
 }
 
 @media (max-width: 750px) {
@@ -216,5 +216,9 @@ input[type="radio"]:checked:after {
   }
   .form-check {
     text-align: center;
+  }
+  input[type="radio"]:checked:after {
+    top: -7.5px;
+    left: -1px;
   }
 }
