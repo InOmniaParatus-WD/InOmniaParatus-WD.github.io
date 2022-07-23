@@ -13,7 +13,7 @@
 
 .logo {
   padding: 5px 0;
-  font-size: 3rem;
+  font-size: 3.5rem;
   letter-spacing: 1px;
   font-family: "Fleur de Leah", serif;
   padding-left: 30px;
@@ -51,25 +51,23 @@
   border-radius: 5px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px){
   .logo {
     margin: auto 0;
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
   .logo:hover {
     transform: none;
   }
   #navbar ul {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
-    font-size: 0.7em;
+    font-size: .7em;
   }
 
   #navbar ul li {
-    padding-bottom: 2px;
+    padding: 3px 0;
   }
 
   #navbar ul li a:hover {
@@ -77,5 +75,18 @@
     box-shadow: none;
     color: var(--text-color);
     text-decoration: underline 5px var(--link-hover-background);
+  }
+}
+
+@media (max-width: 800px) {
+  .logo {
+    margin: auto 0;
+    font-size: 1.8em;
+  }
+  .logo:hover {
+    transform: none;
+  }
+  #navbar ul {
+    font-size: .8em;
   }
 }
