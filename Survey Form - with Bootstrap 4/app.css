@@ -32,7 +32,7 @@ h1 {
 
 .mandatory,
 .star-question {
-  font-size: 18px;
+  font-size: 15px;
   margin: 20px 0;
 }
 
@@ -91,6 +91,7 @@ label {
 .second-item {
   background-color:#74f3e6;
 }
+
 .choice {
   width: calc(100% / 6);
   font-size: 16px;
@@ -194,7 +195,7 @@ input[type="radio"]:checked:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  top: -7.8px;
+  top: -8px;
   left: -1px;
   position: relative;
   background-color: var(--bright-yellow);
@@ -216,9 +217,5 @@ input[type="radio"]:checked:after {
   }
   .form-check {
     text-align: center;
-  }
-  input[type="radio"]:checked:after {
-    top: -7.5px;
-    left: -1px;
   }
 }
