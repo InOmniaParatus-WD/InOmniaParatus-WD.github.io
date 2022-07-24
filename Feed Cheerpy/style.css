@@ -24,6 +24,9 @@ body {
   text-decoration: wavy;
 }
 
+.container {
+  margin: 20px;
+}
 .message {
   position: relative;
   top: 4rem;
@@ -231,6 +234,7 @@ footer a:hover {
   }
   footer {
     text-align: center;
-    padding: 0;
+    padding: 10px 0 5px 0;
+    font-size: 1rem;
   }
 }

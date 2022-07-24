@@ -9,7 +9,7 @@
   color: var(--text-color);
 }
 
-#collaborate .vectors {
+#collaborate {
   width: 400px;
 }
 
@@ -66,7 +66,7 @@ hr {
 }
 
 @media (max-width: 640px) {
-  #collaborate .vectors {
+  #collaborate {
     width: 200px;
   }
   .contact-header h2 {
@@ -75,8 +75,8 @@ hr {
   }
   .profiles {
     flex-wrap: wrap;
-    width: auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    padding-bottom: 0;
   }
 }
 
@@ -86,8 +86,7 @@ hr {
     font-size: 2rem;
   }
   .profiles {
-    display: flex;
     flex-wrap: wrap;
-    font-size: 0.8em;
+    font-size: 1.2em;
   }
 }
