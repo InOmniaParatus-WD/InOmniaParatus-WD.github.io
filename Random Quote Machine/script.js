@@ -1,7 +1,7 @@
 const quoteBtn = document.getElementById("new-quote");
 const quoteText = document.querySelector(".quote-text");
 const text = document.getElementById("text");
-const authorName = document.getElementById("author");
+const author = document.getElementById("author");
 
 const colors = [
   "#006466",
@@ -37,8 +37,13 @@ function randomQuote() {
     .then((response) => response.json())
     .then((result) => {
       text.innerText = result.content;
-      authorName.innerText = result.author;
-
+      author.innerText = result.author;
+    })
+    .catch((err) => {
+      text.innerHTML= "Oops! Something went wrong <span>&#128533;<span> ...";
+      author.innerText = "Please try again";
+    })
+    .finally(() => {
       document.documentElement.style.setProperty("--elem-color", randomColor);
       setTimeout(() => {
         quoteText.classList.remove("slide");
