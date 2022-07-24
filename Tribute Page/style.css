@@ -9,8 +9,8 @@
     rgba(206, 155, 2, 0.8) 32%,
     rgba(196, 65, 8, 0.7) 47%,
     rgba(170, 11, 11, 0.7) 62%,
-    rgba(0, 0, 0, 0.6) 75%,
-    rgba(0, 0, 0, 0.8) 88%
+    rgba(41, 41, 41, 0.6) 75%,
+    rgba(40, 38, 38, 0.8) 88%
   );
   --photo-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
@@ -28,9 +28,11 @@
 }
 
 body {
-  padding: 30px;
   font-family: "Poppins", sans-serif;
   background: var(--gradient);
+}
+.container {
+ margin: 50px;
 }
 
 header {
@@ -55,6 +57,7 @@ header {
   font-size: 1.5rem;
   font-weight: normal;
   text-align: center;
+  color: var(--background-color);
 }
 
 main {
@@ -82,7 +85,7 @@ img {
   border-radius: 5px;
 }
 
-figcaption#img-caption {
+#img-caption {
   font-size: 16px;
   height: auto;
   text-align: center;
@@ -96,17 +99,17 @@ h3 {
 }
 
 #tribute-info {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: justify;
   letter-spacing: normal;
-  line-height: 2.5rem;
+  line-height: 2rem;
   width: 70vw;
 }
 #tribute-info ul {
   padding-left: 0;
 }
 #tribute-info ul li {
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.5rem;
 }
 #tribute-info ul li span {
   font-weight: bold;
@@ -121,30 +124,33 @@ h3 {
   font-family: "Edu NSW ACT Foundation", cursive;
 }
 
-figcaption#author {
+#author {
   text-align: right;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--red);
 }
 a:hover {
-  text-decoration: underline 5px var(--red);
+  text-decoration: underline 2px var(--red);
 }
 
 footer {
   text-align: center;
   padding: 2rem 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   box-shadow: var(--box-shadow);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
 @media (max-width: 640px) {
+  .container {
+    margin: 10px;
+  }
   header {
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     padding: 10px;
   }
   #title {
