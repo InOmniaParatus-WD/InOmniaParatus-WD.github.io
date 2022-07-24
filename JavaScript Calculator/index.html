@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- CDN Math.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.5.0/math.js"
+        integrity="sha512-y5b7YGYHrDlsI/a24gwJFvK7lx866ski5dPOQs+U1kEnblCArMmf0Zoc/TmREUIj83ZoiOOE6QGBYV4OiCp68Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <!-- <h1>JavaScript Calculator with <strong>onlick</strong> attribute</h1> -->
+    <div class="container">
+        <div class="calculator">
+            <div id="display">
+                 <div class="output" id="output-value">
+                
+                    <!-- 559.9933 -->
+                    <!-- <input placeholder="0" disabled> -->
+                </div>
+                <div class="history" id="history-value">
+                    <!-- <input type="text"  disabled>  -->
+                    <!-- 129,399,457,898,342.4324
+                    .....................................................
+                    Aici o sa fie afisate operatii mai lungi asa ca am facut un scroll lateral ca sa aiba loc tot textul aici
+                    ..................................................... -->
+                    <!-- 12+5*23/3+543-33.34 -->
+                </div>
+            </div>
+            <div class="keyboard">
+                <!-- FIRST ROW OF BUTONS -->
+                <button class="clearAll" id="clear">C</button>
+                <button class="deleteLastKey" id="backspace">&larr;</button>
+                <button class="negative" id="negative">&#8314;&#8725;&#8331;</button>
+                <button class="operator" data-operator="/" id="divide">&#247;</button>
+                <!-- SECOND ROW OF BUTONS -->
+                <button class="number" data-number="7" id="seven">7</button>
+                <button class="number" data-number="8" id="eight">8</button>
+                <button class="number" data-number="9" id="nine">9</button>
+                <button class="operator" data-operator="*" id="multiply">&times;</button>
+                <!-- THIRD ROW OF BUTONS -->
+                <button class="number" data-number="4" id="four">4</button>
+                <button class="number" data-number="5" id="five">5</button>
+                <button class="number" data-number="6" id="six">6</button>
+                <button class="operator" data-operator="-" id="subtract">&minus;</button>
+                <!-- FOURTH ROW OF BUTONS -->
+                <button class="number" data-number="1" id="one">1</button>
+                <button class="number" data-number="2" id="two">2</button>
+                <button class="number" data-number="3" id="three">3</button>
+                <button class="operator" data-operator="+" id="add">&plus;</button>
+                <!-- FIFTH ROW OF BUTONS -->
+                <button class="equals" id="equals">&equals;</button>
+                <button class="number" data-number="0" id="zero">0</button>
+                <button class="number" data-number="." id="decimal">.</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

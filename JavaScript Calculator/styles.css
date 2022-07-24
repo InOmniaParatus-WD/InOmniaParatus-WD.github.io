@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --calc-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -26px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -50px 30px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  --text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+  --text-color: #222223;
+}
+
+html {
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: linear-gradient(
+    135deg,
+    rgba(108, 36, 139, 1) 0%,
+    rgba(70, 138, 126, 1) 23%,
+    rgba(36, 139, 137, 1) 45%,
+    rgba(92, 39, 115, 1) 71%,
+    rgba(87, 99, 54, 1) 100%,
+    rgba(43, 72, 81, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--calc-shadow);
+}
+
+.calculator {
+  width: 400px;
+  height: 650px;
+  margin: 0 auto;
+  top: 20px;
+  border-radius: 1rem;
+  background-color: var(--text-color);
+  box-shadow: var(--calc-shadow);
+}
+
+#display {
+  inline-size: 350px;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  margin: 25px;
+  height: 25%;
+  border-radius: 10px;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+  background: linear-gradient(
+    141deg,
+    rgb(123, 123, 122) 0%,
+    rgb(206, 205, 197) 23%,
+    rgb(197, 197, 195) 47%,
+    rgb(200, 199, 195) 74%,
+    rgb(134, 133, 131) 100%
+  );
+  box-shadow: rgb(56, 60, 62) 2px 2px 5px 0px inset,
+    rgba(136, 136, 137, 0.5) -2px -2px 5px 0.5px inset;
+}
+
+/* Styles for the calculator screen's scroll-bar*/
+#display::-webkit-scrollbar {
+  width: 8px;
+}
+#display::-webkit-scrollbar-track {
+  background: transparent;
+}
+#display::-webkit-scrollbar-thumb {
+  background-color: #3b3939;
+  border-radius: 5px;
+  border: 1px solid #766f6f;
+}
+/*  End of scrollbar styles */
+
+.history {
+  padding-right: 5px;
+  padding-top: 0;
+  text-align: right;
+  font-size: 1.5em;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+}
+
+.output {
+  text-align: right;
+  height: 1.5em;
+  width: 100%;
+  font-size: 45px;
+  padding-right: 5px;
+  padding-top: 15px;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  margin: 25px;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  text-shadow: 0px 0px 6px rgba(124, 124, 124, 0.7);
+}
+
+.clearAll,
+.deleteLastKey,
+.operator,
+.negative {
+  background: #b6f9d6;
+}
+
+.equals {
+  width: calc(70px * 2 + 10px);
+  height: 70px;
+  font-size: 1.5em;
+  background: #ff9e3d;
+}
+
+.number:hover,
+.operator:hover,
+.clearAll:hover,
+.negative:hover,
+.deleteLastKey:hover,
+.equals:hover {
+  cursor: pointer;
+  box-shadow: rgba(148, 132, 132, 0.4) 0px 2px 4px,
+    rgba(240, 225, 225, 0.2) 0px -3px 0px inset;
+}
