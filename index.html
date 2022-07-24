@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="Projects Page/welcome.css">
     <link rel="stylesheet" href="Projects Page/contact.css">
     <link rel="stylesheet" href="Projects Page/navbar.css">
+    <link rel="stylesheet" href="Projects Page/footer.css">
 </head>
 
 <body>
@@ -30,13 +31,12 @@
 
     <main>
         <section id="welcome-section">
-
             <div class="welcome-container">
                 <h1> Welcome to my website! </h1>
                 <p>Take a comfortable seat and enjoy your browsing</p>
             </div>
             <div id="browsing">
-                <img class="vectors" src="Projects Page/PNGs/Browsing.png" alt="">
+                <img src="Projects Page/PNGs/Browsing.png" alt="">
             </div>
         </section>
 
@@ -46,47 +46,77 @@
             </div>
             <div class="projects-cards">
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/Random_Quote_Machine.jpg" alt="random quote machine">
-                    <a href="Random Quote Machine/" target="_blank">Quote Generator</a>
+                    <a href="/Random Quote Machine/" target="_blank">
+                        <img src="Projects Page/Projects Photos/Random_Quote_Machine.jpg" alt="random quote generator">
+                        <div class="project-name">
+                            Random Quote Generator
+                        </div>
+                    </a>
                 </div>
 
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/Product-Landing-Page.jpg" alt="product landing page">
-                    <a href="Product Landing Page/" target="_blank">Product Landing Page</a>
+                    <a href="/Product Landing Page/" target="_blank">
+                        <img src="Projects Page/Projects Photos/Product_Landing_Page.jpg" alt="product landing page">
+                        <div class="project-name">Product Landing Page</div>
+                    </a>
                 </div>
 
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/Technical_Doc_Page.jpg" alt="technical documentation page">
-                    <a href="Technical Docs Page/" target="_blank">Technical Docs Page</a>
+                    <a href="/Technical Docs Page/" target="_blank">
+                        <img src="Projects Page/Projects Photos/Technical_Doc_Page.jpg" alt="technical documentation page">
+                        <div class="project-name">Technical Docs Page</div>
+                    </a>
                 </div>
 
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/Tribute_Page.jpg" alt="tribute page">
-                    <a href="Tribute Page/" target="_blank">Tribute Page</a>
+
+                    <a href="/Feed Cheerpy/" target="_blank">
+                        <img src="Projects Page/Projects Photos\Feed-Cheerpy.jpg" alt="Cheerpy my hungry dog">
+                        <div class="project-name">Cheerpy, my hungry dog</div>
+                    </a>
                 </div>
 
                 <div class="project-tile">
-                    <img src="Projects Photos\Feed-Cheerpy.jpg" alt="">
-                    <a href="Feed Cheerpy/" target="_blank"> Cheerpy, my hungry dog</a>
+                    <a href="/Projects Page/#projects" target="_blank">
+                        <img src="Projects Page/Projects Photos/Projects_Page.jpg" alt="page with all project">
+                        <div class="project-name">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            You are here
+                        </div>
+                    </a>
+
                 </div>
 
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/Bootstrap-Survey.jpg" alt="">
-                    <a href="Survey Form - with Bootstrap 4/" target="_blank"> Bootstrap Survey </a>
+                    <a href="/Survey Form - with Bootstrap 4/" target="_blank">
+                        <img src="Projects Page/Projects Photos/Bootstrap-Survey.jpg" alt="survey form with bootstrap library">
+                        <div class="project-name">
+                            Bootstrap Survey
+                        </div>
+                    </a>
                 </div>
+
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/cat.jpg" alt="">
-                    <a href="https://" target="_blank"> <span>&#149;&#149;&#149;</span> Coming soon
-                        <span>&#149;&#149;&#149;</span> </a>
+                    <a href="/Tribute Page/" target="_blank">
+                        <img src="Projects Page/Projects Photos/Tribute_Page.jpg" alt="tribute page">
+                        <div class="project-name">Tribute Page</div>
+                    </a>
                 </div>
+
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/FCC_Survey_Form.jpg" alt="">
-                    <a href="FCC Survey Form/" target="_blank">FCC Survey Form</a>
+                    <a href="/FCC Survey Form/" target="_blank">
+                        <img src="Projects Page/Projects Photos/FCC_Survey_Form.jpg" alt="survey form css vanilla">
+                        <div class="project-name">FCC Survey Form</div>
+                    </a>
                 </div>
+
                 <div class="project-tile">
-                    <img src="Projects Page/Projects Photos/cat.jpg" alt="">
-                    <a href="https://" target="_blank"> <span>&#149;&#149;&#149;</span> Coming soon
-                        <span>&#149;&#149;&#149;</span></a>
+                    <a href="/JavaScript Calculator/" target="_blank">
+                        <img src="Projects Page/Projects Photos/JavaScript_Calculator.jpg" alt="JavaScript Calculator">
+                        <div class="project-name">
+                            <span>JavaScript Calculator</span>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="more-projects-button">
@@ -97,7 +127,7 @@
 
         <section id="contact">
             <div id="collaborate">
-                <img class="vectors" src="Projects Page/PNGs/people-make-puzzles-concept-team.png" alt="">
+                <img src="Projects Page/PNGs/people-make-puzzles-concept-team.png" alt="">
             </div>
             <div class="contact-header">
                 <h2>Let's work Together</h2>
@@ -114,11 +144,11 @@
                 </div>
                 <div>
                     <i class="fa-brands fa-linkedin-in"></i>
-                    <a href="https://www.linkedin.com/in/ioanap">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/ioanap" target="_blank">LinkedIn</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-at"></i>
-                    <a href="">Send a mail</a>
+                    <a href="">Send me a mail</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-mobile-screen-button"></i>
@@ -126,18 +156,15 @@
                 </div>
 
             </div>
-
-            <hr>
-            
-            <div class="footer">
-                <p> ~ All the projects on this page were created by me as part of my self-directed WD learning journey ~
-                    <i class="fa-light fa-pipe"></i>
-                </p>
-                <p class="copyright"><span>&copy;</span> Ioana Popa, April 2022</p>
-            </div>
         </section>
+        <hr>
+        <footer>
+            <p> ~ All the projects on this page were created by me as part of my self-directed web dev study journey ~
+                <i class="fa-light fa-pipe"></i>
+            </p>
+            <p class="copyright"><span>&copy;</span> Ioana Popa, April 2022</p>
+        </footer>
     </main>
-
 </body>
 
 </html>
