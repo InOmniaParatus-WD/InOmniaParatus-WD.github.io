@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
+:root {
+  --placeholder-color: rgba(28, 28, 29, 0.9);
+  --dark-blue: rgba(14, 37, 102, 0.9);
+  --bleu-marine: rgba(4, 22, 73, 0.8);
+  --light-yellow: rgb(241, 241, 123);
+  --input-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
 * {
   box-sizing: border-box;
 }
@@ -15,11 +22,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: #f5f5f5;
   margin-top: 2rem;
 }
 
@@ -40,7 +43,7 @@ header h1 {
   font-size: 2em;
   margin-bottom: 5px;
   margin-top: 0px;
-  color: rgba(14, 37, 102, 0.9);
+  color: var(--dark-blue);
 }
 
 header p {
@@ -48,12 +51,12 @@ header p {
   font-style: italic;
   font-weight: normal;
   letter-spacing: 1.2px;
-  color: rgba(14, 37, 102, 0.9);
+  color: var(--dark-blue);
   margin-top: 0;
 }
 
 #survey-form {
-  background-color: rgba(4, 22, 73, 0.9);
+  background-color: var(--bleu-marine);
   padding: 40px;
   border-radius: 5px;
   letter-spacing: 1px;
@@ -62,7 +65,7 @@ header p {
 
 ::placeholder {
   font-size: 14px;
-  color: rgba(28, 28, 29, 0.9);
+  color: var(--placeholder-color);
   font-family: "Poppins", sans-serif;
   letter-spacing: 1.2px;
 }
@@ -71,8 +74,6 @@ header p {
 #email,
 #number,
 textarea {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   margin-top: 5px;
   padding-top: 13px;
@@ -80,12 +81,11 @@ textarea {
   padding-left: 10px;
   border: none;
   border-radius: 3px;
+  box-shadow: var(--input-shadow);
 }
 
 #dropdown,
 #favourite {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   margin-top: 5px;
   padding-top: 10px;
@@ -94,7 +94,8 @@ textarea {
   border: none;
   border-radius: 3px;
   font-size: 14px;
-  color: rgba(28, 28, 29, 0.9);
+  color: var(--placeholder-color);
+  box-shadow: var(--input-shadow);
   font-family: "Poppins", sans-serif;
   letter-spacing: 1.2px;
 }
@@ -125,9 +126,12 @@ input:hover,
 textarea:hover,
 #dropdown:hover,
 #favourite:hover {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  transform: translateY(-0.1em);
-  cursor: pointer;
+  background-color: var(--light-yellow);
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  box-shadow: none;
 }
 
 button {
@@ -135,19 +139,20 @@ button {
   width: 100%;
   justify-content: center;
   text-align: center;
-  background-color: rgba(4, 22, 73, 0.9);
-  color: rgb(241, 241, 123);
-  border: 1px solid rgb(241, 241, 123);
+  background-color: var(--bleu-marine);
+  color: var(--light-yellow);
+  box-shadow: var(--input-shadow);
+  border: none;  
   font-family: inherit;
   letter-spacing: 1.5px;
-  font-size: 16px;
+  font-size: 20px;
   padding: 10px 0 10px;
   border-radius: 5px;
 }
 
 button:hover {
-  color: rgba(4, 22, 73, 0.9);
-  background-color: rgb(241, 241, 123);
+  color: var(--bleu-marine);
+  background-color: var(--light-yellow);
   border-radius: 5px;
 }
 
@@ -155,6 +160,7 @@ input[type="radio"],
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
+  box-shadow: var(--input-shadow);
 }
 
 @media (max-width: 640px) {
