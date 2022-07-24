@@ -173,6 +173,9 @@ footer a:hover {
 }
 
 @media (max-width: 1000px) {
+  .container{
+    margin: 5px;
+  }
   .message {
     width: 350px;
     left: 20px;
@@ -185,14 +188,15 @@ footer a:hover {
 }
 
 @media (max-width: 640px) {
+   .container{
+    margin: 5px;
+  }
   .message {
     font-size: 15px;
     width: 180px;
     left: 20px;
   }
-  .container{
-    margin: 5px;
-  }
+ 
   span {
     margin: 0;
   }
