@@ -47,6 +47,7 @@ const appendNumber = (key) => {
 };
 // the function allows the user to chose an operator and will replace the previously hit operator key. The operator dsiaplyed before the next integer is enatered will be the last operator key hit
 const chooseOperator = (operatorKey) => {
+  if(numberOrOperator === "") return;
   if (evaluatedExpression) {
     evaluatedExpression = "";
     expression = numberOrOperator;
@@ -58,7 +59,7 @@ const chooseOperator = (operatorKey) => {
   }
   numberOrOperator = operatorKey;
 };
-//Turns the displayed number into a negative
+//Turns the already entered and displayed number into a negative one or turns it back to positive
 const makeNumberNegative = () => {
   if ("+-/*".includes(numberOrOperator)) return;
   numberOrOperator = `${parseFloat(numberOrOperator) * -1}`;
