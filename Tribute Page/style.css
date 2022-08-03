@@ -135,6 +135,9 @@ a {
 a:hover {
   text-decoration: underline 2px var(--red);
 }
+a:visited {
+  color: grey;
+}
 
 footer {
   text-align: center;
@@ -176,8 +179,5 @@ footer {
   footer {
     font-size: 1rem;
     padding: 10px;
-  }
-  a {
-    color: var(--red);
   }
 }
