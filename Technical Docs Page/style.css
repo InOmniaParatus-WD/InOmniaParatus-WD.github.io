@@ -1,9 +1,9 @@
 :root {
   --box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
     rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    --code-font-color: #f5f5f5;
-    --dark-blue:#024d72;
-    --yellow: #ffb703;
+  --code-font-color: #f5f5f5;
+  --dark-blue: #024d72;
+  --yellow: #ffb703;
 }
 
 * {
@@ -25,7 +25,7 @@ nav {
   top: 0;
   left: 0;
   height: 100%;
-  box-shadow:var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 
 nav header {
@@ -51,7 +51,7 @@ nav ul {
 }
 
 nav ul li {
-  padding:  10px 40px;
+  padding: 10px 40px;
   width: 100%;
 }
 
@@ -71,6 +71,7 @@ main {
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 22rem;
+  margin-right: 2rem;
   width: calc(100% - 22rem);
   overflow-x: auto;
   overflow-y: hidden;
@@ -86,7 +87,12 @@ main ul li {
   margin-bottom: 2px;
 }
 
+section {
+  width: 100%;
+}
+
 code {
+  max-width: 100%;
   display: block;
   text-align: left;
   white-space: pre-line;
@@ -98,9 +104,9 @@ code {
   background-color: var(--dark-blue);
   color: var(--code-font-color);
   padding: 10px 15px;
-  margin: 0;
+  margin-right: 2rem;
   border-radius: 5px;
-  box-shadow:var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 /* Navbar scroll styling for smaller screens  */
 nav ul::-webkit-scrollbar {
@@ -139,7 +145,7 @@ nav ul::-webkit-scrollbar-thumb {
   }
 
   section {
-    padding: 150px 5px 0 5px;
+    padding: 180px 5px 0 5px;
     height: calc(100% + 150px);
     display: flex;
     flex-direction: column;
