@@ -11,6 +11,8 @@ let numberOrOperator = "";
 let expression = "";
 let evaluatedExpression = "";
 
+// ------ FUNCTIONS TO MAKE THE CALCULATOR WORK ------
+
 //Updates the calculator display
 const updateDisplay = () => {
   if (numberOrOperator !== "" && "+-/*".includes(numberOrOperator)) {
@@ -45,9 +47,10 @@ const appendNumber = (key) => {
     numberOrOperator = numberOrOperator.replace("0", "");
   }
 };
-// the function allows the user to chose an operator and will replace the previously hit operator key. The operator dsiaplyed before the next integer is enatered will be the last operator key hit
+//The function allows the user to chose an operator and will replace the previously hit operator key. The operator dsiaplyed before the next integer is enatered will be the last operator key hit
 const chooseOperator = (operatorKey) => {
-  if(numberOrOperator === "") return;
+  if (numberOrOperator === "" && operatorKey !== "-") return;
+
   if (evaluatedExpression) {
     evaluatedExpression = "";
     expression = numberOrOperator;
@@ -59,18 +62,38 @@ const chooseOperator = (operatorKey) => {
   }
   numberOrOperator = operatorKey;
 };
-//Turns the already entered and displayed number into a negative one or turns it back to positive
+
+//Turns the displayed number into a negative
 const makeNumberNegative = () => {
   if ("+-/*".includes(numberOrOperator)) return;
   numberOrOperator = `${parseFloat(numberOrOperator) * -1}`;
 };
 //Evaluates the math expression when the "equals" key is hit and returns the result
+//Uses Math.js
 const calculate = (expression) => {
   let result = math.evaluate(expression);
   evaluatedExpression = result.toLocaleString("en-US", {
     maximumFractionDigits: 4,
   });
   numberOrOperator = evaluatedExpression;
+};
+
+//Delete the last entered number or digit
+const deleteKey = () => {
+  if (numberOrOperator === "") {
+    expression = expression.slice(0, -1);
+  }
+  numberOrOperator = numberOrOperator.slice(0, -1);
+};
+
+//Equal key button
+const equalsBtn = () => {
+  if (isNaN(numberOrOperator)) return;
+  if (Number(numberOrOperator) < 0) {
+    numberOrOperator = `(${numberOrOperator})`;
+  }
+  expression += numberOrOperator;
+  numberOrOperator = "";
 };
 
 // ---------------------- EVENT HANDLERS FOR EACH BUTTON --------------------
@@ -95,13 +118,7 @@ negativeNumbers.addEventListener("click", () => {
 });
 
 equals.addEventListener("click", () => {
-  if (isNaN(numberOrOperator)) return;
-  if (Number(numberOrOperator) < 0) {
-    numberOrOperator = `(${numberOrOperator})`;
-  }
-  expression += numberOrOperator;
-  numberOrOperator = "";
-
+  equalsBtn();
   calculate(expression);
   updateDisplay();
 });
@@ -113,14 +130,10 @@ clearDisplay.addEventListener("click", () => {
 });
 
 deleteLastKey.addEventListener("click", () => {
-  if (numberOrOperator === "") {
-    expression = expression.slice(0, -1);
-  }
-
-  numberOrOperator = numberOrOperator.slice(0, -1);
+  deleteKey();
   updateDisplay();
 });
 
-//MathJS example of evaluating a string expression
-let str = "2*3-4/5+22*54";
-console.log(str + " = " + math.evaluate(str));
+// //MathJS example of evaluating a string expression
+// let str = "2*3-4/5+22*54";
+// console.log(str + " = " + math.evaluate(str));
