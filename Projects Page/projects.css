@@ -104,7 +104,7 @@ img {
     width: 80%;
   }
   .projects-link {
-    font-size: 1em;
+    font-size: 1rem;
     width: 35%;
   }
 }
@@ -114,10 +114,10 @@ img {
     width: 35%;
   }
   .project-tile a {
-    font-size: 1em;
+    font-size: 1rem;
     text-align: center;
   }
   .projects-link {
-    width: 35%;
+    width: 30%;
   }
 }
