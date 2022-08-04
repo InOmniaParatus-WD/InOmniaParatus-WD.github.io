@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+:root {
+  --lightseagreen: lightseagreen;
+  --elem-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  --success-color: #0a970a;
+  --error-color: #d10609;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #033436;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #f1f4f3;
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+h2 {
+  color: darkslategray;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 25px;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  position: relative;
+}
+
+label {
+  color: #4d4b4b;
+  display: block;
+  margin: 5px 0;
+}
+
+span.asterisk {
+  color: var(--error-color);
+}
+
+input {
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #bcbbbb;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: var(--elem-shadow);
+}
+span.eye {
+  position: relative;
+  top: -35px;
+  text-align: right;
+  font-size: 12px;
+}
+input:focus {
+  outline-color: var(--lightseagreen);
+  outline-style: outset;
+}
+
+.form-control.success input {
+  border: 1px solid var(--success-color);
+}
+.form-control.error input {
+  border: 1px solid var(--error-color);
+}
+
+.form-control small {
+  position: relative;
+  padding-left: 10px;
+  font-size: 12px;
+  bottom: 0;
+  left: 0;
+}
+
+.form-control.error small {
+  color: var(--error-color);
+}
+
+.form-control.success small {
+  color: var(--success-color);
+}
+
+button {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid var(--lightseagreen);
+  background-color: var(--lightseagreen);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  box-shadow: var(--elem-shadow);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #01606f;
+}
