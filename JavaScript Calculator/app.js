@@ -68,15 +68,6 @@ const makeNumberNegative = () => {
   if ("+-/*".includes(numberOrOperator)) return;
   numberOrOperator = `${parseFloat(numberOrOperator) * -1}`;
 };
-//Evaluates the math expression when the "equals" key is hit and returns the result
-//Uses Math.js
-const calculate = (expression) => {
-  let result = math.evaluate(expression);
-  evaluatedExpression = result.toLocaleString("en-US", {
-    maximumFractionDigits: 4,
-  });
-  numberOrOperator = evaluatedExpression;
-};
 
 //Delete the last entered number or digit
 const deleteKey = () => {
@@ -87,15 +78,25 @@ const deleteKey = () => {
 };
 
 //Equal key button
-const equalsBtn = () => {
-  if (isNaN(numberOrOperator)) return;
-  if (Number(numberOrOperator) < 0) {
-    numberOrOperator = `(${numberOrOperator})`;
+const equalsBtn = () => {};
+
+//Evaluates the math expression when the "equals" key is hit and returns the result
+//Uses Math.js
+const calculate = () => {
+  if (!isNaN(numberOrOperator)) {
+    if (Number(numberOrOperator) < 0) {
+      numberOrOperator = `(${numberOrOperator})`;
+    }
   }
   expression += numberOrOperator;
   numberOrOperator = "";
-};
 
+  let result = math.evaluate(expression);
+  evaluatedExpression = result.toLocaleString("en-US", {
+    maximumFractionDigits: 4,
+  });
+  numberOrOperator = evaluatedExpression;
+};
 // ---------------------- EVENT HANDLERS FOR EACH BUTTON --------------------
 
 numbers.forEach((button) =>
@@ -118,8 +119,8 @@ negativeNumbers.addEventListener("click", () => {
 });
 
 equals.addEventListener("click", () => {
-  equalsBtn();
-  calculate(expression);
+  // equalsBtn();
+  calculate();
   updateDisplay();
 });
 
