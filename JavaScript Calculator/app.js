@@ -77,9 +77,6 @@ const deleteKey = () => {
   numberOrOperator = numberOrOperator.slice(0, -1);
 };
 
-//Equal key button
-const equalsBtn = () => {};
-
 //Evaluates the math expression when the "equals" key is hit and returns the result
 //Uses Math.js
 const calculate = () => {
@@ -119,7 +116,6 @@ negativeNumbers.addEventListener("click", () => {
 });
 
 equals.addEventListener("click", () => {
-  // equalsBtn();
   calculate();
   updateDisplay();
 });
