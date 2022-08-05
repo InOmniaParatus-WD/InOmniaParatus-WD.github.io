@@ -94,6 +94,7 @@ const calculate = () => {
   });
   numberOrOperator = evaluatedExpression;
 };
+
 // ---------------------- EVENT HANDLERS FOR EACH BUTTON --------------------
 
 numbers.forEach((button) =>
