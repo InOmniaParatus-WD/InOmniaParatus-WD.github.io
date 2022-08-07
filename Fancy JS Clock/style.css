@@ -77,25 +77,24 @@ body {
 
 .needle.seconds {
   transform: var(--needle-default-rotation);
-  height: 270px;
+  height: 260px;
   width: 100px;
   background-color: #dfdfae;
   box-shadow: var(--needle-shadow);
 }
 .needle.seconds img {
   width: 7.5rem;
-  position: absolute;
-  left: -25px;
-  top: -20px;
+  margin-left: -25px;
+  margin-top: -55px;
   transform: rotateZ(180deg);
 }
-.hour-dot {
+.hour-dots {
   height: 640px;
   width: 648px;
   position: absolute;
 }
 
-.hour-dot div {
+.hour-dots div {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -104,38 +103,37 @@ body {
   height: 100%;
 }
 
-.hour-dot div:nth-of-type(1) {
+.hour-dots div:nth-of-type(1) {
   transform: rotateZ(30deg);
 }
-.hour-dot div:nth-of-type(2) {
+.hour-dots div:nth-of-type(2) {
   transform: rotateZ(60deg);
 }
-.hour-dot div:nth-of-type(3) {
+.hour-dots div:nth-of-type(3) {
   transform: rotateZ(90deg);
 }
-.hour-dot div:nth-of-type(4) {
+.hour-dots div:nth-of-type(4) {
   transform: rotateZ(120deg);
 }
-.hour-dot div:nth-of-type(5) {
+.hour-dots div:nth-of-type(5) {
   transform: rotateZ(150deg);
 }
-
-.hour-dot div:nth-of-type(6) {
+.hour-dots div:nth-of-type(6) {
   transform: rotateZ(180deg);
 }
-.hour-dot div:nth-of-type(7) {
+.hour-dots div:nth-of-type(7) {
   transform: rotateZ(210deg);
 }
-.hour-dot div:nth-of-type(8) {
+.hour-dots div:nth-of-type(8) {
   transform: rotateZ(240deg);
 }
-.hour-dot div:nth-of-type(9) {
+.hour-dots div:nth-of-type(9) {
   transform: rotateZ(270deg);
 }
-.hour-dot div:nth-of-type(10) {
+.hour-dots div:nth-of-type(10) {
   transform: rotateZ(300deg);
 }
-.hour-dot div:nth-of-type(11) {
+.hour-dots div:nth-of-type(11) {
   transform: rotateZ(330deg);
 }
 
