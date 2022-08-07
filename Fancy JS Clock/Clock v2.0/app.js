@@ -1,6 +1,3 @@
-const body = document.querySelector("body");
-document.body.onload = addElement;
-
 const hourEl = document.querySelector(".hours");
 const minuteEl = document.querySelector(".minutes");
 const secondEl = document.querySelector(".seconds");
