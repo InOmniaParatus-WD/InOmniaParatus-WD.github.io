@@ -28,6 +28,7 @@ const months = [
   "Dec",
 ];
 
+let lastSec = 0
 //Changes the time and date displayed on the clock and the displays underneath it
 function setTime() {
   const time = new Date();
@@ -38,22 +39,29 @@ function setTime() {
   const hoursForClock = hours % 12; //12hrs instead of 24hrs time format
   const minutes = time.getMinutes();
   const seconds = time.getSeconds();
+  const ticks = time.getTime();
   const ampm = hours >= 12 ? "PM" : "AM";
 
-  hourEl.style.transform = ` translate(-50%, -100%) rotate(${scale(hoursForClock,0,12,0,360)}deg)`;
-  minuteEl.style.transform = ` translate(-50%, -100%) rotate(${scale(minutes,0,60,0,360)}deg)`;
-  secondEl.style.transform = ` translate(-50%, -100%) rotate(${scale(seconds,0,60,0,360)}deg)`;
+  hourEl.style.transform = ` translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0, 360)}deg)`;
+  minuteEl.style.transform = ` translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
+  secondEl.style.transform = ` translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
 
-  timeEl.innerHTML = `${hours}:${
+  timeEl.innerHTML = `${hoursForClock}:${
     minutes < 10 ? `0${minutes}` : minutes
-  } ${ampm}`; // For the non-military hour format with 24:00 hrs use 'hoursForClock''hours' instead of 
+  } ${ampm}`; // For the military hour format with 24:00 hrs use 'hours' instead of 'hoursForClock'
 
   dateEl.innerHTML = `${days[day]}, ${months[month]} <span>${date}</span>`;
 }
 
 //https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 const scale = (num, inMin, inMax, outMin, outMax) => {
-  return ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+
+  const res =  ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+  // if (comp == 's') {
+  //   console.log(num - lastSec, res)
+  //   lastSec = num
+  // }
+  return res
 };
 
 setTime();

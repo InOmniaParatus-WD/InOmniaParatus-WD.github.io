@@ -8,7 +8,6 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   --needle-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  --needle-default-rotation: translate(-50%, -100%) rotate(0deg);
 }
 
 * {
@@ -18,39 +17,47 @@
 body {
   font-family: "Glass Antiqua", cursive;
   background-color: #051224;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+  margin: 30px;
 }
 
-.clock-container {
-  height: 60rem;
-  width: 60rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.hours-ring,
-.clock,
-.inner-circle {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+.container {
+  position: relative;
+  height: 740px;
+  width: 740px;
+  margin: auto;
 }
 
 .hours-ring {
+  position: relative;
+  border-radius: 50%;
   background-color: #3a4444;
   width: 640px;
   height: 640px;
+  margin: auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.clock {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  background: linear-gradient(
+    135deg,
+    rgba(1, 20, 17, 1) 0%,
+    rgba(49, 102, 93, 1) 19%,
+    rgba(70, 138, 126, 1) 39%,
+    rgba(36, 139, 137, 1) 58%,
+    rgba(57, 122, 102, 1) 79%,
+    rgba(87, 99, 54, 1) 100%,
+    rgba(43, 72, 81, 1) 100%
+  );
 }
 
 .needle {
@@ -59,42 +66,44 @@ body {
   left: 50%;
   transform-origin: bottom center;
   border-radius: 50%;
-  transition: all 0.35s ease-in;
+  /* transition: all 0.35s ease-in; */
 }
 
 .needle.hours {
   width: 150px;
   height: 265px;
   background-color: #f2a20c;
-  transform: var(--needle-default-rotation);
+  transform: translate(-50%, -100%) rotate(0deg);
   box-shadow: var(--needle-shadow);
 }
 
 .needle.minutes {
-  transform: var(--needle-default-rotation);
-  height: 265px;
   width: 90px;
+  height: 255px;
   background-color: #282335;
+  transform: translate(-50%, -100%) rotate(0deg);
   box-shadow: var(--needle-shadow);
 }
 
 .needle.seconds {
-  transform: var(--needle-default-rotation);
-  height: 260px;
-  width: 90px;
+  width: 80px;
+  height: 265px;
   background-color: #dfdfae;
+  transform: translate(-50%, -100%) rotate(0deg);
   box-shadow: var(--needle-shadow);
 }
+
 .needle.seconds img {
   width: 7.5rem;
-  margin-left: -25px;
+  margin-left: -30px;
   margin-top: -55px;
   transform: rotateZ(180deg);
 }
+
 .hour-dots {
   height: 640px;
   width: 640px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .hour-dots div {
@@ -152,28 +161,14 @@ body {
   box-shadow: var(--dot-shadow);
 }
 
-.clock {
-  position: relative;
-  width: 540px;
-  height: 540px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  background: linear-gradient(
-    135deg,
-    rgba(1, 20, 17, 1) 0%,
-    rgba(49, 102, 93, 1) 19%,
-    rgba(70, 138, 126, 1) 39%,
-    rgba(36, 139, 137, 1) 58%,
-    rgba(57, 122, 102, 1) 79%,
-    rgba(87, 99, 54, 1) 100%,
-    rgba(43, 72, 81, 1) 100%
-  );
-}
-
 .inner-circle {
-  position: relative;
   width: 180px;
   height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
   background-color: #3e463c;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
@@ -185,16 +180,15 @@ body {
   width: 160px;
   border-radius: 50%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #3c6d3c;
   box-shadow: var(--dot-shadow);
 }
 
 .time-and-date {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: antiquewhite;
+   color: #faebd7;
   font-size: 2.8rem;
   text-align: center;
   margin: auto;
@@ -203,16 +197,18 @@ body {
 }
 
 @media (max-width: 640px) {
-  .clock-container {
-    width: 100%;
-    height: 100%;
-    margin: auto;
+  body {
+    margin-top: 20px;
+  }
+  .container {
+    width: auto;
   }
   .hours-ring,
   .hour-dots {
     border-radius: 50%;
     width: 380px;
     height: 380px;
+    margin: auto;
   }
   .dot {
     font-size: 1.5rem;
@@ -220,6 +216,7 @@ body {
     height: 25px;
   }
   .clock {
+    margin: auto;
     width: 320px;
     height: 320px;
   }
@@ -240,7 +237,6 @@ body {
     width: 60px;
     right: -5px;
     top: 20px;
-   
   }
   .inner-circle {
     width: 110px;
