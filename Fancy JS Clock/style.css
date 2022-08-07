@@ -205,7 +205,6 @@ body {
 @media (max-width: 640px) {
   .clock-container {
     width: 100%;
-    height: 100%;
     margin: 10px 0 25px 0;
   }
   .hours-ring,
@@ -251,6 +250,6 @@ body {
   }
   .time-and-date {
     font-size: 1.5rem;
-margin: 10px 0 5px 0;
+    margin: 10px 0 5px 0;
   }
 }
