@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .hours-ring,
@@ -73,7 +73,7 @@ body {
 .needle.minutes {
   transform: var(--needle-default-rotation);
   height: 265px;
-  width: 90px;
+  width: 100px;
   background-color: #282335;
   box-shadow: var(--needle-shadow);
 }
@@ -81,7 +81,7 @@ body {
 .needle.seconds {
   transform: var(--needle-default-rotation);
   height: 260px;
-  width: 90px;
+  width: 100px;
   background-color: #dfdfae;
   box-shadow: var(--needle-shadow);
 }
@@ -144,7 +144,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  margin-top: 3px;
+  /*margin-top: 3px;*/
   height: 40px;
   width: 40px;
   background-color: #fffcfc;
@@ -197,7 +197,7 @@ body {
   color: antiquewhite;
   font-size: 2.8rem;
   text-align: center;
-  margin: auto;
+  margin: 15px auto;
   padding: 20px;
   border-radius: 5px;
 }
@@ -206,6 +206,7 @@ body {
   .clock-container {
     width: 100%;
     height: 100%;
+    margin-left:25px;
   }
   .hours-ring,
   .hour-dots {
@@ -250,6 +251,5 @@ body {
   }
   .time-and-date {
     font-size: 1.5rem;
-    margin: auto;
   }
 }
