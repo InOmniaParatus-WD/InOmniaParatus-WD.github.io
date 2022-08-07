@@ -31,6 +31,7 @@ body {
   height: 60rem;
   width: 60rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
@@ -40,7 +41,6 @@ body {
 .clock,
 .inner-circle {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
