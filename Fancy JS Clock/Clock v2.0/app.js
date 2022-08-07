@@ -1,21 +1,6 @@
 const body = document.querySelector("body");
 document.body.onload = addElement;
 
-function addElement () {
-  // create a new div element
-  const newDiv = document.createElement("div");
-
-  // and give it some content
-  const newContent = document.createTextNode("13");
-
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);
-
-  // add the newly created element and its content into the DOM
-  const clockContainer = document.querySelector(".time-and-date");
-  document.body.insertBefore(newDiv, clockContainer);
-}
-
 const hourEl = document.querySelector(".hours");
 const minuteEl = document.querySelector(".minutes");
 const secondEl = document.querySelector(".seconds");
