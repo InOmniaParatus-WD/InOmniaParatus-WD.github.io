@@ -55,7 +55,7 @@ body {
   left: 50%;
   transform-origin: bottom center;
   border-radius: 50%;
-  transition: all 0.35 ease-in;
+  transition: all 0.35s ease-in;
 }
 
 .needle.hours {
@@ -144,6 +144,7 @@ body {
 @media (max-width: 640px) {
   body {
     height: 100vh;
+    margin: 0;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
@@ -187,6 +188,6 @@ body {
   .time-and-date {
     font-size: 1.5rem;
     width: 100%;
-    margin: 20px;
+    margin: 20px 0;
   }
 }

@@ -23,6 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .clock-container {
@@ -58,7 +59,7 @@ body {
   left: 50%;
   transform-origin: bottom center;
   border-radius: 50%;
-  transition: all 0.35 ease-in;
+  transition: all 0.35s ease-in;
 }
 
 .needle.hours {
@@ -237,7 +238,7 @@ body {
   .needle.seconds img {
     max-width: 60px;
     top: -25px;
-    left: -15px;
+    left: -30px;
   }
   .inner-circle {
     max-width: 110px;
