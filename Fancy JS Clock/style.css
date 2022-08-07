@@ -24,6 +24,7 @@ body {
 
 .container {
   position: relative;
+  top: 50px;
   height: 740px;
   width: 740px;
   margin: auto;
