@@ -206,7 +206,7 @@ body {
   .clock-container {
     width: 100%;
     height: 100%;
-    margin-left:25px;
+    margin: 10px 0 25px 0;
   }
   .hours-ring,
   .hour-dots {
@@ -251,5 +251,6 @@ body {
   }
   .time-and-date {
     font-size: 1.5rem;
+margin: 10px 0 5px 0;
   }
 }
