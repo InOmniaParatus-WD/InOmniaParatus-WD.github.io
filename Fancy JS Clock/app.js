@@ -28,7 +28,9 @@ const months = [
   "Dec",
 ];
 
-//Change the time and date
+
+
+//Changes the time and date displayed on the clock and the displays underneath it
 function setTime() {
   const time = new Date();
   const month = time.getMonth();

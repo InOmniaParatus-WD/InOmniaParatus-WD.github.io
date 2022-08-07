@@ -10,6 +10,7 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   --needle-default-rotation: translate(-50%, -100%) rotate(0deg);
 }
+
 * {
   box-sizing: border-box;
 }
@@ -22,15 +23,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
 }
 
 .clock-container {
-  margin-top: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .hours-ring,
@@ -45,8 +45,8 @@ body {
 
 .hours-ring {
   background-color: #3a4444;
-  width: 700px;
-  height: 700px;
+  width: 640px;
+  height: 640px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
@@ -54,15 +54,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform-origin: bottom center;
   border-radius: 50%;
   transition: all 0.35 ease-in;
 }
 
 .needle.hours {
-  width: 150px;
-  height: 280px;
+  width: 130px;
+  height: 265px;
   background-color: #f2a20c;
   transform: var(--needle-default-rotation);
   box-shadow: var(--needle-shadow);
@@ -78,7 +77,7 @@ body {
 
 .needle.seconds {
   transform: var(--needle-default-rotation);
-  height: 280px;
+  height: 270px;
   width: 100px;
   background-color: #dfdfae;
   box-shadow: var(--needle-shadow);
@@ -91,8 +90,8 @@ body {
   transform: rotateZ(180deg);
 }
 .hour-dot {
-  height: 680px;
-  width: 688px;
+  height: 640px;
+  width: 648px;
   position: absolute;
 }
 
@@ -144,6 +143,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
+  margin-top: 3px;
   height: 40px;
   width: 40px;
   background-color: #fffcfc;
@@ -153,8 +153,8 @@ body {
 
 .clock {
   position: relative;
-  width: 580px;
-  height: 580px;
+  width: 540px;
+  height: 540px;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   background: linear-gradient(
@@ -171,8 +171,8 @@ body {
 
 .inner-circle {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background-color: #3e463c;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
@@ -180,8 +180,8 @@ body {
 }
 
 .center {
-  height: 180px;
-  width: 180px;
+  height: 160px;
+  width: 160px;
   border-radius: 50%;
   position: absolute;
   background-color: #3c6d3c;
@@ -194,18 +194,20 @@ body {
   justify-content: center;
   align-items: center;
   color: antiquewhite;
-  font-size: 3rem;
+  font-size: 2.8rem;
   text-align: center;
   margin: auto;
   padding: 20px;
   border-radius: 5px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px) and (min-width: 1000px) {
   body {
     height: 100vh;
+    justify-content: center;
     align-items: center;
   }
+
   .hours-ring,
   .hour-dot {
     max-width: 380px;
@@ -247,6 +249,6 @@ body {
   }
   .time-and-date {
     font-size: 1.5rem;
-    margin: auto;
+    margin: 0;
   }
 }
