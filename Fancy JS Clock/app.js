@@ -55,13 +55,7 @@ function setTime() {
 
 //https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 const scale = (num, inMin, inMax, outMin, outMax) => {
-
-  const res =  ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-  // if (comp == 's') {
-  //   console.log(num - lastSec, res)
-  //   lastSec = num
-  // }
-  return res
+  return ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 };
 
 setTime();
