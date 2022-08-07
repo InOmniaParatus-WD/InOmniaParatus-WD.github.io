@@ -26,6 +26,8 @@ body {
 }
 
 .clock-container {
+  height: 640px;
+  width: 640px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -199,7 +201,7 @@ body {
   border-radius: 5px;
 }
 
-@media (max-width: 640px) and (min-width: 1000px) {
+@media (max-width: 640px){
   body {
     height: 100vh;
     justify-content: center;
@@ -207,7 +209,7 @@ body {
   }
 
   .hours-ring,
-  .hour-dot {
+  .hour-dots {
     max-width: 380px;
     max-height: 380px;
   }

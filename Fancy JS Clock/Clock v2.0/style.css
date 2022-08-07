@@ -27,7 +27,6 @@ body {
 
 .clock-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 0 50px 0 0;
@@ -38,7 +37,6 @@ body {
 .clock,
 .inner-circle {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -143,22 +141,20 @@ body {
   width: 20%;
 }
 
-@media (max-width: 640px) and (min-width: 1000px) {
+@media (max-width: 640px) {
   body {
     height: 100vh;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
   }
-
-  .hours-ring,
-  .hour-dot {
+  .clock-container {
+    width: 100%;
+    margin: 0;
+  }
+  .hours-ring {
     max-width: 380px;
     max-height: 380px;
-  }
-  .dot {
-    font-size: 1.5rem;
-    max-width: 25px;
-    max-height: 25px;
   }
   .clock {
     max-width: 320px;
@@ -177,9 +173,8 @@ body {
     max-height: 135px;
   }
   .needle.seconds img {
+    top: 0;
     max-width: 60px;
-    top: -25px;
-    left: -15px;
   }
   .inner-circle {
     max-width: 110px;
@@ -191,66 +186,7 @@ body {
   }
   .time-and-date {
     font-size: 1.5rem;
-    margin: 0;
+    width: 100%;
+    margin: 20px;
   }
 }
-
-/* .hour-dots {
-  height: 640px;
-  width: 648px;
-  position: absolute;
-}
-
-.hour-dots div {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}
-
-.hour-dots div:nth-of-type(1) {
-  transform: rotateZ(30deg);
-}
-.hour-dots div:nth-of-type(2) {
-  transform: rotateZ(60deg);
-}
-.hour-dots div:nth-of-type(3) {
-  transform: rotateZ(90deg);
-}
-.hour-dots div:nth-of-type(4) {
-  transform: rotateZ(120deg);
-}
-.hour-dots div:nth-of-type(5) {
-  transform: rotateZ(150deg);
-}
-.hour-dots div:nth-of-type(6) {
-  transform: rotateZ(180deg);
-}
-.hour-dots div:nth-of-type(7) {
-  transform: rotateZ(210deg);
-}
-.hour-dots div:nth-of-type(8) {
-  transform: rotateZ(240deg);
-}
-.hour-dots div:nth-of-type(9) {
-  transform: rotateZ(270deg);
-}
-.hour-dots div:nth-of-type(10) {
-  transform: rotateZ(300deg);
-}
-.hour-dots div:nth-of-type(11) {
-  transform: rotateZ(330deg);
-}
-
-.dot {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-top: 3px;
-  height: 40px;
-  width: 40px;
-  background-color: #fffcfc;
-  border-radius: 50%;
-  box-shadow: var(--dot-shadow);
-} */
