@@ -206,7 +206,6 @@ body {
   .clock-container {
     width: 100%;
     height: 100%;
-    margin: auto;
   }
   .hours-ring,
   .hour-dots {
