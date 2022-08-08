@@ -19,7 +19,7 @@ body {
   background-color: #051224;
   height: 100vh;
   overflow: hidden;
-  margin: 30px;
+  margin: auto;
 }
 
 .container {
@@ -96,8 +96,8 @@ body {
 
 .needle.seconds img {
   width: 7.5rem;
-  margin-left: -30px;
-  margin-top: -55px;
+  margin-left: -25px;
+  margin-top: -70px;
   transform: rotateZ(180deg);
 }
 
@@ -188,8 +188,15 @@ body {
   box-shadow: var(--dot-shadow);
 }
 
+.center img {
+  width: 250px;
+  position: absolute;
+  top: -50px;
+  left: -35px;
+}
+
 .time-and-date {
-   color: #faebd7;
+  color: #faebd7;
   font-size: 2.8rem;
   text-align: center;
   margin: 15px auto;
@@ -246,6 +253,12 @@ body {
   .center {
     max-width: 90px;
     max-height: 90px;
+  }
+  .center img {
+    width: 150px;
+    position: absolute;
+    top: -30px;
+    left: -20px;
   }
   .time-and-date {
     font-size: 1.5rem;
