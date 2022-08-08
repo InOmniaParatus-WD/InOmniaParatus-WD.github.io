@@ -28,7 +28,6 @@ const months = [
   "Dec",
 ];
 
-let lastSec = 0
 //Changes the time and date displayed on the clock and the displays underneath it
 function setTime() {
   const time = new Date();
@@ -39,7 +38,6 @@ function setTime() {
   const hoursForClock = hours % 12; //12hrs instead of 24hrs time format
   const minutes = time.getMinutes();
   const seconds = time.getSeconds();
-  const ticks = time.getTime();
   const ampm = hours >= 12 ? "PM" : "AM";
 
   hourEl.style.transform = ` translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0, 360)}deg)`;
