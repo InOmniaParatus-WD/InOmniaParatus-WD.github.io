@@ -228,16 +228,16 @@ body {
     height: 320px;
   }
   .needle.hours {
-    width: 75px;
+    width: 50px;
     height: 155px;
   }
   .needle.minutes {
-    width: 40px;
+    width: 50px;
     height: 150px;
   }
   .needle.seconds {
-    width: 40px;
-    height: 145px;
+    width: 50px;
+    height: 155px;
   }
   .needle.seconds img {
     position: absolute;
