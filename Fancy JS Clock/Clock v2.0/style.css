@@ -55,7 +55,7 @@ body {
   left: 50%;
   transform-origin: bottom center;
   border-radius: 50%;
-  transition: all 0.35s ease-in;
+  /* transition: all 0.35s ease-in; */
 }
 
 .needle.hours {
