@@ -241,9 +241,9 @@ body {
   }
   .needle.seconds img {
     position: absolute;
-    width: 60px;
+    width: 70px;
     right: -5px;
-    top: 20px;
+    top: 10px;
   }
   .inner-circle {
     width: 110px;
@@ -257,7 +257,7 @@ body {
     width: 150px;
     position: absolute;
     top: -30px;
-    left: -20px;
+    left: -25px;
   }
   .time-and-date {
     font-size: 1.5rem;
