@@ -27,16 +27,16 @@ const updateDisplay = () => {
 };
 //Adds a new digit to the number displayed every time the user hits a digit key before choosing an operator
 const appendNumber = (key) => {
+  //erases the result from the display when the user enters a new number following a completed previous calculation
+  if (evaluatedExpression) {
+    evaluatedExpression = "";
+    numberOrOperator = evaluatedExpression;
+    expression = "";
+  }
+
   //prevents the user from adding more than one decimal dot
   if (key === "." && numberOrOperator.includes(".")) return;
 
-  if ("+-/*".includes(numberOrOperator)) {
-    // verifies if the previously hit key is an operator
-    expression += numberOrOperator;
-    numberOrOperator = key;
-  } else {
-    numberOrOperator += key;
-  }
   //A number cannot begin with zero unless zero is immediately followed by a decimal
   if (
     !isNaN(numberOrOperator) &&
@@ -46,10 +46,18 @@ const appendNumber = (key) => {
   ) {
     numberOrOperator = numberOrOperator.replace("0", "");
   }
+
+  if ("+-/*".includes(numberOrOperator)) {
+    // verifies if the previously hit key is an operator
+    expression += numberOrOperator;
+    numberOrOperator = key;
+  } else {
+    numberOrOperator += key;
+  }
 };
 //The function allows the user to chose an operator and will replace the previously hit operator key. The operator dsiaplyed before the next integer is enatered will be the last operator key hit
 const chooseOperator = (operatorKey) => {
-  if (numberOrOperator === "" && operatorKey !== "-") return;
+  if (numberOrOperator === "") return;
 
   if (evaluatedExpression) {
     evaluatedExpression = "";
@@ -78,7 +86,8 @@ const deleteKey = () => {
 };
 
 //Evaluates the math expression when the "equals" key is hit and returns the result
-//Uses Math.js
+//Uses Math.js library to avoid calculus errors with floating numbers
+
 const calculate = () => {
   if (!isNaN(numberOrOperator)) {
     if (Number(numberOrOperator) < 0) {
@@ -89,8 +98,9 @@ const calculate = () => {
   numberOrOperator = "";
 
   let result = math.evaluate(expression);
+
   evaluatedExpression = result.toLocaleString("en-US", {
-    maximumFractionDigits: 4,
+    maximumFractionDigits: 2,
   });
   numberOrOperator = evaluatedExpression;
 };
