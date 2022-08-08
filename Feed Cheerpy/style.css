@@ -140,7 +140,7 @@ main {
   left: 0;
   box-shadow: var(--image-shadow);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.1s;
 }
 
 #bone-with-bow {
