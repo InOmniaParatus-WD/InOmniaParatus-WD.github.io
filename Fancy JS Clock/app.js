@@ -3,6 +3,7 @@ const minuteEl = document.querySelector(".minutes");
 const secondEl = document.querySelector(".seconds");
 const timeEl = document.querySelector(".time");
 const dateEl = document.querySelector(".date");
+const zoneEl = document.querySelector(".time-zone");
 
 const days = [
   "Sunday",
@@ -29,13 +30,18 @@ const months = [
 ];
 
 const time = new Date();
+
 const month = time.getMonth();
 const date = time.getDate();
 const day = time.getDay();
+const year = time.getFullYear();
+
 const hours = time.getHours();
 const minutes = time.getMinutes();
 const seconds = time.getSeconds();
 const ampm = hours >= 12 ? "PM" : "AM";
+
+const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 let hoursPosition = (hours * 360) / 12 + (minutes * (360 / 60)) / 12;
 let minutesPosition = (minutes * 360) / 60 + (seconds * (360 / 60)) / 60;
@@ -51,11 +57,9 @@ function setTime() {
   minuteEl.style.transform = `translate(-50%, -100%) rotate(${minutesPosition}deg`;
   secondEl.style.transform = `translate(-50%, -100%) rotate(${secondsPosition}deg`;
 
-  timeEl.innerHTML = `${hours}:${
-    minutes < 10 ? `0${minutes}` : minutes
-  } ${ampm}`; 
-
-  dateEl.innerHTML = `${days[day]}, ${months[month]} <span>${date}</span>`;
+  timeEl.innerHTML = `${hours % 12} : ${(minutes < 10) ? `0${minutes}` : minutes} ${ampm}`;
+  dateEl.innerHTML = `${days[day]}, ${months[month]} <span>${date}</span>, ${year}`;
+  zoneEl.innerHTML = `${timeZone}`;
 }
 
 setTime();
