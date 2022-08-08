@@ -28,35 +28,35 @@ const months = [
   "Dec",
 ];
 
-let lastSec = 0
+const time = new Date();
+const month = time.getMonth();
+const date = time.getDate();
+const day = time.getDay();
+const hours = time.getHours();
+const minutes = time.getMinutes();
+const seconds = time.getSeconds();
+const ampm = hours >= 12 ? "PM" : "AM";
+
+let hoursPosition = (hours * 360) / 12 + (minutes * (360 / 60)) / 12;
+let minutesPosition = (minutes * 360) / 60 + (seconds * (360 / 60)) / 60;
+let secondsPosition = (seconds * 360) / 60;
+
 //Changes the time and date displayed on the clock and the displays underneath it
 function setTime() {
-  const time = new Date();
-  const month = time.getMonth();
-  const date = time.getDate();
-  const day = time.getDay();
-  const hours = time.getHours();
-  const hoursForClock = hours % 12; //12hrs instead of 24hrs time format
-  const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
-  const ticks = time.getTime();
-  const ampm = hours >= 12 ? "PM" : "AM";
+  secondsPosition = secondsPosition + 360 / 60;
+  minutesPosition = minutesPosition + (1 / 60) * (360 / 60);
+  hoursPosition = hoursPosition + 30 / 3600;
 
-  hourEl.style.transform = ` translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0, 360)}deg)`;
-  minuteEl.style.transform = ` translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
-  secondEl.style.transform = ` translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
+  hourEl.style.transform = `translate(-50%, -100%) rotate(${hoursPosition}deg`;
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(${minutesPosition}deg`;
+  secondEl.style.transform = `translate(-50%, -100%) rotate(${secondsPosition}deg`;
 
-  timeEl.innerHTML = `${hoursForClock}:${
+  timeEl.innerHTML = `${hours}:${
     minutes < 10 ? `0${minutes}` : minutes
-  } ${ampm}`; // For the military hour format with 24:00 hrs use 'hours' instead of 'hoursForClock'
+  } ${ampm}`; 
 
   dateEl.innerHTML = `${days[day]}, ${months[month]} <span>${date}</span>`;
 }
-
-//https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
-const scale = (num, inMin, inMax, outMin, outMax) => {
-  return ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-};
 
 setTime();
 setInterval(setTime, 1000);
