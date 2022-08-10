@@ -5,6 +5,17 @@ const timeEl = document.querySelector(".time");
 const dateEl = document.querySelector(".date");
 const zoneEl = document.querySelector(".time-zone");
 
+//Creates the hours elements on the side of the clock
+for (let i = 1; i <= 12; i++) {
+  const hoursRing = document.querySelector(".hour-dots");
+  const hourDiv = document.createElement("div");
+  
+  hourDiv.innerHTML = `<span class="dot">${i}</span>`;
+  hourDiv.style.transform =`rotateZ(${i * 30}deg)`
+   
+  hoursRing.appendChild(hourDiv);
+}
+
 const days = [
   "Sunday",
   "Monday",
@@ -43,6 +54,7 @@ const ampm = hours >= 12 ? "PM" : "AM";
 
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+//Calculates the needles' rotation angles
 let hoursPosition = (hours * 360) / 12 + (minutes * (360 / 60)) / 12;
 let minutesPosition = (minutes * 360) / 60 + (seconds * (360 / 60)) / 60;
 let secondsPosition = (seconds * 360) / 60;

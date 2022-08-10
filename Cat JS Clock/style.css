@@ -115,45 +115,10 @@ body {
   height: 100%;
 }
 
-.hour-dots div:nth-of-type(1) {
-  transform: rotateZ(30deg);
-}
-.hour-dots div:nth-of-type(2) {
-  transform: rotateZ(60deg);
-}
-.hour-dots div:nth-of-type(3) {
-  transform: rotateZ(90deg);
-}
-.hour-dots div:nth-of-type(4) {
-  transform: rotateZ(120deg);
-}
-.hour-dots div:nth-of-type(5) {
-  transform: rotateZ(150deg);
-}
-.hour-dots div:nth-of-type(6) {
-  transform: rotateZ(180deg);
-}
-.hour-dots div:nth-of-type(7) {
-  transform: rotateZ(210deg);
-}
-.hour-dots div:nth-of-type(8) {
-  transform: rotateZ(240deg);
-}
-.hour-dots div:nth-of-type(9) {
-  transform: rotateZ(270deg);
-}
-.hour-dots div:nth-of-type(10) {
-  transform: rotateZ(300deg);
-}
-.hour-dots div:nth-of-type(11) {
-  transform: rotateZ(330deg);
-}
-
 .dot {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  /*margin-top: 3px;*/
   height: 40px;
   width: 40px;
   background-color: #fffcfc;
