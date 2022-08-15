@@ -69,7 +69,7 @@ function setTime() {
   minuteEl.style.transform = `translate(-50%, -100%) rotate(${minutesPosition}deg`;
   secondEl.style.transform = `translate(-50%, -100%) rotate(${secondsPosition}deg`;
 
-  timeEl.innerHTML = `${hours % 12} : ${(minutes < 10) ? `0${minutes}` : minutes} ${ampm}`;
+  timeEl.innerHTML = `${hours} : ${(minutes < 10) ? `0${minutes}` : minutes} ${ampm}`;
   dateEl.innerHTML = `${days[day]}, ${months[month]} <span>${date}</span>, ${year}`;
   zoneEl.innerHTML = `${timeZone}`;
 }
