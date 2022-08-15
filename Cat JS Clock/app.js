@@ -9,10 +9,10 @@ const zoneEl = document.querySelector(".time-zone");
 for (let i = 1; i <= 12; i++) {
   const hoursRing = document.querySelector(".hour-dots");
   const hourDiv = document.createElement("div");
-  
+
   hourDiv.innerHTML = `<span class="dot">${i}</span>`;
-  hourDiv.style.transform =`rotateZ(${i * 30}deg)`
-   
+  hourDiv.style.transform = `rotateZ(${i * 30}deg)`;
+
   hoursRing.appendChild(hourDiv);
 }
 
@@ -47,29 +47,42 @@ const date = time.getDate();
 const day = time.getDay();
 const year = time.getFullYear();
 
-const hours = time.getHours();
-const minutes = time.getMinutes();
-const seconds = time.getSeconds();
-const ampm = hours >= 12 ? "PM" : "AM";
+let hours = time.getHours();
+let minutes = time.getMinutes();
+let seconds = time.getSeconds();
 
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 //Calculates the needles' rotation angles
-let hoursPosition = (hours * 360) / 12 + (minutes * (360 / 60)) / 12;
-let minutesPosition = (minutes * 360) / 60 + (seconds * (360 / 60)) / 60;
-let secondsPosition = (seconds * 360) / 60;
+let hoursAngle = (hours * 360) / 12 + (minutes * (360 / 60)) / 12;
+let minutesAngle = (minutes * 360) / 60 + (seconds * (360 / 60)) / 60;
+let secondsAngle = (seconds * 360) / 60;
 
 //Changes the time and date displayed on the clock and the displays underneath it
 function setTime() {
-  secondsPosition = secondsPosition + 360 / 60;
-  minutesPosition = minutesPosition + (1 / 60) * (360 / 60);
-  hoursPosition = hoursPosition + 30 / 3600;
+  seconds++;
+  if (seconds === 60) {
+    seconds = 0;
+    minutes++;
+    if (minutes === 60) {
+      minutes = 0;
+      hours++;
+    }
+  }
 
-  hourEl.style.transform = `translate(-50%, -100%) rotate(${hoursPosition}deg`;
-  minuteEl.style.transform = `translate(-50%, -100%) rotate(${minutesPosition}deg`;
-  secondEl.style.transform = `translate(-50%, -100%) rotate(${secondsPosition}deg`;
+  secondsAngle = secondsAngle + 360 / 60;
+  minutesAngle = minutesAngle + (1 / 60) * (360 / 60);
+  hoursAngle = hoursAngle + 30 / 360;
 
-  timeEl.innerHTML = `${hours} : ${(minutes < 10) ? `0${minutes}` : minutes} ${ampm}`;
+  hourEl.style.transform = `translate(-50%, -100%) rotate(${hoursAngle}deg`;
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(${minutesAngle}deg`;
+  secondEl.style.transform = `translate(-50%, -100%) rotate(${secondsAngle}deg`;
+
+  let ampm = hours >= 12 ? "PM" : "AM";
+  let hourDisplayed = hours % 12;
+  let minutesDisplayed = minutes < 10 ? `0${minutes}` : minutes;
+
+  timeEl.innerHTML = `${hourDisplayed === 0 ? hourDisplayed = 12 : hourDisplayed} : ${minutesDisplayed} ${ampm}`;
   dateEl.innerHTML = `${days[day]}, ${months[month]} <span>${date}</span>, ${year}`;
   zoneEl.innerHTML = `${timeZone}`;
 }
