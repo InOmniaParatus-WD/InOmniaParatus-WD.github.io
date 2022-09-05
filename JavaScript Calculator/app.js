@@ -37,22 +37,22 @@ const appendNumber = (key) => {
   //prevents the user from adding more than one decimal dot
   if (key === "." && numberOrOperator.includes(".")) return;
 
-  //A number cannot begin with zero unless zero is immediately followed by a decimal
-  if (
-    !isNaN(numberOrOperator) &&
-    numberOrOperator.length > 1 &&
-    numberOrOperator.startsWith("0") &&
-    numberOrOperator[1] !== "."
-  ) {
-    numberOrOperator = numberOrOperator.replace("0", "");
-  }
-
   if ("+-/*".includes(numberOrOperator)) {
     // verifies if the previously hit key is an operator
     expression += numberOrOperator;
     numberOrOperator = key;
   } else {
     numberOrOperator += key;
+  }
+
+  //A number cannot begin with zero unless zero is immediately followed by a decimal
+  if (
+    !isNaN(numberOrOperator) &&
+    numberOrOperator.startsWith("0") &&
+    numberOrOperator.length > 1 &&
+    numberOrOperator[1] !== "."
+  ) {
+    numberOrOperator = numberOrOperator.replace("0", "");
   }
 };
 //The function allows the user to chose an operator and will replace the previously hit operator key. The operator dsiaplyed before the next integer is enatered will be the last operator key hit
