@@ -55,6 +55,9 @@ body {
 }
 
 .calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
   height: 650px;
   margin: 0 auto;
@@ -66,11 +69,9 @@ body {
 
 #display {
   inline-size: 350px;
-  overflow-wrap: break-word;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
   scrollbar-width: thin;
-  margin: 35px 20px;
+  margin: 30px 30px 0 30px;
   height: 25%;
   border-radius: 10px;
   color: var(--text-color);

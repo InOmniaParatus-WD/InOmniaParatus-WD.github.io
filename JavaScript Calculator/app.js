@@ -141,7 +141,52 @@ deleteLastKey.addEventListener("click", () => {
   deleteKey();
   updateDisplay();
 });
+// ---------- DOCUMENT EVENT LISTENERS FOR KEYBOARD USE ------------
+
+document.addEventListener("keydown", (e) => {
+  const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
+  const operators = ["+", "-", "/", "*"];
+  //Add digits to the numer
+  if (digits.includes(e.key)) {
+    appendNumber(e.key);
+    updateDisplay();
+    console.log(e.key, "Number Key");
+  }
+  //Choose the operator
+  if (operators.includes(e.key)) {
+    chooseOperator(e.key);
+    updateDisplay();
+    console.log(e.key, "Operator Key");
+  }
+  //Calculate
+  if (e.key === "=" || e.key === "Enter") {
+    calculate();
+    updateDisplay();
+    console.log(e.key, "Equal/Enter");
+  }
+  //Delete the last entered key
+  if (e.key === "Backspace") {
+    deleteKey();
+    updateDisplay();
+    console.log("delete last key");
+  }
+  //Clear display
+  if (e.key === "Delete") {
+    numberOrOperator = "";
+    expression = "";
+    updateDisplay();
+    console.log("clear the display");
+  }
+});
+//Negate number
+document.addEventListener("keypress", (e) => {
+  if (!isNaN(numberOrOperator) && e.key === "_") {
+    makeNumberNegative();
+    updateDisplay();
+  }
+  console.log(e.key);
+});
 
 // //MathJS example of evaluating a string expression
-// let str = "2*3-4/5+22*54";
-// console.log(str + " = " + math.evaluate(str));
+let str = "2*3-4/5+22*54";
+console.log(str + " = " + math.evaluate(str));
