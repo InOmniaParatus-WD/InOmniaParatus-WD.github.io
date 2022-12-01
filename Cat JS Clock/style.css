@@ -161,9 +161,9 @@ body {
 
 .time-and-date {
   color: #faebd7;
-  font-size: 2.8rem;
+  font-size: 2em;
   text-align: center;
-  margin: 20px 20px 35px 200px;
+  margin: 1.2rem .5rem .5rem 3rem;
   border-radius: 5px;
   display: inline-block;
 }
