@@ -195,6 +195,13 @@ footer a:hover {
   cursor: pointer;
 }
 
+.star-rating span.active {
+  unicode-bidi: bidi-override;
+  color: var(--bright-yellow);
+  text-shadow: 3px 3px 3px grey;
+  content: "\2605";
+}
+
 /* Overriding the radio buttons' style (code addapted from CSS-tricks.com) */
 input[type="radio"]:checked:after {
   width: 15px;
