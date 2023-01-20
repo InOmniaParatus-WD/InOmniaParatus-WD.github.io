@@ -65,12 +65,12 @@ img {
   color: var(--text-hover-color);
 }
 
-.more-projects-button {
+/* .more-projects-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .projects-link {
   text-align: center;
