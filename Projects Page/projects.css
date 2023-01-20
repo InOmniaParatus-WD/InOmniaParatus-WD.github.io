@@ -72,7 +72,7 @@ img {
   align-items: center;
 } */
 
-.projects-link {
+/* .projects-link {
   text-align: center;
   width: 20%;
   margin: 30px auto;
@@ -93,7 +93,7 @@ img {
 .projects-link:hover {
   background-color: var(--link-hover-background);
   color: var(--dark-gray);
-}
+} */
 
 @media (max-width: 640px) {
   .projects-section-header h2 {
