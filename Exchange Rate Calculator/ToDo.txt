@@ -1,0 +1,5 @@
+1. Cand scrii intr-un input valoarea sa se actualizeze in cealalta fara sa fie nevoie sa fac swap intre sectiunile cu inputs (to be explored) - stil exploring
+2. Logica pentru exchange - DONE
+3. Cum poate fi generata dinamic lista de currency din HTML dinamic, cu JavaScipt, in loc sa fie hardcoded in HTML (folosing API-ul) - DONE
+4. catch err pe fetch API - DONE
+6. Facut cache la cursurile valutare ca sa nu mai mearga sacadat (aplicatia sa salveze unde cursul valutar odata ce l-a preluat pentru ziua respectiva) - DONE

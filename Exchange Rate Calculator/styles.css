@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #071c33;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: rgba(213, 213, 213, 0.35) 0px 3px 15px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #cadce0;
+  margin-bottom: 2rem;
+}
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+}
+header p {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  width: 30rem;
+}
+img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+div.container {
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+section {
+  margin: 2rem 0;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-around;
+}
+.currency select {
+  border: none;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 6px;
+  background-color: #000e1d;
+  background-image: url("images/down-arrow-download-svgrepo-com.png");
+  background-size: 15px auto, 100%;
+  background-position: right 10px top 50%, 0, 0;
+  background-repeat: no-repeat;
+  color: #cadce0;
+  padding: 6px;
+  margin-right: 1.2rem;
+  width: 5rem;
+  text-align: start;
+  border-radius: 5px;
+  appearance: none;
+}
+input {
+  padding: 5px;
+  width: 10rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: end;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  background-color: #89b1c9;
+  background: -moz-linear-gradient(
+    135deg,
+    rgba(111, 143, 154, 1) 0%,
+    rgba(25, 70, 87, 1) 4%,
+    rgba(202, 220, 224, 1) 14%,
+    rgba(74, 112, 125, 1) 48%,
+    rgba(105, 138, 149, 1) 71%,
+    rgba(118, 149, 159, 1) 94%,
+    rgba(7, 44, 58, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    135deg,
+    rgba(111, 143, 154, 1) 0%,
+    rgba(25, 70, 87, 1) 4%,
+    rgba(202, 220, 224, 1) 14%,
+    rgba(74, 112, 125, 1) 48%,
+    rgba(105, 138, 149, 1) 71%,
+    rgba(118, 149, 159, 1) 94%,
+    rgba(7, 44, 58, 1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(111, 143, 154, 1) 0%,
+    rgba(25, 70, 87, 1) 4%,
+    rgba(202, 220, 224, 1) 14%,
+    rgba(74, 112, 125, 1) 48%,
+    rgba(105, 138, 149, 1) 71%,
+    rgba(118, 149, 159, 1) 94%,
+    rgba(7, 44, 58, 1) 100%
+  );
+}
+input::placeholder {
+  color: #071c33;
+}
+button.btn {
+  background-color: transparent;
+  color: #daa520;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-align: center;
+  cursor: pointer;
+  width: 5rem;
+}
+button.btn:hover {
+  color: #cadce0;
+}
+/* Styles for the tooltip */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 250px;
+  color: #071c33;
+  font-size: 1rem;
+  background-color: #daa520;
+  border-radius: 10px;
+  padding: 10px;
+  letter-spacing: 1.2px;
+  box-shadow: rgba(213, 213, 213, 0.35) 0px 3px 15px;
+}
+button.btn:hover .tooltip-text {
+  visibility: visible;
+}
+button.btn:hover #bottom {
+  opacity: 1;
+}
+#bottom {
+  left: 48%;
+  top: 46%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+/* End of styles for tooltip */
+div.rate {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-align: end;
+  vertical-align: middle;
+  color: #daa520;
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+div.network-error {
+  color: #cadce0;
+  letter-spacing: 1.2px;
+}
+
+@media (max-width: 640px) {
+  p {
+    width: 70%;
+    margin: auto;
+  }
+  main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+  div.container {
+    width: auto;
+    margin: auto;
+  }
+  section {
+    width: auto;
+    justify-content: center;
+  }
+  #bottom {
+    left: 30%;
+    top: 65%;
+  }
+}

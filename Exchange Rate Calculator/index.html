@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate Calculator</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1> Exchange Calculator </h1>
+        <p>Choose the currencies and enter the desired amounts to get the exchange rates</p>
+    </header>
+    <main>
+        <img src="images/exchange-reates.png" alt="money stack photo" class="money-img">
+        <div class="container">
+            <section class="currency">
+                <select name="currency" id="currency-one">
+                </select>
+                <input type="text" id="amount-one" value="1">
+            </section>
+
+            <section class="swap-rate-container">
+                <button class="btn" id="swap">
+                    Swap
+                    &#8593;&#8595;
+                    <span class="tooltip-text" id="bottom">Swap the places of your chosen
+                        currencies</span>
+                    </button>
+                <!-- Add a small message when the user hovers over the swap button they will know what the button is for -->
+                <div class="rate" id="rate">1 AUD = 0.6414 EUR</div>
+            </section>
+            <section class="currency">
+                <select name="currency" id="currency-two"></select>
+                <input type="text" id="amount-two">
+            </section>
+        </div>
+    </main>
+
+    <!-- Replace select options with JS code extracting from the API?? -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

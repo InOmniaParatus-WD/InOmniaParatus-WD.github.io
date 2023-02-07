@@ -47,6 +47,6 @@ function randomQuote() {
       document.documentElement.style.setProperty("--elem-color", randomColor);
       setTimeout(() => {
         quoteText.classList.remove("slide");
-      }, 500);
+      }, 100);
     });
 }
