@@ -145,18 +145,31 @@ button.btn:hover {
   letter-spacing: 1.2px;
   box-shadow: rgba(213, 213, 213, 0.35) 0px 3px 15px;
 }
+.tooltip-text::before {
+  content: "";
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: #daa520;
+  padding: 5px;
+  z-index: 1;
+}
 button.btn:hover .tooltip-text {
   visibility: visible;
 }
-button.btn:hover #bottom {
+button.btn:hover #top {
   opacity: 1;
 }
-#bottom {
+#top {
   left: 48%;
-  top: 46%;
+  top: 50%;
   opacity: 0;
   transition: opacity 0.5s;
 }
+#top::before {
+  bottom: -8%;
+  left: 20%;
+}
+
 /* End of styles for tooltip */
 div.rate {
   font-size: 0.9rem;
