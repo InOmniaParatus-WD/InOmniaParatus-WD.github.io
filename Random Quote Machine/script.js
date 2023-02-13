@@ -46,7 +46,7 @@ $(document).ready(function () {
         $(author).text("Please try again");
       })
       .always(() => {
-       $(quoteContainer).fadeIn("slow")
+       $(quoteContainer).fadeIn()
         document.documentElement.style.setProperty("--elem-color", randomColor);
       });
   });
