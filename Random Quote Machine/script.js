@@ -35,11 +35,14 @@ $(document).ready(function () {
 
     let randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-    $.getJSON("https://api.quotable.io/random")
-      .done((data) => {
+    $.ajax({
+      url: "https://api.quotable.io/random",
+      dataType: "json",
+      success: function (data) {
         $(quoteText).text(data.content);
         $(author).text(data.author);
-      })
+      },
+    })
       .fail((err) => {
         $(quoteText).text(
           "Oops! Something went wrong <span>&#128533;</span> ..."

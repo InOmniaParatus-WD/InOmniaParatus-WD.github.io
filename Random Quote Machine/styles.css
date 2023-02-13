@@ -2,6 +2,7 @@
 :root {
   --elem-color: #808080;
   --text-color: #f5f5f5;
+  --yellow: #fbff06;
   --text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -138,10 +139,11 @@ footer a {
 #tumblr-quote:hover,
 #tweet-quote:hover,
 #new-quote:hover {
-  background-color: #000;
+  background-color: var(--yellow);
+  color: #000;
 }
 
 footer a:hover {
   text-decoration: underline;
-  color: rgb(251, 255, 6);
+  color: var(--yellow);
 }
