@@ -20,7 +20,6 @@ const colors = [
   "#723d46",
 ];
 
-
 // ---------- jQuery Code ---------- //
 
 const quoteBtn = $("#new-quote");
@@ -50,7 +49,7 @@ $(document).ready(function () {
         $(author).text("Please try again");
       })
       .always(() => {
-       $(quoteContainer).fadeIn("slow")
+       $(quoteContainer).fadeIn()
         document.documentElement.style.setProperty("--elem-color", randomColor);
       });
   });
