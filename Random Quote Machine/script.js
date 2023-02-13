@@ -20,7 +20,6 @@ const colors = [
   "#723d46",
 ];
 
-
 // ---------- jQuery Code ---------- //
 
 const quoteBtn = $("#new-quote");
