@@ -1,8 +1,3 @@
-const quoteBtn = document.getElementById("new-quote");
-const quoteText = document.querySelector(".quote-text");
-const text = document.getElementById("text");
-const author = document.getElementById("author");
-
 const colors = [
   "#006466",
   "#065A60",
@@ -25,28 +20,69 @@ const colors = [
   "#723d46",
 ];
 
-quoteBtn.addEventListener("click", randomQuote);
-randomQuote();
 
-function randomQuote() {
-  let randomColor = colors[Math.floor(Math.random() * colors.length)];
+// ---------- jQuery Code ---------- //
 
-  quoteText.classList.add("slide");
+const quoteBtn = $("#new-quote");
+const quoteContainer = $(".quote-text");
+const quoteText = $("#text");
+const author = $("#author");
 
-  fetch("https://api.quotable.io/random")
-    .then((response) => response.json())
-    .then((result) => {
-      text.innerText = result.content;
-      author.innerText = result.author;
-    })
-    .catch((err) => {
-      text.innerHTML= "Oops! Something went wrong <span>&#128533;<span> ...";
-      author.innerText = "Please try again";
-    })
-    .finally(() => {
-      document.documentElement.style.setProperty("--elem-color", randomColor);
-      setTimeout(() => {
-        quoteText.classList.remove("slide");
-      }, 100);
-    });
-}
+$(document).ready(function () {
+  $(quoteBtn).click(function (e) {
+    
+    $(quoteContainer).fadeOut()
+
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    $.getJSON("https://api.quotable.io/random")
+      .done((data) => {
+        $(quoteText).text(data.content);
+        $(author).text(data.author);
+      })
+      .fail((err) => {
+        $(quoteText).text(
+          "Oops! Something went wrong <span>&#128533;</span> ..."
+        );
+        $(author).text("Please try again");
+      })
+      .always(() => {
+       $(quoteContainer).fadeIn("slow")
+        document.documentElement.style.setProperty("--elem-color", randomColor);
+      });
+  });
+});
+
+// ---------- Vanilla Code ---------- //
+
+// const quoteBtn = document.getElementById("new-quote");
+// const quoteText = document.querySelector(".quote-text");
+// const text = document.getElementById("text");
+// const author = document.getElementById("author");
+
+
+// quoteBtn.addEventListener("click", randomQuote);
+// randomQuote();
+
+// function randomQuote() {
+//   let randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+//   quoteText.classList.add("slide");
+
+//   fetch("https://api.quotable.io/random")
+//     .then((response) => response.json())
+//     .then((result) => {
+//       text.innerText = result.content;
+//       author.innerText = result.author;
+//     })
+//     .catch((err) => {
+//       text.innerHTML= "Oops! Something went wrong <span>&#128533;<span> ...";
+//       author.innerText = "Please try again";
+//     })
+//     .finally(() => {
+//       document.documentElement.style.setProperty("--elem-color", randomColor);
+//       setTimeout(() => {
+//         quoteText.classList.remove("slide");
+//       }, 100);
+//     });
+// }

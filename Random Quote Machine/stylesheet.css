@@ -30,8 +30,7 @@ body {
 }
 
 #quote-box {
-  border-top-left-radius: 60px;
-  border-bottom-right-radius: 60px;
+  border-radius: 10px 60px;
   position: relative;
   padding: 40px 50px;
   display: table;
@@ -134,12 +133,6 @@ body {
 footer a {
   color: var(--text-color);
   text-decoration: none;
-}
-
-.slide *,
-.slide:after {
-  color: white;
-  transition: color 0.5s linear;
 }
 
 #tumblr-quote:hover,
