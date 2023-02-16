@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #125e5a;
+  --secondary-color: #20b2aa;
+  --font-color: #131212;
+  --borders: #a9a9a9;
+  --buttons-text-color: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dcfcfa;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+div.container {
+  color: var(--font-color);
+  display: flex;
+  flex-direction: row;
+  width: 40rem;
+}
+
+div.container aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+  border-right: solid 1px var(--borders);
+}
+
+div.container aside button {
+  width: 15rem;
+  padding: 10px 5px;
+  margin: 1rem;
+  border: solid 1px var(--borders);
+  background-color: var(--secondary-color);
+  color: var(--buttons-text-color);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  box-shadow: 1px 3px 5px rgba(148, 148, 148, 0.74);
+  cursor: pointer;
+}
+
+div.container aside button:hover {
+  background-color: #ebeb55;
+  color: var(--font-color);
+  border: solid 1px transparent;
+}
+main {
+  width: 100%;
+}
+h2 {
+  color: #063330;
+  padding: 0 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+main h2.person {
+  border-bottom: solid 1px var(--borders);
+}
+main h2.total {
+  border-top: solid 1px var(--borders);
+  padding-top: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  height: 40vh;
+  overflow: auto;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-left: none;
+  letter-spacing: 1px;
+}
+
+/* Styles for the ul scrollbar*/
+ul::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 5px;
+}
+ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+ul::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  border: 1px solid var(--buttons-text-color);
+}
+/*  End of scrollbar styles */
