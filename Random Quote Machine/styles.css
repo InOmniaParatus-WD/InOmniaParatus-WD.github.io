@@ -31,7 +31,7 @@ body {
 }
 
 #quote-box {
-  border-radius: 10px 60px;
+  border-radius: 50px;
   position: relative;
   padding: 40px 50px;
   display: table;
