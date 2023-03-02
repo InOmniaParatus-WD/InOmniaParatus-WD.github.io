@@ -22,6 +22,10 @@ body {
   min-height: 100vh;
 }
 
+.leftside-image img {
+  width: 50rem;
+}
+
 .container {
   background-color: #f2efeb;
   width: 350px;
@@ -116,4 +120,16 @@ button:hover {
   cursor: pointer;
   background-color: #369AD9;
   color: #f2efeb;
+}
+
+@media (min-width: 400px) and (max-width: 1200px){
+  body {
+    flex-direction: column;
+  }
+  .leftside-image img {
+    width: 10rem;
+    margin: 0;
+    padding-top: 0;
+    /* display: none; */
+  }
 }
