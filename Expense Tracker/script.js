@@ -65,7 +65,7 @@ const validateInput = (dateEl, nameEl, amountEl) => {
   let name = nameEl.value;
   let date = dateEl.value;
 
-  let dateRegex = /\d{2}\/\d{2}\/\s\d{4}/g;
+  let dateRegex = /\d{2}\/\d{2}\/\d{4}/g;
 
   if (amount === 0 || !amount || isNaN(amount)) {
     result = false;
