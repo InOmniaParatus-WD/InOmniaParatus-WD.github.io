@@ -327,7 +327,7 @@ button:active {
 }
 
 /* Media queries */
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 300px) and (max-width: 900px) {
   div.top-corner {
     width: 40rem;
     height: 40rem;
@@ -340,10 +340,10 @@ button:active {
     text-align: center;
   }
   .container {
-    width: 26rem;
+    width: 30rem;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 64px) {
   .image {
     width: 6rem;
   }
