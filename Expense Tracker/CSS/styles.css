@@ -343,7 +343,7 @@ button:active {
     width: 30rem;
   }
 }
-@media (max-width: 64px) {
+@media (max-width: 640px) {
   .image {
     width: 6rem;
   }
