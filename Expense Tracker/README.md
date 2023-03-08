@@ -6,7 +6,7 @@
 <img src="https://user-images.githubusercontent.com/78725314/223628930-d80ec2e7-c666-4ac3-993f-898460f35561.jpg" width=500px/>
 
 - **UPDATE** any list items as desired
-<img src="https://user-images.githubusercontent.com/78725314/223629763-84a70ddb-1168-4889-9af8-729c5ee8108d.jpg" width=200px />
+<img src="https://user-images.githubusercontent.com/78725314/223633197-58a70a3f-2f87-4f8d-bd04-a0a5e910b102.jpg" width=500px />
 
 - **DELETE** list items, if the user is sure that's what they want to do
-<img src="https://user-images.githubusercontent.com/78725314/223629799-b57ea6f4-efa5-41d5-821c-2eb0c981eeba.jpg" width=200px />
+<img src="https://user-images.githubusercontent.com/78725314/223629799-b57ea6f4-efa5-41d5-821c-2eb0c981eeba.jpg" width=500px />
