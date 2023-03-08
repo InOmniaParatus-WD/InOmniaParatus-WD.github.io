@@ -1,6 +1,7 @@
 # Expenses-Tracker
  
 <p>A vanilla CRUD app which allows the users to keep track or their finances</p>
+Check out the project [here](https://inomniaparatus-wd.github.io/Expense%20Tracker/)
 
 ### **CREATE** and **READ** new list items, with details about the transaction (income or expense)
 <img src="https://user-images.githubusercontent.com/78725314/223628930-d80ec2e7-c666-4ac3-993f-898460f35561.jpg" width=450px/>  <img src="https://user-images.githubusercontent.com/78725314/223633380-03b3f8ce-ccfe-41ec-9a3a-e66809792a0f.jpg" width=450px/> 
