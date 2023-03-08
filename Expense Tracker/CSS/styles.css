@@ -87,7 +87,6 @@ h1 {
   width: 8rem;
   padding-top: 1.5rem;
   margin-left: none;
-  /* z-index: 1; */
 }
 
 .container {
@@ -343,7 +342,7 @@ button:active {
     width: 30rem;
   }
 }
-@media (max-width: 64px) {
+@media (max-width: 640px) {
   .image {
     width: 6rem;
   }
