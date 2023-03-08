@@ -65,7 +65,7 @@ const validateInput = (dateEl, nameEl, amountEl) => {
   let name = nameEl.value;
   let date = dateEl.value;
 
-  let dateRegex = /\d{2}\s\w{3}\s\d{4}/g;
+  let dateRegex = /\d{2}\/\d{2}\/\s\d{4}/g;
 
   if (amount === 0 || !amount || isNaN(amount)) {
     result = false;
@@ -125,7 +125,7 @@ const updateDOM = () => {
     <button class="edit-item">&#128393;
       <span class="tooltip-text edit">Edit transaction</span>
     </button>
-    <button class="delete-item">&#215;
+    <button class="delete-item">&#128465;
       <span class="tooltip-text delete">Delete transaction</span>
     </button>
     `;
@@ -149,6 +149,10 @@ const updateDOM = () => {
   totalExpenses.innerHTML = `${Number(
     totalExpensesValue.toFixed(2)
   ).toLocaleString("en-IN")}`;
+
+  if (!balanceValue) balance.innerHTML = "0.00";
+  if (!totalIncomeValue) totalIncome.innerHTML = "0.00";
+  if (!totalExpensesValue) totalExpenses.innerHTML = "0.00";
 
   transactionName.value = "";
   transactionAmount.value = "";

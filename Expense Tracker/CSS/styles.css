@@ -232,13 +232,13 @@ ul li button.edit-item {
 ul li button.delete-item {
   top: 0;
   right: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 ul li button.edit-item {
   right: 0;
-  font-size: 1.5rem;
   bottom: 0;
+  font-size: 1.5rem;
 }
 
 ul li:hover button.edit-item,
@@ -334,7 +334,7 @@ button:active {
   }
   div.bottom-corner {
     top: 60%;
-  } 
+  }
   h1 {
     text-align: center;
   }
