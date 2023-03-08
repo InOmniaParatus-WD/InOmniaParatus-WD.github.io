@@ -1,0 +1,66 @@
+.undo-modal-container {
+  background-color: #4a4d3eef;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.undo-modal-container.show-modal {
+  display: block;
+}
+
+.undo-modal {
+  background-color: #fafff4;
+  color: var(--dark-grey);
+  border-radius: 5px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: modalopen;
+  animation-duration: 0.5s;
+  padding: 2rem;
+}
+
+.undo-modal-container h4 span {
+    font-size: 2rem;
+}
+
+button.delete-btn,
+button.cancel-delete-btn {
+  background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--button-shadow);
+  text-shadow: var(--text-shadow);
+  padding: 10px 15px;
+  margin: 1.2rem 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: transparent;
+  cursor: pointer;
+  width: 50%;
+}
+
+button.delete-btn {
+  margin-right: 2rem;
+}
+
+button:hover {
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

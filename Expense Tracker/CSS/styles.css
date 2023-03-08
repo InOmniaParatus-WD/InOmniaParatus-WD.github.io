@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap");
+@import url("edit-modal-styles.css");
+@import url("undo-modal-styles.css");
+@import url("scroll-styles.css");
+@import url("tooltip-styles.css");
+
+:root {
+  --box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --button-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 1px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  --text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --corners-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  --white: #e5e3e3;
+  --faded-white: #ffffff8a;
+  --green: #16683f;
+  --red: #fa2226;
+  --blue: #577590;
+  --dark-grey: #242323;
+  --light-green: #caffbf;
+  --yellow: #f9c74f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Martel Sans", sans-serif;
+  color: var(--dark-grey);
+  text-shadow: var(--text-shadow);
+  background-color: var(--white);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+div.top-corner {
+  width: 45rem;
+  height: 60rem;
+  position: fixed;
+  border-radius: 2%;
+  left: 0;
+  top: -50%;
+  z-index: -1;
+  transform: rotate(45deg);
+  background-color: #50ceb594;
+  box-shadow: var(--corners-shadow);
+}
+
+div.bottom-corner {
+  width: 45rem;
+  height: 60rem;
+  position: fixed;
+  border-radius: 2%;
+  z-index: -1;
+  right: 0;
+  top: 50%;
+  transform: rotate(45deg);
+  background-color: #f9c64f93;
+  box-shadow: var(--corners-shadow);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+}
+
+h1 {
+  letter-spacing: 1.2px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.image {
+  width: 8rem;
+  padding-top: 1.5rem;
+  margin-left: none;
+  /* z-index: 1; */
+}
+
+.container {
+  width: 40rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+  text-align: left;
+}
+
+.totals-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.totals-section div {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.totals-section div:nth-of-type(1) {
+  border-right: 3px solid var(--green);
+  margin-right: 0.8px;
+}
+
+.totals-section div:last-of-type {
+  border-left: 3px solid var(--red);
+}
+
+h3 {
+  border-bottom: 3px double var(--dark-grey);
+  box-shadow: rgba(82, 81, 81, 0.19) 0px 1.5px 0px,
+    rgba(90, 88, 88, 0.23) 0px 2.5px 0px;
+  background-color: transparent;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+h3 span {
+  font-size: 2rem;
+}
+
+.form-control {
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+p.plus {
+  color: var(--green);
+}
+
+p.minus {
+  color: var(--red);
+}
+
+ul {
+  list-style: none;
+  margin: 1.2rem 0;
+  padding-right: 0.2rem;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+ul li.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--faded-white);
+  box-shadow: var(--box-shadow);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+ul li.display-date {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: normal;
+  border: none;
+  text-shadow: var(--text-shadow);
+}
+
+ul li.display-date span {
+  font-size: 1.2rem;
+}
+
+ul li span.item-name {
+  width: auto;
+  margin-left: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+ul li span.value {
+  margin-left: auto;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.transaction.plus {
+  border-left: 10px solid var(--green);
+}
+
+.transaction.minus {
+  border-left: 10px solid var(--red);
+}
+
+ul li button.delete-item,
+ul li button.edit-item {
+  background-color: transparent;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  text-shadow: var(--text-shadow);
+  cursor: pointer;
+  position: absolute;
+  margin-right: 0.5rem;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+ul li button.delete-item {
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+}
+
+ul li button.edit-item {
+  right: 0;
+  font-size: 1.5rem;
+  bottom: 0;
+}
+
+ul li:hover button.edit-item,
+ul li:hover button.delete-item {
+  opacity: 1;
+}
+
+button.delete-item:hover {
+  color: var(--red);
+}
+
+button.edit-item:hover {
+  color: #f3722c;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  padding: 10px;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: rgb(212, 229, 245) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border: transparent;
+  background-color: var(--faded-white);
+}
+
+form label {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+form input:focus {
+  outline: 1px solid;
+}
+
+form sub {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+form button.add-btn {
+  padding: 10px 15px;
+  margin: 2rem 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: transparent;
+  box-shadow: var(--button-shadow);
+  text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  cursor: pointer;
+  background-color: var(--green);
+  color: var(--white);
+  width: 100%;
+}
+
+form button.add-btn:hover {
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.form-control.success small {
+  color: var(--green);
+}
+
+.form-control.error small {
+  color: var(--red);
+}
+
+.form-control.success input {
+  border: 1px solid var(--green);
+}
+
+.form-control.error input {
+  border: 1px solid var(--red);
+}
+
+/* Media queries */
+@media (min-width: 300px) and (max-width: 640px) {
+  div.top-corner {
+    width: 40rem;
+    height: 40rem;
+  }
+  h1 {
+    text-align: center;
+  }
+  .container {
+    width: 26rem;
+  }
+}
+@media (max-width: 640px) {
+  .image {
+    width: 6rem;
+  }
+}

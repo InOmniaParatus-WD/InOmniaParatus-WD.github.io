@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="images/expense-tracker.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <div class="top-corner"></div>
+    <header>
+        <h1>Expense Tracker</h1>
+        <img class="image" src="images/expense-tracker.png" alt="" />
+    </header>
+
+    <div class="container">
+        <div class="total-balance">
+            <h4>TOTAL BALANCE</h4>
+            <h2 id="balance"><span>&#128176;</span>0.00 </h2>
+        </div>
+
+        <section class="totals-section">
+            <div>
+                <h4>Income</h4>
+                <p id="income" class="money plus">0.00</p>
+            </div>
+            <div>
+                <h4>Expenses</h4>
+                <p id="expenses" class=" money minus">0.00</p>
+            </div>
+        </section>
+
+        <h3>Transactions History<span> &#129534;</span></h3>
+
+        <ul id="list"></ul>
+
+        <h3>Add new transaction <span>&#128394;</span></h3>
+        <form id="form">
+            <div class="form-control"> 
+                <label for="transaction-date">Date</label>
+                <input type="text" name="transaction-date" id="transaction-date" placeholder="Ex: 08 Mar 2023">
+                <small></small>
+            </div>
+
+            <div class="form-control">
+                <label for="text">Type</label>
+                <input type="text" name="text" id="text" placeholder="Ex: Books">
+                <small></small>
+            </div>
+            <div class="form-control">
+                <label for="amount">Amount</label>
+                <sub>(negative number = expense | positive number = income)</sub>
+                <input type="amount" name="amount" id="amount" placeholder="Ex: -20">
+                <small></small>
+            </div>
+            <button class="add-btn" id="add-btn">Add transaction</button>
+        </form>
+    </div>
+    <div class="bottom-corner">
+    </div>
+
+    <!-- Modal Edit Entries -->
+    <div class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Edit transaction <span>&#128393;</span></h2>
+            </div>
+            <div class="modal-content">
+                <form class="modal-form" id="modal-form">
+                    <div class="form-control"> 
+                        <label for="edit-date">Date</label>
+                        <input type="text" name="edit-date" id="edit-date" placeholder="08 Mar 2023">
+                        <small></small>
+                    </div>
+          
+                    <div class="form-control">
+                        <label for="edit-name">Type</label>
+                        <input type="text" name="edit-name" id="edit-name" placeholder="Ex: Books">
+                        <small></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="edit-amount">Amount</label>
+                        <input type="text" name="edit-amount" id="edit-amount" placeholder="Ex: -20">
+                        <small></small>
+                    </div>
+
+                    <div class="edit-btns">
+                        <button type="submit" class="save-btn" id="save-btn">Save</button>
+                        <button class="cancel-btn" id="cancel-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Undo Delete -->
+    <div class="undo-modal-container">
+        <div class="undo-modal">
+            <h4>Are you sure you want to delete this item? <span>&#128543;</span></h4>
+            <div class="edit-btns">
+                <button class="delete-btn" id="delete-btn">Delete</button>
+                <button class="cancel-delete-btn" id="cancel-delete-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
