@@ -331,7 +331,11 @@ button:active {
   div.top-corner {
     width: 40rem;
     height: 40rem;
+    top: -40%;
   }
+  div.bottom-corner {
+    top: 60%;
+  } 
   h1 {
     text-align: center;
   }
