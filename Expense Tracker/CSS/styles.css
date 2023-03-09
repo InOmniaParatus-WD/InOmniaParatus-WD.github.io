@@ -222,17 +222,19 @@ ul li button.edit-item {
   position: absolute;
   right: 0;
   margin-right: 0.5rem;
-  margin-top: 0.2rem;
+
   transition: opacity 0.5s ease;
   opacity: 0;
 }
 
 ul li button.delete-item {
   top: 0;
+  margin-top: 0.2rem;
 }
 
 ul li button.edit-item {
   bottom: 0;
+  margin-top: 1.2rem;
 }
 
 ul li:hover button.edit-item,
@@ -341,14 +343,10 @@ button:active {
     font-size: 0.8rem;
   }
 
-  ul li button.delete-item {
- font-size: 1rem;
-  }
-  
+  ul li button.delete-item,
   ul li button.edit-item {
-    bottom: 1rem;
+    font-size: 1.2rem;
   }
-
 }
 @media (max-width: 640px) {
   .image {
