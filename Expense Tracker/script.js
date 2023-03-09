@@ -122,7 +122,7 @@ const updateDOM = () => {
     <span class="value">${Number(item.value.toFixed(2)).toLocaleString(
       "en-IN"
     )}</span>
-    <button class="edit-item">&#128393;
+    <button class="edit-item">&#128397;
       <span class="tooltip-text edit">Edit transaction</span>
     </button>
     <button class="delete-item">&#128465;

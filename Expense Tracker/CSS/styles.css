@@ -215,25 +215,24 @@ ul li button.edit-item {
   background-color: transparent;
   text-align: center;
   font-weight: 600;
+  font-size: 1.5rem;
   border: none;
   text-shadow: var(--text-shadow);
   cursor: pointer;
   position: absolute;
+  right: 0;
   margin-right: 0.5rem;
+  margin-top: 0.2rem;
   transition: opacity 0.5s ease;
   opacity: 0;
 }
 
 ul li button.delete-item {
   top: 0;
-  right: 0;
-  font-size: 1.5rem;
 }
 
 ul li button.edit-item {
-  right: 0;
   bottom: 0;
-  font-size: 1.5rem;
 }
 
 ul li:hover button.edit-item,
@@ -341,6 +340,15 @@ button:active {
   ul li span.value {
     font-size: 0.8rem;
   }
+
+  ul li button.delete-item {
+ font-size: 1rem;
+  }
+  
+  ul li button.edit-item {
+    bottom: 1rem;
+  }
+
 }
 @media (max-width: 640px) {
   .image {
