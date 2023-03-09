@@ -205,9 +205,15 @@ ul li span.value {
 .transaction.plus {
   border-left: 10px solid var(--green);
 }
+.transaction.plus button{
+  color: var(--green);
+}
 
 .transaction.minus {
   border-left: 10px solid var(--red);
+}
+.transaction.minus button{
+  color: var(--red);
 }
 
 ul li button.delete-item,
@@ -222,7 +228,6 @@ ul li button.edit-item {
   position: absolute;
   right: 0;
   margin-right: 0.5rem;
-
   transition: opacity 0.5s ease;
   opacity: 0;
 }

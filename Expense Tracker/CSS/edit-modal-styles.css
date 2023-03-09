@@ -35,7 +35,9 @@
   box-shadow: rgba(82, 81, 81, 0.19) 0px 1.5px 0px,
   rgba(90, 88, 88, 0.23) 0px 2.5px 0px;
 }
-
+.modal-header span{
+  font-size: 1.5rem;
+}
 .modal-content {
   padding: 20px;
 }

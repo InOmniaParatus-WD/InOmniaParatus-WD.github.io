@@ -9,8 +9,8 @@ ul::-webkit-scrollbar {
     box-shadow: none;
   }
   ul::-webkit-scrollbar-thumb {
-    background-color: var(--dark-grey);
+    background-color: var(--blue);
+    border: 1px solid var(--white);
     border-radius: 5px;
-    border: none;
     box-shadow: var(--box-shadow);
   } 

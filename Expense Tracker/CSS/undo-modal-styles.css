@@ -27,8 +27,11 @@
   animation-duration: 0.5s;
   padding: 2rem;
 }
+.undo-modal-container p {
+  font-size: 1.2rem;
+}
 
-.undo-modal-container h4 span {
+.undo-modal-container p span {
   font-size: 2rem;
 }
 
@@ -55,7 +58,9 @@ button.delete-btn {
 button:hover {
   background-color: var(--yellow);
   color: var(--dark-grey);
+
 }
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -66,6 +71,10 @@ button:hover {
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
+
+  .undo-modal-container p{
+    font-size: 1rem;
+  }
   .undo-modal {
     width: 350px;
   }
