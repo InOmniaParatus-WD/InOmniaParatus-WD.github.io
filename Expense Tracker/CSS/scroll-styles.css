@@ -1,6 +1,6 @@
 /* Styles for the ul scrollbar*/
 ul::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
     border-radius: 5px;
     box-shadow: none;
   }

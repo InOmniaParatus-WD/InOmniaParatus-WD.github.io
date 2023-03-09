@@ -43,30 +43,28 @@ body {
   overflow-x: hidden;
 }
 
-div.top-corner {
-  width: 45rem;
-  height: 60rem;
+div.top-corner,
+div.bottom-corner {
+  width: 700px;
+  height: 700px;
   position: fixed;
-  border-radius: 2%;
-  left: 0;
-  top: -50%;
+  border-radius: 50%;
   z-index: -1;
   transform: rotate(45deg);
-  background-color: #50ceb594;
   box-shadow: var(--corners-shadow);
 }
 
+div.top-corner {
+  right: 50%;
+  left: -10%;
+  top: -50%;
+  background-color: #50ceb594;
+}
+
 div.bottom-corner {
-  width: 45rem;
-  height: 60rem;
-  position: fixed;
-  border-radius: 2%;
-  z-index: -1;
-  right: 0;
-  top: 50%;
-  transform: rotate(45deg);
+  bottom: -50%;
+  right: -10%;
   background-color: #f9c64f93;
-  box-shadow: var(--corners-shadow);
 }
 
 header {
@@ -81,6 +79,7 @@ h1 {
   border-radius: 5px;
   text-align: center;
   padding-top: 3rem;
+  font-size: 1.5rem;
 }
 
 .image {
@@ -91,14 +90,14 @@ h1 {
 
 .container {
   width: 40rem;
-}
-
-h4 {
-  font-size: 1.2rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   letter-spacing: 1.2px;
   text-align: left;
 }
@@ -134,7 +133,7 @@ h3 {
     rgba(90, 88, 88, 0.23) 0px 2.5px 0px;
   background-color: transparent;
   padding-bottom: 5px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 h3 span {
@@ -191,20 +190,16 @@ ul li.display-date {
 }
 
 ul li.display-date span {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 ul li span.item-name {
   width: auto;
-  margin-left: 1rem;
-  text-align: center;
-  font-size: 1.2rem;
 }
 
 ul li span.value {
   margin-left: auto;
   margin-right: 1rem;
-  font-size: 1.2rem;
 }
 
 .transaction.plus {
@@ -325,21 +320,26 @@ button:active {
   border: 1px solid var(--red);
 }
 
-/* Media queries */
-@media (min-width: 300px) and (max-width: 900px) {
-  div.top-corner {
-    width: 40rem;
-    height: 40rem;
-    top: -40%;
-  }
-  div.bottom-corner {
-    top: 60%;
-  }
-  h1 {
-    text-align: center;
-  }
+@media (min-width: 320px) and (max-width: 640px) {
   .container {
-    width: 30rem;
+    width: auto;
+  }
+
+  ul li.display-date {
+    font-size: 1rem;
+  }
+
+  ul li.display-date span {
+    font-size: 0.8rem;
+  }
+
+  ul li span.item-name {
+    width: fit-content;
+    margin-left: 0;
+    font-size: 0.8rem;
+  }
+  ul li span.value {
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 640px) {

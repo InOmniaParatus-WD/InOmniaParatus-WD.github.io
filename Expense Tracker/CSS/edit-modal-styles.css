@@ -87,3 +87,9 @@ button:hover {
     opacity: 1;
   }
 }
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .modal {
+    width: 350px;
+  }
+}
