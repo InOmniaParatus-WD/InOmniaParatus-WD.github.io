@@ -1,6 +1,6 @@
 # freeCodeCamp Portfolio Page
 
-- Final project for freeCodeCamp's Responsive Design certification
+- Final project for freeCodeCamp's ***Responsive Design*** certification
 - Written with HTML and CSS
 
 ### Check out the project [here](https://inomniaparatus-wd.github.io/).
