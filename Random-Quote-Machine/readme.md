@@ -1,2 +1,0 @@
-- A little project using jQuery library to fetch data from a free quotes API
-- The project is part of the freeCodeCamp's Front End Development Libraries certification 
