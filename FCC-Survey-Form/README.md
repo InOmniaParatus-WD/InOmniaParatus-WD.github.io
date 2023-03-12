@@ -1,6 +1,6 @@
 # freeCodeCamp Survey Form
 
-- Part of the Responsive Design Certification from freeCodeCamp.org
+- Part of freeCodeCamp's ***Responsive Design*** Certification from
 - Written with vanilla CSS & HTML
 
 ### Check out the project [here](https://inomniaparatus-wd.github.io/FCC-Survey-Form/).
