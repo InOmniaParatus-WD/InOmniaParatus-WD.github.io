@@ -12,18 +12,16 @@
 </head>
 
 <body>
-    <div class="top-corner"></div>
-    <div class="bottom-corner"></div>
-    <header>
-        <h1>Expense Tracker</h1>
-        <img class="image" src="images/expense-tracker.png" alt="" />
-    </header>
+    <!-- <div class="top-corner"></div>
+    <div class="bottom-corner"></div> -->
 
     <div class="container">
-        <div class="total-balance">
+
+        <header class="total-balance">
             <h4>TOTAL BALANCE</h4>
             <h2 id="balance"><span>&#128176;</span>0.00 </h2>
-        </div>
+
+        </header>
 
         <section class="totals-section">
             <div>
@@ -42,27 +40,27 @@
 
         <h3>Add new transaction <span>&#128394;</span></h3>
         <form id="form">
-            <div class="form-control"> 
-                <label for="transaction-date">Date</label>
-                <input type="text" name="transaction-date" id="transaction-date" placeholder="Ex: 08/03/2023">
-                <small></small>
-            </div>
 
-            <div class="form-control">
-                <label for="text">Type</label>
-                <input type="text" name="text" id="text" placeholder="Ex: Books">
+            <fieldset class="form-control">
+                <label for="transaction-date">Date</label>
+                <input type="text" name="transaction-date" id="transaction-date" placeholder=" 08/03/2023">
                 <small></small>
-            </div>
-            <div class="form-control">
+            </fieldset>
+
+            <fieldset class="form-control">
+                <label for="text">Type</label>
+                <input type="text" name="text" id="text" placeholder=" Books">
+                <small></small>
+            </fieldset>
+            <fieldset class="form-control">
                 <label for="amount">Amount</label>
                 <sub>(negative number = expense | positive number = income)</sub>
-                <input type="amount" name="amount" id="amount" placeholder="Ex: -20">
+                <input type="amount" name="amount" id="amount" placeholder=" -20">
                 <small></small>
-            </div>
+            </fieldset>
             <button class="add-btn" id="add-btn">Add transaction</button>
         </form>
     </div>
-  
 
     <!-- Modal Edit Entries -->
     <div class="modal-container">
@@ -72,28 +70,25 @@
             </div>
             <div class="modal-content">
                 <form class="modal-form" id="modal-form">
-                    <div class="form-control"> 
+                    <fieldset class="form-control">
                         <label for="edit-date">Date</label>
                         <input type="text" name="edit-date" id="edit-date" placeholder="08/03/2023">
                         <small></small>
-                    </div>
-          
-                    <div class="form-control">
+                    </fieldset>
+                    <fieldset class="form-control">
                         <label for="edit-name">Type</label>
-                        <input type="text" name="edit-name" id="edit-name" placeholder="Ex: Books">
+                        <input type="text" name="edit-name" id="edit-name" placeholder=" Books">
                         <small></small>
-                    </div>
-                    <div class="form-control">
+                    </fieldset>
+                    <fieldset class="form-control">
                         <label for="edit-amount">Amount</label>
-                        <input type="text" name="edit-amount" id="edit-amount" placeholder="Ex: -20">
+                        <input type="text" name="edit-amount" id="edit-amount" placeholder="-20">
                         <small></small>
-                    </div>
-
+                    </fieldset>
                     <div class="edit-btns">
                         <button type="submit" class="save-btn" id="save-btn">Save</button>
                         <button class="cancel-btn" id="cancel-btn">Cancel</button>
                     </div>
-
                 </form>
             </div>
         </div>

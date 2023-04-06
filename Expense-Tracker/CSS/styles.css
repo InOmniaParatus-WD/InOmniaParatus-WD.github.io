@@ -16,7 +16,7 @@
   --white: #e5e3e3;
   --faded-white: #ffffff8a;
   --green: #16683f;
-  --red: #fa2226;
+  --red: #d3070a;
   --blue: #577590;
   --dark-grey: #242323;
   --light-green: #caffbf;
@@ -31,58 +31,26 @@
 
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: "Martel Sans", sans-serif;
   color: var(--dark-grey);
-  text-shadow: var(--text-shadow);
-  background-color: var(--white);
+  background: #20b2aa;
+  background: linear-gradient(
+    45deg,
+    rgb(247, 206, 103) 0%,
+    rgb(247, 215, 128) 9%,
+    rgb(82, 219, 155) 49%,
+    rgb(114, 155, 201) 76%,
+    rgb(67, 112, 124) 100%
+  );
   max-width: 100vw;
   overflow-x: hidden;
 }
 
-div.top-corner,
-div.bottom-corner {
-  width: 700px;
-  height: 700px;
-  position: fixed;
-  border-radius: 50%;
-  z-index: -1;
-  transform: rotate(45deg);
-  box-shadow: var(--corners-shadow);
-}
-
-div.top-corner {
-  right: 50%;
-  left: -10%;
-  top: -50%;
-  background-color: #50ceb594;
-}
-
-div.bottom-corner {
-  bottom: -50%;
-  right: -10%;
-  background-color: #f9c64f93;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: auto;
-}
-
-h1 {
-  letter-spacing: 1.2px;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 3rem;
-  font-size: 1.5rem;
-}
-
 .image {
-  width: 8rem;
+  width: 10rem;
   padding-top: 1.5rem;
   margin-left: none;
 }
@@ -93,6 +61,7 @@ h1 {
   margin: 2rem 0;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
+  background-color: #f2f8f8ea;
 }
 
 h2 {
@@ -185,7 +154,6 @@ ul li.display-date {
   font-size: 1.5rem;
   font-weight: normal;
   border: none;
-  text-shadow: var(--text-shadow);
 }
 
 ul li.display-date span {
@@ -204,14 +172,14 @@ ul li span.value {
 .transaction.plus {
   border-left: 10px solid var(--green);
 }
-.transaction.plus button{
+.transaction.plus button {
   color: var(--green);
 }
 
 .transaction.minus {
   border-left: 10px solid var(--red);
 }
-.transaction.minus button{
+.transaction.minus button {
   color: var(--red);
 }
 
@@ -254,12 +222,13 @@ button.edit-item:hover {
   color: #f3722c;
 }
 
-form div {
+fieldset {
   display: flex;
   flex-direction: column;
+  border: none;
 }
 
-form input {
+input {
   padding: 10px;
   margin: 0.5rem 0;
   font-size: 1rem;
@@ -292,10 +261,9 @@ form button.add-btn {
   letter-spacing: 1px;
   border: transparent;
   box-shadow: var(--button-shadow);
-  text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-    rgba(0, 0, 0, 0.23) 0px 6px 6px;
   cursor: pointer;
   background-color: var(--green);
+  text-shadow: var(--text-shadow);
   color: var(--white);
   width: 100%;
 }

@@ -14,16 +14,16 @@
 .tooltip-text.delete {
   background-color: var(--red);
   color: var(--white);
-  right: 120%;
-  top: 15%;
+  right: 5rem;
+  top: 50%;
   opacity: 0;
   transition: opacity 0.5s;
 }
 .tooltip-text.edit {
   background-color: var(--yellow);
   color: var(--dark-grey);
-  right: 120%;
-  bottom: 15%;
+  right: 5rem;
+  bottom: 50%;
   opacity: 0;
   transition: opacity 0.5s;
 }
