@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="shortcut icon" href="images/favicon/instruments.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Audio Player</title>
+</head>
+
+<body>
+
+    <div class="music-container" id="music-container">
+        <section class="music-info">
+            <div class="song-info">
+                <h4 id="title"></h4>
+                <div class="time">
+                    <span class="minutes"></span><span class="seconds"></span>
+                </div>
+            </div>
+
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+
+
+        </section>
+
+        <audio id="audio" src="music/"></audio>
+
+        <section class="play-section">
+            <div class="image-container">
+                <img src="images/key.jpg" id="cover" alt="music cover" />
+            </div>
+
+            <div class="buttons">
+                <div class="navigation">
+                    <button id="prev" class="action-btn" title="Previous Song">
+                        <i class="fas fa-backward"></i>
+                    </button>
+
+                    <button id="play" class="action-btn action-btn-big" title="Play">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="stop" class="action-btn action-btn-big" title="Stop">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                    <button id="next" class="action-btn" title="Next Song">
+                        <i class="fas fa-forward"></i>
+                    </button>
+
+                    <button id="show-playlist" class="show-playlist action-btn displayed" title="Toggle Playlist">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                </div>
+
+                <div class="playlist-options">
+                    <button class="action-btn shuffle" id="shuffle" title="Shuffle">
+                        <i class="fas fa-shuffle"></i>
+                    </button>
+                    <button class="action-btn repeat" id="repeat" title="Repeat">
+                        <i class="fas fa-repeat"></i>
+                    </button>
+                </div>
+
+                <div class="volume-section">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <input type="range" step="0.01" min="0" max="1" value="0.5" class="volume-btn" id="volume-control"
+                        title="Volume">
+                </div>
+            </div>
+
+        </section>
+
+        <section class="playlist show" id="playlist">
+            <ul></ul>
+        </section>
+    </div>
+
+    <footer class="copyrights">
+        <p> &copy; Copyright Ioana Popa - 2023 </p>
+        <aside> All tracks used for this demo are Royalty-free. Courtesy of pixabay.com/music </aside>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
