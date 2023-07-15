@@ -1,22 +1,41 @@
+const projectsCollection = document.querySelector("#project-tiles");
 const projects = document.querySelectorAll(".project-tile");
-const projectsContainer = document.querySelector("#projects-cards");
-const loading = document.querySelector(".loader");
+const showMoreBtn = document.querySelector("#show-more-projects");
 
-console.log(projects, projects.length);
+let projectsDetails;
+let currCount = 0;
 
-// Show loader and fetch more projects
-function showLoading() {
-  loading.classList.add("show");
+fetch("projects.json")
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    projectsDetails = data;
+    addToDom(6);
+  });
 
-  setTimeout(() => {
-    loading.classList.remove("show");
-    showProjects();
-    setTimeout(() => {}, 300);
-  }, 1000);
+function addToDom(count) {
+  projectsDetails.slice(currCount, currCount + count).forEach((project) => {
+    const projectTile = document.createElement("div");
+
+    projectTile.classList.add("project-tile");
+
+    projectTile.innerHTML = `
+      <a href="${project.projectLink}" target="_blank">
+      <img src="${project.photo}" alt="${project.altText}">
+      </a>
+    `;
+
+    projectsCollection.appendChild(projectTile);
+
+    currCount++;
+  });
+
+  console.log(currCount, projectsDetails.length);
+  if (projectsDetails.length === currCount) {
+    showMoreBtn.style.display ="none"
+    projectsCollection.style.paddingBottom = "2rem"
+  }
 }
 
-function showProjects() {
-  let projects = Array.from(projectsContainer.children);
-  console.log(projects);
-}
-showProjects();
+showMoreBtn.addEventListener("click", () => addToDom(3));
