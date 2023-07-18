@@ -353,11 +353,12 @@ aside {
     margin: 0;
   }
   .volume-section {
-    margin: 0;
     padding: 0;
+    width: 20rem;
   }
   .action-btn {
     width: 2rem;
+    margin: 0.3rem;
   }
   .image-container {
     left: -0.8rem;
