@@ -116,10 +116,6 @@ body {
   margin: 0.5rem;
 }
 
-.action-btn:hover {
-  color: var(--whitesmoke-color);
-}
-
 .action-btn.active {
   background-color: var(--whitesmoke-color);
   color: var(--orange);
@@ -131,7 +127,6 @@ body {
 }
 
 .music-info {
-  /* background-color: #fdfdfde5; */
   background: var(--songs-background);
   border-radius: 10px 10px 0 0;
   letter-spacing: 1.2px;
@@ -221,7 +216,6 @@ input[type="range"]::-webkit-slider-thumb {
   opacity: 0;
   transition: opacity 0.3s ease-in;
   pointer-events: none;
-  /* background-color: #fdfdfde5; */
   background: var(--songs-background);
   box-shadow: var(--text-shadow);
   border-radius: 0 0 5px 5px;
@@ -289,11 +283,6 @@ li:last-of-type {
   border-bottom: none;
 }
 
-li:hover {
-  background-color: var(--dark-brown);
-  color: var(--whitesmoke-color);
-}
-
 li.active {
   color: var(--darker-orange);
   font-weight: 600;
@@ -303,11 +292,6 @@ li.active {
   background-color: var(--whitesmoke-color);
   color: var(--orange);
   box-shadow: var(--btn-clicked-shadow);
-}
-
-.action-btn:hover {
-  background-color: #ffffff;
-  color: var(--dark-brown);
 }
 
 .action-btn:active {
@@ -340,6 +324,18 @@ li.active {
 aside {
   font-style: italic;
   font-size: 0.8rem;
+}
+
+@media (hover: hover) {
+  .action-btn:hover {
+    background-color: #ffffff;
+    color: var(--dark-brown);
+  }
+  
+  li:hover {
+    background-color: var(--dark-brown);
+    color: var(--whitesmoke-color);
+  }
 }
 
 @media (max-width: 33rem) {
@@ -381,3 +377,5 @@ aside {
     margin-top: 1rem;
   }
 }
+
+
