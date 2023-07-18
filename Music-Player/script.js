@@ -236,7 +236,7 @@ playBtn.addEventListener("click", () => {
 });
 
 // Adjust the volume and input background color
-volume.addEventListener("input", handleInputChange);
+volume.addEventListener("change", handleInputChange);
 volume.addEventListener("click", (e) => {
   audio.volume = e.target.value;
 });
@@ -296,12 +296,6 @@ audio.addEventListener("ended", () => {
 });
 
 // ------------ Further study -------------- //
-
-// Display total time next to each song:
-/* In order to accomplish this, I will need to create an array of objects, each corresponding to a song from the playlist.
-Each object will contain the name of the song alog with its duration.
-Would map through the array and generate a new innerText for each li item.
-*/
 
 // Upload local files in the playlist
 // Drag and drop => move the player on a different spot on the browser page
