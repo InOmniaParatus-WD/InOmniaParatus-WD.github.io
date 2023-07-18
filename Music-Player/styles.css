@@ -344,7 +344,7 @@ aside {
 
 @media (max-width: 33rem) {
   .music-container {
-    width: 25rem;
+    width: 22rem;
   }
   .buttons {
     width: 10rem;
@@ -365,11 +365,14 @@ aside {
   }
   .image-container {
     left: -0.8rem;
+    width: 7rem;
+    height: 7rem;
   }
-  .image-container,
+
   .image-container img {
-    width: 8.5rem;
-    height: 8.5rem;
+    width: inherit;
+    height: inherit;
+    bottom: 1.5rem;
   }
   .playlist {
     flex-wrap: normal;
