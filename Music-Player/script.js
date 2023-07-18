@@ -238,7 +238,7 @@ playBtn.addEventListener("click", () => {
 // Adjust the volume and input background color
 volume.addEventListener("change", handleInputChange);
 
-volume.addEventListener("touchmouse", (e) => {
+volume.addEventListener("touchend", (e) => {
   audio.volume = e.target.value;
 }); // for mobile web browser
 
