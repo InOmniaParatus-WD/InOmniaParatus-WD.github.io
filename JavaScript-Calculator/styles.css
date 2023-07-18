@@ -17,15 +17,9 @@
   --text-color: #222223;
 }
 
-html {
-  --scrollbarBG: #cfd8dc;
-  --thumbBG: #90a4ae;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -33,18 +27,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-}
-
-head {
-  margin-top: 200px;
-}
-
-h1,
-p {
-  text-align: center;
-}
-.container {
-  background: linear-gradient(
+  background-image: linear-gradient(
     135deg,
     rgba(108, 36, 139, 1) 0%,
     rgba(70, 138, 126, 1) 23%,
@@ -53,35 +36,29 @@ p {
     rgba(87, 99, 54, 1) 100%,
     rgba(43, 72, 81, 1) 100%
   );
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  box-shadow: var(--calc-shadow);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
-  height: 650px;
-  margin: 0 auto;
-  top: 20px;
+  width: 22rem;
+  height: 38rem;
   border-radius: 1rem;
   background-color: var(--text-color);
   box-shadow: var(--calc-shadow);
 }
 
 #display {
-  inline-size: 350px;
+  inline-size: 22rem;
   overflow: auto;
   scrollbar-width: thin;
-  margin: 30px 30px 0 30px;
+  margin-top: 2rem;
   height: 25%;
-  border-radius: 10px;
+  width: 90%;
+  border-radius: 0.5rem;
   color: var(--text-color);
   text-shadow: var(--text-shadow);
   background: linear-gradient(
@@ -98,7 +75,11 @@ p {
 
 /* Styles for the calculator screen's scroll-bar*/
 #display::-webkit-scrollbar {
-  width: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  margin: 0;
+  background-color: #222223;
 }
 #display::-webkit-scrollbar-track {
   background: transparent;
@@ -111,9 +92,9 @@ p {
 /*  End of scrollbar styles */
 
 .history {
-  padding: 15px 5px 0 5px;
+  padding: 1.2rem 0.5rem 1rem 1rem;
   text-align: right;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: var(--text-color);
   text-shadow: var(--text-shadow);
 }
@@ -122,8 +103,8 @@ p {
   text-align: right;
   height: 1.5em;
   width: 100%;
-  font-size: 45px;
-  padding: 20px 5px 0 5px;
+  font-size: 2.5rem;
+  padding: 1.2rem 0.5rem 0 0.5rem;
   color: var(--text-color);
   text-shadow: var(--text-shadow);
 }
@@ -134,17 +115,17 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  margin: 25px;
+  width: 90%;
+  margin: 1.5rem;
 }
 
 button {
-  width: 70px;
-  height: 70px;
-  margin: 5px;
-  font-size: 1.5em;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.4rem;
+  font-size: 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   text-shadow: 0px 0px 6px rgba(124, 124, 124, 0.7);
@@ -154,23 +135,36 @@ button {
 .deleteLastKey,
 .operator,
 .negative {
-  background: #b6f9d6;
+  background: #6dca9a;
 }
 
 .equals {
-  width: calc(70px * 2 + 10px);
-  height: 70px;
+  width: 9rem;
+  height: 4rem;
   font-size: 1.5em;
   background: #ff9e3d;
 }
 
-.number:hover,
-.operator:hover,
-.clearAll:hover,
-.negative:hover,
-.deleteLastKey:hover,
-.equals:hover {
-  cursor: pointer;
-  box-shadow: rgba(148, 132, 132, 0.4) 0px 2px 4px,
-    rgba(240, 225, 225, 0.2) 0px -3px 0px inset;
+@media (hover: hover) {
+  button:hover {
+    cursor: pointer;
+    box-shadow: rgba(243, 239, 239, 0.904) 0px 2px 4px,
+      rgba(255, 251, 251, 0.808) 0px -2px 0px inset;
+    text-shadow: none;
+  }
+}
+
+@media (max-width: 25rem) {
+  .calculator {
+    width: 20rem;
+  }
+
+  button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  button.equals {
+    width: 8rem;
+    height: 3.5rem;
+  }
 }
