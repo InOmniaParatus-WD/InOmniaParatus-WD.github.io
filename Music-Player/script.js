@@ -297,8 +297,8 @@ audio.addEventListener("timeupdate", (e) => updateProgress(e));
 
 // Song ends
 audio.addEventListener("ended", (e) => {
-  console.log("I'm done", e.target, songIdx);
-  console.log(allSongs.length, e.target.duration);
+  // console.log("I'm done", e.target, songIdx);
+  // console.log(allSongs.length, e.target.duration);
 
   if (songIdx < allSongs.length - 1) {
     nextSong();
