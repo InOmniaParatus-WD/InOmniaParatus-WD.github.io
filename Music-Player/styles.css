@@ -242,7 +242,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 ul {
-  max-height: 22rem;
+  max-height: 18rem;
   overflow: auto;
 }
 
@@ -277,10 +277,6 @@ li {
   text-shadow: var(--text-shadow);
   cursor: pointer;
   width: 100%;
-}
-
-li:last-of-type {
-  border-bottom: none;
 }
 
 li.active {

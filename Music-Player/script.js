@@ -45,32 +45,38 @@ showSongsInPlaylist();
 function showSongsInPlaylist() {
   let songDuration = "";
   let index = 0;
+
   let newAudio = document.createElement("audio");
+
+  newAudio.src = `music/${allSongs[index]}.mp3`;
 
   // to display the total time for each song
   newAudio.ondurationchange = () => {
-    let song = allSongs[index];
     songDuration = sToTime(newAudio.duration);
 
     const songTitle = document.createElement("li");
 
+    songTitle.dataset["songIndex"] = index;
     songTitle.innerHTML = `<span>${allSongs[index]}</span> <span>${songDuration}</span>`;
-    songTitle.addEventListener("click", () => {
+
+    // when a track in the playlis is clicked...
+    songTitle.addEventListener("click", (evt) => {
       playBtn.classList.add("active");
-      loadSong(song);
+      songIdx = +evt.currentTarget.dataset["songIndex"];
+
+      loadSong(allSongs[songIdx]);
       playSong();
     });
 
-    playList.querySelector("ul").appendChild(songTitle);
-
-    if (index++ < allSongs.length - 1) {
+    if (index < allSongs.length - 1) {
+      index++;
       newAudio.src = `music/${allSongs[index]}.mp3`;
     } else {
       loadSong(allSongs[songIdx]);
     }
-  };
 
-  newAudio.src = `music/${allSongs[index]}.mp3`;
+    playList.querySelector("ul").appendChild(songTitle);
+  };
 }
 
 // Load the song currently playing/to play
@@ -90,7 +96,6 @@ function loadSong(song) {
     } else s.classList.remove("active");
   });
 }
-
 // Play song
 function playSong() {
   musicContainer.classList.remove("pause");
@@ -222,6 +227,7 @@ function handleInputChange(e) {
 }
 
 // ---------------- EVENTS ----------------- //
+
 // Play/pause a song
 playBtn.addEventListener("click", () => {
   playBtn.classList.add("active");
@@ -236,7 +242,7 @@ playBtn.addEventListener("click", () => {
 });
 
 // Adjust the volume and input background color
-volume.addEventListener("change", handleInputChange);
+volume.addEventListener("change", handleInputChange); // desktop browser
 
 volume.addEventListener("touchend", (e) => {
   audio.volume = e.target.value;
@@ -290,13 +296,24 @@ progressContainer.addEventListener("click", setProgress);
 audio.addEventListener("timeupdate", (e) => updateProgress(e));
 
 // Song ends
-audio.addEventListener("ended", () => {
+audio.addEventListener("ended", (e) => {
+  console.log("I'm done", e.target, songIdx);
+  console.log(allSongs.length, e.target.duration);
+
   if (songIdx < allSongs.length - 1) {
     nextSong();
-  } else if (repeatBtn.classList.contains("clicked")) {
-    if (songIdx === allSongs.length - 1) nextSong();
+    playSong();
   } else {
     stopPlaying();
+  }
+
+  if (
+    songIdx === allSongs.length - 1 &&
+    repeatBtn.classList.contains("clicked")
+  ) {
+    songIdx = 0;
+    loadSong(allSongs[songIdx]);
+    playSong();
   }
 });
 
