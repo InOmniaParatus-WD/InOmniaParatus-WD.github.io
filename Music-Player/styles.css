@@ -322,7 +322,7 @@ aside {
   font-size: 0.8rem;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine){
   .action-btn:hover {
     background-color: #ffffff;
     color: var(--dark-brown);
@@ -334,7 +334,7 @@ aside {
   }
 }
 
-@media (max-width: 33rem) and (pointer: fine){
+@media (max-width: 33rem) {
   .music-container {
     width: 22rem;
   }
