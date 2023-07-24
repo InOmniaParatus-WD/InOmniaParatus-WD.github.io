@@ -116,13 +116,15 @@ button {
   box-shadow: var(--elem-shadow);
 }
 
-button:hover {
-  cursor: pointer;
-  background-color: #369AD9;
-  color: #f2efeb;
+@media (hover: hover) and (pointer: fine) {
+  button:hover {
+    cursor: pointer;
+    background-color: #369ad9;
+    color: #f2efeb;
+  }
 }
 
-@media (min-width: 400px) and (max-width: 1200px){
+@media (min-width: 400px) and (max-width: 1200px) {
   body {
     flex-direction: column;
   }

@@ -136,14 +136,16 @@ footer a {
   text-decoration: none;
 }
 
-#tumblr-quote:hover,
-#tweet-quote:hover,
-#new-quote:hover {
-  background-color: var(--yellow);
-  color: #000;
-}
+@media (hover: hover) and (pointer: fine) {
+  #tumblr-quote:hover,
+  #tweet-quote:hover,
+  #new-quote:hover {
+    background-color: var(--yellow);
+    color: #000;
+  }
 
-footer a:hover {
-  text-decoration: underline;
-  color: var(--yellow);
+  footer a:hover {
+    text-decoration: underline;
+    color: var(--yellow);
+  }
 }

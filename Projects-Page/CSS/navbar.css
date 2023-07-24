@@ -51,7 +51,7 @@
   border-radius: 5px;
 }
 
-@media (max-width: 640px){
+@media (max-width: 40rem){
   .logo {
     margin: auto 0;
     font-size: 1.8em;

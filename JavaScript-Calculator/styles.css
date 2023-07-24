@@ -145,7 +145,7 @@ button {
   background: #ff9e3d;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine){
   button:hover {
     cursor: pointer;
     box-shadow: rgba(243, 239, 239, 0.904) 0px 2px 4px,

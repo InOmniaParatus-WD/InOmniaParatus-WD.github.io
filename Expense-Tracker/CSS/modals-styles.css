@@ -140,9 +140,11 @@ button.delete-btn {
 }
 
 /*  Both modals */
-button:hover {
-  background-color: var(--yellow);
-  color: var(--dark-grey);
+@media (hover: hover) and (pointer: fine) {
+  button:hover {
+    background-color: var(--yellow);
+    color: var(--dark-grey);
+  }
 }
 
 @keyframes modalopen {

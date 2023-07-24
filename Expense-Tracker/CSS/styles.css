@@ -267,10 +267,11 @@ form button.add-btn {
   color: var(--white);
   width: 100%;
 }
-
-form button.add-btn:hover {
-  background-color: var(--yellow);
-  color: var(--dark-grey);
+@media (hover: hover) and (pointer:fine) {
+  form button.add-btn:hover {
+    background-color: var(--yellow);
+    color: var(--dark-grey);
+  }
 }
 
 button:active {
