@@ -334,7 +334,7 @@ aside {
   }
 }
 
-@media (max-width: 33rem) {
+@media (max-width: 33rem) and (pointer: fine){
   .music-container {
     width: 22rem;
   }
