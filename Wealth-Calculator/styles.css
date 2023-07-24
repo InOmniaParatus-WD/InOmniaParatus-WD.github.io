@@ -24,18 +24,17 @@ body {
 h1 {
   font-size: 2rem;
   letter-spacing: 1.2px;
-  margin-bottom: 2rem;
   color: var(--primary-color);
 }
 
-div.container {
+.container {
   color: var(--font-color);
   display: flex;
   flex-direction: row;
   width: 40rem;
 }
 
-div.container aside {
+aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +42,7 @@ div.container aside {
   border-right: solid 1px var(--borders);
 }
 
-div.container aside button {
+button {
   width: 15rem;
   padding: 10px 5px;
   margin: 1rem;
@@ -57,14 +56,16 @@ div.container aside button {
   cursor: pointer;
 }
 
-div.container aside button:hover {
+button:hover {
   background-color: #ebeb55;
   color: var(--font-color);
   border: solid 1px transparent;
 }
+
 main {
   width: 100%;
 }
+
 h2 {
   color: #063330;
   padding: 0 0.5rem 0.5rem;
@@ -73,10 +74,12 @@ h2 {
   letter-spacing: 1px;
   font-weight: normal;
 }
-main h2.person {
+
+h2.person {
   border-bottom: solid 1px var(--borders);
 }
-main h2.total {
+
+h2.total {
   border-top: solid 1px var(--borders);
   padding-top: 5px;
 }
@@ -84,10 +87,11 @@ main h2.total {
 ul {
   list-style: none;
   padding: 0;
-  height: 40vh;
+  max-height: 35vh;
   overflow: auto;
 }
-ul li {
+
+li {
   display: flex;
   justify-content: space-between;
   padding: 5px;
@@ -109,3 +113,38 @@ ul::-webkit-scrollbar-thumb {
   border: 1px solid var(--buttons-text-color);
 }
 /*  End of scrollbar styles */
+
+@media (max-width: 40rem) {
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+  }
+
+  .container aside {
+    border: none;
+  }
+
+  main {
+    width: 80%;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  ul li {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    width: 15rem;
+  }
+}
