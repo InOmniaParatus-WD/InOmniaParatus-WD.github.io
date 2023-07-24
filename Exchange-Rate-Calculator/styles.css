@@ -73,6 +73,28 @@ section {
   border-radius: 5px;
   appearance: none;
 }
+
+/* Styles for currency select scroll-bar*/
+#currency-one::-webkit-scrollbar,
+#currency-two::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  margin: 0;
+  background-color: #cadce0;
+}
+#currency-one::-webkit-scrollbar-track,
+#currency-two::-webkit-scrollbar-track {
+  background: transparent;
+}
+#currency-one::-webkit-scrollbar-thumb,
+#currency-two::-webkit-scrollbar-thumb {
+  background-color: #000e1d;
+  border-radius: 5px;
+  border: 1px solid #cadce0;
+}
+/*  End of scrollbar styles */
+
 input {
   padding: 5px;
   width: 10rem;
