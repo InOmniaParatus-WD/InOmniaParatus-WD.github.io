@@ -21,6 +21,10 @@
   width: 700px;
 }
 
+#browsing img {
+  width: 100%;
+}
+
 .welcome-container h1 {
   font-size: 4rem;
   text-align: center;

@@ -23,6 +23,7 @@ function addToDom(count) {
     projectTile.innerHTML = `
       <a href="${project.projectLink}" target="_blank">
       <img src="${project.photo}" alt="${project.altText}">
+      <div class="project-name">${project.projectName}</div>
       </a>
     `;
 
@@ -31,7 +32,6 @@ function addToDom(count) {
     currCount++;
   });
 
-  console.log(currCount, projectsDetails.length);
   if (projectsDetails.length === currCount) {
     showMoreBtn.style.display ="none"
     projectsCollection.style.paddingBottom = "2rem"

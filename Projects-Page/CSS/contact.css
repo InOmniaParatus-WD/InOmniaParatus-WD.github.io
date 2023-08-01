@@ -13,6 +13,9 @@
   width: 400px;
 }
 
+#collaborate img{
+  width: 100%;
+}
 .contact-header h2 {
   font-size: 3.5em;
   letter-spacing: 2px;

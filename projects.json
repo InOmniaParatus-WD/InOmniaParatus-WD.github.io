@@ -1,6 +1,6 @@
 [
     {
-        "projectName": "Music Player App",
+        "projectName": "Music Player Browser App",
         "projectLink": "../Music-Player/",
         "photo": "Projects-Page/Projects Photos/Music_player.jpg",
         "altText": "music player"
@@ -12,7 +12,7 @@
         "altText": "exchange rate calculator"
     },
     {
-        "projectName": "Cat Clock",
+        "projectName": "Clock JavaScript",
         "projectLink": "../Cat-Clock/",
         "photo": "Projects-Page/Projects Photos/cat-clock.jpg",
         "altText": "cat clock"
@@ -30,19 +30,19 @@
         "altText": "wealth calculator"
     },
     {
-        "projectName": "Pocker Calculator",
+        "projectName": "Pocket Calculator JavaScript",
         "projectLink": "../JavaScript-Calculator/",
         "photo": "Projects-Page/Projects Photos/JavaScript_Calculator.jpg",
         "altText": "JavaScript Calculator"
     },
     {
-        "projectName": "Random Quotes",
+        "projectName": "Random Quotes Machine with jQuery",
         "projectLink": "../Random-Quote-Machine/",
         "photo": "Projects-Page/Projects Photos/Random_Quote_Machine.jpg",
         "altText": "random quote generator"
     },
     {
-        "projectName": "Form Validator",
+        "projectName": "Form Validation JavaScript",
         "projectLink": "../Form-Validator/",
         "photo": "Projects-Page/Projects Photos/Form_Validator.jpg",
         "altText": "form validator"
@@ -54,19 +54,19 @@
         "altText": "product landing page"
     },
     {
-        "projectName": "JS Technical Docs",
+        "projectName": "Technical Docs",
         "projectLink": "../Technical-Docs-Page/",
         "photo": "Projects-Page/Projects Photos/Technical_Doc_Page.jpg",
         "altText": "technical documentation page"
     },
     {
-        "projectName": "Survey Form With Bootstrap",
+        "projectName": "Survey Form with Bootstrap",
         "projectLink": "../Survey-Form-Bootstrap/",
         "photo": "Projects-Page/Projects Photos/Bootstrap_Survey.jpg",
         "altText": "survey form with bootstrap library"
     },
     {
-        "projectName": "freeCodeCamp Survey Form",
+        "projectName": "Survey Form",
         "projectLink": "../FCC-Survey-Form/",
         "photo": "Projects-Page/Projects Photos/FCC_Survey_Form.jpg",
         "altText": "freecodecamp survey form"
