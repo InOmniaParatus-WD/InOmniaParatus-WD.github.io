@@ -23,11 +23,22 @@ body {
 h1 {
   font-family: "Croissant One", cursive;
   font-size: 3rem;
+  margin-bottom: 0;
   color: #bdd0d0;
-  margin-bottom: 3rem;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
+p {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #bdd0d0;
+  font-family: "Fuggles", cursive;
+}
+
+p span.smiley {
+  font-size: 1.2rem;
+}
 /* -------------- 
 Squares' stylings
 -----------------*/
