@@ -23,6 +23,13 @@
         "photo": "Projects-Page/Projects Photos/Expenses_Tracker.jpg",
         "altText": "expenses tracker"
     },
+
+    {
+        "projectName": "Rotating Squares",
+        "projectLink": "../Rotating-Divs/",
+        "photo": "Projects-Page/Projects Photos/Rotating-Divs.jpg",
+        "altText": "Rotating Squares"
+    },
     {
         "projectName": "Wealth Calculator",
         "projectLink": "../Wealth-Calculator/",
