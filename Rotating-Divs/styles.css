@@ -14,6 +14,7 @@ body {
   width: 100vw;
   overflow: hidden;
   display: flex;
+  margin: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -210,47 +211,36 @@ div.rotate.sixteen {
 }
 
 /* Hovering effects */
-@media screen and (orientation: landscape) {
- 
-  div.rotating-divs:hover {
-    transform: rotate(90deg);
-  }
 
-  div.rotating-divs:hover div.rotate {
-    transform: rotate(-180deg);
-  }
+div.rotating-divs:hover {
+  transform: rotate(90deg);
 }
 
-@media screen and (orientation: portrait) {
-  div.rotating-divs:hover {
-    transform: rotate(-90deg);
-  }
-
-  div.rotating-divs:hover div.rotate {
-    transform: rotate(180deg);
-  }
+div.rotating-divs:hover div.rotate {
+  transform: rotate(-180deg);
 }
+
 /* Responsiveness  */
-@media (min-width: 300px) and (max-width: 400px) {
+@media (max-width: 430px) {
   h1 {
     text-align: center;
     font-size: 2rem;
   }
 
   div.rotating-divs {
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
   }
 
   div.rotate {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
 
   /* Center squares */
   div.rotate.six {
     background-image: radial-gradient(
-      farthest-corner at 70px 70px,
+      farthest-corner at 50px 50px,
       #160416,
       #440144,
       #ad5ea6,
@@ -261,7 +251,7 @@ div.rotate.sixteen {
 
   div.rotate.seven {
     background-image: radial-gradient(
-      farthest-corner at 0px 70px,
+      farthest-corner at 0px 50px,
       #160416,
       #440144,
       #ad5ea6,
@@ -271,7 +261,7 @@ div.rotate.sixteen {
   }
   div.rotate.ten {
     background-image: radial-gradient(
-      farthest-corner at 70px 0px,
+      farthest-corner at 50px 0px,
       #160416,
       #440144,
       #ad5ea6,
@@ -309,7 +299,7 @@ div.rotate.sixteen {
   div.rotate.four,
   div.rotate.twelve {
     background-image: radial-gradient(
-      farthest-corner at 70px 0px,
+      farthest-corner at 50px 0px,
       #0b1818,
       #024747,
       #77f8f8,
@@ -320,7 +310,7 @@ div.rotate.sixteen {
 
   div.rotate.five {
     background-image: radial-gradient(
-      farthest-corner at 0px 70px,
+      farthest-corner at 0px 50px,
       #0b1818,
       #024747,
       #77f8f8,
@@ -333,7 +323,7 @@ div.rotate.sixteen {
   div.rotate.fourteen,
   div.rotate.sixteen {
     background-image: radial-gradient(
-      farthest-corner at 70px 70px,
+      farthest-corner at 50px 50px,
       #0b1818,
       #024747,
       #77f8f8,
@@ -345,7 +335,7 @@ div.rotate.sixteen {
   div.rotate.thirteen,
   div.rotate.fifteen {
     background-image: radial-gradient(
-      farthest-corner at 0px 70px,
+      farthest-corner at 0px 50px,
       #0b1818,
       #024747,
       #77f8f8,
