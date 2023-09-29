@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Fuggles&family=Mooli&display=swap");
+
+body {
+  background-image: conic-gradient(
+    from 90deg at 45% 50%,
+    #085d5d,
+    #8b8b04,
+    #440144,
+    #085d5d
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  border-radius: 20px;
+  padding: 2rem 0;
+  background-color: #373e3e3c;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+button {
+  font-family: "Croissant One", cursive;
+  margin: 3rem;
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border: transparent;
+  background-color: #e7fad3;
+  cursor: pointer;
+}
+
+.btn-one {
+  background: linear-gradient(
+    5deg,
+    #024747 10%,
+    #77f8f8 50%,
+    #3ffefe 65%,
+    #024747 75%
+  );
+  transition: transform 1s ease-in;
+}
+
+.btn-one:hover {
+  transform: translate(50px, 60px);
+}
+
+.btn-two {
+  color: #daa520;
+  background-color: #085d5d;
+  transition: transform 1.5s ease-in, background-color 1.5s ease-in-out,
+    border-radius 1.5s ease-in-out;
+}
+
+.btn-two:hover {
+  background-color: #011a1a;
+  box-shadow: #f0c456de 0px 4px 7px, #daa5207a 3px 6px 30px -2px,
+    #daa520cf 0px -4px 10px;
+  border-radius: 50%;
+  padding: 4rem 1rem;
+  margin: 1rem 6rem;
+  transform: scale(20%);
+}
+
+.btn-three {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  background-color: #232222;
+  color: #b4b402;
+  position: relative;
+  transition: transform 0.5s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.btn-nail {
+  width: 20px;
+  height: 20px;
+  background-image: radial-gradient(#2d2e2d, #141414, #7e7a7a);
+  box-shadow: rgba(196, 193, 193, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  position: absolute;
+  top: 15px;
+  left: calc(50% - 10px);
+  border-radius: 50%;
+}
+
+.btn-three:hover {
+  border-radius: 50%;
+  transform-origin: top center;
+  transform: rotate(-35deg);
+}
+
+.btn-four {
+  position: relative;
+  background-color: #feed03dd;
+  transition: background-color 2s ease-in, color 2s ease-in;
+}
+
+.btn-four .img-four {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2.5s ease-in, transform 4s ease-in;
+}
+
+.btn-four:hover {
+  background-color: transparent;
+  color: transparent;
+  box-shadow: none;
+}
+
+.btn-four:hover .img-four {
+  opacity: 1;
+  transform: scale(3);
+  transition-delay: 1s;
+  transition-property: opacity, transform;
+}
+
+.btn-five {
+  position: relative;
+  background-color: #011a1a;
+  color: #c3bfbf;
+  transition: transform 2s ease-in, color 2s ease-in,
+    background-color 2s ease-in;
+}
+
+.btn-five .img-five {
+  position: absolute;
+  left: calc(100% - 65%);
+  width: 150px;
+  bottom: 50px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease-in;
+}
+
+.btn-five:hover {
+  color: transparent;
+  background-color: #024747;
+  transform: scale(1.6);
+}
+
+.btn-five:hover .img-five {
+  opacity: 1;
+}
+
+.btn-six {
+  background-image: radial-gradient(
+    farthest-corner at 10px 10px,
+    #440144,
+    #ad5ea6,
+    #440144
+  );
+  transition: transform 1s ease-in;
+}
+
+.btn-six:hover {
+  transform: rotate(45deg) scale(1.5);
+}
+
+.btn-seven {
+  background-color: #710909;
+  color: white;
+  transition: transform 1s ease-in;
+}
+
+.btn-seven:hover {
+  transform: scaleY(1.2) scale(-0.5) rotate(360deg);
+}
+
+.btn-eight {
+  background-image: linear-gradient(
+    20deg,
+    #f87a7a,
+    #fdbc45,
+    #f9f959,
+    #428042,
+    #8c8cf8,
+    #6b4a83,
+    #efa5ef
+  );
+  transition: transform 1s ease-in;
+}
+
+.btn-eight:hover {
+  font-family: "Fuggles", cursive;
+  font-size: 3.8rem;
+  font-weight: 600;
+  padding: 1.1rem 4.2rem;
+  transform: translate(0, -12rem) scale(-1.5) rotate(180deg);
+}
+
+.btn-nine {
+  background-color: #232222;
+  color: #f5f5f5;
+  transition: box-shadow 1s ease-in, transform 1s ease-in,
+    border-color 1s ease-in, border-top-right-radius 1s ease-in;
+}
+
+.btn-nine:hover {
+  box-shadow: rgba(250, 250, 40, 0.625) 0px -2px 2px,
+    rgba(243, 249, 127, 0.874) 0px 1px 3px 0px,
+    rgba(248, 248, 110, 0.817) 0px -1px 0px inset;
+  transform: translate(50px, 20px) rotate(-35deg);
+  border-top-right-radius: 30px;
+  border-color: #e6ff05ec;
+}
+
+@media (min-width: 300px) and (max-width: 640px) {
+  button {
+    font-size: 1.5rem;
+  }
+
+  .btn-eight:hover {
+    font-size: 3.25rem;
+  }
+}

@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Fuggles&family=Mooli&display=swap");
+
+body {
+  background-image: conic-gradient(
+    from 45deg at 55% 50%,
+    #085d5d,
+    #a4430a,
+    #440144,
+    #085d5d
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Croissant One", cursive;
+  font-size: 3rem;
+  color: #bdd0d0;
+  margin-bottom: 3rem;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------- 
+Squares' stylings
+-----------------*/
+
+/* Outer square */
+div.rotating-divs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  margin: 3rem 5rem 5rem 5rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background-color: #1b1e21;
+  cursor: pointer;
+  transition: transform 1s ease-in;
+}
+
+/* Smaller inner squares */
+div.rotate {
+  height: 100px;
+  width: 100px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: transparent;
+  background-color: #e7fad3;
+  pointer-events: unset;
+  transition: transform 1s ease-in;
+}
+
+/* Center squares */
+div.rotate.six {
+  background-image: radial-gradient(
+    farthest-corner at 100px 100px,
+    #160416,
+    #440144,
+    #ad5ea6,
+    #440144,
+    #160416
+  );
+}
+
+div.rotate.seven {
+  background-image: radial-gradient(
+    farthest-corner at 0px 100px,
+    #160416,
+    #440144,
+    #ad5ea6,
+    #440144,
+    #160416
+  );
+}
+div.rotate.ten {
+  background-image: radial-gradient(
+    farthest-corner at 100px 0px,
+    #160416,
+    #440144,
+    #ad5ea6,
+    #440144,
+    #160416
+  );
+}
+
+div.rotate.eleven {
+  background-image: radial-gradient(
+    farthest-corner at 0px 0px,
+    #160416,
+    #440144,
+    #ad5ea6,
+    #440144,
+    #160416
+  );
+}
+
+/* Outer squares */
+div.rotate.one,
+div.rotate.three,
+div.rotate.nine {
+  background-image: radial-gradient(
+    farthest-corner at 0px 0px,
+    #0b1818,
+    #024747,
+    #77f8f8,
+    #024747,
+    #0b1818
+  );
+}
+
+div.rotate.two,
+div.rotate.four,
+div.rotate.twelve {
+  background-image: radial-gradient(
+    farthest-corner at 100px 0px,
+    #0b1818,
+    #024747,
+    #77f8f8,
+    #024747,
+    #0b1818
+  );
+}
+
+div.rotate.five {
+  background-image: radial-gradient(
+    farthest-corner at 0px 100px,
+    #0b1818,
+    #024747,
+    #77f8f8,
+    #024747,
+    #0b1818
+  );
+}
+
+div.rotate.eight,
+div.rotate.fourteen,
+div.rotate.sixteen {
+  background-image: radial-gradient(
+    farthest-corner at 100px 100px,
+    #0b1818,
+    #024747,
+    #77f8f8,
+    #024747,
+    #0b1818
+  );
+}
+
+div.rotate.thirteen,
+div.rotate.fifteen {
+  background-image: radial-gradient(
+    farthest-corner at 0px 100px,
+    #0b1818,
+    #024747,
+    #77f8f8,
+    #024747,
+    #0b1818
+  );
+}
+
+/* Transition delays for the blue small squares  */
+div.rotate.one {
+  transition-delay: 2s;
+}
+div.rotate.two {
+  transition-delay: 2.5s;
+}
+div.rotate.three {
+  transition-delay: 3s;
+}
+div.rotate.four {
+  transition-delay: 3.5s;
+}
+div.rotate.five {
+  transition-delay: 1.5s;
+}
+
+div.rotate.eight {
+  transition-delay: 4s;
+}
+
+div.rotate.nine {
+  transition-delay: 1s;
+}
+div.rotate.twelve {
+  transition-delay: 4.5s;
+}
+div.rotate.thirteen {
+  transition-delay: 0.5s;
+}
+div.rotate.fourteen {
+  transition-delay: 6s;
+}
+div.rotate.fifteen {
+  transition-delay: 5.5s;
+}
+div.rotate.sixteen {
+  transition-delay: 5s;
+}
+
+/* Hovering effects */
+@media screen and (orientation: landscape) {
+ 
+  div.rotating-divs:hover {
+    transform: rotate(90deg);
+  }
+
+  div.rotating-divs:hover div.rotate {
+    transform: rotate(-180deg);
+  }
+}
+
+@media screen and (orientation: portrait) {
+  div.rotating-divs:hover {
+    transform: rotate(-90deg);
+  }
+
+  div.rotating-divs:hover div.rotate {
+    transform: rotate(180deg);
+  }
+}
+/* Responsiveness  */
+@media (min-width: 300px) and (max-width: 400px) {
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  div.rotating-divs {
+    width: 280px;
+    height: 280px;
+  }
+
+  div.rotate {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Center squares */
+  div.rotate.six {
+    background-image: radial-gradient(
+      farthest-corner at 70px 70px,
+      #160416,
+      #440144,
+      #ad5ea6,
+      #440144,
+      #160416
+    );
+  }
+
+  div.rotate.seven {
+    background-image: radial-gradient(
+      farthest-corner at 0px 70px,
+      #160416,
+      #440144,
+      #ad5ea6,
+      #440144,
+      #160416
+    );
+  }
+  div.rotate.ten {
+    background-image: radial-gradient(
+      farthest-corner at 70px 0px,
+      #160416,
+      #440144,
+      #ad5ea6,
+      #440144,
+      #160416
+    );
+  }
+
+  div.rotate.eleven {
+    background-image: radial-gradient(
+      farthest-corner at 0px 0px,
+      #160416,
+      #440144,
+      #ad5ea6,
+      #440144,
+      #160416
+    );
+  }
+
+  /* Outer squares */
+  div.rotate.one,
+  div.rotate.three,
+  div.rotate.nine {
+    background-image: radial-gradient(
+      farthest-corner at 0px 0px,
+      #0b1818,
+      #024747,
+      #77f8f8,
+      #024747,
+      #0b1818
+    );
+  }
+
+  div.rotate.two,
+  div.rotate.four,
+  div.rotate.twelve {
+    background-image: radial-gradient(
+      farthest-corner at 70px 0px,
+      #0b1818,
+      #024747,
+      #77f8f8,
+      #024747,
+      #0b1818
+    );
+  }
+
+  div.rotate.five {
+    background-image: radial-gradient(
+      farthest-corner at 0px 70px,
+      #0b1818,
+      #024747,
+      #77f8f8,
+      #024747,
+      #0b1818
+    );
+  }
+
+  div.rotate.eight,
+  div.rotate.fourteen,
+  div.rotate.sixteen {
+    background-image: radial-gradient(
+      farthest-corner at 70px 70px,
+      #0b1818,
+      #024747,
+      #77f8f8,
+      #024747,
+      #0b1818
+    );
+  }
+
+  div.rotate.thirteen,
+  div.rotate.fifteen {
+    background-image: radial-gradient(
+      farthest-corner at 0px 70px,
+      #0b1818,
+      #024747,
+      #77f8f8,
+      #024747,
+      #0b1818
+    );
+  }
+}
