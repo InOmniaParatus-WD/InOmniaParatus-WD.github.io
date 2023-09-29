@@ -36,6 +36,12 @@
         "altText": "JavaScript Calculator"
     },
     {
+        "projectName": "Buttons Hover Effects",
+        "projectLink": "../Buttons-Hover-Effects/",
+        "photo": "Projects-Page/Projects Photos/Buttons_Hover_Effects.jpg",
+        "altText": "Buttons Hover Effects"
+    },
+    {
         "projectName": "Random Quotes Machine with jQuery",
         "projectLink": "../Random-Quote-Machine/",
         "photo": "Projects-Page/Projects Photos/Random_Quote_Machine.jpg",
