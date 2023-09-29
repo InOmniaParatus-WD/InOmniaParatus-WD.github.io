@@ -170,7 +170,7 @@ body {
 
 @media (max-width: 640px) {
   body {
-    margin-top: 20px;
+    margin-top: 6rem;
   }
   .container {
     width: auto;
