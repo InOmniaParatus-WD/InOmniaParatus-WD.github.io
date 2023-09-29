@@ -5,7 +5,7 @@
   align-items: center;
   max-width: 100vw;
   min-height: 100vh;
-  padding: 2.5rem;
+  padding: 8rem 5rem;
   background: lightseagreen;
   background: linear-gradient(
     45deg,
@@ -26,12 +26,8 @@
   width: 100%;
 }
 
-.welcome-container {
-  margin: 2rem;
-}
-
 .welcome-container h1 {
-  font-size: 4.5rem;
+  font-size: 3rem;
   margin: 3rem 0;
   text-align: center;
   letter-spacing: 2px;
@@ -41,13 +37,11 @@
 
 .welcome-container p {
   text-align: center;
-  margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 1px;
   color: var(--dark-gray);
   opacity: 70%;
-  /* width: 80%; */
 }
 .welcome-container p.action {
   margin-top: 3rem;
@@ -62,6 +56,7 @@
 @media (max-width: 40rem) {
   #welcome-section {
     flex-direction: column;
+    padding: 8rem 1rem;
   }
 
   #browsing {
@@ -69,7 +64,7 @@
   }
 
   .welcome-container h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     text-align: center;
   }
 
@@ -87,21 +82,22 @@
 @media (min-width: 40.06rem) and (max-width: 68.75rem) {
   #welcome-section {
     flex-direction: column;
-    padding: 0.5rem;
+    padding: 8rem 3rem;
   }
 
   #browsing {
     width: 500px;
   }
 
+
   .welcome-container h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .welcome-container p {
     font-size: 1.2rem;
   }
 
   .welcome-container p span {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
