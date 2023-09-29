@@ -4,4 +4,4 @@
 
 A fun exercise using the CSS properties **_position_**, **_transform_** and **_transition_** to creat some interesting effects
 
-<img src="https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io/assets/78725314/e4421616-8631-46de-933c-d1060b45dbef" width="400px"/>
+https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io/assets/78725314/072dae2c-31eb-4c30-9d72-65dee0b8de49
