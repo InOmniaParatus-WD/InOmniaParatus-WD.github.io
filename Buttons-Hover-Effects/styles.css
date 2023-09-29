@@ -22,7 +22,9 @@ div.buttons {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 80%;
+  min-width: 80%;
+  width: 90%;
+  height: 80%;
   border-radius: 20px;
   padding: 2rem 0;
   background-color: #373e3e3c;
@@ -43,6 +45,7 @@ button {
   border: transparent;
   background-color: #e7fad3;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 
 .btn-one {
@@ -223,9 +226,9 @@ button {
   border-color: #e6ff05ec;
 }
 
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 230px) and (max-width: 640px) {
   button {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .btn-eight:hover {
