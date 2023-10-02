@@ -353,6 +353,11 @@ div.rotating-divs:hover div.rotate {
       #024747,
       #0b1818
     );
+  }
+}
+
+/* @media (min-width: 900px) {
+  .rotating-divs {
     transform: rotate(90deg);
     transform-origin: right top;
     width: 100vh;
@@ -362,4 +367,4 @@ div.rotating-divs:hover div.rotate {
     top: 100%;
     right: 0;
   }
-}
+} */
