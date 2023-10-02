@@ -353,5 +353,13 @@ div.rotating-divs:hover div.rotate {
       #024747,
       #0b1818
     );
+    transform: rotate(90deg);
+    transform-origin: right top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    right: 0;
   }
 }
