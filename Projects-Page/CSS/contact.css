@@ -25,7 +25,7 @@
 .contact-header p {
   font-style: oblique;
   letter-spacing: 1.5px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding-top: 20px;
   text-align: center;
 }
@@ -51,13 +51,11 @@
   color: var(--text-color);
 }
 
-#mobile-num {
-  color: var(--text-color);
-  cursor: pointer;
+.profiles .email-message p i {
+  margin-right: 50rem;
 }
 
-.profiles div:hover {
-  transform: translateY(-5px);
+.profiles div:hover, .profiles div:hover a {
   color: var(--link-hover-background);
 }
 
