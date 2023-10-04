@@ -1,6 +1,6 @@
 # Wealth Calculator
 
-- This project integrates data from a free API that can generate a number of random users
+- This project integrates data from an external free API that can generate a number of random users
 - The app allows filtering users based on their wealth, calculates total wealth and sorts users based on their wealth, among other functionalities.
 - Written with HTML, CSS and jQuery
 
