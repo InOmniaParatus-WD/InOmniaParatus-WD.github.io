@@ -20,7 +20,7 @@
         <header class="total-balance">
             <h4>TOTAL BALANCE</h4>
             <h2 id="balance"><span>&#128176;</span>0.00 </h2>
-
+            <img class="image" src="images/expense-tracker.png" alt="">
         </header>
 
         <section class="totals-section">
@@ -34,28 +34,34 @@
             </div>
         </section>
 
-        <h3>Transactions History<span> &#129534;</span></h3>
+        <h3>Transactions History</h3>
 
         <ul id="list"></ul>
 
-        <h3>Add new transaction <span>&#128394;</span></h3>
+        <h3>Add new transaction</h3>
         <form id="form">
 
             <fieldset class="form-control">
                 <label for="transaction-date">Date</label>
-                <input type="text" name="transaction-date" id="transaction-date" placeholder=" 08/03/2023">
+                <input type="text" name="transaction-date" id="transaction-date" placeholder="ex: 24.03.2023">
                 <small></small>
             </fieldset>
+            <div class="transaction-type">
+                <fieldset class="form-control">
+                    <label for="transaction">Transaction type / name</label>
+                    <input type="text" name="transaction" id="transaction" placeholder="ex: Books">
+                    <small></small>
+                </fieldset>
+                <fieldset class="form-control">
+                    <label for="number">Number of items (if applicable)</label>
+                    <input type="text" name="number" id="number" placeholder="ex: 5">
+                </fieldset>
+            </div>
 
             <fieldset class="form-control">
-                <label for="text">Type</label>
-                <input type="text" name="text" id="text" placeholder=" Books">
-                <small></small>
-            </fieldset>
-            <fieldset class="form-control">
-                <label for="amount">Amount</label>
+                <label for="amount">Transaction amount</label>
                 <sub>(negative number = expense | positive number = income)</sub>
-                <input type="amount" name="amount" id="amount" placeholder=" -20">
+                <input type="amount" name="amount" id="amount" placeholder="ex: -20">
                 <small></small>
             </fieldset>
             <button class="add-btn" id="add-btn">Add transaction</button>
@@ -76,7 +82,7 @@
                         <small></small>
                     </fieldset>
                     <fieldset class="form-control">
-                        <label for="edit-name">Type</label>
+                        <label for="edit-name">Type/Item</label>
                         <input type="text" name="edit-name" id="edit-name" placeholder=" Books">
                         <small></small>
                     </fieldset>

@@ -2,8 +2,9 @@
 const balance = document.querySelector("#balance");
 const totalIncome = document.querySelector("#income");
 const totalExpenses = document.querySelector("#expenses");
-const transactionName = document.querySelector("#text");
+const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
+const quantity = document.querySelector("#number");
 const dateEl = document.querySelector("#transaction-date");
 const transactionsList = document.querySelector("#list");
 const form = document.querySelector("#form");
@@ -46,6 +47,7 @@ let allTransactions =
 let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
+let totalItems = 0;
 
 // Generate random ID
 const createID = () => {
@@ -53,19 +55,25 @@ const createID = () => {
 };
 
 // Add new transaction to array
-const newTransaction = (date, name, value) => {
-  let transaction = { id: createID(), date, name, value: +value };
+const newTransaction = (date, name, value, qty) => {
+  let transaction = {
+    id: createID(),
+    date,
+    name,
+    value: +value,
+    qty: +quantity.value,
+  };
   allTransactions.push(transaction);
   console.log(allTransactions);
+  console.log(qty);
 };
 
+// Validate data on user side
 const validateInput = (dateEl, nameEl, amountEl) => {
   let result = true;
   let amount = +amountEl.value;
   let name = nameEl.value;
   let date = dateEl.value;
-
-  let dateRegex = /\d{2}\/\d{2}\/\d{4}/g;
 
   if (amount === 0 || !amount || isNaN(amount)) {
     result = false;
@@ -75,28 +83,40 @@ const validateInput = (dateEl, nameEl, amountEl) => {
   }
   if (!name) {
     result = false;
-    showError(nameEl, "&#x2717; Please enter a valid name", true);
+    showError(nameEl, "&#x2717; Please enter a type or item name", true);
   } else {
     showError(nameEl, "&check; Looks good", false);
   }
-  if (!date || !dateRegex.test(date)) {
+  let dateRegex = /\d{2}\.\d{2}\.\d{4}/g;
+
+  if (!dateRegex.test(date)) {
     result = false;
     showError(dateEl, "&#x2717; Please enter a valid date", true);
   } else {
     showError(dateEl, "&check; Looks good", false);
   }
-
   return result;
 };
 
 // Calculate total income / expenses when a new transaction is added
+
 const calculate = () => {
+  // if the number of items is 2 or higher, multiply the transaction item/amount total price by entered number
+  // update the total expenses accordingly
+  // update total balance
+
   totalIncomeValue = 0;
   totalExpensesValue = 0;
   balanceValue = 0;
+  totalItems = 0;
 
   allTransactions.forEach((item) => {
     if (item.value > 0) {
+      if (quantity.value >= 2) {
+        totalItems = quantity.value;
+        item.value *= totalItems;
+        console.log(item.value);
+      }
       totalIncomeValue += item.value;
     }
     if (item.value < 0) {
@@ -111,6 +131,8 @@ const updateDOM = () => {
   transactionsList.replaceChildren();
 
   allTransactions.forEach((item) => {
+    let numOfitems = quantity.value;
+
     const listItem = document.createElement("li");
 
     listItem.setAttribute("id", `${item.id}`);
@@ -118,7 +140,11 @@ const updateDOM = () => {
     listItem.classList.add(item.value < 0 ? "minus" : "plus");
 
     listItem.innerHTML = `
-    <span class="item-name">${item.name}</span>
+    <div> 
+      <span class="quantity">${item.qty}</span>
+      <span class="item-name">${item.name}</span>
+    </div>
+   
     <span class="value">${Number(item.value.toFixed(2)).toLocaleString(
       "en-IN"
     )}</span>
