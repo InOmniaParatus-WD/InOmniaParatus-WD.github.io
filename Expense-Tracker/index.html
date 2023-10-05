@@ -38,28 +38,28 @@
 
         <ul id="list"></ul>
 
-        <h3>Add new transaction</h3>
+        <h3>New transaction</h3>
         <form id="form">
 
             <fieldset class="form-control">
-                <label for="transaction-date">Date</label>
+                <label for="transaction-date">Date<sup>*</sup></label>
                 <input type="text" name="transaction-date" id="transaction-date" placeholder="ex: 24.03.2023">
                 <small></small>
             </fieldset>
             <div class="transaction-type">
                 <fieldset class="form-control">
-                    <label for="transaction">Transaction type / name</label>
+                    <label for="transaction">Transaction type / name <sup>*</sup></label>
                     <input type="text" name="transaction" id="transaction" placeholder="ex: Books">
                     <small></small>
                 </fieldset>
                 <fieldset class="form-control">
-                    <label for="number">Number of items (if applicable)</label>
-                    <input type="text" name="number" id="number" placeholder="ex: 5">
+                    <label for="number">Quantity <sup>(Optional)</sup></label>
+                    <input type="text" name="number" id="number" placeholder="0">
                 </fieldset>
             </div>
 
             <fieldset class="form-control">
-                <label for="amount">Transaction amount</label>
+                <label for="amount">Transaction amount <sup>*</sup></label>
                 <sub>(negative number = expense | positive number = income)</sub>
                 <input type="amount" name="amount" id="amount" placeholder="ex: -20">
                 <small></small>
@@ -78,17 +78,21 @@
                 <form class="modal-form" id="modal-form">
                     <fieldset class="form-control">
                         <label for="edit-date">Date</label>
-                        <input type="text" name="edit-date" id="edit-date" placeholder="08/03/2023">
+                        <input type="text" name="edit-date" id="edit-date">
                         <small></small>
                     </fieldset>
                     <fieldset class="form-control">
-                        <label for="edit-name">Type/Item</label>
-                        <input type="text" name="edit-name" id="edit-name" placeholder=" Books">
+                        <label for="edit-name">Transaction name</label>
+                        <input type="text" name="edit-name" id="edit-name">
                         <small></small>
+
+                        <label for="edit-qty">Quantity</label>
+                        <input type="text" name="edit-qty" id="edit-qty">
+
                     </fieldset>
                     <fieldset class="form-control">
-                        <label for="edit-amount">Amount</label>
-                        <input type="text" name="edit-amount" id="edit-amount" placeholder="-20">
+                        <label for="edit-amount">Transaction amount</label>
+                        <input type="text" name="edit-amount" id="edit-amount">
                         <small></small>
                     </fieldset>
                     <div class="edit-btns">
