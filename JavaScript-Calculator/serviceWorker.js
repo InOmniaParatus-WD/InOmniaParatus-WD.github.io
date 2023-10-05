@@ -2,14 +2,6 @@
 const pocketCalculator = "Calculator";
 const assets = ["index.html", "app.js", "styles.css"];
 
-self.addEventListener("install", (installEvent) => {
-  installEvent.waitUntil(
-    caches.open(pocketCalculator).then((cache) => {
-      cache.addAll(assets);
-    })
-  );
-});
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
     navigator.serviceWorker
@@ -18,10 +10,20 @@ if ("serviceWorker" in navigator) {
       .catch((err) => console.log("service worker not registered", err));
   });
 }
-self.addEventListener("fetch", (fetchEvent) => {
-  fetchEvent.respondWith(
-    caches.match(fetchEvent.request).then((res) => {
-      return res || fetch(fetchEvent.request);
+
+self.addEventListener("install", (evt) => {
+  evt.waitUntil(
+    caches.open(pocketCalculator).then((cache) => {
+      cache.addAll(assets);
+    })
+  );
+});
+
+
+self.addEventListener("fetch", (evt) => {
+  evt.respondWith(
+    caches.match(evt.request).then((res) => {
+      return res || fetch(evt.request);
     })
   );
 });
