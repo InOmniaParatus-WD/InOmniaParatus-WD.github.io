@@ -190,3 +190,30 @@ document.addEventListener("keypress", (e) => {
 // //MathJS example of evaluating a string expression
 let str = "2*3-4/5+22*54";
 console.log(str + " = " + math.evaluate(str));
+
+// Pop-up to let the user know they can install the app
+let promptUser;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  promptUser = e;
+  // Update the install UI to notify the user app can be installed
+  document.querySelector('#install_button').style.display = 'block';
+});
+
+document.querySelector('#install_button').addEventListener('click', (e) => {
+  // Hide the install button
+  document.querySelector('#install_button').style.display = 'none';
+  // Show the install prompt
+  promptUser.prompt();
+  // Wait for the user to respond to the prompt
+  promptUser.userChoice.then((res) => {
+    if (res.outcome === 'accepted') {
+      console.log('User accepted the install prompt');
+    } else {
+      console.log('User dismissed the install prompt');
+    }
+  });
+});
