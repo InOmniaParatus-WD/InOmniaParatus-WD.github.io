@@ -1,6 +1,6 @@
 // PWA
 const pocketCalculator = "Calculator";
-const assets = ["/", "/index.html", "/app.js", "/styles.css"];
+const assets = ["index.html", "app.js", "styles.css"];
 
 self.addEventListener("install", (installEvent) => {
   installEvent.waitUntil(

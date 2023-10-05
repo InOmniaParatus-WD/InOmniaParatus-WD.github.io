@@ -1,13 +1,13 @@
 {
-  "name": "JSC",
-  "short_name": "JSC",
-  "start_url":"/index.html",
-  "id": "/JavaScript_Calculator/index.html",
+  "name": "Calculator",
+  "short_name": "Calculator",
+  "start_url":"index.html",
+  "id": "index.html",
   "display": "browser",
   "display_override": [
     "window-controls-overlay"
   ],
-  "scope": "/",
+
   "orientation": "portrait-primary",
   "icons": [
     {
