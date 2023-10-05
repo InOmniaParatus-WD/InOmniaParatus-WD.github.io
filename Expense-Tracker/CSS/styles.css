@@ -27,13 +27,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Martel Sans", sans-serif;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Martel Sans", sans-serif;
+
   color: var(--dark-grey);
   background-image: linear-gradient(
     45deg,
@@ -110,7 +111,7 @@ div.transaction-type {
 }
 
 div.transaction-type .form-control {
- width: 45%;
+  width: 45%;
 }
 
 p {
@@ -126,7 +127,15 @@ p.minus {
   color: var(--red);
 }
 
-ul {
+div.display-date {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-weight: normal;
+  border: none;
+}
+
+ul#list {
   list-style: none;
   margin: 1.2rem 0;
   padding-right: 0.2rem;
@@ -134,39 +143,39 @@ ul {
   overflow-y: auto;
 }
 
-ul li.transaction {
+ul#list li.transaction {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 1rem;
   border-radius: 5px;
   background-color: var(--faded-white);
   box-shadow: var(--box-shadow);
-  font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 1rem;
   position: relative;
   cursor: pointer;
 }
 
-ul li.display-date {
-  border: none;
-  background-color: transparent;
-  font-size: 1.5rem;
-  font-weight: normal;
-  border: none;
+ul#list li div.item-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
 }
 
-ul li.display-date span {
-  font-size: 1rem;
+ul#list li div.price-per-unit {
+  width: 100%;
+  text-align: right;
+  font-size: 0.8rem;
 }
 
-ul li span.item-name {
-  width: auto;
+ul#list li span.per-unit {
+  margin-right: 1rem;
 }
 
-ul li span.value {
-  margin-left: auto;
+ul#list li span.value {
   margin-right: 1rem;
 }
 
@@ -238,6 +247,11 @@ input {
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   border: transparent;
   background-color: var(--faded-white);
+  color: var(--dark-grey);
+}
+
+input::placeholder {
+  color: var(--dark-grey);
 }
 
 form label {
@@ -250,6 +264,7 @@ form label sup {
   font-size: 0.7rem;
   color: var(--red);
 }
+
 form input:focus {
   outline: 1px solid;
 }
