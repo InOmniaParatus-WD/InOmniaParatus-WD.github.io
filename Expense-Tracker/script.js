@@ -16,6 +16,7 @@ const cancelChange = document.querySelector("#cancel-btn");
 const editDate = document.querySelector("#edit-date");
 const editName = document.querySelector("#edit-name");
 const editAmount = document.querySelector("#edit-amount");
+const editQuantity = document.querySelector("#edit-qty");
 
 // Confirmation for deleting a transcaction (modal)
 const deleteItemModal = document.querySelector(".undo-modal-container");
@@ -47,7 +48,6 @@ let allTransactions =
 let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
-let totalItems = 0;
 
 // Generate random ID
 const createID = () => {
@@ -55,13 +55,13 @@ const createID = () => {
 };
 
 // Add new transaction to array
-const newTransaction = (date, name, value, qty) => {
+const newTransaction = (date, name, itemPrice, qty) => {
   let transaction = {
     id: createID(),
     date,
     name,
-    value: +value,
-    qty: +quantity.value,
+    itemPrice: +itemPrice,
+    qty: +qty,
   };
   allTransactions.push(transaction);
   console.log(allTransactions);
@@ -69,7 +69,10 @@ const newTransaction = (date, name, value, qty) => {
 };
 
 // Validate data on user side
+
 const validateInput = (dateEl, nameEl, amountEl) => {
+  // validate quantity - can only be an integer from 1 upwards, no decimals accepted
+
   let result = true;
   let amount = +amountEl.value;
   let name = nameEl.value;
@@ -108,19 +111,15 @@ const calculate = () => {
   totalIncomeValue = 0;
   totalExpensesValue = 0;
   balanceValue = 0;
-  totalItems = 0;
 
-  allTransactions.forEach((item) => {
-    if (item.value > 0) {
-      if (quantity.value >= 2) {
-        totalItems = quantity.value;
-        item.value *= totalItems;
-        console.log(item.value);
-      }
-      totalIncomeValue += item.value;
+  allTransactions.forEach((tran) => {
+    tran.totalAmount = tran.qty * tran.itemPrice;
+
+    if (tran.totalAmount > 0) {
+      totalIncomeValue += tran.totalAmount;
     }
-    if (item.value < 0) {
-      totalExpensesValue += item.value;
+    if (tran.totalAmount < 0) {
+      totalExpensesValue += tran.totalAmount;
     }
   });
   balanceValue = totalIncomeValue + totalExpensesValue;
@@ -130,24 +129,24 @@ const calculate = () => {
 const updateDOM = () => {
   transactionsList.replaceChildren();
 
-  allTransactions.forEach((item) => {
-    let numOfitems = quantity.value;
-
+  allTransactions.forEach((tran) => {
     const listItem = document.createElement("li");
 
-    listItem.setAttribute("id", `${item.id}`);
+    listItem.setAttribute("id", `${tran.id}`);
     listItem.classList.add("transaction");
-    listItem.classList.add(item.value < 0 ? "minus" : "plus");
+    listItem.classList.add(tran.itemPrice < 0 ? "minus" : "plus");
 
     listItem.innerHTML = `
     <div> 
-      <span class="quantity">${item.qty}</span>
-      <span class="item-name">${item.name}</span>
+      <span class="quantity">${tran.qty}</span>
+      
+      <!-- <span> @ ${tran.itemPrice} each</span> -->
+      <span class="item-name">${tran.name}</span>
     </div>
    
-    <span class="value">${Number(item.value.toFixed(2)).toLocaleString(
+    <span class="value">${Number(tran.itemPrice.toFixed(2)).toLocaleString(
       "en-IN"
-    )}</span>
+    )}</span> 
     <button class="edit-item">&#128397;
       <span class="tooltip-text edit">Edit transaction</span>
     </button>
@@ -159,7 +158,7 @@ const updateDOM = () => {
     const dateListItem = document.createElement("li");
     dateListItem.classList.add("display-date");
     dateListItem.innerHTML = `&#128198;
-      <span class="entry-date">${item.date}</span>
+      <span class="entry-date">${tran.date}</span>
    `;
 
     transactionsList.appendChild(dateListItem);
@@ -210,7 +209,12 @@ form.addEventListener("submit", (e) => {
 
   if (!validateInput(dateEl, transactionName, transactionAmount)) return;
 
-  newTransaction(dateEl.value, transactionName.value, transactionAmount.value);
+  newTransaction(
+    dateEl.value,
+    transactionName.value,
+    transactionAmount.value,
+    quantity.value
+  );
 
   showError(dateEl, "", false);
   showError(transactionName, "", false);
@@ -235,12 +239,14 @@ transactionsList.addEventListener("click", (e) => {
     editEntry = allTransactions.filter((item) => itemID === item.id)[0];
 
     editName.value = editEntry.name;
-    editAmount.value = editEntry.value;
+    editAmount.value = editEntry.itemPrice;
     editDate.value = editEntry.date;
+    editQuantity.value = editEntry.qty;
 
     showError(editDate, "", false);
     showError(editName, "", false);
     showError(editAmount, "", false);
+    showError(editQuantity, "", false);
 
     editItemModal.classList.add("show-modal");
   }
@@ -256,7 +262,8 @@ editForm.addEventListener("submit", (e) => {
 
   editEntry.date = editDate.value;
   editEntry.name = editName.value;
-  editEntry.value = +editAmount.value;
+  editEntry.itemPrice = +editAmount.value;
+  editEntry.qty = +editQuantity.value;
 
   calculate();
   updateLocalStorage();

@@ -245,6 +245,11 @@ form label {
   letter-spacing: 1px;
 }
 
+form label sup {
+  font-weight: normal;
+  font-size: 0.7rem;
+  color: var(--red);
+}
 form input:focus {
   outline: 1px solid;
 }
