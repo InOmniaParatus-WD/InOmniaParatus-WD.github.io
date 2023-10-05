@@ -5,11 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="inomniaparatus-wd" />
     <!-- Favicon icon -->
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
     <!-- Local CSS -->
     <link rel="stylesheet" href="styles.css">
-        <!-- CDN Math.js Library -->
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+<!-- 
+    <link rel="apple-touch-icon" href="icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="icons/icon-512x512.png" /> -->
+   
+    <!-- CDN Math.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.5.0/math.js"
         integrity="sha512-y5b7YGYHrDlsI/a24gwJFvK7lx866ski5dPOQs+U1kEnblCArMmf0Zoc/TmREUIj83ZoiOOE6QGBYV4OiCp68Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -19,7 +32,7 @@
 <body>
 
     <div class="container">
-         <div class="calculator">
+        <div class="calculator">
             <div id="display">
                 <div class="output" id="output-value">
                 </div>

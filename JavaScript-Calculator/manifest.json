@@ -1,0 +1,59 @@
+{
+  "name": "JSC",
+  "short_name": "JSC",
+  "start_url":"/index.html",
+  "id": "/JavaScript_Calculator/index.html",
+  "display": "browser",
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon_48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/icon_72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "icons/icon_96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/icon_144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/icon_128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icons/icon_192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon_384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "icons/icon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icons/icon_556x556.png",
+      "type": "image/png",
+      "sizes": "556x556"
+    }
+  ]
+}
