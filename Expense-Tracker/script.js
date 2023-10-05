@@ -90,9 +90,8 @@ const validateInput = (dateEl, nameEl, amountEl) => {
   } else {
     showError(nameEl, "&check; Looks good", false);
   }
-  let dateRegex = /\d{2}\.\d{2}\.\d{4}/g;
 
-  if (!dateRegex.test(date)) {
+  if (!date) {
     result = false;
     showError(dateEl, "&#x2717; Please enter a valid date", true);
   } else {
@@ -137,28 +136,35 @@ const updateDOM = () => {
     listItem.classList.add(tran.itemPrice < 0 ? "minus" : "plus");
 
     listItem.innerHTML = `
-    <div> 
-      <span class="quantity">${tran.qty}</span>
-      
-      <!-- <span> @ ${tran.itemPrice} each</span> -->
-      <span class="item-name">${tran.name}</span>
+    <div class="item-details">
+      <span class="item-name">${tran.name}</span>  
+      <span class="value">${Number(tran.totalAmount.toFixed(2)).toLocaleString(
+        "en-IN"
+      )}</span>
     </div>
-   
-    <span class="value">${Number(tran.itemPrice.toFixed(2)).toLocaleString(
-      "en-IN"
-    )}</span> 
-    <button class="edit-item">&#128397;
+       
+    <div class="price-per-unit"> 
+      <span class="quantity">${tran.qty}</span>
+      <span class="per-unit"> @ ${tran.itemPrice} each</span>
+    </div>
+    
+   <button class="edit-item">&#128397;
       <span class="tooltip-text edit">Edit transaction</span>
-    </button>
+   </button>
+
+   
     <button class="delete-item">&#128465;
       <span class="tooltip-text delete">Delete transaction</span>
     </button>
     `;
 
-    const dateListItem = document.createElement("li");
+    const dateListItem = document.createElement("div");
     dateListItem.classList.add("display-date");
     dateListItem.innerHTML = `&#128198;
-      <span class="entry-date">${tran.date}</span>
+      <span class="entry-date">${tran.date
+        .split("-")
+        .reverse()
+        .join("-")}</span>
    `;
 
     transactionsList.appendChild(dateListItem);
