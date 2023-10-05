@@ -31,13 +31,11 @@
 
 body {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: "Martel Sans", sans-serif;
   color: var(--dark-grey);
-  background: #20b2aa;
-  background: linear-gradient(
+  background-image: linear-gradient(
     45deg,
     rgb(247, 206, 103) 0%,
     rgb(247, 215, 128) 9%,
@@ -45,14 +43,10 @@ body {
     rgb(114, 155, 201) 76%,
     rgb(67, 112, 124) 100%
   );
-  max-width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   overflow-x: hidden;
-}
-
-.image {
-  width: 10rem;
-  padding-top: 1.5rem;
-  margin-left: none;
 }
 
 .container {
@@ -62,12 +56,22 @@ body {
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   background-color: #f2f8f8ea;
+  position: relative;
 }
 
 h2 {
   font-size: 1.5rem;
   letter-spacing: 1.2px;
   text-align: left;
+}
+
+.image {
+  width: 10rem;
+  padding-top: 1.5rem;
+  margin-left: none;
+  position: absolute;
+  left: calc(50% - 5rem);
+  top: 50px;
 }
 
 .totals-section {
@@ -86,15 +90,6 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.totals-section div:nth-of-type(1) {
-  border-right: 3px solid var(--green);
-  margin-right: 0.8px;
-}
-
-.totals-section div:last-of-type {
-  border-left: 3px solid var(--red);
-}
-
 h3 {
   border-bottom: 3px double var(--dark-grey);
   box-shadow: rgba(82, 81, 81, 0.19) 0px 1.5px 0px,
@@ -104,12 +99,18 @@ h3 {
   font-size: 1.2rem;
 }
 
-h3 span {
-  font-size: 2rem;
-}
-
 .form-control {
   margin-top: 1rem;
+}
+
+div.transaction-type {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+div.transaction-type .form-control {
+ width: 45%;
 }
 
 p {
@@ -267,7 +268,8 @@ form button.add-btn {
   color: var(--white);
   width: 100%;
 }
-@media (hover: hover) and (pointer:fine) {
+
+@media (hover: hover) and (pointer: fine) {
   form button.add-btn:hover {
     background-color: var(--yellow);
     color: var(--dark-grey);
@@ -321,8 +323,14 @@ button:active {
     font-size: 1.2rem;
   }
 }
-@media (max-width: 640px) {
+
+@media (max-width: 800px) {
+  .container {
+    margin-top: 5rem;
+  }
   .image {
-    width: 6rem;
+    width: 8rem;
+    left: calc(50% - 4rem);
+    top: 50px;
   }
 }
