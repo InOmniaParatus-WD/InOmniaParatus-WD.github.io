@@ -316,9 +316,14 @@ button:active {
   border: 1px solid var(--red);
 }
 
-@media (min-width: 320px) and (max-width: 640px) {
+@media (min-width: 280px) and (max-width: 600px) {
   .container {
-    width: auto;
+    margin: 0;
+  }
+  .image {
+    width: 6rem;
+    left: calc(65%);
+    top: -10px;
   }
 
   ul li.display-date {
@@ -342,15 +347,20 @@ button:active {
   ul li button.edit-item {
     font-size: 1.2rem;
   }
+
+  div.transaction-type {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  div.transaction-type .form-control {
+    width: 100%;
+  }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 641px) {
   .container {
-    margin-top: 5rem;
-  }
-  .image {
-    width: 8rem;
-    left: calc(50% - 4rem);
-    top: 50px;
+    margin: 5rem 2rem;
   }
 }
