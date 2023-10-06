@@ -133,8 +133,7 @@ p.minus {
 
 div.display-date {
   border: none;
-  background-color: transparent;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: normal;
   border: none;
 }
@@ -145,13 +144,16 @@ ul#list {
   padding-right: 0.2rem;
   max-height: 50vh;
   overflow-y: auto;
+
 }
 
 ul#list li.transaction {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 1.5rem 1rem;
   border-radius: 5px;
   background-color: var(--faded-white);

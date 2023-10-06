@@ -149,11 +149,11 @@ const updateDOM = () => {
     <span class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</span>
     
     <button class="edit-item">&#128397;
-      <span class="tooltip-text edit">Edit transaction</span>
+      <span class="tooltip-text edit">Edit</span>
     </button>
 
     <button class="delete-item">&#128465;
-      <span class="tooltip-text delete">Delete transaction</span>
+      <span class="tooltip-text delete">Delete</span>
     </button>
     `;
 
