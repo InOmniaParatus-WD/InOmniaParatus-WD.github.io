@@ -104,6 +104,10 @@ h3 {
   margin-top: 1rem;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 div.transaction-type {
   display: flex;
   justify-content: space-between;

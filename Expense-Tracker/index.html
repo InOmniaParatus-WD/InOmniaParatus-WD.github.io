@@ -54,7 +54,8 @@
                 </fieldset>
                 <fieldset class="form-control">
                     <label for="number">Quantity <sup>(Optional)</sup></label>
-                    <input type="text" name="number" id="number" placeholder="0">
+                    <input type="text" name="number" id="number" placeholder="1" >
+                    <small></small>
                 </fieldset>
             </div>
 
@@ -78,18 +79,21 @@
                 <form class="modal-form" id="modal-form">
                     <fieldset class="form-control">
                         <label for="edit-date">Date</label>
-                        <input type="text" name="edit-date" id="edit-date">
+                        <input type="date" name="edit-date" id="edit-date">
                         <small></small>
                     </fieldset>
                     <fieldset class="form-control">
                         <label for="edit-name">Transaction name</label>
                         <input type="text" name="edit-name" id="edit-name">
                         <small></small>
+                    </fieldset>
 
+                    <fieldset class="form-control">
                         <label for="edit-qty">Quantity</label>
                         <input type="text" name="edit-qty" id="edit-qty">
-
+                        <small></small>
                     </fieldset>
+
                     <fieldset class="form-control">
                         <label for="edit-amount">Transaction amount</label>
                         <input type="text" name="edit-amount" id="edit-amount">

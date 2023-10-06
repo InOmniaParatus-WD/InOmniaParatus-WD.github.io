@@ -5,7 +5,7 @@ const totalExpenses = document.querySelector("#expenses");
 const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
 const quantity = document.querySelector("#number");
-const dateEl = document.querySelector("#transaction-date");
+const transactionDate = document.querySelector("#transaction-date");
 const transactionsList = document.querySelector("#list");
 const form = document.querySelector("#form");
 
@@ -49,36 +49,30 @@ let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
 
-// Generate random ID
-const createID = () => {
-  return Math.floor(Math.random() * 10000000);
-};
-
 // Add new transaction to array
 const newTransaction = (date, name, itemPrice, qty) => {
+  let id = 1;
   let transaction = {
-    id: createID(),
+    id: id++,
     date,
     name,
     itemPrice: +itemPrice,
     qty: +qty,
   };
   allTransactions.push(transaction);
-  console.log(allTransactions);
-  console.log(qty);
 };
 
-// Validate data on user side
-
-const validateInput = (dateEl, nameEl, amountEl) => {
+// User side validation
+const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
   // validate quantity - can only be an integer from 1 upwards, no decimals accepted
 
   let result = true;
   let amount = +amountEl.value;
   let name = nameEl.value;
   let date = dateEl.value;
+  let qty = +quantityEl.value;
 
-  if (amount === 0 || !amount || isNaN(amount)) {
+  if (amount === 0 || isNaN(amount)) {
     result = false;
     showError(amountEl, "&#x2717; Please enter a valid amount", true);
   } else {
@@ -96,6 +90,18 @@ const validateInput = (dateEl, nameEl, amountEl) => {
     showError(dateEl, "&#x2717; Please enter a valid date", true);
   } else {
     showError(dateEl, "&check; Looks good", false);
+  }
+
+  if (quantityEl.value === "") {
+    qty = 1;
+    quantityEl.value = String(qty);
+  } else {
+    if (qty <= 0 || isNaN(qty)) {
+      result = false;
+      showError(quantityEl, "&#x2717; Please enter a positive number", true);
+    } else {
+      showError(quantityEl, "&check; Looks good", false);
+    }
   }
   return result;
 };
@@ -177,6 +183,7 @@ const updateDOM = () => {
   totalIncome.innerHTML = `${Number(totalIncomeValue.toFixed(2)).toLocaleString(
     "en-IN"
   )}`;
+
   totalExpenses.innerHTML = `${Number(
     totalExpensesValue.toFixed(2)
   ).toLocaleString("en-IN")}`;
@@ -187,7 +194,8 @@ const updateDOM = () => {
 
   transactionName.value = "";
   transactionAmount.value = "";
-  dateEl.value = "";
+  transactionDate.value = "";
+  quantity.value = "";
 
   updateLocalStorage();
 };
@@ -213,18 +221,29 @@ let editEntry;
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!validateInput(dateEl, transactionName, transactionAmount)) return;
+  if (
+    !validateInput(
+      transactionDate,
+      transactionName,
+      transactionAmount,
+      quantity
+    )
+  )
+    return;
 
   newTransaction(
-    dateEl.value,
+    transactionDate.value,
     transactionName.value,
     transactionAmount.value,
     quantity.value
   );
 
-  showError(dateEl, "", false);
+  transactionDate.classList.remove("success");
+
+  showError(transactionDate, "", false);
   showError(transactionName, "", false);
   showError(transactionAmount, "", false);
+  showError(quantity, "", false);
 
   calculate();
   updateDOM();
@@ -264,9 +283,14 @@ transactionsList.addEventListener("click", (e) => {
 // Modal form - save edited entries
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (!validateInput(editDate, editName, editAmount)) return;
 
-  editEntry.date = editDate.value;
+  if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
+
+  // if (!editQuantity.value) {
+  //   editQuantity.value = String(1);
+  // }
+
+  editEntry.date = String(editDate.value);
   editEntry.name = editName.value;
   editEntry.itemPrice = +editAmount.value;
   editEntry.qty = +editQuantity.value;
@@ -299,3 +323,7 @@ cancelDelete.addEventListener("click", (e) => {
   e.preventDefault();
   deleteItemModal.classList.remove("show-modal");
 });
+
+document
+  .querySelector(".form-control")
+  .addEventListener("focus", (e) => e.target.placeholder === "");
