@@ -143,7 +143,7 @@ ul#list {
   list-style: none;
   margin: 1.2rem 0;
   padding-right: 0.2rem;
-  max-height: 30vh;
+  max-height: 50vh;
   overflow-y: auto;
 }
 
@@ -167,19 +167,13 @@ ul#list li div.item-details {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-}
-
-ul#list li div.price-per-unit {
-  width: 100%;
-  text-align: right;
-  font-size: 0.8rem;
-}
-
-ul#list li span.per-unit {
   margin-right: 1rem;
 }
 
-ul#list li span.value {
+ul#list li span.price-per-unit {
+  width: 100%;
+  text-align: right;
+  font-size: 0.8rem;
   margin-right: 1rem;
 }
 

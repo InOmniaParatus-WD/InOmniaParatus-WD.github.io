@@ -48,10 +48,10 @@ let allTransactions =
 let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
+let id = 1;
 
 // Add new transaction to array
 const newTransaction = (date, name, itemPrice, qty) => {
-  let id = 1;
   let transaction = {
     id: id++,
     date,
@@ -109,10 +109,6 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
 // Calculate total income / expenses when a new transaction is added
 
 const calculate = () => {
-  // if the number of items is 2 or higher, multiply the transaction item/amount total price by entered number
-  // update the total expenses accordingly
-  // update total balance
-
   totalIncomeValue = 0;
   totalExpensesValue = 0;
   balanceValue = 0;
@@ -131,6 +127,7 @@ const calculate = () => {
 };
 
 // Update DOM
+
 const updateDOM = () => {
   transactionsList.replaceChildren();
 
@@ -148,17 +145,13 @@ const updateDOM = () => {
         "en-IN"
       )}</span>
     </div>
-       
-    <div class="price-per-unit"> 
-      <span class="quantity">${tran.qty}</span>
-      <span class="per-unit"> @ ${tran.itemPrice} each</span>
-    </div>
     
-   <button class="edit-item">&#128397;
+    <span class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</span>
+    
+    <button class="edit-item">&#128397;
       <span class="tooltip-text edit">Edit transaction</span>
-   </button>
+    </button>
 
-   
     <button class="delete-item">&#128465;
       <span class="tooltip-text delete">Delete transaction</span>
     </button>
@@ -175,6 +168,12 @@ const updateDOM = () => {
 
     transactionsList.appendChild(dateListItem);
     transactionsList.appendChild(listItem);
+
+    // let price = document.querySelectorAll(".price-per-unit");
+    // price.forEach((unit) => {
+    //   if (unit.firstElementChild.innerText === "1")
+    //     return (unit.style.display = "none");
+    // });
   });
 
   balance.innerHTML = `&#128176;${Number(
@@ -286,10 +285,6 @@ editForm.addEventListener("submit", (e) => {
 
   if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
 
-  // if (!editQuantity.value) {
-  //   editQuantity.value = String(1);
-  // }
-
   editEntry.date = String(editDate.value);
   editEntry.name = editName.value;
   editEntry.itemPrice = +editAmount.value;
@@ -319,11 +314,8 @@ confirmDelete.addEventListener("click", (e) => {
 
   deleteItemModal.classList.remove("show-modal");
 });
+
 cancelDelete.addEventListener("click", (e) => {
   e.preventDefault();
   deleteItemModal.classList.remove("show-modal");
 });
-
-document
-  .querySelector(".form-control")
-  .addEventListener("focus", (e) => e.target.placeholder === "");
