@@ -8,12 +8,26 @@
 
     <link rel="shortcut icon" href="images/expense-tracker.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/styles.css">
+
+     <!-- PWA -->
+     <link rel="manifest" href="manifest.json" />
+     <script src="serviceWorker.js"></script>
+     
+    <!-- iOS icon compatibility -->
+    <link rel="apple-touch-icon" href="icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="icons/icon-1230x1230.png" />
+
     <title>Expense Tracker</title>
 </head>
 
 <body>
-    <!-- <div class="top-corner"></div>
-    <div class="bottom-corner"></div> -->
+    <button id="install" hidden>Install App</button>
 
     <div class="container">
 

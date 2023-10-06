@@ -1,0 +1,53 @@
+{
+  "name": "Expense Tracker",
+  "short_name": "Expense Tracker",
+  "start_url": "index.html",
+  "id": "index.html",
+  "display": "browser",
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icons/icon_48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/icons/icon_72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/icons/icon_96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/icons/icon_128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "images/icons/icon_192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icons/icon_384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "images/icons/icon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "images/icons/icon_1230x1230.png",
+      "type": "image/png",
+      "sizes": "1230x1230"
+    }
+  ]
+}
