@@ -35,7 +35,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center; 
-  padding: 3rem 0;
+  margin: 3rem 0 1rem 0;
 }
 
 .profiles div {
@@ -51,14 +51,19 @@
   color: var(--text-color);
 }
 
-.profiles .email-message p i {
-  margin-right: 50rem;
-}
-
 .profiles div:hover, .profiles div:hover a {
   color: var(--link-hover-background);
 }
 
+.call-to-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.call-to-action p {
+  margin-left: 0.5rem;
+}
 hr {
   background-color: var(--link-hover-background);
   height: 5px;
