@@ -12,15 +12,6 @@
   box-shadow: rgba(213, 213, 213, 0.35) 0px 3px 15px;
 }
 
-.tooltip-text.delete {
-  background-color: var(--red);
-  color: var(--white);
-  right: 2rem;
-  top: -30%;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
 .tooltip-text.edit {
   background-color: var(--yellow);
   color: var(--dark-grey);
@@ -30,26 +21,15 @@
   transition: opacity 0.5s;
 }
 
-.tooltip-text::before {
-  content: "";
-  width: 15px;
-  height: 15px;
-  position: absolute;
-}
-
-.tooltip-text.delete::before {
-  transform: rotate(65deg);
+.tooltip-text.delete {
   background-color: var(--red);
-  right: -4.5px;
-  bottom: 6px;
+  color: var(--white);
+  right: 3.5rem;
+  bottom: -30%;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-.tooltip-text.edit::before {
-  transform: rotate(-65deg);
-  background-color: var(--yellow);
-  right: -4.5px;
-  top: 6px;
-}
 button.edit-item:hover .tooltip-text,
 button.delete-item:hover .tooltip-text {
   visibility: visible;

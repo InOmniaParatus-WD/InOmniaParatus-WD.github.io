@@ -134,11 +134,24 @@ const updateDOM = () => {
   allTransactions.forEach((tran) => {
     const listItem = document.createElement("li");
 
+    let pricePerUnit = "";
+    if (tran.qty > 1) {
+      pricePerUnit = `<p class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</p>`;
+    }
+
     listItem.setAttribute("id", `${tran.id}`);
     listItem.classList.add("transaction");
-    listItem.classList.add(tran.itemPrice < 0 ? "minus" : "plus");
 
     listItem.innerHTML = `
+    <time class="display-date">&#128198; ${tran.date
+      .split("-")
+      .reverse()
+      .join("-")} 
+    </time>
+  
+   <section class="transaction-details ${
+     tran.itemPrice < 0 ? "minus" : "plus"
+   }">
     <div class="item-details">
       <span class="item-name">${tran.name}</span>  
       <span class="value">${Number(tran.totalAmount.toFixed(2)).toLocaleString(
@@ -146,7 +159,7 @@ const updateDOM = () => {
       )}</span>
     </div>
     
-    <span class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</span>
+    ${pricePerUnit}
     
     <button class="edit-item">&#128397;
       <span class="tooltip-text edit">Edit</span>
@@ -155,25 +168,10 @@ const updateDOM = () => {
     <button class="delete-item">&#128465;
       <span class="tooltip-text delete">Delete</span>
     </button>
+  </section>
     `;
 
-    const dateListItem = document.createElement("div");
-    dateListItem.classList.add("display-date");
-    dateListItem.innerHTML = `&#128198;
-      <span class="entry-date">${tran.date
-        .split("-")
-        .reverse()
-        .join("-")}</span>
-   `;
-
-    transactionsList.appendChild(dateListItem);
     transactionsList.appendChild(listItem);
-
-    // let price = document.querySelectorAll(".price-per-unit");
-    // price.forEach((unit) => {
-    //   if (unit.firstElementChild.innerText === "1")
-    //     return (unit.style.display = "none");
-    // });
   });
 
   balance.innerHTML = `&#128176;${Number(
