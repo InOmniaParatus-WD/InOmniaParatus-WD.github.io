@@ -30,10 +30,10 @@
         "altText": "Rotating Squares"
     },
     {
-        "projectName": "Wealth Calculator",
-        "projectLink": "../Wealth-Calculator/",
-        "photo": "Projects-Page/Projects Photos/Wealth_Calculator.jpg",
-        "altText": "wealth calculator"
+        "projectName": "Random Quotes Machine with jQuery",
+        "projectLink": "../Random-Quote-Machine/",
+        "photo": "Projects-Page/Projects Photos/Random_Quote_Machine.jpg",
+        "altText": "random quote generator"
     },
     {
         "projectName": "Pocket Calculator JavaScript",
@@ -42,22 +42,22 @@
         "altText": "JavaScript Calculator"
     },
     {
-        "projectName": "Buttons Hover Effects",
-        "projectLink": "../Buttons-Hover-Effects/",
-        "photo": "Projects-Page/Projects Photos/Buttons_Hover_Effects.jpg",
-        "altText": "Buttons Hover Effects"
-    },
-    {
-        "projectName": "Random Quotes Machine with jQuery",
-        "projectLink": "../Random-Quote-Machine/",
-        "photo": "Projects-Page/Projects Photos/Random_Quote_Machine.jpg",
-        "altText": "random quote generator"
+        "projectName": "Wealth Calculator",
+        "projectLink": "../Wealth-Calculator/",
+        "photo": "Projects-Page/Projects Photos/Wealth_Calculator.jpg",
+        "altText": "wealth calculator"
     },
     {
         "projectName": "Form Validation JavaScript",
         "projectLink": "../Form-Validator/",
         "photo": "Projects-Page/Projects Photos/Form_Validator.jpg",
         "altText": "form validator"
+    },
+    {
+        "projectName": "Buttons Hover Effects",
+        "projectLink": "../Buttons-Hover-Effects/",
+        "photo": "Projects-Page/Projects Photos/Buttons_Hover_Effects.jpg",
+        "altText": "Buttons Hover Effects"
     },
     {
         "projectName": "Landing Page",
