@@ -131,7 +131,7 @@ p.minus {
   color: var(--red);
 }
 
-time.display-date {
+time.transaction-date {
   width: 100%;
   font-size: 1rem;
   font-weight: normal;
