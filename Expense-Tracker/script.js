@@ -23,6 +23,16 @@ const deleteItemModal = document.querySelector(".undo-modal-container");
 const confirmDelete = document.querySelector("#delete-btn");
 const cancelDelete = document.querySelector("#cancel-delete-btn");
 
+// Default value for date input
+const fullDate = new Date();
+
+const displayDate = `${fullDate.getFullYear()}-${
+  fullDate.getMonth() + 1
+}-${fullDate.getDate()}`;
+
+transactionDate.setAttribute("value", `${displayDate}`);
+console.log(displayDate);
+
 // ---------------- FUNCTIONALITY ---------------- //
 
 //Show Input Error Message
@@ -47,7 +57,8 @@ let allTransactions = localStorageTransaction || [];
 let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
-let nextTransactionId = Math.max(...allTransactions.map(tran => tran.id)) + 1 || 1;
+let nextTransactionId =
+  Math.max(...allTransactions.map((tran) => tran.id)) + 1 || 1;
 
 // Add new transaction to array
 const newTransaction = (date, name, itemPrice, qty) => {
@@ -143,13 +154,14 @@ const updateDOM = () => {
 
     listItem.innerHTML = `
     <time class="display-date">&#128198; ${tran.date
-        .split("-")
-        .reverse()
-        .join("-")} 
+      .split("-")
+      .reverse()
+      .join("-")} 
     </time>
   
-   <section class="transaction-details ${tran.itemPrice < 0 ? "minus" : "plus"
-      }" id=${tran.id}>
+   <section class="transaction-details ${
+     tran.itemPrice < 0 ? "minus" : "plus"
+   }" id=${tran.id}>
     <div class="item-details">
       <span class="item-name">${tran.name}</span>  
       <span class="value">${Number(tran.totalAmount.toFixed(2)).toLocaleString(
@@ -248,8 +260,8 @@ transactionsList.addEventListener("click", (e) => {
 
   let itemId = +e.target.parentNode.id;
   // If user clicks on the "Delete" button ...
-  if (e.target.classList.contains("delete-item")) {    
-    deleteItemModal.dataset['toDelete'] = itemId
+  if (e.target.classList.contains("delete-item")) {
+    deleteItemModal.dataset["toDelete"] = itemId;
     deleteItemModal.classList.add("show-modal");
   }
   // If user clicks on the "Edit" button ...
@@ -300,7 +312,7 @@ cancelChange.addEventListener("click", (e) => {
 // Modal form - delete item
 confirmDelete.addEventListener("click", (e) => {
   e.preventDefault();
-  let itemId = deleteItemModal.dataset['toDelete']
+  let itemId = deleteItemModal.dataset["toDelete"];
   allTransactions = allTransactions.filter((item) => item.id !== +itemId);
 
   calculate();
