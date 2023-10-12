@@ -42,18 +42,17 @@ const localStorageTransaction = JSON.parse(
 );
 
 // Save transactions added to the list
-let allTransactions =
-  localStorage.getItem("transactions") !== null ? localStorageTransaction : [];
+let allTransactions = localStorageTransaction || [];
 
 let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
-let id = 1;
+let nextTransactionId = Math.max(...allTransactions.map(tran => tran.id)) + 1 || 1;
 
 // Add new transaction to array
 const newTransaction = (date, name, itemPrice, qty) => {
   let transaction = {
-    id: id++,
+    id: nextTransactionId++,
     date,
     name,
     itemPrice: +itemPrice,
@@ -139,19 +138,18 @@ const updateDOM = () => {
       pricePerUnit = `<p class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</p>`;
     }
 
-    listItem.setAttribute("id", `${tran.id}`);
+    // listItem.setAttribute("id", `${tran.id}`);
     listItem.classList.add("transaction");
 
     listItem.innerHTML = `
     <time class="display-date">&#128198; ${tran.date
-      .split("-")
-      .reverse()
-      .join("-")} 
+        .split("-")
+        .reverse()
+        .join("-")} 
     </time>
   
-   <section class="transaction-details ${
-     tran.itemPrice < 0 ? "minus" : "plus"
-   }">
+   <section class="transaction-details ${tran.itemPrice < 0 ? "minus" : "plus"
+      }" id=${tran.id}>
     <div class="item-details">
       <span class="item-name">${tran.name}</span>  
       <span class="value">${Number(tran.totalAmount.toFixed(2)).toLocaleString(
@@ -211,9 +209,6 @@ const init = () => {
 init();
 
 // ---------------- EVENTS ---------------- //
-let itemID = 0;
-let editEntry;
-
 // Add a new transaction to the list
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -251,14 +246,15 @@ transactionsList.addEventListener("click", (e) => {
   // If user clicks on list, do nothing
   if (e.target.nodeName !== "BUTTON") return;
 
-  itemID = +e.target.parentNode.id;
-  // If user clicks in the "Delete" button ...
-  if (e.target.classList.contains("delete-item")) {
+  let itemId = +e.target.parentNode.id;
+  // If user clicks on the "Delete" button ...
+  if (e.target.classList.contains("delete-item")) {    
+    deleteItemModal.dataset['toDelete'] = itemId
     deleteItemModal.classList.add("show-modal");
   }
   // If user clicks on the "Edit" button ...
   if (e.target.classList.contains("edit-item")) {
-    editEntry = allTransactions.filter((item) => itemID === item.id)[0];
+    editEntry = allTransactions.filter((item) => itemId === item.id)[0];
 
     editName.value = editEntry.name;
     editAmount.value = editEntry.itemPrice;
@@ -304,7 +300,8 @@ cancelChange.addEventListener("click", (e) => {
 // Modal form - delete item
 confirmDelete.addEventListener("click", (e) => {
   e.preventDefault();
-  allTransactions = allTransactions.filter((item) => item.id !== itemID);
+  let itemId = deleteItemModal.dataset['toDelete']
+  allTransactions = allTransactions.filter((item) => item.id !== +itemId);
 
   calculate();
   updateLocalStorage();
