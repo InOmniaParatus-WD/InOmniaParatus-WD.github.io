@@ -9,10 +9,10 @@
     <link rel="shortcut icon" href="images/expense-tracker.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/styles.css">
 
-     <!-- PWA -->
-     <!-- <link rel="manifest" href="manifest.json" />
+    <!-- PWA -->
+    <!-- <link rel="manifest" href="manifest.json" />
      <script src="serviceWorker.js"></script> -->
-     
+
     <!-- iOS icon compatibility -->
     <link rel="apple-touch-icon" href="icons/icon-72x72.png" />
     <link rel="apple-touch-icon" href="icons/icon-96x96.png" />
@@ -54,12 +54,18 @@
 
         <h3>New transaction</h3>
         <form id="form">
-
-            <fieldset class="form-control">
-                <label for="transaction-date">Transaction date<sup>*</sup></label>
-                <input type="date" name="transaction-date" id="transaction-date">
-                <small></small>
-            </fieldset>
+            <div class="date-time-section">
+                <fieldset class="form-control">
+                    <label for="transaction-date">Transaction date<sup>*</sup></label>
+                    <input type="date" name="transaction-date" id="transaction-date">
+                    <small></small>
+                </fieldset>
+                <fieldset class="form-control">
+                    <label for="transaction-time">Transaction time<sup>*</sup></label>
+                    <input type="time" name="transaction-time" id="transaction-time">
+                    <small></small>
+                </fieldset>
+            </div>
             <div class="transaction-type">
                 <fieldset class="form-control">
                     <label for="transaction">Transaction name <sup>*</sup></label>
@@ -68,7 +74,7 @@
                 </fieldset>
                 <fieldset class="form-control">
                     <label for="number">Quantity <sup>(Optional)</sup></label>
-                    <input type="text" name="number" id="number" placeholder="1" >
+                    <input type="text" name="number" id="number" placeholder="1">
                     <small></small>
                 </fieldset>
             </div>

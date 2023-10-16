@@ -6,6 +6,7 @@ const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
 const quantity = document.querySelector("#number");
 const transactionDate = document.querySelector("#transaction-date");
+const transactionTime = document.querySelector("#transaction-time");
 const transactionsList = document.querySelector("#list");
 const form = document.querySelector("#form");
 
@@ -29,8 +30,10 @@ const fullDate = new Date();
 const displayDate = `${fullDate.getFullYear()}-${
   fullDate.getMonth() + 1
 }-${fullDate.getDate()}`;
+const displayTime = `${fullDate.getHours()}:${fullDate.getMinutes()}`;
 
 transactionDate.setAttribute("value", `${displayDate}`);
+transactionTime.setAttribute("value", `${displayTime}`);
 console.log(displayDate);
 
 // ---------------- FUNCTIONALITY ---------------- //

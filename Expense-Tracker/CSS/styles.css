@@ -118,6 +118,10 @@ div.transaction-type .form-control {
   width: 45%;
 }
 
+.form-control input {
+  width: 100%;
+}
+
 p {
   font-size: 1.5rem;
   font-weight: 700;
@@ -132,11 +136,20 @@ p.minus {
 }
 
 time.transaction-date {
-  width: 100%;
   font-size: 1rem;
   font-weight: normal;
   border: none;
   text-align: left;
+}
+
+div.date-time-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+div.date-time-section .form-control {
+  width: 45%;
 }
 
 ul {
@@ -313,7 +326,7 @@ button:active {
   border: 1px solid var(--red);
 }
 
-@media (min-width: 280px) and (max-width: 600px) {
+@media (min-width: 200px) and (max-width: 500px) {
   .container {
     margin: 0;
   }
@@ -343,13 +356,13 @@ button:active {
     font-size: 1.2rem;
   }
 
-  div.transaction-type {
-    display: flex;
+  div.transaction-type,
+  div.date-time-section {
     flex-direction: column;
-    width: 100%;
   }
 
-  div.transaction-type .form-control {
+  div.transaction-type .form-control,
+  div.date-time-section .form-control {
     width: 100%;
   }
 }
