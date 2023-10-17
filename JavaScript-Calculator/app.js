@@ -15,7 +15,7 @@ const updateDisplay = () => {
   const [number, expression] = pocketCalculator.getCurrentState();
   displayedNumber.innerText = number;
   displayedExpression.innerText = expression;
-}
+};
 
 // ------------ MOUSE EVENTS ------------- //
 numbers.forEach((button) =>
@@ -51,7 +51,6 @@ deleteLastKey.addEventListener("click", () => {
   pocketCalculator.delete();
   updateDisplay();
 });
-
 
 // ------------ KEYBOARD EVENTS ------------- //
 document.addEventListener("keydown", (e) => {
@@ -89,4 +88,13 @@ document.addEventListener("keypress", (e) => {
     pocketCalculator.makeNumberNegative();
     updateDisplay();
   }
+});
+
+const modal = document.querySelector(".modal-container");
+document.querySelector("#open-modal").addEventListener("click", () => {
+  modal.classList.toggle("show");
+});
+
+document.querySelector("#close-modal").addEventListener("click", () => {
+  modal.classList.toggle("show");
 });

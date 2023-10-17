@@ -9,7 +9,7 @@
     <!-- Favicon icon -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Local CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <!-- PWA -->
     <!-- <link rel="manifest" href="manifest.json" />
     <script src="serviceWorker.js"></script> -->
@@ -33,7 +33,32 @@
 
 <body>
     <!-- <button id="install" hidden>Install</button> -->
+
+    <div class="modal-container">
+        <legend class="legend">
+
+            <header class="modal-header">
+                <p>If you're using your keyboard on this
+                    app, here are some tips to help you out:</p>
+                <button class="close-modal" id="close-modal">X</button>
+            </header>
+            <ul>
+                <li>
+                    👉🏽 To turn a positive number into a negative one use the <b>"Shift + _"</b> shortcut after you
+                    fininshed
+                    typing the number.
+                </li>
+                <li> 👉🏽 Use the <b>"Backspace"</b> key to delete the last typed number or operator.</li>
+                <li> 👉🏽 Use the <b>"Delete</b> key to clear the calculator's display.</li>
+            </ul>
+
+            <p> All the other buttons on the calculator app are identical to the ones on your computer keyboard.</p>
+            <p>Have fun testing out this app and if you have any suggestions feel free to send them my way. 😉</p>
+        </legend>
+    </div>
+
     <div class="container">
+         <button class="open-legend-modal" id="open-modal">Click me!</button>
         <div class="calculator">
             <div id="display">
                 <div class="output" id="output-value">
@@ -70,12 +95,15 @@
 
             </div>
         </div>
+        <footer>
+            <p class="copyright"><span>&copy;</span> <a
+                    href="https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io" target="_blank">Ioana
+                    Popa</a>
+            </p>
+        </footer>
     </div>
-    <footer>
-        <p class="copyright"><span>&copy;</span> <a href="https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io" target="_blank">Ioana Popa</a></p>
-    </footer>
 
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
 </body>
 
 </html>

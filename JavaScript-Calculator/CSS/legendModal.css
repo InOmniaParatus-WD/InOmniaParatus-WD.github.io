@@ -1,0 +1,98 @@
+button.open-legend-modal {
+    position: relative;
+    top: 60px;
+    left: -25px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgb(18, 62, 61);
+    color: #fafff4;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  
+  .modal-container {
+    margin: 0;
+    background-color: #4a4d3eef;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .modal-header {
+    display: flex;
+    letter-spacing: 1px;
+    border-bottom: #22222352 3px groove;
+  }
+  
+  .modal-header p {
+    font-size: 2rem;
+  }
+  
+  .modal-container ul {
+    list-style: none;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .modal-container.show {
+    display: block;
+  }
+  
+  button.close-modal {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #6dca9a;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  button.close-modal:hover {
+    background-color: #ff9e3d;
+  }
+  
+  legend {
+    background-color: #fafff4;
+    color: var(--dark-grey);
+    border-radius: 5px;
+    width: 50rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+    padding: 30px;
+  }
+  
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (min-width: 200px) and (max-width: 800px) {
+    .legend {
+      width: 90%;
+      max-width: 30rem;
+    }
+    .modal-header p {
+      font-size: 1.5rem;
+    }
+    legend li,
+    legend p {
+      font-size: 0.9rem;
+    }
+  }
+  

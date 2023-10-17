@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url("legendModal.CSS");
 
-*,
-::before,
-::after {
+*, ::before, ::after {
   box-sizing: border-box;
   /* margin: 0; */
   padding: 0;
@@ -184,5 +183,5 @@ footer a {
 }
 
 footer a:hover {
-  text-decoration:  underline 2px #ff9e3d;
+  text-decoration: underline 2px #ff9e3d;
 }
