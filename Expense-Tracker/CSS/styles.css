@@ -32,6 +32,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -51,9 +52,8 @@ body {
 }
 
 .container {
-  width: 640px;
+  width: 40rem;
   padding: 1.5rem;
-  margin: 2rem 0;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   background-color: #f2f8f8ea;
@@ -171,7 +171,6 @@ li button.edit-item {
   font-weight: 600;
   font-size: 1.5rem;
   border: none;
-  /* text-shadow: var(--text-shadow); */
   cursor: pointer;
   position: absolute;
   right: 0;
@@ -301,10 +300,34 @@ button:active {
   border: 1px solid var(--red);
 }
 
+hr {
+  width: 30%;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+}
+
+footer .copyright {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  footer {
+    padding-top: 0.5rem;
+  }
+}
+
 @media (min-width: 200px) and (max-width: 500px) {
   .container {
+    width: 100%;
     margin: 0;
   }
+
   .image {
     width: 6rem;
     left: calc(65%);
@@ -342,6 +365,6 @@ button:active {
 
 @media (min-width: 641px) {
   .container {
-    margin: 5rem 2rem;
+    margin: 2.5rem;
   }
 }
