@@ -283,6 +283,7 @@ transactionsList.addEventListener("click", (e) => {
     showError(editAmount, "", false);
     showError(editQuantity, "", false);
 
+    editItemModal.dataset["toEdit"] = itemId;
     editItemModal.classList.add("show-modal");
   }
 
@@ -296,10 +297,10 @@ editForm.addEventListener("submit", (e) => {
 
   if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
 
-  let itemId = +e.target.parentNode.id;
-  let editTransaction = allTransactions.filter((item) => itemId === item.id)[0];
+  let itemId = +editItemModal.dataset["toEdit"];
+  let editTransaction = allTransactions.filter((item) => item.id === itemId)[0];
 
-  editTransaction.date = String(editDate.value);
+  editTransaction.date = editDate.value;
   editTransaction.name = editName.value;
   editTransaction.itemPrice = +editAmount.value;
   editTransaction.qty = +editQuantity.value;
@@ -320,8 +321,8 @@ cancelChange.addEventListener("click", (e) => {
 // Modal form - delete item
 confirmDelete.addEventListener("click", (e) => {
   e.preventDefault();
-  let itemId = deleteItemModal.dataset["toDelete"];
-  allTransactions = allTransactions.filter((item) => item.id !== +itemId);
+  let itemId = +deleteItemModal.dataset["toDelete"];
+  allTransactions = allTransactions.filter((item) => item.id !== itemId);
 
   calculate();
   updateLocalStorage();
