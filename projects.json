@@ -24,10 +24,10 @@
         "altText": "expenses tracker"
     },
     {
-        "projectName": "Rotating Squares",
-        "projectLink": "../Rotating-Squares/",
-        "photo": "Projects-Page/Projects Photos/Rotating_Divs.jpg",
-        "altText": "Rotating Squares"
+        "projectName": "Pocket Calculator JavaScript",
+        "projectLink": "../JavaScript-Calculator/",
+        "photo": "Projects-Page/Projects Photos/JavaScript_Calculator.jpg",
+        "altText": "JavaScript Calculator"
     },
     {
         "projectName": "Random Quotes Machine with jQuery",
@@ -36,10 +36,10 @@
         "altText": "random quote generator"
     },
     {
-        "projectName": "Pocket Calculator JavaScript",
-        "projectLink": "../JavaScript-Calculator/",
-        "photo": "Projects-Page/Projects Photos/JavaScript_Calculator.jpg",
-        "altText": "JavaScript Calculator"
+        "projectName": "Rotating Squares",
+        "projectLink": "../Rotating-Squares/",
+        "photo": "Projects-Page/Projects Photos/Rotating_Divs.jpg",
+        "altText": "Rotating Squares"
     },
     {
         "projectName": "Wealth Calculator",
