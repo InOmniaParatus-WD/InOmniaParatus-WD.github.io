@@ -17,9 +17,17 @@ body {
   background-color: #0678bf;
   font-family: "Poppins", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+main {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
 }
 
 .leftside-image img {
@@ -124,14 +132,40 @@ button {
   }
 }
 
-@media (min-width: 400px) and (max-width: 1200px) {
-  body {
+@media screen and (min-width: 641px) and (max-width: 1200px) {
+  .leftside-image img {
+    width: 20rem;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    display: flex;
     flex-direction: column;
   }
   .leftside-image img {
     width: 10rem;
     margin: 0;
     padding-top: 0;
-    /* display: none; */
   }
+}
+
+footer {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0;
+  color: #cadce0;
+}
+
+footer a {
+  color: #cadce0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline 2px #ff9e3d;
 }

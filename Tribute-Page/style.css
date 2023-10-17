@@ -31,8 +31,9 @@ body {
   font-family: "Poppins", sans-serif;
   background: var(--gradient);
 }
+
 .container {
- margin: 50px;
+  margin: 50px;
 }
 
 header {
@@ -146,6 +147,21 @@ footer {
   box-shadow: var(--box-shadow);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.copyright a {
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline 2px #ff9e3d;
 }
 
 @media (max-width: 640px) {

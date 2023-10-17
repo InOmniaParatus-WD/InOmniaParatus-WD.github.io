@@ -12,42 +12,46 @@
 </head>
 
 <body>
+    <main>
+        <div class="leftside-image">
+            <img src="images/leftside-image.png" alt="">
+        </div>
 
-    <div class="leftside-image">
-        <img src="images/leftside-image.png" alt="">
-    </div>
+        <div class="container">
+            <form id="form" class="form">
+                <h2>Sign Up</h2>
+                <div class="form-control">
+                    <label for="username">Username <span class="asterisk"><sup>&#42;</sup></span></label>
+                    <input type="text" name="username" id="username" placeholder="Enter username">
+                    <small></small>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email <span class="asterisk"><sup>&#42;</sup></span></label>
+                    <input type="text" name="email" id="email" placeholder="Enter email">
+                    <small></small>
+                </div>
 
-    <div class="container">
-        <form id="form" class="form">
-            <h2>Sign Up</h2>
-            <div class="form-control">
-                <label for="username">Username <span class="asterisk"><sup>&#42;</sup></span></label>
-                <input type="text" name="username" id="username" placeholder="Enter username">
-                <small></small>
-            </div>
-            <div class="form-control">
-                <label for="email">Email <span class="asterisk"><sup>&#42;</sup></span></label>
-                <input type="text" name="email" id="email" placeholder="Enter email">
-                <small></small>
-            </div>
+                <div class="form-control">
+                    <label for="password">Password <span class="asterisk"><sup>&#42;</sup></span></label>
+                    <input type="password" id="password" name="password" placeholder="Enter a password">
+                    <!-- <span class="eye">&#128065;</span> -->
+                    <small></small>
+                </div>
 
-            <div class="form-control">
-                <label for="password">Password <span class="asterisk"><sup>&#42;</sup></span></label>
-                <input type="password" id="password" name="password" placeholder="Enter a password">
-                <!-- <span class="eye">&#128065;</span> -->
-                <small></small>
-            </div>
-
-            <div class="form-control">
-                <label for="confirm-pasword">Confirm Password <span class="asterisk"><sup>&#42;</sup></span></label>
-                <input type="password" id="confirmation" name="password-confirmation" placeholder="Enter password again">
-                <!-- <span class="eye">&#128065;</span> -->
-                <small></small>
-            </div>
-            <button>Submit</button>
-        </form>
-    </div>
-
+                <div class="form-control">
+                    <label for="confirm-pasword">Confirm Password <span class="asterisk"><sup>&#42;</sup></span></label>
+                    <input type="password" id="confirmation" name="password-confirmation"
+                        placeholder="Enter password again">
+                    <!-- <span class="eye">&#128065;</span> -->
+                    <small></small>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer"> <span>&copy;</span>
+        <a href="https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io" target="_blank">Ioana Popa</a>
+    </footer>
     <script src="app.js"></script>
 </body>
 

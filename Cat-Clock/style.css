@@ -231,3 +231,11 @@ body {
     display: block;
   }
 }
+
+.copyright {
+  text-align: center;
+  margin: 30rem auto;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #faebd7;
+}

@@ -233,3 +233,13 @@ div.network-error {
     top: 65%;
   }
 }
+
+footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0;
+  width: 100%;
+  color: #cadce0;
+}
