@@ -51,7 +51,7 @@ body {
 }
 
 .container {
-  width: 40rem;
+  width: 640px;
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 5px;
@@ -100,28 +100,6 @@ h3 {
   font-size: 1.2rem;
 }
 
-.form-control {
-  margin-top: 1rem;
-}
-
-input:focus::placeholder {
-  color: transparent;
-}
-
-div.transaction-type {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-div.transaction-type .form-control {
-  width: 45%;
-}
-
-.form-control input {
-  width: 100%;
-}
-
 p {
   font-size: 1.5rem;
   font-weight: 700;
@@ -133,23 +111,6 @@ p.plus {
 
 p.minus {
   color: var(--red);
-}
-
-time.transaction-date {
-  font-size: 1rem;
-  font-weight: normal;
-  border: none;
-  text-align: left;
-}
-
-div.date-time-section {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-div.date-time-section .form-control {
-  width: 45%;
 }
 
 ul {
@@ -243,9 +204,21 @@ button.edit-item:hover {
 }
 
 fieldset {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.form-control {
   display: flex;
   flex-direction: column;
-  border: none;
+  width: 48%;
+  margin-top: 1rem;
+}
+
+.transaction-name .form-control {
+  width: 100%;
 }
 
 input {
@@ -263,28 +236,30 @@ input {
 input::placeholder {
   color: var(--dark-grey);
 }
+input:focus {
+  outline: 1px solid;
+}
+input:focus::placeholder {
+  color: transparent;
+}
 
-form label {
+label {
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-form label sup {
+sup {
   font-weight: normal;
   font-size: 0.7rem;
   color: var(--red);
 }
 
-form input:focus {
-  outline: 1px solid;
-}
-
-form sub {
+sub {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
 
-form button.add-btn {
+button.add-btn {
   padding: 10px 15px;
   margin: 2rem 0;
   border-radius: 5px;
@@ -356,13 +331,11 @@ button:active {
     font-size: 1.2rem;
   }
 
-  div.transaction-type,
-  div.date-time-section {
+  fieldset {
     flex-direction: column;
   }
 
-  div.transaction-type .form-control,
-  div.date-time-section .form-control {
+  .form-control {
     width: 100%;
   }
 }

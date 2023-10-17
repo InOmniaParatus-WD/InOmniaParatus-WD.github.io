@@ -54,37 +54,41 @@
 
         <h3>New transaction</h3>
         <form id="form">
-            <div class="date-time-section">
-                <fieldset class="form-control">
+            <fieldset class="date-time-section">
+                <div class="form-control">
                     <label for="transaction-date">Transaction date<sup>*</sup></label>
                     <input type="date" name="transaction-date" id="transaction-date">
                     <small></small>
-                </fieldset>
-                <fieldset class="form-control">
+                </div>
+                <div class="form-control">
                     <label for="transaction-time">Transaction time<sup>*</sup></label>
                     <input type="time" name="transaction-time" id="transaction-time">
                     <small></small>
-                </fieldset>
-            </div>
-            <div class="transaction-type">
-                <fieldset class="form-control">
+                </div>
+            </fieldset>
+
+            <div class="transaction-name">
+                <div class="form-control">
                     <label for="transaction">Transaction name <sup>*</sup></label>
                     <input type="text" name="transaction" id="transaction" placeholder="ex: Books">
                     <small></small>
-                </fieldset>
-                <fieldset class="form-control">
-                    <label for="number">Quantity <sup>(Optional)</sup></label>
-                    <input type="text" name="number" id="number" placeholder="1">
-                    <small></small>
-                </fieldset>
+                </div>
             </div>
 
-            <fieldset class="form-control">
-                <label for="amount">Price per unit <sup>*</sup></label>
-                <sub>(negative number = expense | positive number = income)</sub>
-                <input type="amount" name="amount" id="amount" placeholder="ex: -20">
-                <small></small>
+            <fieldset class="transaction-cost">
+                <div class="form-control">
+                    <label for="number">Quantity </label>
+                    <input type="text" name="number" id="number" placeholder="1">
+                    <small></small>
+                </div>
+                <div class="form-control">
+                    <label for="amount">Price per unit <sup>*</sup></label>
+                    <input type="amount" name="amount" id="amount" placeholder="ex: -20">
+                    <small></small>
+                </div>
             </fieldset>
+
+            <sub>(negative number = expense | positive number = income)</sub>
             <button class="add-btn" id="add-btn">Add transaction</button>
         </form>
     </div>
