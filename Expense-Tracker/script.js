@@ -34,7 +34,6 @@ const displayTime = `${fullDate.getHours()}:${fullDate.getMinutes()}`;
 
 transactionDate.setAttribute("value", `${displayDate}`);
 transactionTime.setAttribute("value", `${displayTime}`);
-console.log(displayDate);
 
 // ---------------- FUNCTIONALITY ---------------- //
 
@@ -61,7 +60,9 @@ let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
 let nextTransactionId =
-  Math.max(...allTransactions.map((tran) => tran.id)) + 1 || 1;
+  allTransactions.length === 0
+    ? 1
+    : Math.max(allTransactions.map((tran) => tran.id)) + 1;
 
 // Add new transaction to array
 const newTransaction = (date, name, itemPrice, qty) => {
@@ -204,7 +205,6 @@ const updateDOM = () => {
 
   transactionName.value = "";
   transactionAmount.value = "";
-  transactionDate.value = "";
   quantity.value = "";
 
   updateLocalStorage();
@@ -269,12 +269,14 @@ transactionsList.addEventListener("click", (e) => {
   }
   // If user clicks on the "Edit" button ...
   if (e.target.classList.contains("edit-item")) {
-    editEntry = allTransactions.filter((item) => itemId === item.id)[0];
+    let editTransaction = allTransactions.filter(
+      (item) => itemId === item.id
+    )[0];
 
-    editName.value = editEntry.name;
-    editAmount.value = editEntry.itemPrice;
-    editDate.value = editEntry.date;
-    editQuantity.value = editEntry.qty;
+    editName.value = editTransaction.name;
+    editAmount.value = editTransaction.itemPrice;
+    editDate.value = editTransaction.date;
+    editQuantity.value = editTransaction.qty;
 
     showError(editDate, "", false);
     showError(editName, "", false);
@@ -294,10 +296,13 @@ editForm.addEventListener("submit", (e) => {
 
   if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
 
-  editEntry.date = String(editDate.value);
-  editEntry.name = editName.value;
-  editEntry.itemPrice = +editAmount.value;
-  editEntry.qty = +editQuantity.value;
+  let itemId = +e.target.parentNode.id;
+  let editTransaction = allTransactions.filter((item) => itemId === item.id)[0];
+
+  editTransaction.date = String(editDate.value);
+  editTransaction.name = editName.value;
+  editTransaction.itemPrice = +editAmount.value;
+  editTransaction.qty = +editQuantity.value;
 
   calculate();
   updateLocalStorage();
