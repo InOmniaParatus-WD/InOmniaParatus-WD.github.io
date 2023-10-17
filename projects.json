@@ -8,43 +8,43 @@
     {
         "projectName": "Exchange Rate Calculator",
         "projectLink": "../Exchange-Rate-Calculator/",
-        "photo": "_images/Projects-Photos//Exchange_Rate_Calculator.jpg",
+        "photo": "_images/Projects-Photos/Exchange_Rate_Calculator.jpg",
         "altText": "exchange rate calculator"
     },
     {
         "projectName": "Clock JavaScript",
         "projectLink": "../Cat-Clock/",
-        "photo": "_images/Projects-Photos//cat-clock.jpg",
+        "photo": "_images/Projects-Photos/cat-clock.jpg",
         "altText": "cat clock"
     },
     {
         "projectName": "Expense Tracker Browser App",
         "projectLink": "../Expense-Tracker/",
-        "photo": "_images/Projects-Photos//Expenses_Tracker.jpg",
+        "photo": "_images/Projects-Photos/Expenses_Tracker.jpg",
         "altText": "expenses tracker"
     },
     {
         "projectName": "Pocket Calculator JavaScript",
         "projectLink": "../JavaScript-Calculator/",
-        "photo": "_images/Projects-Photos//JavaScript_Calculator.jpg",
+        "photo": "_images/Projects-Photos/JavaScript_Calculator.jpg",
         "altText": "JavaScript Calculator"
     },
     {
         "projectName": "Random Quotes Machine with jQuery",
         "projectLink": "../Random-Quote-Machine/",
-        "photo": "_images/Projects-Photos//Random_Quote_Machine.jpg",
+        "photo": "_images/Projects-Photos/Random_Quote_Machine.jpg",
         "altText": "random quote generator"
     },
     {
         "projectName": "Rotating Squares",
         "projectLink": "../Rotating-Squares/",
-        "photo": "_images/Projects-Photos//Rotating_Divs.jpg",
+        "photo": "_images/Projects-Photos/Rotating_Divs.jpg",
         "altText": "Rotating Squares"
     },
     {
         "projectName": "Wealth Calculator",
         "projectLink": "../Wealth-Calculator/",
-        "photo": "_images/Projects-Photos//Wealth_Calculator.jpg",
+        "photo": "_images/Projects-Photos/Wealth_Calculator.jpg",
         "altText": "wealth calculator"
     },
     {
@@ -56,37 +56,37 @@
     {
         "projectName": "Buttons Hover Effects",
         "projectLink": "../Buttons-Hover-Effects/",
-        "photo": "_images/Projects-Photos//Buttons_Hover_Effects.jpg",
+        "photo": "_images/Projects-Photos/Buttons_Hover_Effects.jpg",
         "altText": "Buttons Hover Effects"
     },
     {
         "projectName": "Landing Page",
         "projectLink": "./Product-Landing-Page/",
-        "photo": "_images/Projects-Photos//Product_Landing_Page.jpg",
+        "photo": "_images/Projects-Photos/Product_Landing_Page.jpg",
         "altText": "product landing page"
     },
     {
         "projectName": "Technical Docs",
         "projectLink": "../Technical-Docs-Page/",
-        "photo": "_images/Projects-Photos//Technical_Doc_Page.jpg",
+        "photo": "_images/Projects-Photos/Technical_Doc_Page.jpg",
         "altText": "technical documentation page"
     },
     {
         "projectName": "Survey Form with Bootstrap",
         "projectLink": "../Survey-Form-Bootstrap/",
-        "photo": "_images/Projects-Photos//Bootstrap_Survey.jpg",
+        "photo": "_images/Projects-Photos/Bootstrap_Survey.jpg",
         "altText": "survey form with bootstrap library"
     },
     {
         "projectName": "Survey Form",
         "projectLink": "../FCC-Survey-Form/",
-        "photo": "_images/Projects-Photos//FCC_Survey_Form.jpg",
+        "photo": "_images/Projects-Photos/FCC_Survey_Form.jpg",
         "altText": "freecodecamp survey form"
     },
     {
         "projectName": "Tribute Page",
         "projectLink": "../Tribute-Page/",
-        "photo": "_images/Projects-Photos//Tribute_Page.jpg",
+        "photo": "_images/Projects-Photos/Tribute_Page.jpg",
         "altText": "tribute page"
     }
 ]
