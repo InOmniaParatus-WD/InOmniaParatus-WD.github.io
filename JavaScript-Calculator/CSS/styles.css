@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
-@import "legendModal.CSS";
+@import "legendModal.css";
 
 *, ::before, ::after {
   box-sizing: border-box;
