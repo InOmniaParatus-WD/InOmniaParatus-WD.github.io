@@ -2,52 +2,18 @@
   "name": "Expenses Tracker",
   "short_name": "ExpensesTrackerPWA",
   "description": "Keep track of your expenses anytime anywhere",
-  "start_url":"https://inomniaparatus-wd.github.io/Expense-Tracker/index.html",
-  "scope":"https://inomniaparatus-wd.github.io/Expense-Tracker/index.html",
+  "start_url": "index.html",
+  "scope": "https://inomniaparatus-wd.github.io/Expense-Tracker/index.html",
   "display": "standalone",
   "background-color": "#F2F4F8",
+  "theme-color": "#F2F4F8",
   "orientation": "portrait-primary",
- 
   "icons": [
     {
-      "src": "images/icons/icon_48x48.png",
+      "src": "images/icons/icon_144x144.png",
       "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "images/icons/icon_72x72.png",
-      "type": "image/png",
-      "sizes": "72x72"
-    },
-    {
-      "src": "images/icons/icon_96x96.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "images/icons/icon_128x128.png",
-      "type": "image/png",
-      "sizes": "128x128"
-    },
-    {
-      "src": "images/icons/icon_192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "images/icons/icon_384x384.png",
-      "type": "image/png",
-      "sizes": "384x384"
-    },
-    {
-      "src": "images/icons/icon_512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "images/icons/icon_1230x1230.png",
-      "type": "image/png",
-      "sizes": "1230x1230"
+      "sizes": "144x144",
+      "purpose": "any"
     }
   ]
 }
