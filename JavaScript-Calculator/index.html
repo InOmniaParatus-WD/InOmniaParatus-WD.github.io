@@ -11,18 +11,13 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="CSS/styles.css">
     <!-- PWA -->
-    <!-- <link rel="manifest" href="manifest.json" />
-    <script src="serviceWorker.js"></script> -->
-
+    <link rel="manifest" href="manifest.json" />
+    <script>
+        navigator.serviceWorker.register('sw.js');
+    </script>
     <!-- iOS icon compatibility -->
-    <link rel="apple-touch-icon" href="icons/icon-72x72.png" />
-    <link rel="apple-touch-icon" href="icons/icon-96x96.png" />
-    <link rel="apple-touch-icon" href="icons/icon-128x128.png" />
     <link rel="apple-touch-icon" href="icons/icon-144x144.png" />
-    <link rel="apple-touch-icon" href="icons/icon-152x152.png" />
-    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
-    <link rel="apple-touch-icon" href="icons/icon-384x384.png" />
-    <link rel="apple-touch-icon" href="icons/icon-512x512.png" />
+
 
     <!-- CDN Math.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.5.0/math.js"
@@ -32,7 +27,7 @@
 </head>
 
 <body>
-    <!-- <button id="install" hidden>Install</button> -->
+    <button id="install" hidden>Install</button>
 
     <div class="modal-container">
         <legend class="legend">
@@ -45,11 +40,14 @@
             <ul>
                 <li>
                     👉🏽 To turn a positive number into a negative one use the <b>"Shift + _"</b> shortcut after you
-                    fininshed typing the number. Note that if you are using your mouse instead, to turn a positive number into
-                    its negative you will need to click this button  <img src="icons/neg-btn.png"
-                        alt="image of calculator button for making a number negative"> <b><i> after</i></b> you finished entering the number.
+                    fininshed typing the number. Note that if you are using your mouse instead, to turn a positive
+                    number into
+                    its negative you will need to click this button <img src="icons/neg-btn.png"
+                        alt="image of calculator button for making a number negative"> <b><i> after</i></b> you finished
+                    entering the number.
                 </li>
-                <li> 👉🏽 Use the <b>"Backspace"</b> key to delete the last typed digit or operator from the calculator's dsiplay.</li>
+                <li> 👉🏽 Use the <b>"Backspace"</b> key to delete the last typed digit or operator from the
+                    calculator's dsiplay.</li>
                 <li> 👉🏽 Use the <b>"Delete</b> key to clear the calculator's display entirely.</li>
             </ul>
 
