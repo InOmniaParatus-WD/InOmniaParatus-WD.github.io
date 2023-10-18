@@ -1,0 +1,19 @@
+{
+    "name": "Clock",
+    "short_name": "ClockPWA",
+    "description": "A funny looking clock that displays your local time and location",
+    "start_url": "index.html",
+    "scope": "https://inomniaparatus-wd.github.io/Cat-Clock/index.html",
+    "display": "standalone",
+    "background-color": "#051224",
+    "theme-color": "#051224",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "images/cat_icon_144x144.png",
+        "type": "image/png",
+        "sizes": "144x144",
+        "purpose": "any"
+      }
+    ]
+  }
