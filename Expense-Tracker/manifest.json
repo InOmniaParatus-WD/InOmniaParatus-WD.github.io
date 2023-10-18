@@ -1,13 +1,13 @@
 {
-  "name": "Expense Tracker",
-  "short_name": "Expense Tracker",
-  "start_url": "index.html",
-  "id": "index.html",
-  "display": "browser",
-  "display_override": [
-    "window-controls-overlay"
-  ],
+  "name": "Expenses Tracker",
+  "short_name": "ExpensesTrackerPWA",
+  "description": "Keep track of your expenses anytime anywhere",
+  "start_url": "/",
+  "scope":"/",
+  "display": "standalone",
+  "background-color": "f5f5f5",
   "orientation": "portrait-primary",
+ 
   "icons": [
     {
       "src": "images/icons/icon_48x48.png",
