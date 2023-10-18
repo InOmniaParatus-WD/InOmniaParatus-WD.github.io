@@ -72,7 +72,14 @@ button.open-legend-modal {
     animation-duration: 0.5s;
     padding: 30px;
   }
+
   
+  
+  ul img {
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+  }
   @keyframes modalopen {
     from {
       opacity: 0;
