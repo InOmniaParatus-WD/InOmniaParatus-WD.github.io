@@ -35,9 +35,10 @@ button.open-legend-modal {
   
   .modal-container ul {
     list-style: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 1px;
   }
+  
   
   .modal-container.show {
     display: block;
@@ -47,14 +48,17 @@ button.open-legend-modal {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background-color: #6dca9a;
+    /* color: #fafff4; */
     position: absolute;
     top: 5px;
     right: 5px;
+    box-shadow: none;
   }
   
   button.close-modal:hover {
-    background-color: #ff9e3d;
+    background-color:var(--text-color);
+    color: #fafff4;
+
   }
   
   legend {
@@ -73,12 +77,15 @@ button.open-legend-modal {
     padding: 30px;
   }
 
-  
+  ul li {
+    margin-bottom: 1rem;
+  }
   
   ul img {
     width: 45px;
     height: 45px;
     vertical-align: middle;
+    margin: 0 0.2rem;
   }
   @keyframes modalopen {
     from {
