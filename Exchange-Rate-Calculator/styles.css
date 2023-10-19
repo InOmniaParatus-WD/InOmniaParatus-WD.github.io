@@ -31,14 +31,15 @@ header {
   margin-bottom: 2rem;
 }
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: 1.5px;
+  width: auto;
 }
 header p {
   padding: 1rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 1.5px;
-  width: 30rem;
+ width: auto;
 }
 img {
   width: 200px;
