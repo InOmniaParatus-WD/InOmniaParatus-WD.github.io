@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/JavaScript-Calculator/",
   "display": "standalone",
-  "background-color": "#F2F4F8",
-  "theme-color": "#F2F4F8",
+  "background-color": "#adb1a9",
+  "theme-color": "#adb1a9",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -14,6 +14,15 @@
       "type": "image/png",
       "sizes": "144x144",
       "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icons/screenshot.webp",
+      "sizes": "587x872",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Homescreen of Awesome Calculator App"
     }
   ]
 }
