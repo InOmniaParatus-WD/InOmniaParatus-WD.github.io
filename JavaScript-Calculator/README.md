@@ -1,6 +1,6 @@
 # JavaScript Pocket Calculator
 
-- Writeen with with vanilla JavaScript, CSS & HTML.
+- A PWA written in JavaScript, CSS & HTML.
 - It integrates the Math.js library for calculation to avoid programming errors when dealing with floating numbers
 - Performs main calculus based on order of operations formula
 
