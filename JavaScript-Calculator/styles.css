@@ -283,11 +283,11 @@ ul img {
 
 /* ----------------- COPYERIGHT ---------------- */
 .copyright {
-  width: 100%;
   color: rgb(18, 62, 61);
-
   text-align: right;
-  margin: 1rem 2rem 0 0;
+  position: relative;
+  top: 10px;
+  left: 100px;
 }
 .copyright a {
   color: rgb(18, 62, 61);
