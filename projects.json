@@ -24,16 +24,16 @@
         "altText": "expenses tracker"
     },
     {
-        "projectName": "Pocket Calculator JavaScript",
-        "projectLink": "../JavaScript-Calculator/",
-        "photo": "images/Projects-Photos/JavaScript_Calculator.jpg",
-        "altText": "JavaScript Calculator"
-    },
-    {
         "projectName": "Random Quotes Machine with jQuery",
         "projectLink": "../Random-Quote-Machine/",
         "photo": "images/Projects-Photos/Random_Quote_Machine.jpg",
         "altText": "random quote generator"
+    },
+    {
+        "projectName": "Pocket Calculator JavaScript",
+        "projectLink": "../JavaScript-Calculator/",
+        "photo": "images/Projects-Photos/updated_version_JS_Calculator.jpg",
+        "altText": "JavaScript Calculator"
     },
     {
         "projectName": "Rotating Squares",
@@ -53,12 +53,7 @@
         "photo": "images/Projects-Photos//Form_Validator.jpg",
         "altText": "form validator"
     },
-    {
-        "projectName": "Buttons Hover Effects",
-        "projectLink": "../Buttons-Hover-Effects/",
-        "photo": "images/Projects-Photos/Buttons_Hover_Effects.jpg",
-        "altText": "Buttons Hover Effects"
-    },
+ 
     {
         "projectName": "Landing Page",
         "projectLink": "./Product-Landing-Page/",
@@ -88,5 +83,10 @@
         "projectLink": "../Tribute-Page/",
         "photo": "images/Projects-Photos/Tribute_Page.jpg",
         "altText": "tribute page"
+    },  {
+        "projectName": "Buttons Hover Effects",
+        "projectLink": "../Buttons-Hover-Effects/",
+        "photo": "images/Projects-Photos/Buttons_Hover_Effects.jpg",
+        "altText": "Buttons Hover Effects"
     }
 ]
