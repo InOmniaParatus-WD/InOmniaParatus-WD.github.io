@@ -6,7 +6,6 @@ const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
 const quantity = document.querySelector("#number");
 const transactionDate = document.querySelector("#transaction-date");
-const transactionTime = document.querySelector("#transaction-time");
 const transactionsList = document.querySelector("#list");
 const form = document.querySelector("#form");
 
@@ -30,10 +29,8 @@ const fullDate = new Date();
 const displayDate = `${fullDate.getFullYear()}-${
   fullDate.getMonth() + 1
 }-${fullDate.getDate()}`;
-const displayTime = `${fullDate.getHours()}:${fullDate.getMinutes()}`;
 
 transactionDate.setAttribute("value", `${displayDate}`);
-transactionTime.setAttribute("value", `${displayTime}`);
 
 // ---------------- FUNCTIONALITY ---------------- //
 
@@ -81,9 +78,10 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
   // validate quantity - can only be an integer from 1 upwards, no decimals accepted
 
   let result = true;
-  let amount = +amountEl.value;
-  let name = nameEl.value;
+
   let date = dateEl.value;
+  let name = nameEl.value;
+  let amount = +amountEl.value;
   let qty = +quantityEl.value;
 
   if (amount === 0 || isNaN(amount)) {
@@ -160,7 +158,7 @@ const updateDOM = () => {
     <time class="display-date">&#128198; ${tran.date
       .split("-")
       .reverse()
-      .join("-")} 
+      .join("-")}
     </time>
   
    <section class="transaction-details ${

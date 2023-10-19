@@ -44,9 +44,15 @@
 .modal-content {
   padding: 20px;
 }
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .modal-form .form-control {
-  margin: 0 15px 0;
+   padding: 0 1rem;
 }
 
 div.edit-btns {
@@ -54,11 +60,15 @@ div.edit-btns {
   flex-direction: row;
 }
 
+.modal-form div {
+  width: 100%;
+}
 .modal-form input {
   color: var(--dark-grey);
   background-color: var(--white);
   letter-spacing: 1px;
   font-weight: 600;
+  width: 100%;
 }
 button.save-btn,
 button.cancel-btn {
@@ -112,11 +122,11 @@ button.save-btn {
 }
 
 .undo-modal-container p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .undo-modal-container p span {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 button.delete-btn,
@@ -133,6 +143,10 @@ button.cancel-delete-btn {
   border: transparent;
   cursor: pointer;
   width: 50%;
+}
+button.delete-btn:hover{
+  background-color: var(--red);
+  color: var(--white);
 }
 
 button.delete-btn {

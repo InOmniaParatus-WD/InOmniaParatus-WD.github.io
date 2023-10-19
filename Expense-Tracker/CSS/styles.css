@@ -129,11 +129,15 @@ li.transaction {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 1rem;
+  padding-top: 1rem;
   letter-spacing: 1px;
   margin-bottom: 1rem;
   position: relative;
   cursor: pointer;
+}
+
+li.transaction .display-date {
+  align-self: start;
 }
 
 li section.transaction-details {
@@ -212,12 +216,12 @@ fieldset {
 .form-control {
   display: flex;
   flex-direction: column;
-  width: 48%;
   margin-top: 1rem;
+  width: 100%;
 }
 
-.transaction-name .form-control {
-  width: 100%;
+.transaction-cost .form-control {
+  width: 48%;
 }
 
 input {
@@ -322,7 +326,7 @@ footer .copyright {
   }
 }
 
-@media (min-width: 200px) and (max-width: 500px) {
+@media (min-width: 200px) and (max-width: 640px) {
   .container {
     width: 100%;
     margin: 0;
@@ -334,10 +338,11 @@ footer .copyright {
     top: -10px;
   }
 
-  li.display-date {
+  .display-date {
     font-size: 1rem;
+     
   }
-  li.display-date span {
+ .display-date span {
     font-size: 0.8rem;
   }
 
@@ -354,11 +359,11 @@ footer .copyright {
     font-size: 1.2rem;
   }
 
-  fieldset {
+  .transaction-cost {
     flex-direction: column;
   }
 
-  .form-control {
+  .transaction-cost .form-control {
     width: 100%;
   }
 }
