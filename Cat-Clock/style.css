@@ -18,24 +18,37 @@ body {
   font-family: "Glass Antiqua", cursive;
   background-color: #051224;
   height: 100vh;
+  min-width: fit-content;
   overflow: hidden;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  position: relative;
-  height: 740px;
-  width: 740px;
-  margin: auto;
+  display: flex;
+}
+
+.time-and-date {
+  color: #faebd7;
+  font-size: 2em;
+  text-align: center;
+  margin: auto 5rem auto 3rem;
+  border-radius: 5px;
+  align-self: flex-start;
 }
 
 .hours-ring {
+  margin: 2rem;
   position: relative;
   border-radius: 50%;
   background-color: #3a4444;
+  align-self: center;
   width: 640px;
   height: 640px;
-  margin: auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
@@ -159,28 +172,29 @@ body {
   left: -35px;
 }
 
-.time-and-date {
+
+footer {
+  width: 100%;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 400;
   color: #faebd7;
-  font-size: 2em;
-  text-align: center;
-  margin: 1.2rem .5rem .5rem 3rem;
-  border-radius: 5px;
-  display: inline-block;
 }
 
-@media (max-width: 640px) {
-  body {
-    margin-top: 6rem;
-  }
+footer p {
+  margin-right: 3rem;
+}
+
+@media (max-width: 1000px) {
   .container {
-    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .hours-ring,
   .hour-dots {
-    border-radius: 50%;
     width: 380px;
     height: 380px;
-    margin: auto;
   }
   .dot {
     font-size: 1.5rem;
@@ -194,21 +208,20 @@ body {
   }
   .needle.hours {
     width: 50px;
-    height: 155px;
+    height: 145px;
   }
   .needle.minutes {
     width: 50px;
-    height: 150px;
+    height: 160px;
   }
   .needle.seconds {
     width: 50px;
-    height: 155px;
+    height: 170px;
   }
   .needle.seconds img {
-    position: absolute;
     width: 70px;
-    right: -5px;
-    top: 10px;
+   margin-left: -15px;
+    margin-top: -35px;
   }
   .inner-circle {
     width: 110px;
@@ -226,16 +239,6 @@ body {
   }
   .time-and-date {
     font-size: 1.5rem;
-    margin: auto;
     margin-bottom: 35px;
-    display: block;
   }
-}
-
-.copyright {
-  text-align: center;
-  margin: 30rem auto;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #faebd7;
 }
