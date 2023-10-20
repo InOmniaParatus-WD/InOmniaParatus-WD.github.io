@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/JavaScript-Calculator/",
   "display": "standalone",
-  "background-color": "#adb1a9",
-  "theme-color": "#adb1a9",
+  "background_color": "#adb1a9",
+  "theme_color": "#adb1a9",
   "orientation": "portrait-primary",
   "icons": [
     {

@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/Exchage-Rate-Calculator/",
   "display": "standalone",
-  "background-color": "#071c33",
-  "theme-color": "##071c33",
+  "background_color": "#071c33",
+  "theme_color": "##071c33",
   "orientation": "portrait-primary",
   "icons": [
     {

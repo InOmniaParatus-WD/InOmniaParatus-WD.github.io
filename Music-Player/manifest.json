@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/Music-Player/index.html",
   "display": "standalone",
-  "background-color": "#252422",
-  "theme-color": "#252422",
+  "background_color": "#252422",
+  "theme_color": "#252422",
   "orientation": "portrait-primary",
   "icons": [
     {

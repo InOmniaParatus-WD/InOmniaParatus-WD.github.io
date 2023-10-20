@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/Expense-Tracker/index.html",
   "display": "standalone",
-  "background-color": "#F2F4F8",
-  "theme-color": "#F2F4F8",
+  "background_color": "#F2F4F8",
+  "theme_color": "#F2F4F8",
   "orientation": "portrait-primary",
   "icons": [
     {

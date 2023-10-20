@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/Cat-Clock/index.html",
   "display": "standalone",
-  "background-color": "#051224",
-  "theme-color": "#051224",
+  "background_color": "#051224",
+  "theme_color": "#051224",
   "orientation": "portrait-primary",
   "icons": [
     {
