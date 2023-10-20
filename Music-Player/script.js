@@ -297,8 +297,6 @@ audio.addEventListener("timeupdate", (e) => updateProgress(e));
 
 // Song ends
 audio.addEventListener("ended", (e) => {
-  // console.log("I'm done", e.target, songIdx);
-  // console.log(allSongs.length, e.target.duration);
 
   if (songIdx < allSongs.length - 1) {
     nextSong();
@@ -321,3 +319,5 @@ audio.addEventListener("ended", (e) => {
 
 // Upload local files in the playlist
 // Drag and drop => move the player on a different spot on the browser page
+// Refactor the code to class helper function
+// Pack as a mobile app
