@@ -199,11 +199,11 @@ button.open-legend-modal {
 .modal-header {
   display: flex;
   letter-spacing: 1px;
-  border-bottom: #22222352 3px groove;
 }
 
 .modal-header p {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .modal-container ul {
@@ -212,6 +212,10 @@ button.open-legend-modal {
   letter-spacing: 1px;
 }
 
+.modal-container ul li {
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
 .modal-container.show {
   display: block;
 }
@@ -232,7 +236,7 @@ button.close-modal:hover {
   color: #fafff4;
 }
 
-legend {
+section.legend {
   background-color: #fafff4;
   color: var(--dark-grey);
   border-radius: 5px;
@@ -248,16 +252,17 @@ legend {
   padding: 30px;
 }
 
-ul li {
-  margin-bottom: 1rem;
+section.legend p {
+  margin-bottom: 0.5rem;
 }
 
 ul img {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   vertical-align: middle;
   margin: 0 0.2rem;
 }
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -275,9 +280,10 @@ ul img {
   .modal-header p {
     font-size: 1.5rem;
   }
-  legend li,
-  legend p {
-    font-size: 0.9rem;
+  .modal-container ul li,
+  section p {
+    font-size: 0.8rem;
+    line-height: normal;
   }
 }
 
@@ -297,4 +303,17 @@ ul img {
 
 .copyright a:hover {
   text-decoration: underline 2px #ff9e3d;
+}
+
+/* horizontal lines styles */
+hr {
+  border: 0;
+  height: 2px;
+  margin: 1rem 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(18, 62, 61),
+    rgba(0, 0, 0, 0)
+  );
 }
