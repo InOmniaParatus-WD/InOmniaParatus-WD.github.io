@@ -1,0 +1,31 @@
+{
+  "name": "Exchage Calculator",
+  "short_name": "Exchange Calculator",
+  "description": "Exchange rate calculator",
+  "start_url": "index.html",
+  "scope": "https://inomniaparatus-wd.github.io/Exchage-Rate-Calculator/",
+  "display": "standalone",
+  "background-color": "#071c33",
+  "theme-color": "##071c33",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icons/icon_144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons/icon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons/icon_1280x1280.png",
+      "type": "image/png",
+      "sizes": "1280x1280",
+      "purpose": "any"
+    }
+  ]
+}
