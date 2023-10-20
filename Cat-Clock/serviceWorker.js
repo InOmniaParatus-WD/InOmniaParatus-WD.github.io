@@ -1,4 +1,4 @@
-const clock = "Expense Tracker";
+const clock = "Clock";
 
 const assets = [
   "index.html",
