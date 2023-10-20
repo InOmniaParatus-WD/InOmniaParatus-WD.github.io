@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ioana Popa">
+    <meta name="theme-color" content="#252422">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -13,7 +15,16 @@
     <link rel="shortcut icon" href="images/favicon/instruments.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 
-    <title>Audio Player</title>
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <script>
+        navigator.serviceWorker.register('serviceWorker.js');
+    </script>
+    <!-- iOS icon compatibility -->
+    <link rel="apple-touch-icon" href="images/icons/icon_144x144.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon_512x512 .png" />
+    
+    <title>Music Player</title>
 </head>
 
 <body>

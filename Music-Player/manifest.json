@@ -1,0 +1,26 @@
+{
+  "name": "PWA-Music Player",
+  "short_name": "Music Player",
+  "description": "A simple music player with some relaxing tracks at your fingertips",
+  "start_url": "index.html",
+  "scope": "https://inomniaparatus-wd.github.io/Music-Player/index.html",
+  "display": "standalone",
+  "background-color": "#252422",
+  "theme-color": "#252422",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icons/icon_144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    }, 
+    {
+      "src": "images/icons/icon_512x512.png",
+      "type": "image/png",
+      "sizes":"512x512",
+      "purpose": "any"
+    }
+  ]
+
+}
