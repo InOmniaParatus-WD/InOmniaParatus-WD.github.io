@@ -12,22 +12,16 @@
         "altText": "exchange rate calculator"
     },
     {
-        "projectName": "Clock JavaScript",
-        "projectLink": "../Cat-Clock/",
-        "photo": "images/Projects-Photos/cat-clock.jpg",
-        "altText": "cat clock"
-    },
-    {
         "projectName": "Expense Tracker Browser App",
         "projectLink": "../Expense-Tracker/",
         "photo": "images/Projects-Photos/Expenses_Tracker.jpg",
         "altText": "expenses tracker"
     },
     {
-        "projectName": "Random Quotes Machine with jQuery",
-        "projectLink": "../Random-Quote-Machine/",
-        "photo": "images/Projects-Photos/Random_Quote_Machine.jpg",
-        "altText": "random quote generator"
+        "projectName": "Clock JavaScript",
+        "projectLink": "../Cat-Clock/",
+        "photo": "images/Projects-Photos/cat-clock.jpg",
+        "altText": "cat clock"
     },
     {
         "projectName": "Pocket Calculator JavaScript",
@@ -36,12 +30,23 @@
         "altText": "JavaScript Calculator"
     },
     {
+        "projectName": "Recipies Directory",
+        "projectLink": "../Recipies-Search-App/",
+        "photo": "images/Projects-Photos/Recipies_Search_App.jpg",
+        "altText": "Recipies finder with third party API"
+    },
+    {
+        "projectName": "Random Quotes Machine with jQuery",
+        "projectLink": "../Random-Quote-Machine/",
+        "photo": "images/Projects-Photos/Random_Quote_Machine.jpg",
+        "altText": "random quote generator"
+    },
+    {
         "projectName": "Hangman",
         "projectLink": "../Hangman-Game/",
         "photo": "images/Projects-Photos/Hangman_Game.jpg",
         "altText": "Hangman Game"
     },
-     
     {
         "projectName": "Rotating Squares",
         "projectLink": "../Rotating-Squares/",
@@ -60,7 +65,6 @@
         "photo": "images/Projects-Photos//Form_Validator.jpg",
         "altText": "form validator"
     },
- 
     {
         "projectName": "Landing Page",
         "projectLink": "./Product-Landing-Page/",
