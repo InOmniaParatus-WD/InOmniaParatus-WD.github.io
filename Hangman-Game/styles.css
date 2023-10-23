@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #252422;
+  color: #fffcf2;
+  font-family: "Electrolize", sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  margin: 20px 0 0;
+  color: #eb5e28;
+}
+
+.game-container {
+  padding: 20px 30px;
+  position: relative;
+  height: 350px;
+  width: 450px;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: #faebd7;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.figure-part {
+  display: none;
+}
+
+.wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.wrong-letters-container p {
+  margin: 0 0 5px;
+}
+
+.wrong-letters-container span {
+  font-size: 24px;
+}
+
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.word span {
+  border-bottom: 3px solid #15616d;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 5px;
+  height: 50px;
+  width: 20px;
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background-color: #403d39;
+  text-shadow: -2px 1px 2px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  padding: 30px;
+  font-size: 30px;
+  letter-spacing: 1.2px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup button {
+  padding: 20px 25px;
+  margin-top: 20px;
+  background-color: #eb5e28;
+  color: #fffcf2;
+  border: transparent;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+}
+
+.popup button:active {
+  transform: scale(0.9);
+}
+
+.popup button:hover {
+  background-color: #252422;
+}
+
+.notification-container {
+  background-color: #403d39;
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container.show {
+  transform: translateY(-50px);
+}
+
+h2 span {
+  font-style: italic;
+  font-weight: normal;
+}

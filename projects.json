@@ -36,6 +36,13 @@
         "altText": "JavaScript Calculator"
     },
     {
+        "projectName": "Hangman",
+        "projectLink": "../Hangman-Game/",
+        "photo": "images/Projects-Photos/Hangman_Game.jpg",
+        "altText": "Hangman Game"
+    },
+     
+    {
         "projectName": "Rotating Squares",
         "projectLink": "../Rotating-Squares/",
         "photo": "images/Projects-Photos/Rotating_Divs.jpg",
