@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #102c3a;
+  color: rgb(206, 204, 204);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.container {
+  margin: auto;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: transparent;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  width: 400px;
+}
+
+input:focus {
+  outline: 0.5px solid inset;
+}
+
+button {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: transparent;
+  background-color: #fb8500;
+  color: #f5f5f5;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+button.random-btn {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #219ebc;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.meals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: space-evenly;
+  justify-content: center;
+}
+
+.meal {
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  width: 30%;
+  text-align: center;
+}
+
+.meal img {
+  width: 100%;
+  border: 4px #fb8500 solid;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.meal-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.702);
+  color: #f1faee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease-in;
+  opacity: 0;
+  padding: 0;
+}
+
+.meal:hover .meal-info {
+  opacity: 1;
+}
+
+.single-meal-container {
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.676);
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.single-meal-container.show {
+  display: block;
+}
+
+.single-meal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 2.5rem auto;
+  border: 1px groove #fb8500;
+  background-color: #102c3a;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  z-index: 1;
+  width: 80%;
+}
+
+section.chosen-meal-img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2.5rem;
+}
+
+section.chosen-meal-img div.image {
+  width: 30%;
+  max-width: 500px;
+}
+
+section.chosen-meal-img div.list-of-ingredients {
+  width: 70%;
+}
+
+section.preparation {
+  padding: 0 2.5rem 2.5rem 2.5rem;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+h2.meal-name {
+  color: #fb8500;
+  font-size: 2rem;
+}
+
+header span {
+  color: #fb8500;
+  font-size: 1.2rem;
+}
+
+h2.method {
+  letter-spacing: 1px;
+}
+
+section.chosen-meal-img img {
+  border-radius: 10px;
+  width: 100%;
+  border: 4px groove #fb8500;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+}
+
+li {
+  padding: 0.5rem;
+  border: 1px solid #fb8500;
+  border-radius: 5px;
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+section.preparation {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.preparation .main p {
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+.single-meal .main ul li:last-of-type {
+  border: none;
+  padding: none;
+}
+
+button.close-recipe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+}
+
+@media (min-width: 300px) and (max-width: 1200px) {
+  .meal {
+    width: 100%;
+  }
+
+  header {
+    margin-top: 4.5rem;
+  }
+
+  h2.meal-name {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  section.chosen-meal-img {
+    flex-direction: column;
+  }
+
+  section.chosen-meal-img div.list-of-ingredients,
+  section.chosen-meal-img div.image {
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  li {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .flex form input {
+    width: 100%;
+  }
+  .meal {
+    width: 30%;
+  }
+
+  .preparation {
+    font-size: 0.8rem;
+    margin-left: 0;
+  }
+}
