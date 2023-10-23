@@ -89,7 +89,7 @@ export class Calculator {
     let result = math.evaluate(this.expression);
 
     this.evaluatedExpression = result.toLocaleString("en-US", {
-      maximumFractionDigits: 3,
+      maximumFractionDigits: 2,
     });
     this.numberOrOperator = this.evaluatedExpression;
   }

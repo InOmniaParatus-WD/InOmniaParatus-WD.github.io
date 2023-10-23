@@ -226,8 +226,8 @@ button.close-modal {
   border-radius: 50%;
   /* color: #fafff4; */
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
   box-shadow: none;
 }
 
@@ -236,11 +236,12 @@ button.close-modal:hover {
   color: #fafff4;
 }
 
-section.legend {
+.legend {
   background-color: #fafff4;
   color: var(--dark-grey);
   border-radius: 5px;
-  width: 50rem;
+  max-width: 55rem;
+  width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -251,8 +252,7 @@ section.legend {
   animation-duration: 0.5s;
   padding: 30px;
 }
-
-section.legend p {
+.legend p {
   margin-bottom: 0.5rem;
 }
 
@@ -272,9 +272,8 @@ ul img {
   }
 }
 
-@media (min-width: 200px) and (max-width: 800px) {
+@media (min-width: 300px) and (max-width: 800px) {
   .legend {
-    width: 90%;
     max-width: 30rem;
   }
   .modal-header p {
@@ -284,6 +283,11 @@ ul img {
   section p {
     font-size: 0.8rem;
     line-height: normal;
+  }
+  button.close-modal {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -307,6 +311,7 @@ ul img {
 
 /* horizontal lines styles */
 hr {
+  width: 100%;
   border: 0;
   height: 2px;
   margin: 1rem 0;
