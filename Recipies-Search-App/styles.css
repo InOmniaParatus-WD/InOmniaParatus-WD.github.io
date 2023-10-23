@@ -111,7 +111,7 @@ button:active {
 
 .single-meal-container {
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.676);
+  background-color: rgba(36, 35, 44, 0.839);
   position: fixed;
   display: none;
   top: 0;
@@ -133,7 +133,7 @@ button:active {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin: 2.5rem auto;
+  margin: 5rem auto;
   border: 1px groove #fb8500;
   background-color: #102c3a;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
