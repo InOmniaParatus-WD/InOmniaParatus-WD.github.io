@@ -90,10 +90,5 @@
         "projectLink": "../Tribute-Page/",
         "photo": "images/Projects-Photos/Tribute_Page.jpg",
         "altText": "tribute page"
-    },  {
-        "projectName": "Buttons Hover Effects",
-        "projectLink": "../Buttons-Hover-Effects/",
-        "photo": "images/Projects-Photos/Buttons_Hover_Effects.jpg",
-        "altText": "Buttons Hover Effects"
     }
 ]
