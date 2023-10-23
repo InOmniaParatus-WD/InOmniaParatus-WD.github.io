@@ -3,3 +3,4 @@
 // Display a number or recipies (9 - 12) when page loads.
 // Tolltips on the buttons at the top
 // Reallign the layout so the h1 doesn't stand so high at the top
+// Create a better alert than the browser one
