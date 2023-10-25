@@ -138,8 +138,7 @@ const calculate = () => {
   balanceValue = totalIncomeValue + totalExpensesValue;
 };
 
-// Update DOM
-
+// Update DOM - render expenses on the page
 const updateDOM = () => {
   transactionsList.replaceChildren();
 
