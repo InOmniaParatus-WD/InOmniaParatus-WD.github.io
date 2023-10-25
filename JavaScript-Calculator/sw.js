@@ -1,5 +1,5 @@
 // PWA
-const pocketCalculator = "Calculator";
+const hangman = "Calculator";
 const assets = ["index.html", "app.js", "styles.css"];
 
 if ("serviceWorker" in navigator) {
@@ -13,7 +13,7 @@ if ("serviceWorker" in navigator) {
 
 self.addEventListener("install", (evt) => {
   evt.waitUntil(
-    caches.open(pocketCalculator).then((cache) => {
+    caches.open(hangman).then((cache) => {
       cache.addAll(assets);
     })
   );

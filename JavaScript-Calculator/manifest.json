@@ -5,13 +5,13 @@
   "start_url": "index.html",
   "scope": "https://inomniaparatus-wd.github.io/JavaScript-Calculator/",
   "display": "standalone",
-  "background_color": "#adb1a9",
-  "theme_color": "#adb1a9",
+  "background_color": "#218187",
+  "theme_color": "#218187",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "icons/icon_144x144.png",
-      "type": "image/png",
+      "src": "icons/icon_144x144.webp",
+      "type": "image/webp",
       "sizes": "144x144",
       "purpose": "any"
     }
