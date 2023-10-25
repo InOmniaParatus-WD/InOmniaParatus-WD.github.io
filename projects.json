@@ -1,30 +1,30 @@
 [
     {
-        "projectName": "Music Player Browser App",
+        "projectName": "Music Player → PWA",
         "projectLink": "../Music-Player/",
         "photo": "images/Projects-Photos/Music_player.jpg",
         "altText": "music player"
     },
     {
-        "projectName": "Exchange Rate Calculator",
+        "projectName": "Exchange Rate Calculator → PWA",
         "projectLink": "../Exchange-Rate-Calculator/",
         "photo": "images/Projects-Photos/Exchange_Rate_Calculator.jpg",
         "altText": "exchange rate calculator"
     },
     {
-        "projectName": "Expense Tracker Browser App",
+        "projectName": "Expense Tracker → PWA",
         "projectLink": "../Expense-Tracker/",
         "photo": "images/Projects-Photos/Expenses_Tracker.jpg",
         "altText": "expenses tracker"
     },
     {
-        "projectName": "Clock JavaScript",
+        "projectName": "Clock → PWA",
         "projectLink": "../Cat-Clock/",
         "photo": "images/Projects-Photos/cat-clock.jpg",
         "altText": "cat clock"
     },
     {
-        "projectName": "Pocket Calculator JavaScript",
+        "projectName": "Pocket Calculator → PWA",
         "projectLink": "../JavaScript-Calculator/",
         "photo": "images/Projects-Photos/updated_version_JS_Calculator.jpg",
         "altText": "JavaScript Calculator"
