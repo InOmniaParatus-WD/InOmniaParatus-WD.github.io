@@ -2,8 +2,8 @@ const expenseTracker = "Expense Tracker";
 
 const assets = [
   "index.html",
-  "script.js",
-  "css/styles.css",
+  "JS/script.js",
+  "CSS/styles.css",
   "images/expense-tracker.png"
 ];
 
