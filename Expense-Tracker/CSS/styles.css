@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap");
-@import url("modals-styles.css");
-@import url("scroll-styles.css");
-@import url("tooltip-styles.css");
 
 :root {
   --box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -122,6 +119,23 @@ ul {
   width: 100%;
 }
 
+/* ------------ UL SCROLLBAR ------------ */
+ul::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+  box-shadow: none;
+}
+ul::-webkit-scrollbar-track {
+  background: transparent;
+  box-shadow: none;
+}
+ul::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}/* ----- END OF UL SCROLLBAR STYLES ------ */
+
 li.transaction {
   position: relative;
   display: flex;
@@ -205,6 +219,48 @@ button.delete-item:hover {
 button.edit-item:hover {
   color: #f3722c;
 }
+
+/* ----------- TOOLTIPS STYLES ----------- */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: fit-content;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  width: 100px;
+  padding: 5px;
+  letter-spacing: 1.2px;
+  box-shadow: rgba(213, 213, 213, 0.35) 0px 3px 15px;
+}
+
+.tooltip-text.edit {
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+  right: 2rem;
+  bottom: -30%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.tooltip-text.delete {
+  background-color: var(--red);
+  color: var(--white);
+  right: 3.5rem;
+  bottom: -30%;
+  opacity: 0;
+  transition: opacity 0.5s;
+} 
+
+button.edit-item:hover .tooltip-text,
+button.delete-item:hover .tooltip-text {
+  visibility: visible;
+}
+
+button.delete-item:hover .delete,
+button.edit-item:hover .edit {
+  opacity: 1;
+} /* ---- END OF TOOLTIPS STYLES ---- */
 
 fieldset {
   border: none;
@@ -340,9 +396,8 @@ footer .copyright {
 
   .display-date {
     font-size: 1rem;
-     
   }
- .display-date span {
+  .display-date span {
     font-size: 0.8rem;
   }
 
@@ -371,5 +426,198 @@ footer .copyright {
 @media (min-width: 641px) {
   .container {
     margin: 2.5rem;
+  }
+}
+
+/* MODALS STYLING */
+
+/* Edit entries modal */
+.modal-container {
+  background-color: #4a4d3eef;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: #fafff4;
+  color: var(--dark-grey);
+  border-radius: 5px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: modalopen;
+  animation-duration: 0.5s;
+}
+
+.modal-header {
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+  padding: 1.2rem;
+  letter-spacing: 1px;
+  box-shadow: rgba(82, 81, 81, 0.19) 0px 1.5px 0px,
+    rgba(90, 88, 88, 0.23) 0px 2.5px 0px;
+}
+
+.modal-header span {
+  font-size: 1.5rem;
+}
+
+.modal-content {
+  padding: 20px;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form .form-control {
+  padding: 0 1rem;
+}
+
+div.edit-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-form div {
+  width: 100%;
+}
+.modal-form input {
+  color: var(--dark-grey);
+  background-color: var(--white);
+  letter-spacing: 1px;
+  font-weight: 600;
+  width: 100%;
+}
+button.save-btn,
+button.cancel-btn {
+  background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--button-shadow);
+  text-shadow: var(--text-shadow);
+  padding: 10px 15px;
+  margin: 1.2rem 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: transparent;
+  cursor: pointer;
+  width: 50%;
+}
+
+button.save-btn {
+  margin-right: 2rem;
+}
+
+/*  Delete entries modal */
+.undo-modal-container {
+  background-color: #4a4d3eef;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.undo-modal-container.show-modal {
+  display: block;
+}
+
+.undo-modal {
+  background-color: #fafff4;
+  color: var(--dark-grey);
+  border-radius: 5px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: modalopen;
+  animation-duration: 0.5s;
+  padding: 2rem;
+}
+
+.undo-modal-container p {
+  font-size: 1rem;
+}
+
+.undo-modal-container p span {
+  font-size: 1.5rem;
+}
+
+button.delete-btn,
+button.cancel-delete-btn {
+  background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--button-shadow);
+  text-shadow: var(--text-shadow);
+  padding: 10px 15px;
+  margin: 1.2rem 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: transparent;
+  cursor: pointer;
+  width: 50%;
+}
+button.delete-btn:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+button.delete-btn {
+  margin-right: 2rem;
+}
+
+/*  Both modals */
+@media (hover: hover) and (pointer: fine) {
+  button:hover {
+    background-color: var(--yellow);
+    color: var(--dark-grey);
+  }
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .modal {
+    width: 350px;
+  }
+
+  .undo-modal-container p {
+    font-size: 1rem;
+  }
+  .undo-modal {
+    width: 350px;
+  }
+  .undo-modal-container h4 {
+    font-size: 1rem;
+  }
+  .undo-modal-container h4 span {
+    font-size: 1.5rem;
   }
 }
