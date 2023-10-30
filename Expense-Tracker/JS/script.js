@@ -49,10 +49,10 @@ const showError = (input, message, isError) => {
 const localStorageTransaction = JSON.parse(
   localStorage.getItem("transactions")
 );
-
 // Save transactions added to the list
 let allTransactions = localStorageTransaction || [];
 
+// Globals. They change with state updates
 let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let balanceValue = 0;
