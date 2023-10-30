@@ -6,6 +6,8 @@
 
 ### Check out the live project [here](https://inomniaparatus-wd.github.io/).
 
-- A collection of front-end projects built predominantly with HTML, JavaScript and CSS
-- Some are part of certifications such as the ones on freeCodeCamp, and others are independent projects as part of my programming learning journey
+- A collection of front-end projects with logic written in JavaScript
+- Fetching data from third party APIs
+- A few of the apps are PWA
+- Some of these projects were part of different certifications
 - Each project in the repo contains a link to a live view
