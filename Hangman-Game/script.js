@@ -82,7 +82,8 @@ function showNotification() {
 }
 // Keydown letter press
 window.addEventListener("keydown", (e) => {
-  if (/[a-z]/gi.test(e.key)) {
+  if (!e.code.includes("Key")) return;
+  else {
     const letter = e.key;
 
     if (selectedWord.includes(letter)) {
