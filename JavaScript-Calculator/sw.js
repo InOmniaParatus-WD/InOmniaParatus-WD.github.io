@@ -1,5 +1,5 @@
 // PWA
-const hangman = "Calculator";
+const calculator = "Calculator";
 const assets = ["index.html", "app.js", "styles.css"];
 
 if ("serviceWorker" in navigator) {
