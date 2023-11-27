@@ -1,5 +1,11 @@
 [
     {
+        "projectName": "Clickable Squares Challange",
+        "projectLink": "../Six-Clickable-Squares/",
+        "photo": "images/Projects-Photos/Six_Squares.jpg",
+        "altText": "six squares to change colors when clicked"
+    },
+    {
         "projectName": "Music Player → PWA",
         "projectLink": "../Music-Player/",
         "photo": "images/Projects-Photos/Music_player.jpg",
