@@ -16,14 +16,13 @@ body {
   background-color: rgb(122, 121, 119);
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 p {
   font-size: 2rem;
-  width: 50%;
   text-align: center;
   color: rgb(228, 244, 195);
-  /* background: #629552; */
   text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     0px -5px 35px rgba(255, 255, 255, 0.3);
 }
@@ -31,21 +30,21 @@ p {
 .squares-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: space-between;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 10px;
-  width: 40rem;
-  height: 40rem;
+  width: 50rem;
+  min-height: fit-content;
   border-radius: 5px;
+  padding: 10px;
 }
 
 .square {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: 30%;
-  margin: auto;
+  width: 15rem;
+  height: auto;
   border-radius: 5px;
   font-size: 4rem;
   font-weight: bold;
@@ -71,24 +70,39 @@ p {
 }
 
 @media (max-width: 640px) {
+  body {
+    overflow-y: auto;
+  }
   p {
-    font-size: 1.5rem;
-    width: 80%;
+    font-size: 1.2rem;
   }
 
   .squares-container {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    /* min-height: 30rem; */
+    min-height: fit-content;
+    gap: 5px;
   }
+
   .square {
-    width: 40%;
-    height: 40%;
+    width: 8rem;
+    height: 8rem;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1100px) {
+  p {
+    font-size: 1.5rem;
+  }
+
+  .squares-container {
+    width: 30rem;
+    min-height: 30rem;
+    max-height: fit-content;
+  }
+
   .square {
-    width: 45%;
-    height: 45%;
+    width: 10rem;
+    height: auto;
   }
 }
