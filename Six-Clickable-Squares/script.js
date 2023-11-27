@@ -55,8 +55,8 @@ function changeColor() {
       clickedSquares[i].classList.remove("green");
       // Empty the array of clicked squares so that the game can be played again
       clickedSquares.pop();
-    }, (6 - i) * 1000);
+    }, (6 - i) * 500);
     // Re-enable the squares to be clickable again
-    setTimeout(() => (squares[i].style.pointerEvents = "initial"), 6000);
+    setTimeout(() => (squares[i].style.pointerEvents = "initial"), 3000);
   }
 }
