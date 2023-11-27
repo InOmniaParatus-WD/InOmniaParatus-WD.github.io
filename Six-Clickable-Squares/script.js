@@ -1,9 +1,10 @@
-// STEP 3: Bring in all the square and the image
+// STEP 4: Bring in all the square and the image
+
 // The image is not a feature required by the challange :)
 const squares = document.querySelectorAll(".square");
 const image = document.querySelector("img");
 
-// STEP 4: Keep track of the clicked squares
+// STEP 5: Keep track of the clicked squares
 // Initialize an array which will "house" all the clicked squares
 let clickedSquares = [];
 
@@ -12,36 +13,40 @@ let startImg = `<img src="owl.png">`;
 squares.forEach((btn) => {
   btn.innerHTML = startImg;
   btn.addEventListener("click", (e) => {
-    // Save the value of the clicked square in a variable. Not mandatory but it prevents repeating myself
-    let clicked = e.target;
-
-    // Add the class green when clicked
-    clicked.classList.add("green");
-
-    // Disable squares once they are clicked to avoid multiple clicks
-    // If the quares are clicked once the colour reverse function gets triggered it will cause issues
-    clicked.style.pointerEvents = "none";
-
-    // Check if the button is already in the array if not push index
-    for (let i = 0; i < squares.length; i++) {
-      // Temporarly replace the image with a number. I will restore it later on.
-      clicked.innerHTML = clickedSquares.indexOf(clicked) + 1;
-      
-      // If the button is not there...
-      if (!clickedSquares.includes(clicked)) {
-        //...add it to the array
-        clickedSquares.push(clicked);
-      } 
-    }
-
+    updateArray(e.target);
     // When the last button is clicked start changing colors backwards
-    if (clickedSquares.lastIndexOf(clicked) === squares.length - 1) {
-      changeColor();
-    }
+    if (clickedSquares.lastIndexOf(e.target) === squares.length - 1) changeColor();
   });
 });
 
-// When the sixth button is clicked change colors back to white in reverse order
+// STEP 6: Define the functions that will update the state of the square
+
+// ----------- Change background and add buttons clicked to the array
+function updateArray(square) {
+  // Save the value of the clicked square in a variable. Not mandatory but it prevents repeating myself
+  let clicked = square;
+
+  // Add the class green when clicked
+  clicked.classList.add("green");
+
+  // Disable squares once they are clicked to avoid multiple clicks
+  // If the quares are clicked once the colour reverse function gets triggered it will cause issues
+  clicked.style.pointerEvents = "none";
+
+  // Check if the button is already in the array if not push index
+  for (let i = 0; i < squares.length; i++) {
+    // Temporarly replace the image with a number. I will restore it later on.
+    clicked.innerHTML = clickedSquares.indexOf(clicked) + 1;
+
+    // If the button is not there...
+    if (!clickedSquares.includes(clicked)) {
+      //...add it to the array
+      clickedSquares.push(clicked);
+    }
+  }
+}
+
+// ---------- When the sixth button is clicked, the background color will change back to initial colour, in reverse order to which the squares where clicked
 function changeColor() {
   for (let i = 5; i >= 0; i--) {
     // Change the square's color and background in reverse order
