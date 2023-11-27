@@ -9,7 +9,7 @@ const image = document.querySelector("img");
 let clickedSquares = [];
 
 let startImg = `<img src="owl.png">`;
-
+// Add events to the squares
 squares.forEach((btn) => {
   btn.innerHTML = startImg;
   btn.addEventListener("click", (e) => {
@@ -22,9 +22,7 @@ squares.forEach((btn) => {
 // STEP 6: Define the functions that will update the state of the square
 
 // ----------- Change background and add buttons clicked to the array
-function updateArray(square) {
-  // Save the value of the clicked square in a variable. Not mandatory but it prevents repeating myself
-  let clicked = square;
+function updateArray(clicked) {
 
   // Add the class green when clicked
   clicked.classList.add("green");
