@@ -82,13 +82,13 @@ p {
   }
   .square {
     width: 40%;
-    height: auto;
+    height: 40%;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1100px) {
   .square {
     width: 45%;
-    height: auto;
+    height: 45%;
   }
 }
