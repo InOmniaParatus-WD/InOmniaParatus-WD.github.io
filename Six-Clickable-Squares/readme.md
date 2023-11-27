@@ -7,8 +7,8 @@
 
 ### This here is my approach with some extra features
 Final result looks like this 👇🏽
-
-https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io/assets/78725314/de6e8ed8-21a7-40ee-b57c-0ba6d5cb0825
+ 
+https://github.com/InOmniaParatus-WD/InOmniaParatus-WD.github.io/assets/78725314/a646d289-af13-407d-90e5-efc6b4381c09
 
 You can test out the live project [here](https://inomniaparatus-wd.github.io/Six-Clickable-Squares/).
 Any constructive criticism is welcomed ☺️.
