@@ -44,7 +44,7 @@ p {
   justify-content: center;
   align-items: center;
   width: 15rem;
-  height: auto;
+  height: 15rem;
   border-radius: 5px;
   font-size: 4rem;
   font-weight: bold;
@@ -103,6 +103,6 @@ p {
 
   .square {
     width: 10rem;
-    height: auto;
+    height: 10rem;
   }
 }
