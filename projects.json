@@ -1,10 +1,5 @@
 [
-    {
-        "projectName": "Clickable Squares Challange",
-        "projectLink": "../Six-Clickable-Squares/",
-        "photo": "images/Projects-Photos/Six_Squares.jpg",
-        "altText": "six squares to change colors when clicked"
-    },
+ 
     {
         "projectName": "Music Player → PWA",
         "projectLink": "../Music-Player/",
@@ -100,5 +95,11 @@
         "projectLink": "../Tribute-Page/",
         "photo": "images/Projects-Photos/Tribute_Page.jpg",
         "altText": "tribute page"
+    },
+    {
+        "projectName": "Clickable Squares Challange",
+        "projectLink": "../Six-Clickable-Squares/",
+        "photo": "images/Projects-Photos/Six_Squares.jpg",
+        "altText": "six squares to change colors when clicked"
     }
 ]
