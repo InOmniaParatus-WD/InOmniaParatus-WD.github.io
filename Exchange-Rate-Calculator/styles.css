@@ -184,7 +184,7 @@ button.btn:hover #top {
 }
 #top {
   left: 48%;
-  top: 50%;
+  top: 45%;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -232,6 +232,10 @@ div.network-error {
   #bottom {
     left: 30%;
     top: 65%;
+  }
+  #top {
+    top: 58%;
+   left: 20%;
   }
 }
 
