@@ -13,7 +13,7 @@ if ("serviceWorker" in navigator) {
 
 self.addEventListener("install", (evt) => {
   evt.waitUntil(
-    caches.open(hangman).then((cache) => {
+    caches.open(calculator).then((cache) => {
       cache.addAll(assets);
     })
   );
