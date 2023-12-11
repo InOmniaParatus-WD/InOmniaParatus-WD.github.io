@@ -39,7 +39,7 @@ header p {
   padding: 1rem 0;
   font-size: 1rem;
   letter-spacing: 1.5px;
- width: auto;
+  width: auto;
 }
 img {
   width: 200px;
@@ -205,11 +205,22 @@ div.rate {
   padding: 0.5rem;
 }
 
-div.network-error {
+div.error {
   color: #cadce0;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
+div.error p.error-head {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+div.error p.error-type {
+  color: rgb(246, 120, 120);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
 @media (max-width: 640px) {
   p {
     width: 70%;
@@ -235,7 +246,7 @@ div.network-error {
   }
   #top {
     top: 58%;
-   left: 20%;
+    left: 20%;
   }
 }
 

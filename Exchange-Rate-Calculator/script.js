@@ -44,30 +44,46 @@ function changeChars(input) {
 // Cached the latest currency rate from the API
 let cachedRates = {};
 
-function getCurrencyRates(currency) {
-  if (cachedRates.hasOwnProperty(currency)) {
-    return cachedRates[currency];
-  } else {
-    return fetch(
+async function fetchData(currency) {
+  try {
+    const res = await fetch(
       `https://v6.exchangerate-api.com/v6/cbe0c79dea978802cfac4f74/latest/${currency}`
-    )
-      .then(async (res) => {
-        let dataFethced = (await res.json()).conversion_rates;
-        cachedRates[currency] = dataFethced;
-        return dataFethced;
-      })
-      .catch((err) => {
-        currencyContainer.innerHTML = `
-      <div class="network-error">
-        <h2> Oops! Something went wrong <span>&#128533;<span> ... </h2>
-        <p>Please check your network connection or your API requests limit</p>
-      </div>
-      `;
-      });
+    );
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+    return err;
   }
 }
 
-//Fetch echange rates and update the DOM
+async function getCurrencyRates(currency) {
+  if (cachedRates.hasOwnProperty(currency)) {
+    return cachedRates[currency];
+  } else {
+    let response = await fetchData(currency);
+
+    if (response.result === "success") {
+      cachedRates[currency] = response.conversion_rates;
+      return response.conversion_rates;
+    }
+
+    if (response.result === "error") {
+      let res = response["error-type"].replace("-", " ").toUpperCase();
+
+      currencyContainer.innerHTML = `
+        <div class="error">
+          <p class="error-head"> Oops! Something went wrong <span>&#128533;<span> ... </p>
+          
+          <p class="error-type"> ${res}</p>
+          <!-- <p>Please check your network connection or your API requests limit</p> -->
+    </div>
+    `;
+    }
+    return null;
+  }
+}
+
+//Fetch exchange rates and update the DOM
 async function calculate(event) {
   const currencyOne = currEl_one.value;
   const currencyTwo = currEl_two.value;
@@ -103,8 +119,9 @@ currEl_one.addEventListener("change", calculate);
 currEl_two.addEventListener("change", calculate);
 
 getCurrencyRates("AUD").then((data) => {
+  if (data === null) return;
+
   let currencies = Object.keys(data);
-  // console.log(currencies)
 
   // Dynamically populates currEl_one select with currency options
   for (let i = 0; i < currencies.length; i++) {
