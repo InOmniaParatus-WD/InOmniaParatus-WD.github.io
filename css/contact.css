@@ -13,7 +13,7 @@
   width: 400px;
 }
 
-#collaborate img{
+#collaborate img {
   width: 100%;
 }
 .contact-header h2 {
@@ -23,47 +23,59 @@
 }
 
 .contact-header p {
-  font-style: oblique;
   letter-spacing: 1.5px;
   font-size: 1.5rem;
-  padding-top: 20px;
   text-align: center;
 }
 
 .profiles {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   margin: 3rem 0 1rem 0;
 }
 
-.profiles div {
-  padding-left: 25px;
-  font-size: 1.2rem;
+.social-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.profiles-links {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1rem;
   color: var(--text-color);
-  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2),
-    1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 .profiles div a {
   text-decoration: none;
   color: var(--text-color);
+  background-color: var(--navbar-color);
+  padding: 2px 5px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
 }
 
-.profiles div:hover, .profiles div:hover a {
-  color: var(--link-hover-background);
+.profiles a:hover {
+  background-color: var(--link-hover-background);
+  color: var( --text-hover-color);
+  font-weight: bold;
 }
 
-.call-to-action {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
+.email-me {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
 }
-.call-to-action p {
-  margin-left: 0.5rem;
-}
+
 hr {
   background-color: var(--link-hover-background);
   height: 5px;

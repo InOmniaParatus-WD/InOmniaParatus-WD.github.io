@@ -49,6 +49,7 @@
   color: var(--text-hover-color);
   box-shadow: var(--box-shadow);
   border-radius: 5px;
+  font-weight: bold;
 }
 
 @media (max-width: 40rem){
