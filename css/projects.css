@@ -29,8 +29,6 @@
   align-items: center;
   width: 30%;
   height: fit-content;
-  /* background-color: var(--project-tile-background); */
-  /* box-shadow: var(--box-shadow); */
   border-radius: 50px;
   margin: 15px;
   text-align: center;
@@ -45,11 +43,6 @@
   border: 2px solid  #0b525b;;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
-/* .project-link {
-  max-width: 100%;
-  font-size: 1.2em;
-} */
 
 .project-name {
   margin: 0.8rem 0;
@@ -76,7 +69,6 @@
   margin: 1.5rem auto;
   font-size: 1.5rem;
   letter-spacing: 1px;
-  /* box-shadow: var(--box-shadow); */
 }
 
 @media (hover: hover) and (pointer: fine) {
