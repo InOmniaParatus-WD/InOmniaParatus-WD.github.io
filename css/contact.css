@@ -10,7 +10,7 @@
 }
 
 #collaborate {
-  width: 400px;
+  width: 25rem;
 }
 
 #collaborate img {
@@ -23,7 +23,7 @@
 }
 
 .contact-header p {
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -38,7 +38,7 @@
 }
 
 .social-media {
-  width: 100%;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,9 +70,10 @@ a.profile-link:hover {
 }
 
 .email-me {
-  width: 100%;
+  width: fit-content;
   text-align: center;
   font-size: 1rem;
+  padding: 0.2rem;
 }
 
 a#email-me-link {
@@ -103,16 +104,25 @@ hr {
 
 @media (max-width: 640px) {
   #collaborate {
-    width: 200px;
+    width: 15rem;
   }
   .contact-header h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .profiles {
-    flex-wrap: wrap;
     font-size: 1rem;
     padding-bottom: 0;
+  }
+  .contact-header p {
+    font-size: 1rem;
+  }
+  .social-media {
+    flex-direction: column;
+  }
+
+  .fa-hand-point-right {
+    opacity: 0;
   }
 }
 
