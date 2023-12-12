@@ -22,8 +22,9 @@ function addToDom(count) {
 
     projectTile.innerHTML = `
       <a href="${project.projectLink}" target="_blank">
-      <img src="${project.photo}" alt="${project.altText}">
-      </a>
+        <div class="overlay">VIEW PROJECT</div>  
+        <img src="${project.photo}" alt="${project.altText}">
+      </a> 
     `;
 
     projectsCollection.appendChild(projectTile);
@@ -47,7 +48,5 @@ showProjectsBtn.addEventListener("click", () => {
       projectsCollection.removeChild(tiles[i]);
       showProjectsBtn.innerHTML = "More projects...";
     }
-   
   }
-  addToDom(0);
 });

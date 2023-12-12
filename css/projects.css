@@ -20,39 +20,53 @@
   flex-wrap: wrap;
   align-items: space-between;
   justify-content: center;
+  width: 100vw;
 }
 
 .project-tile {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 30%;
-  height: fit-content;
+  height: auto;
   border-radius: 50px;
   margin: 15px;
+}
+
+.project-tile .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  bottom: 40%;
+  left: 2px;
+  right: inherit;
+  width: calc(100% - 4px);
+  /* height: 100%; */
   text-align: center;
-  letter-spacing: 1px;
-  font-size: 1.3rem;
-  padding: 0.8rem;
+  background-color: var(--link-hover-background);
+  color: var(--text-hover-color);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+  font-size: 0;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding: 2rem 0;
+  /* border-radius: 50px; */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
 }
 
 .project-tile img {
   width: 100%;
+  height: 100%;
   border-radius: 50px;
-  border: 2px solid  #0b525b;;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-.project-name {
-  margin: 0.8rem 0;
-  letter-spacing: 1.2px;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-.project-tile a {
-  color: var(--text-color);
-  text-decoration: none;
+  border: 2px solid #0b525b;
 }
 
 .show-more-projects {
@@ -72,14 +86,9 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project-tile:hover {
-    background-color: var(--link-hover-background);
-    border-radius: 50px;
-    font-weight: 500;
-  }
-  .project-tile a:hover {
-    text-decoration: none;
-    color: var(--text-hover-color);
+  .project-tile:hover .overlay {
+    opacity: 1;
+    font-size: 2rem;
   }
 
   .show-more-projects:hover {
@@ -96,24 +105,17 @@
   .project-tile {
     width: 80%;
   }
-  .projects-link {
-    font-size: 1rem;
-    width: 30%;
-  }
-  img {
-    height: auto;
-  }
 }
 
 @media (min-width: 641px) and (max-width: 1100px) {
   .project-tile {
-    width: 35%;
-  }
-  .project-tile a {
-    font-size: 1rem;
-    text-align: center;
-  }
-  .projects-link {
     width: 30%;
+  }
+}
+
+@media (min-width: 1101px) {
+ 
+  .project-tile {
+    width: 25%;
   }
 }

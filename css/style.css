@@ -24,4 +24,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  width: 100vw;
+  margin: 0;
+  overflow-x:hidden;
 }
