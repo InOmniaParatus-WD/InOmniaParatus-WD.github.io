@@ -1,14 +1,13 @@
 footer {
   text-align: center;
   font-size: 1rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1rem 0 2rem 0;
   background-color: #0b525b;
   color: var(--text-color);
 }
 
 footer .copyright {
-  margin-top: 5px;
+  margin-top: 1px;
 }
 @media (max-width: 640px) {
   footer {
