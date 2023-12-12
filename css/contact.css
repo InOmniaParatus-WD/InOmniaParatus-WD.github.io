@@ -64,16 +64,34 @@
   box-shadow: var(--box-shadow);
 }
 
-.profiles a:hover {
+a.profile-link:hover {
   background-color: var(--link-hover-background);
-  color: var( --text-hover-color);
-  font-weight: bold;
+  color: var(--text-hover-color);
 }
 
 .email-me {
   width: 100%;
   text-align: center;
   font-size: 1rem;
+}
+
+a#email-me-link {
+  text-decoration: underline 2px var(--text-color);
+  padding: 2px;
+  color: var(--text-color);
+}
+
+a#email-me-link:hover {
+  text-decoration: underline 2px var(--link-hover-background);
+  background-color: var(--link-hover-background);
+  color: var(--text-hover-color);
+  border-radius: 5px;
+}
+
+.fa-hand-point-right,
+.fa-smile-wink,
+.fa-envelope {
+  color: var(--link-hover-background);
 }
 
 hr {
