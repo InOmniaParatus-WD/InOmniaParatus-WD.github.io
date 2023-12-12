@@ -23,19 +23,39 @@ function addToDom(count) {
     projectTile.innerHTML = `
       <a href="${project.projectLink}" target="_blank">
       <img src="${project.photo}" alt="${project.altText}">
-      <div class="project-name">${project.projectName}</div>
       </a>
     `;
 
     projectsCollection.appendChild(projectTile);
 
     currCount++;
+    if (projectsDetails.length === currCount) console.log("ok");
   });
 
   if (projectsDetails.length === currCount) {
-    showMoreBtn.style.display ="none"
-    projectsCollection.style.paddingBottom = "2rem"
+    showMoreBtn.innerHTML = "Show less...";
+    // projectsCollection.style.paddingBottom = "2rem";
   }
 }
 
-showMoreBtn.addEventListener("click", () => addToDom(3));
+showMoreBtn.addEventListener("click", () => {
+  if (projectsDetails.length > currCount) {
+    console.log("ADDING");
+    addToDom(3);
+  } else if (projectsDetails.length === currCount) {
+    let tiles = Array.from(projectsCollection.childNodes);
+
+    for (let i = tiles.length - 1; i > 5; i--) {
+      console.log(i)
+    }
+
+    // forEach((tile, i) => {
+    //   if (i > 5) {
+    //     console.log(tile, i);
+    //     projectsCollection.removeChild(tile);
+    //     // tile.remove()
+    //     currCount--;
+    //   }
+    // });
+  }
+});
