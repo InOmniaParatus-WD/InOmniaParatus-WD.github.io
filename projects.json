@@ -1,5 +1,4 @@
-[
- 
+[ 
     {
         "projectName": "Music Player → PWA",
         "projectLink": "../all-projects/Music-Player/",
@@ -70,14 +69,16 @@
         "projectName": "Form Validation JavaScript",
         "projectLink": "../all-projects/Form-Validator/",
         "photo": "images/Projects-Photos//Form_Validator.jpg",
-        "altText": "form validator"
+        "altText": "form validation with vanilla JavaScript"
     },
+ 
     {
         "projectName": "Landing Page",
         "projectLink": "../all-projects/Product-Landing-Page/",
         "photo": "images/Projects-Photos/Product_Landing_Page.jpg",
         "altText": "product landing page"
     },
+    
     {
         "projectName": "Technical Docs",
         "projectLink": "../all-projects/Technical-Docs-Page/",
@@ -101,6 +102,16 @@
         "projectLink": "../all-projects/Tribute-Page/",
         "photo": "images/Projects-Photos/Tribute_Page.jpg",
         "altText": "tribute page"
+    }, {
+        "projectName": "Hover Effects on Buttons",
+        "projectLink": "../all-projects/Buttons-Hover-Effects/",
+        "photo": "images/Projects-Photos/Buttons_Hover_Effects.jpg",
+        "altText": "different hovering effects on buttons"
+    },
+    {
+        "projectName": "Feed My Dog",
+        "projectLink": "../all-projects/Feed-Cheerpy/",
+        "photo": "images/Projects-Photos/cheerpy.png",
+        "altText": "feeding my dog Cheerpy while I am away"
     }
-
 ]
