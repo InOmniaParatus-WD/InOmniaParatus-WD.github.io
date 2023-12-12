@@ -46,7 +46,7 @@ showProjectsBtn.addEventListener("click", () => {
     for (let i = tiles.length - 1; i > 5; i--) {
       currCount--;
       projectsCollection.removeChild(tiles[i]);
-      showProjectsBtn.innerHTML = "More projects...";
+      showProjectsBtn.innerText = "More projects...";
     }
   }
 });
