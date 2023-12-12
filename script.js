@@ -1,6 +1,6 @@
 const projectsCollection = document.querySelector("#project-tiles");
 const projects = document.querySelectorAll(".project-tile");
-const showMoreBtn = document.querySelector("#show-more-projects");
+const showProjectsBtn = document.querySelector("#show-more-projects");
 
 let projectsDetails;
 let currCount = 0;
@@ -29,33 +29,25 @@ function addToDom(count) {
     projectsCollection.appendChild(projectTile);
 
     currCount++;
-    if (projectsDetails.length === currCount) console.log("ok");
   });
 
   if (projectsDetails.length === currCount) {
-    showMoreBtn.innerHTML = "Show less...";
-    // projectsCollection.style.paddingBottom = "2rem";
+    showProjectsBtn.innerHTML = "Show less...";
   }
 }
 
-showMoreBtn.addEventListener("click", () => {
+showProjectsBtn.addEventListener("click", () => {
   if (projectsDetails.length > currCount) {
-    console.log("ADDING");
     addToDom(3);
   } else if (projectsDetails.length === currCount) {
     let tiles = Array.from(projectsCollection.childNodes);
 
     for (let i = tiles.length - 1; i > 5; i--) {
-      console.log(i)
+      currCount--;
+      projectsCollection.removeChild(tiles[i]);
+      showProjectsBtn.innerHTML = "More projects...";
     }
-
-    // forEach((tile, i) => {
-    //   if (i > 5) {
-    //     console.log(tile, i);
-    //     projectsCollection.removeChild(tile);
-    //     // tile.remove()
-    //     currCount--;
-    //   }
-    // });
+   
   }
+  addToDom(0);
 });
