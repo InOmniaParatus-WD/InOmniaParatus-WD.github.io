@@ -37,6 +37,12 @@
         "altText": "Recipies finder with third party API"
     },
     {
+        "projectName": "Clickable Squares Challange",
+        "projectLink": "../Six-Clickable-Squares/",
+        "photo": "images/Projects-Photos/Six_Squares.jpg",
+        "altText": "six squares to change colors when clicked"
+    },
+    {
         "projectName": "Random Quotes Machine with jQuery",
         "projectLink": "../Random-Quote-Machine/",
         "photo": "images/Projects-Photos/Random_Quote_Machine.jpg",
@@ -95,11 +101,6 @@
         "projectLink": "../Tribute-Page/",
         "photo": "images/Projects-Photos/Tribute_Page.jpg",
         "altText": "tribute page"
-    },
-    {
-        "projectName": "Clickable Squares Challange",
-        "projectLink": "../Six-Clickable-Squares/",
-        "photo": "images/Projects-Photos/Six_Squares.jpg",
-        "altText": "six squares to change colors when clicked"
     }
+
 ]
