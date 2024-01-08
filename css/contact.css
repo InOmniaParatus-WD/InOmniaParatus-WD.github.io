@@ -56,12 +56,15 @@
 }
 
 .profiles div a {
+  width: 2rem;
+  text-align: center;
   text-decoration: none;
   color: var(--text-color);
   background-color: var(--navbar-color);
-  padding: 2px 5px;
+  padding: 3px 7px;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
+  font-size: 1rem;
 }
 
 a.profile-link:hover {
@@ -89,17 +92,27 @@ a#email-me-link:hover {
   border-radius: 5px;
 }
 
-.fa-hand-point-right,
-.fa-smile-wink,
-.fa-envelope {
+.fa-smile-wink {
   color: var(--link-hover-background);
+  text-shadow: var(--box-shadow);
+  border-radius: 50%;
 }
 
 hr {
-  background-color: var(--link-hover-background);
-  height: 5px;
-  border: none;
-  width: 100%;
+  border: 0;
+  height: 3px;
+  width: 30%;
+  margin: 0 auto 1rem auto;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    var(--navbar-color),
+    rgba(0, 0, 0, 0),
+    var(--link-hover-background),
+    rgba(0, 0, 0, 0),
+    var(--navbar-color),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 @media (max-width: 640px) {
