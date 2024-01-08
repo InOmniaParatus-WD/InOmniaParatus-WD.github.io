@@ -14,7 +14,7 @@ const songTitle = document.querySelector("#title");
 const cover = document.querySelector("#cover");
 const playList = document.querySelector("#playlist");
 const volume = document.querySelector("#volume-control");
-
+let volumeIcon = document.querySelector("#volume-icon");
 // Keep track of song and song list order
 let songIdx = 0;
 let isPlaying = false;
@@ -105,6 +105,7 @@ function playSong() {
   playBtn.title = "Pause";
   buttonFont.classList.add("fa-pause");
 
+  // audio.volume = +volume.value;
   audio.play();
 }
 
@@ -223,7 +224,35 @@ function handleInputChange(e) {
   const max = target.max;
   const val = target.value;
 
-  target.style.backgroundSize = ((val - min) * 100) / (max - min) + "% 100%";
+  let firstParam = ((val - min) * 100) / (max - min);
+
+  if (firstParam === 0) {
+    volumeIcon.classList = "fa-solid fa-volume-mute";
+  } else if (firstParam > 0 && firstParam < 35) {
+    volumeIcon.classList = "fa-solid fa-volume-low";
+  } else {
+    volumeIcon.classList = "fa-solid fa-volume-high";
+  }
+  target.style.backgroundSize = `${firstParam}% 100%`;
+}
+
+function handleVolumeFromIcon() {
+  let param = +volume.value;
+
+  if (param === 0) {
+    param = 0.3;
+
+    volume.style.backgroundSize = "30% 100%";
+    volumeIcon.classList = "fa-solid fa-volume-low";
+  } else if (param > 0) {
+    param = 0;
+
+    volume.style.backgroundSize = "0% 100%";
+    volumeIcon.classList = "fa-solid fa-volume-mute";
+  }
+
+  audio.volume = param;
+  volume.value = `${param}`;
 }
 
 // ---------------- EVENTS ----------------- //
@@ -242,15 +271,18 @@ playBtn.addEventListener("click", () => {
 });
 
 // Adjust the volume and input background color
-volume.addEventListener("change", handleInputChange); // desktop browser
+volume.addEventListener("change", handleInputChange);
 
 volume.addEventListener("touchend", (e) => {
   audio.volume = e.target.value;
 }); // for mobile web browser
 
+// desktop browser
 volume.addEventListener("click", (e) => {
   audio.volume = e.target.value;
 });
+
+volumeIcon.addEventListener("click", handleVolumeFromIcon);
 
 // Stop the player
 stopBtn.addEventListener("click", () => {
@@ -297,7 +329,6 @@ audio.addEventListener("timeupdate", (e) => updateProgress(e));
 
 // Song ends
 audio.addEventListener("ended", (e) => {
-
   if (songIdx < allSongs.length - 1) {
     nextSong();
     playSong();

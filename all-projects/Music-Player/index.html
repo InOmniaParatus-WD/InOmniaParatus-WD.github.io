@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="images/favicon/instruments.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 
-    
+
     <title>Music Player</title>
 </head>
 
@@ -60,23 +60,25 @@
                         <i class="fas fa-forward"></i>
                     </button>
 
-                    <button id="show-playlist" class="show-playlist action-btn displayed" title="Toggle Playlist">
-                        <i class="fas fa-list-ul"></i>
-                    </button>
+
                 </div>
 
                 <div class="playlist-options">
+
                     <button class="action-btn shuffle" id="shuffle" title="Shuffle">
                         <i class="fas fa-shuffle"></i>
                     </button>
                     <button class="action-btn repeat" id="repeat" title="Repeat">
                         <i class="fas fa-repeat"></i>
                     </button>
+                    <button id="show-playlist" class="show-playlist action-btn displayed" title="Toggle Playlist">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
                 </div>
 
                 <div class="volume-section">
-                    <i class="fa-solid fa-volume-high"></i>
-                    <input type="range" step="0.01" min="0" max="1" value="0.5" class="volume-btn" id="volume-control"
+                    <i class="fa-solid fa-volume-low" id="volume-icon"></i>
+                    <input type="range" step="0.01" min="0" max="1" value="0.3" class="volume-btn" id="volume-control"
                         title="Volume">
                 </div>
             </div>
