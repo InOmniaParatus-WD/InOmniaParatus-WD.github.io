@@ -41,7 +41,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 32rem;
+  width: 40rem;
 }
 
 .play-section {
@@ -90,24 +90,19 @@ body {
     transform: rotate(360deg);
   }
 }
-.buttons {
-  margin-left: auto;
-  padding-right: 1rem;
-}
 
 .navigation {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-left: 1rem;
 }
 
 .action-btn {
   background-color: var(--dark-brown);
   border-radius: 5px;
-  padding: 0.3rem;
-  width: 2.5rem;
+  padding: 0.5rem;
+  width: 3rem;
   color: var(--white-gray);
   font-size: 1rem;
   border: none;
@@ -130,7 +125,7 @@ body {
   background: var(--songs-background);
   border-radius: 10px 10px 0 0;
   letter-spacing: 1.2px;
-  width: 95%;
+  width: 97%;
   padding: 1.5rem;
   opacity: 0;
   transition: opacity 0.3s ease-in;
@@ -221,7 +216,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 0 0 5px 5px;
   letter-spacing: 1.2px;
   font-size: 0.8rem;
-  width: 95%;
+  width: 97%;
   padding: 0 1rem;
 }
 
@@ -306,6 +301,8 @@ li.active {
   flex-direction: column;
   align-items: end;
   justify-content: center;
+
+  margin-left: auto;
 }
 
 .copyrights {
@@ -322,25 +319,25 @@ aside {
   font-size: 0.8rem;
 }
 
-@media (hover: hover) and (pointer: fine){
+@media (hover: hover) and (pointer: fine) {
   .action-btn:hover {
     background-color: #ffffff;
-    color: var(--dark-brown);
+    color: var(--darker-orange);
   }
-  
+
   li:hover {
     background-color: var(--dark-brown);
     color: var(--whitesmoke-color);
   }
 }
 
-@media (max-width: 33rem) {
+@media (max-width: 640px) {
   .music-container {
-    width: 22rem;
+    width: 98%;
   }
   .buttons {
     width: 10rem;
-    padding-right: 0.5rem;
+    padding-right: 0.2rem;
   }
   .navigation {
     margin: 0;
@@ -350,14 +347,15 @@ aside {
   }
   .volume-section {
     padding: 0;
-    width: 20rem;
+    width: 15rem;
   }
   .action-btn {
-    width: 2rem;
+    width: 1.8rem;
     margin: 0.3rem;
+    font-size: 0.8rem;
   }
   .image-container {
-    left: -0.8rem;
+    left: -0.5rem;
     width: 7rem;
     height: 7rem;
   }
@@ -374,5 +372,3 @@ aside {
     margin-top: 1rem;
   }
 }
-
-
