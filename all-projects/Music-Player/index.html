@@ -20,13 +20,12 @@
 </head>
 
 <body>
-
     <div class="music-container" id="music-container">
         <section class="music-info">
             <div class="song-info">
-                <h4 id="title"></h4>
-                <div class="time">
-                    <span class="minutes"></span><span class="seconds"></span>
+                <h4 class="title" id="title"></h4>
+                <div id="time">
+                    <span id="minutes"></span><span id="seconds"></span>
                 </div>
             </div>
 
@@ -45,14 +44,17 @@
 
             <div class="buttons">
 
-                <div class="navigation">
+
+                <section class="navigation">
+
+
                     <button id="prev" class="action-btn" title="Previous Song">
                         <i class="fas fa-backward"></i>
                     </button>
-                    <button id="play" class="action-btn action-btn-big" title="Play">
+                    <button id="play" class="action-btn" title="Play">
                         <i class="fas fa-play"></i>
                     </button>
-                    <button id="stop" class="action-btn action-btn-big" title="Stop">
+                    <button id="stop" class="action-btn" title="Stop">
                         <i class="fas fa-stop"></i>
                     </button>
                     <button id="next" class="action-btn" title="Next Song">
@@ -67,14 +69,15 @@
                     <button id="show-playlist" class="show-playlist action-btn displayed" title="Toggle Playlist">
                         <i class="fas fa-list-ul"></i>
                     </button>
-                </div>
+                </section>
 
                 <div class="volume-section">
-                    <i class="fa-solid fa-volume-low" id="volume-icon"></i>
-                    <input type="range" step="0.01" min="0" max="1" value="0.3" class="volume-btn" id="volume-control"
-                        title="Volume">
-                </div>
+                    <button class="volume-btn">
+                        <i class="fa-solid fa-volume-low" id="volume-icon"></i>
+                    </button>
 
+                    <input type="range" step="0.01" min="0" max="1" value="0.3" id="volume-control" title="Volume">
+                </div>
                 <button class="credits" id="credits">Credits</button>
             </div>
 
@@ -92,16 +95,17 @@
 
                     <p> All tracks used for this demo are Royalty-free. Courtesy of <a href="https://pixabay.com/music/"
                             target="_blank">Pixabay</a>.</p>
+                    <p> All images all copyrights-modal</p>
                 </div>
             </div>
         </div>
 
     </div>
-   
+
     <footer>
-       <p> &copy; by <a href="https://github.com/InOmniaParatus-WD">Ioana Popa</a></p> 
+        <p> &copy; by <a href="https://github.com/InOmniaParatus-WD">Ioana Popa</a></p>
     </footer>
-    
+
 
 
 
