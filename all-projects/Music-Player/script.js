@@ -36,7 +36,7 @@ const allSongs = [
 
 const songsCopy = JSON.parse(JSON.stringify(allSongs));
 
-const allImages = ["listening", "vinil", "key", "headphones"];
+const allImages = ["listening", "vinil", "headphones"];
 
 // Initially load song details into DOM
 showSongsInPlaylist();
