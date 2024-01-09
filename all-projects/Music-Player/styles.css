@@ -171,7 +171,7 @@ input[type="range"] {
   height: 0.5rem;
   border-radius: 5px;
   box-shadow: rgba(100, 95, 92, 0.685) 0px 3px 8px inset;
-  background-image: linear-gradient(#252422, #252422);
+  background-image: linear-gradient(#252422, #302d28, #635a4b);
   background-size: 30% 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -282,7 +282,6 @@ li.active {
   background-color: var(--whitesmoke-color);
   color: var(--orange);
   box-shadow: var(--btn-clicked-shadow);
-  
 }
 
 .action-btn:active {
@@ -310,28 +309,95 @@ li.active {
   margin-left: auto;
   padding: 0;
 }
+
 .credits {
   font-size: 1rem;
   text-align: right;
+  text-shadow: var(--text-shadow);
+  font-weight: bold;
   padding: 0.5rem 0.5rem 0 0;
   background-color: transparent;
   border: transparent;
   cursor: pointer;
+  color: var(--dark-brown);
+}
+
+.credits:hover {
   color: var(--whitesmoke-color);
 }
 
+.copyrights-modal {
+  position: absolute;
+  background-color: #33110482;
+  box-shadow: var(--text-shadow);
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
 .copyrights {
+  width: 26rem;
+  background-color: var(--whitesmoke-color);
+  border-radius: 5px;
+  padding: 1rem;
   color: var(--dark-brown);
   height: fit-content;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-align: center;
-  margin-top: 2rem;
+  position: relative;
 }
 
-aside {
-  font-style: italic;
-  font-size: 0.8rem;
+.close-modal {
+  border: none;
+  background-color: var(--dark-brown);
+  color: var(--whitesmoke-color);
+  font-size: 1.2rem;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.close-modal:hover {
+  background-color: var(--orange);
+}
+.close-modal:active {
+  transform: scale(95%);
+}
+
+.text {
+  margin: 2rem 0;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.copyrights a {
+  text-decoration: none;
+  color: var(--orange);
+}
+
+.copyrights a:hover {
+  text-decoration: underline 2px solid var(--orange);
+}
+
+footer {
+  p {
+    color: var(--whitesmoke-color);
+    a {
+      text-decoration: underline 2px var(--orange);
+      color: var(--whitesmoke-color);
+    }
+
+    a:hover {
+      color: var(--orange);
+    }
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -346,9 +346,13 @@ audio.addEventListener("ended", (e) => {
   }
 });
 
-// ------------ Further study -------------- //
+// MODAl
+const modal = document.getElementById("copyrights-modal");
+document.getElementById("close-modal").addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
-// Upload local files in the playlist
-// Drag and drop => move the player on a different spot on the browser page
-// Refactor the code to class helper function
-// Pack as a mobile app
+document
+  .getElementById("credits")
+  .addEventListener("click", () => modal.style.display = "flex");
+
