@@ -26,9 +26,9 @@
 
 body {
   background: url("images/listening.jpg");
-  background-color: var(--dark-brown);
+  background-color: #90431c;
   background-size: cover;
-  background-position: center;
+  background-position: 55%;
   background-repeat: no-repeat;
   font-family: "Lato", sans-serif;
   height: 100vh;
@@ -36,14 +36,15 @@ body {
   flex-direction: column;
   justify-content: end;
   align-items: flex-start;
-  margin: 0;overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 
 .music-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: right;
   position: relative;
   width: 30rem;
 
@@ -127,19 +128,18 @@ body {
   display: flex;
   align-self: flex-start;
   border-radius: 5px;
-  height: 7rem;
+  height: auto;
   width: 100%;
   margin-top: auto;
   background-color: var(--orange);
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 
   .image-container {
-    width: 7rem;
-    height: 7rem;
-    margin: auto;
+    width: 8rem;
+    height: 8rem;
     position: relative;
     left: 5px;
-    top: -20px;
+    top: -25px;
 
     img {
       object-fit: cover;
@@ -157,28 +157,28 @@ body {
 .buttons {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: right;
+  align-items: end;
   width: 100%;
   padding: 0;
 
   .navigation {
+    margin: 0.3rem;
     display: flex;
+    justify-content: right;
     align-items: center;
-    justify-content: center;
     text-align: center;
 
     .action-btn {
       background-color: transparent;
       border-radius: 5px;
-      padding: 0.2rem;
-      width: 2rem;
+      padding: 0.4rem;
       color: var(--dark-brown);
       font-size: 1.5rem;
       border: none;
       cursor: pointer;
       text-shadow: var(--text-shadow);
-      margin: 0.5rem;
+      margin: 0.3rem;
 
       .fa-pause {
         padding-right: 2.4px;
@@ -201,8 +201,9 @@ body {
   .volume-section {
     display: flex;
     flex-direction: row;
+    justify-content: right;
     align-items: center;
-    width: 19.5rem;
+    width: 100%;
     margin: 0.5rem;
     border-radius: 5px;
 
@@ -230,7 +231,7 @@ body {
       background-image: linear-gradient(var(--darker-orange), var(--orange));
       background-size: 30% 100%;
       background-repeat: no-repeat;
-      width: 100%;
+      width: 16rem;
     }
 
     input::-webkit-slider-thumb {
@@ -416,57 +417,55 @@ footer {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 640px) {
   body {
-    justify-content: center;
     align-items: center;
   }
-  .buttons {
-    width: 15rem;
-  }
-  .navigation {
-    margin: 0;
-  }
-  .playlist-options {
-    margin: 0;
-  }
-  .volume-section {
-    padding: 0;
-    width: 8.5rem;
-  }
-  .action-btn {
-    width: 1.8rem;
-    margin: 0.3rem;
-    font-size: 0.8rem;
-  }
-  .image-container {
-    left: -0.5rem;
-    width: 7rem;
-    height: 7rem;
+  .music-container {
+    width: 25rem;
   }
 
-  .image-container img {
-    width: inherit;
-    height: inherit;
-    bottom: 1.5rem;
+  .play-section {
+    .image-container {
+      width: 6rem;
+      height: 6rem;
+      top: 0;
+    }
+    .image-container img {
+      width: inherit;
+      height: inherit;
+      bottom: 1.5rem;
+    }
   }
-  .playlist {
-    flex-wrap: normal;
-  }
-  .copyrights {
-    margin-top: 0.1rem;
+
+  .buttons {
+    .navigation {
+      .action-btn {
+        font-size: 1.2rem;
+        margin: 0.2rem;
+      }
+    }
+    .volume-section {
+      input {
+        width: 12.5rem;
+      }
+    }
   }
 }
 
-@media (max-width: 640px) {
-  .music-container {
-    max-width: 100%;
+@media (min-width: 641px) and (max-width: 1200px) {
+  .navigation {
+    margin: 0;
   }
-  body {
-    /* justify-content: center; */
-    align-items: center;
+
+  .playlist-options {
+    margin: 0;
+  }
+
+  .copyrights {
+    margin-top: 0.1rem;
   }
   ul {
-    max-height: 8rem;
+    max-height: 3.2rem;
   }
 }
