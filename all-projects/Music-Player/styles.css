@@ -25,14 +25,18 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  background: url("images/listening.jpg");
   background-color: var(--dark-brown);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Lato", sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+  justify-content: end;
+  align-items: flex-start;
+  margin: 0;overflow: hidden;
 }
 
 .music-container {
@@ -45,10 +49,11 @@ body {
 
   .music-info {
     background: var(--songs-background);
+    box-shadow: var(--text-shadow);
     border-radius: 10px 10px 0 0;
     letter-spacing: 1.2px;
-    width: 97%;
-    padding: 1.5rem;
+    width: 100%;
+    padding: 0.2rem 1rem 1rem 1rem;
     opacity: 0;
     transition: opacity 0.3s ease-in;
     pointer-events: none;
@@ -120,18 +125,21 @@ body {
 
 .play-section {
   display: flex;
+  align-self: flex-start;
   border-radius: 5px;
-  height: 10rem;
+  height: 7rem;
   width: 100%;
+  margin-top: auto;
   background-color: var(--orange);
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 
   .image-container {
-    width: 9rem;
-    height: 9rem;
+    width: 7rem;
+    height: 7rem;
     margin: auto;
     position: relative;
     left: 5px;
+    top: -20px;
 
     img {
       object-fit: cover;
@@ -149,9 +157,9 @@ body {
 .buttons {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   justify-content: center;
-  margin-left: auto;
+  width: 100%;
   padding: 0;
 
   .navigation {
@@ -204,10 +212,14 @@ body {
     }
     .fa-solid {
       font-size: 1.5rem;
-      padding-right: 0.5rem;
+      padding-right: 0.55rem;
       color: var(--dark-brown);
       cursor: pointer;
       text-shadow: var(--text-shadow);
+    }
+
+    .fa-solid.fa-volume-high {
+      padding-right: 0;
     }
 
     input {
@@ -215,7 +227,7 @@ body {
       height: 0.5rem;
       border-radius: 5px;
       box-shadow: rgba(100, 95, 92, 0.685) 0px 3px 8px inset;
-      background-image: linear-gradient(#252422, #302d28, #635a4b);
+      background-image: linear-gradient(var(--darker-orange), var(--orange));
       background-size: 30% 100%;
       background-repeat: no-repeat;
       width: 100%;
@@ -225,9 +237,9 @@ body {
       appearance: none;
       background-color: var(--dark-brown);
       border: 1px solid var(--orange);
-      border-radius: 50px;
-      height: 1rem;
-      width: 1.5rem;
+      border-radius: 50%;
+      height: 0.8rem;
+      width: 1.8rem;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
         rgba(0, 0, 0, 0.23) 0px 3px 6px;
       cursor: pointer;
@@ -248,9 +260,8 @@ body {
   border-radius: 0 0 5px 5px;
   letter-spacing: 1.2px;
   font-size: 0.8rem;
-  width: 97%;
-  padding: 0 1rem;
-  position: relative;
+  width: 100%;
+  padding: 0 8px;
 }
 
 .playlist.show {
@@ -259,7 +270,7 @@ body {
 }
 
 ul {
-  height: 18rem;
+  max-height: 5rem;
   overflow: auto;
   padding: 0;
 
@@ -267,7 +278,7 @@ ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 0.5rem;
+    padding: 0.3rem;
     font-size: 0.9rem;
     text-shadow: var(--text-shadow);
     cursor: pointer;
@@ -293,7 +304,7 @@ ul::-webkit-scrollbar-track {
 }
 
 ul::-webkit-scrollbar-thumb {
-  background-color: var(--orange);
+  background-color: var(--dark-brown);
   border: 1px solid var(--whitesmoke-color);
   border-radius: 5px;
 }
@@ -406,6 +417,10 @@ footer {
 }
 
 @media (max-width: 400px) {
+  body {
+    justify-content: center;
+    align-items: center;
+  }
   .buttons {
     width: 15rem;
   }
@@ -444,7 +459,14 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .music-container {
+    max-width: 100%;
+  }
+  body {
+    /* justify-content: center; */
+    align-items: center;
+  }
   ul {
-    min-height: 18rem;
+    max-height: 8rem;
   }
 }
