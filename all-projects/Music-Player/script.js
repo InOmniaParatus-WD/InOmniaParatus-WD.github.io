@@ -27,7 +27,7 @@ const allSongs = [
   "Leva Eternity - lemonmusicstudio",
   "Powerful Beat - penguinmusic",
   "Summer Walk - Olexy",
-  "Inspiring Cinematic Ambient - Lexin Music",
+  "Cinematic Ambient - Lexin Music",
   "Weeknds - DayFox",
   "Into the Night - Prazkhanal",
   "Lifelike - AlexiAction",
@@ -36,7 +36,7 @@ const allSongs = [
 
 const songsCopy = JSON.parse(JSON.stringify(allSongs));
 
-const allImages = ["headphones", "rock'n'roll", "key", "instruments"];
+const allImages = ["listening", "vinil", "key", "instruments", "headphones"];
 
 // Initially load song details into DOM
 showSongsInPlaylist();
@@ -169,7 +169,7 @@ function updateProgress(evt) {
   const progressPercent = (currentTime / duration) * 100;
   songProgress.style.width = `${progressPercent}%`;
 
-  document.querySelector(".time").innerHTML = sToTime(currentTime);
+  document.getElementById("time").innerHTML = sToTime(currentTime);
   // document.querySelectorAll(".totalDuration").innerText = sToTime(duration)
 }
 
