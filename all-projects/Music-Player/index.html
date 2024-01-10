@@ -21,23 +21,15 @@
 
 <body>
     <div class="music-container" id="music-container">
-        <section class="music-info">
-            <div class="song-info">
-                <h4 class="title" id="title"></h4>
-                <div id="time">
-                    <span id="minutes"></span><span id="seconds"></span>
-                </div>
-            </div>
-            <div class="progress-container" id="progress-container">
-                <div class="progress" id="progress"></div>
-            </div>
+        <section class="playlist" id="playlist">
+            <ul></ul>
         </section>
 
-        <audio id="audio" ></audio>
+        <audio id="audio"></audio>
 
         <section class="play-section">
             <div class="image-container">
-                <img src="images/listening.jpg" id="cover" alt="music cover" />
+                <img src="images/clef-dark.jpg" id="cover" alt="music cover" />
             </div>
 
             <div class="buttons">
@@ -77,9 +69,18 @@
 
         </section>
 
-        <section class="playlist" id="playlist">
-            <ul></ul>
+        <section class="music-info">
+            <div class="song-info">
+                <h4 class="title" id="title"></h4>
+                <div id="time">
+                    <span id="minutes"></span><span id="seconds"></span>
+                </div>
+            </div>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
         </section>
+
 
     </div>
     <footer>
