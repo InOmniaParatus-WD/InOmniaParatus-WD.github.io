@@ -28,14 +28,14 @@ body {
   background: url("images/listening.jpg");
   background-color: #90431c;
   background-size: cover;
-  background-position: 50%;
+  background-position: 10%;
   background-repeat: no-repeat;
   font-family: "Lato", sans-serif;
+  min-height: 95vh;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: flex-start;
+  justify-content: flex-end;
   margin: 0;
   overflow: hidden;
 }
@@ -328,6 +328,7 @@ ul::-webkit-scrollbar-thumb {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 
   .copyrights {
     width: 26rem;
@@ -432,7 +433,7 @@ footer {
 @media (max-width: 640px) {
   body {
     align-items: center;
-    background-position: 10%;
+    background-position: 25%;
   }
   .music-container {
     width: 25rem;
