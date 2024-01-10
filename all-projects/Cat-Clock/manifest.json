@@ -3,7 +3,7 @@
   "short_name": "Cat Clock",
   "description": "A funny looking clock that displays your local time and location",
   "start_url": "index.html",
-  "scope": "https://inomniaparatus-wd.github.io/Cat-Clock/index.html",
+  "scope": "https://inomniaparatus-wd.github.io/Cat-Clock/",
   "display": "standalone",
   "background_color": "#051224",
   "theme_color": "#051224",
