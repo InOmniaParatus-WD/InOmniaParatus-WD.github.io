@@ -30,11 +30,15 @@
   justify-content: space-evenly;
   align-items: center;
   width: 30%;
-  height: auto;
+ 
   border-radius: 50px;
   margin: 15px;
 }
+.project-tile img {
+  height: 100%;
 
+
+}
 .project-tile .overlay {
   display: flex;
   justify-content: center;
