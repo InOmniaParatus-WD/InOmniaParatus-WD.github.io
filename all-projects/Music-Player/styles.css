@@ -31,8 +31,7 @@ body {
   background-position: 10%;
   background-repeat: no-repeat;
   font-family: "Lato", sans-serif;
-  min-height: 95vh;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
