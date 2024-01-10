@@ -54,7 +54,7 @@ body {
     border-radius: 0 0 5px 5px;
     letter-spacing: 1.2px;
     margin-top: -2px;
-    width: 100%;
+    width: 98%;
     padding: 1rem;
     opacity: 0;
     transition: opacity 0.3s ease-in;
@@ -287,7 +287,7 @@ ul {
     justify-content: space-between;
     list-style: none;
     padding: 0.3rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-shadow: var(--text-shadow);
     cursor: pointer;
     width: 100%;
@@ -434,8 +434,9 @@ footer {
     align-items: center;
     background-position: 25%;
   }
+
   .music-container {
-    width: 25rem;
+    width: 95%;
     margin: 0;
   }
 
