@@ -62,7 +62,7 @@ body {
 
     div.song-info {
       display: flex;
-      font-size: 0.9rem;
+      font-size: 1rem;
       padding: 0.5rem;
       text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
@@ -145,7 +145,7 @@ body {
     position: relative;
     left: 20px;
     top: -10px;
-    
+
     img {
       object-fit: cover;
       border-radius: 50%;
@@ -287,7 +287,7 @@ ul {
     justify-content: space-between;
     list-style: none;
     padding: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-shadow: var(--text-shadow);
     cursor: pointer;
     width: 100%;
@@ -438,8 +438,18 @@ footer {
   .music-container {
     width: 95%;
     margin: 0;
-  }
 
+    .music-info {
+      div.song-info {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  ul {
+    li {
+      font-size: 0.8rem;
+    }
+  }
   .play-section {
     .image-container {
       width: 6rem;
