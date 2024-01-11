@@ -441,15 +441,19 @@ footer {
 
     .music-info {
       div.song-info {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
       }
     }
   }
-  ul {
-    li {
-      font-size: 0.8rem;
+
+  .playlist {
+    ul {
+      li {
+        font-size: 0.85rem;
+      }
     }
   }
+
   .play-section {
     .image-container {
       width: 6rem;
