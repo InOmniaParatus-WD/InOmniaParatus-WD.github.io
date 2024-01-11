@@ -1,7 +1,7 @@
 /* New transaction modal */
 .new-transaction-modal-container {
   background-color: #4a4d3eef;
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
