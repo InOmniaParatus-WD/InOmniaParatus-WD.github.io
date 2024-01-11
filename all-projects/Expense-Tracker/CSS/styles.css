@@ -220,23 +220,26 @@ fieldset {
   display: flex;
   justify-content: space-between;
   align-items: left;
+  width: 100%;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-top: 1rem;
   width: 100%;
 }
-
+ 
 .transaction-cost .form-control {
-  width: 48%;
+  width: 45%;
 }
 
 input {
   padding: 10px;
   margin: 0.5rem 0;
   font-size: 1rem;
+  width: 100%;
   border-radius: 5px;
   box-shadow: rgb(212, 229, 245) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
