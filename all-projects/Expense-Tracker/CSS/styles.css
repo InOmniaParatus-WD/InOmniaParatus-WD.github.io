@@ -339,8 +339,15 @@ footer .copyright {
 }
 
 @media (min-width: 200px) and (max-width: 640px) {
+
+  .background {
+    width: 100%;
+    height: 100svh;
+    margin: 0;
+  }
   .container {
     width: 100%;
+    height: 100%;
     margin: 0;
   }
 
