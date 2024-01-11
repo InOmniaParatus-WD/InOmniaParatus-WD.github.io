@@ -1,3 +1,10 @@
+// Add new transaction modal button
+const newTransactionBtn = document.getElementById("new-transaction-btn");
+const newTransactionModal = document.querySelector(
+  ".new-transaction-modal-container"
+);
+const closeModal = document.getElementById("close-modal");
+
 // Add new transaction form elements
 const balance = document.querySelector("#balance");
 const totalIncome = document.querySelector("#income");
@@ -332,3 +339,9 @@ cancelDelete.addEventListener("click", (e) => {
   e.preventDefault();
   deleteItemModal.classList.remove("show-modal");
 });
+
+newTransactionBtn.addEventListener("click", () =>
+  newTransactionModal.classList.add("show-modal")
+);
+
+closeModal.addEventListener("click", () => newTransactionModal.classList.remove("show-modal"));
