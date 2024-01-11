@@ -32,10 +32,13 @@ const cancelDelete = document.querySelector("#cancel-delete-btn");
 
 // Default value for date input
 const fullDate = new Date();
+const month = fullDate.getMonth() + 1;
+const day = fullDate.getDate();
 
-const displayDate = `${fullDate.getFullYear()}-${
-  fullDate.getMonth() + 1
-}-${fullDate.getDate()}`;
+let displayMonth = month < 10 ? `0${month}` : `${month}`;
+let displayDay = day < 10 ? `0${day}` : `${day}`;
+
+const displayDate = `${fullDate.getFullYear()}-${displayMonth}-${fullDate.getDate()}`;
 
 transactionDate.setAttribute("value", `${displayDate}`);
 
@@ -344,4 +347,6 @@ newTransactionBtn.addEventListener("click", () =>
   newTransactionModal.classList.add("show-modal")
 );
 
-closeModal.addEventListener("click", () => newTransactionModal.classList.remove("show-modal"));
+closeModal.addEventListener("click", () =>
+  newTransactionModal.classList.remove("show-modal")
+);
