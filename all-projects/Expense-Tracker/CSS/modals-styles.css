@@ -67,7 +67,7 @@ button.close-modal {
   background-color: #fafff4;
   color: var(--dark-grey);
   border-radius: 5px;
-  width: 400px;
+  width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -113,13 +113,7 @@ div.edit-btns {
 .modal-form div {
   width: 100%;
 }
-/* .modal-form input {
-  color: var(--dark-grey);
-  background-color: var(--white);
-  letter-spacing: 1px;
-  font-weight: 600;
-  width: 100%;
-} */
+
 button.save-btn,
 button.cancel-btn {
   background-color: var(--green);
@@ -159,7 +153,7 @@ button.save-btn {
   background-color: #fafff4;
   color: var(--dark-grey);
   border-radius: 5px;
-  width: 500px;
+  width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
