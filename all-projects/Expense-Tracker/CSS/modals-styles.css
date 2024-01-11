@@ -1,3 +1,53 @@
+/* New transaction modal */
+.new-transaction-modal-container {
+  background-color: #4a4d3eef;
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.new-transaction-modal-container.show-modal {
+  display: block;
+}
+
+.new-transaction-modal {
+  background-color: #fafff4;
+  color: var(--dark-grey);
+  border-radius: 5px;
+  width: 30rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: modalopen;
+  animation-duration: 0.5s;
+
+  .modal-header{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+button.close-modal {
+ width: 40px;
+ height: 40px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 1.8rem;
+ border-radius: 50%;
+ border: transparent;
+ box-shadow: var(--button-shadow);
+ background-color: var(--green);
+ color: var(--white);
+ cursor: pointer;
+}
+
 /* Edit entries modal */
 .modal-container {
   background-color: #4a4d3eef;
@@ -52,7 +102,7 @@
 }
 
 .modal-form .form-control {
-   padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 div.edit-btns {
@@ -63,13 +113,13 @@ div.edit-btns {
 .modal-form div {
   width: 100%;
 }
-.modal-form input {
+/* .modal-form input {
   color: var(--dark-grey);
   background-color: var(--white);
   letter-spacing: 1px;
   font-weight: 600;
   width: 100%;
-}
+} */
 button.save-btn,
 button.cancel-btn {
   background-color: var(--green);
@@ -144,7 +194,7 @@ button.cancel-delete-btn {
   cursor: pointer;
   width: 50%;
 }
-button.delete-btn:hover{
+button.delete-btn:hover {
   background-color: var(--red);
   color: var(--white);
 }
@@ -153,12 +203,16 @@ button.delete-btn {
   margin-right: 2rem;
 }
 
-/*  Both modals */
+/*  All modals */
 @media (hover: hover) and (pointer: fine) {
   button:hover {
     background-color: var(--yellow);
     color: var(--dark-grey);
   }
+  button.close-modal:hover{
+    background-color: var(--dark-grey);
+    color: var(--yellow);
+  } 
 }
 
 @keyframes modalopen {

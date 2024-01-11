@@ -50,13 +50,22 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+.background {
+  margin: 1.5rem 0;
+  background-image: url("../images/expense-tracker.png");
+  background-size: 68%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .container {
   width: 40rem;
-  padding: 1.5rem;
+  height: fit-content;
+  min-height: 35rem;
+  padding: 2rem;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
-  background-color: #f2f8f8ea;
+  background-color: #f2f8f8ee;
   position: relative;
 }
 
@@ -340,9 +349,8 @@ footer .copyright {
 
   .display-date {
     font-size: 1rem;
-     
   }
- .display-date span {
+  .display-date span {
     font-size: 0.8rem;
   }
 
