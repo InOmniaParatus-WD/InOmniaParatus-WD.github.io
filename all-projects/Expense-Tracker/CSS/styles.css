@@ -290,7 +290,7 @@ button.add-btn {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  form button.add-btn:hover {
+   button.add-btn:hover {
     background-color: var(--yellow);
     color: var(--dark-grey);
   }
