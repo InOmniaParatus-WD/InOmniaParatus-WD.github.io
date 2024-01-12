@@ -248,14 +248,8 @@ input {
   color: var(--dark-grey);
 }
 
-input::placeholder {
-  color: var(--dark-grey);
-}
 input:focus {
   outline: 1px solid;
-}
-input:focus::placeholder {
-  color: transparent;
 }
 
 label {
