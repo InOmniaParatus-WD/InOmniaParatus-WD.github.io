@@ -4,17 +4,19 @@ const newTransactionModal = document.querySelector(
   ".new-transaction-modal-container"
 );
 const closeModal = document.getElementById("close-modal");
+const form = document.querySelector("#form");
+const transactionName = document.querySelector("#transaction");
+const transactionAmount = document.querySelector("#amount");
+const quantity = document.querySelector("#number");
+const transactionDate = document.querySelector("#transaction-date");
+const transactionType = document.getElementById("transaction-type");
 
 // Add new transaction form elements
 const balance = document.querySelector("#balance");
 const totalIncome = document.querySelector("#income");
 const totalExpenses = document.querySelector("#expenses");
-const transactionName = document.querySelector("#transaction");
-const transactionAmount = document.querySelector("#amount");
-const quantity = document.querySelector("#number");
-const transactionDate = document.querySelector("#transaction-date");
+
 const transactionsList = document.querySelector("#list");
-const form = document.querySelector("#form");
 
 // Edit existing transaction form elements (modal)
 const editItemModal = document.querySelector(".modal-container");
@@ -22,6 +24,7 @@ const editForm = document.querySelector("#modal-form");
 const cancelChange = document.querySelector("#cancel-btn");
 const editDate = document.querySelector("#edit-date");
 const editName = document.querySelector("#edit-name");
+const editType = document.getElementById("edit-type");
 const editAmount = document.querySelector("#edit-amount");
 const editQuantity = document.querySelector("#edit-qty");
 
@@ -72,11 +75,12 @@ let nextTransactionId =
     : Math.max(allTransactions.map((tran) => tran.id)) + 1;
 
 // Add new transaction to array
-const newTransaction = (date, name, itemPrice, qty) => {
+const newTransaction = (date, name, type, itemPrice, qty) => {
   let transaction = {
     id: nextTransactionId++,
     date,
     name,
+    type,
     itemPrice: +itemPrice,
     qty: +qty,
   };
@@ -84,7 +88,7 @@ const newTransaction = (date, name, itemPrice, qty) => {
 };
 
 // User side validation
-const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
+const validateInput = (dateEl, nameEl, typeEl, amountEl, quantityEl) => {
   // validate quantity - can only be an integer from 1 upwards, no decimals accepted
 
   let result = true;
@@ -93,16 +97,17 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
   let name = nameEl.value;
   let amount = +amountEl.value;
   let qty = +quantityEl.value;
+  let type = typeEl.value;
 
   if (amount === 0 || isNaN(amount)) {
     result = false;
-    showError(amountEl, "&#x2717; Please enter a valid amount", true);
+    showError(amountEl, "&#x2717; Enter a number", true);
   } else {
     showError(amountEl, "&check; Looks good", false);
   }
   if (!name) {
     result = false;
-    showError(nameEl, "&#x2717; Please enter a type or item name", true);
+    showError(nameEl, "&#x2717; Can't be empty", true);
   } else {
     showError(nameEl, "&check; Looks good", false);
   }
@@ -114,17 +119,25 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
     showError(dateEl, "&check; Looks good", false);
   }
 
+  if (!type) {
+    result = false;
+    showError(typeEl, "&#x2717; Select a type", true);
+  } else {
+    showError(typeEl, "&check; Looks good", false);
+  }
+
   if (quantityEl.value === "") {
-    qty = 1;
-    quantityEl.value = String(qty);
+    result = false;
+    showError(quantityEl, "&#x2717; Enter a number", true);
   } else {
     if (qty <= 0 || isNaN(qty)) {
-      result = false;
-      showError(quantityEl, "&#x2717; Please enter a positive number", true);
+      qty = 1;
+      quantityEl.value = String(qty);
     } else {
       showError(quantityEl, "&check; Looks good", false);
     }
   }
+
   return result;
 };
 
@@ -212,7 +225,9 @@ const updateDOM = () => {
 
   transactionName.value = "";
   transactionAmount.value = "";
+  transactionType.value = "";
   quantity.value = "";
+  transactionType.value = "";
 
   updateLocalStorage();
 };
@@ -239,6 +254,7 @@ form.addEventListener("submit", (e) => {
     !validateInput(
       transactionDate,
       transactionName,
+      transactionType,
       transactionAmount,
       quantity
     )
@@ -248,6 +264,7 @@ form.addEventListener("submit", (e) => {
   newTransaction(
     transactionDate.value,
     transactionName.value,
+    transactionType.value,
     transactionAmount.value,
     quantity.value
   );
@@ -258,6 +275,7 @@ form.addEventListener("submit", (e) => {
   showError(transactionName, "", false);
   showError(transactionAmount, "", false);
   showError(quantity, "", false);
+  showError(transactionType, "", false);
 
   calculate();
   updateDOM();
@@ -282,6 +300,7 @@ transactionsList.addEventListener("click", (e) => {
 
     editName.value = editTransaction.name;
     editAmount.value = editTransaction.itemPrice;
+    editType.type = editType.value;
     editDate.value = editTransaction.date;
     editQuantity.value = editTransaction.qty;
 
@@ -289,6 +308,7 @@ transactionsList.addEventListener("click", (e) => {
     showError(editName, "", false);
     showError(editAmount, "", false);
     showError(editQuantity, "", false);
+    showError(editType, "", false);
 
     editItemModal.dataset["toEdit"] = itemId;
     editItemModal.classList.add("show-modal");
@@ -302,13 +322,15 @@ transactionsList.addEventListener("click", (e) => {
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
+  if (!validateInput(editDate, editName, editType, editAmount, editQuantity))
+    return;
 
   let itemId = +editItemModal.dataset["toEdit"];
   let editTransaction = allTransactions.filter((item) => item.id === itemId)[0];
 
   editTransaction.date = editDate.value;
   editTransaction.name = editName.value;
+  editType.type = editType.value;
   editTransaction.itemPrice = +editAmount.value;
   editTransaction.qty = +editQuantity.value;
 
