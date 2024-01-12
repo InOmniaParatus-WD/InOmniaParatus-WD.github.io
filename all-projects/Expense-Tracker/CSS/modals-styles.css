@@ -217,7 +217,7 @@ button.delete-btn {
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
-  .modal, .new-transaction-modal {
+  .modal , .new-transaction-modal{
     max-width: 25rem;
   }
 
@@ -227,10 +227,10 @@ button.delete-btn {
   .undo-modal {
     width: 350px;
   }
- h4 {
+  .undo-modal-container h4 {
     font-size: 1rem;
   }
-  h4 span {
+  .undo-modal-container h4 span {
     font-size: 1.5rem;
   }
 }
