@@ -14,7 +14,7 @@
 }
 
 .new-transaction-modal {
-  background-color: #fafff4;
+  background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
   width: 30rem;
@@ -27,25 +27,82 @@
   animation-name: modalopen;
   animation-duration: 0.5s;
 
-  .modal-header{
+  .modal-header {
     display: flex;
     justify-content: space-between;
   }
 }
+fieldset {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.transaction-cost .form-control {
+  width: 30%;
+}
+
+.transaction-info .form-control {
+  width: 45%;
+}
+
+input,
+select {
+  padding: 10px;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgb(212, 229, 245) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border: transparent;
+  background-color: var(--faded-white);
+  color: var(--dark-grey);
+}
+
+input:focus,
+select:focus {
+  outline: 1px solid;
+}
+
+label {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+sup {
+  font-weight: normal;
+  font-size: 0.7rem;
+  color: var(--red);
+}
+
+sub {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
 
 button.close-modal {
- width: 40px;
- height: 40px;
- display: flex;
- justify-content: center;
- align-items: center;
- font-size: 1.8rem;
- border-radius: 50%;
- border: transparent;
- box-shadow: var(--button-shadow);
- background-color: var(--green);
- color: var(--white);
- cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  border: transparent;
+  box-shadow: var(--button-shadow);
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
 }
 
 /* Edit entries modal */
@@ -64,7 +121,7 @@ button.close-modal {
 }
 
 .modal {
-  background-color: #fafff4;
+  background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
   width: 30rem;
@@ -148,7 +205,7 @@ button.save-btn {
 }
 
 .undo-modal {
-  background-color: #fafff4;
+  background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
   width: 30rem;
@@ -164,7 +221,8 @@ button.save-btn {
 }
 
 .undo-modal-container p {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 }
 
 .undo-modal-container p span {
@@ -201,10 +259,10 @@ button.delete-btn {
     background-color: var(--yellow);
     color: var(--dark-grey);
   }
-  button.close-modal:hover{
+  button.close-modal:hover {
     background-color: var(--dark-grey);
     color: var(--yellow);
-  } 
+  }
 }
 
 @keyframes modalopen {
@@ -217,7 +275,8 @@ button.delete-btn {
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
-  .modal , .new-transaction-modal{
+  .modal,
+  .new-transaction-modal {
     max-width: 25rem;
   }
 

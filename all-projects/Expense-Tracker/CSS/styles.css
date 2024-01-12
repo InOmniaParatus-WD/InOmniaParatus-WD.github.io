@@ -215,59 +215,6 @@ button.edit-item:hover {
   color: #f3722c;
 }
 
-fieldset {
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  width: 100%;
-}
-
-.form-control {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1rem;
-  width: 100%;
-}
- 
-.transaction-cost .form-control {
-  width: 45%;
-}
-
-input {
-  padding: 10px;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: rgb(212, 229, 245) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  border: transparent;
-  background-color: var(--faded-white);
-  color: var(--dark-grey);
-}
-
-input:focus {
-  outline: 1px solid;
-}
-
-label {
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-sup {
-  font-weight: normal;
-  font-size: 0.7rem;
-  color: var(--red);
-}
-
-sub {
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
 button.add-btn {
   padding: 10px 15px;
   margin: 2rem 0;
@@ -302,13 +249,6 @@ button:active {
   color: var(--red);
 }
 
-.form-control.success input {
-  border: 1px solid var(--green);
-}
-
-.form-control.error input {
-  border: 1px solid var(--red);
-}
 
 hr {
   width: 30%;
