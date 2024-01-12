@@ -84,6 +84,7 @@ const newTransaction = (date, name, type, itemPrice, qty) => {
     itemPrice: +itemPrice,
     qty: +qty,
   };
+
   allTransactions.push(transaction);
 };
 
@@ -119,7 +120,7 @@ const validateInput = (dateEl, nameEl, typeEl, amountEl, quantityEl) => {
     showError(dateEl, "&check; Looks good", false);
   }
 
-  if (!type) {
+  if (type === "") {
     result = false;
     showError(typeEl, "&#x2717; Select a type", true);
   } else {
@@ -151,14 +152,13 @@ const calculate = () => {
   allTransactions.forEach((tran) => {
     tran.totalAmount = tran.qty * tran.itemPrice;
 
-    if (tran.totalAmount > 0) {
+    if (tran.type === "income") {
       totalIncomeValue += tran.totalAmount;
-    }
-    if (tran.totalAmount < 0) {
+    } else if (tran.type === "expense") {
       totalExpensesValue += tran.totalAmount;
     }
   });
-  balanceValue = totalIncomeValue + totalExpensesValue;
+  balanceValue = totalIncomeValue - totalExpensesValue;
 };
 
 // Update DOM - render expenses on the page
@@ -166,6 +166,8 @@ const updateDOM = () => {
   transactionsList.replaceChildren();
 
   allTransactions.forEach((tran) => {
+    const sign = tran.type === "expense" ? "-" : "";
+
     const listItem = document.createElement("li");
 
     let pricePerUnit = "";
@@ -184,16 +186,16 @@ const updateDOM = () => {
     </time>
   
    <section class="transaction-details ${
-     tran.itemPrice < 0 ? "minus" : "plus"
+     tran.type === "expense" ? "minus" : "plus"
    }" id=${tran.id}>
     <div class="item-details">
       <span class="item-name">${tran.name}</span>  
-      <span class="value">${Number(tran.totalAmount.toFixed(2)).toLocaleString(
-        "en-IN"
-      )}</span>
+      <span class="value"> ${sign}${Number(
+      tran.totalAmount.toFixed(2)
+    ).toLocaleString("en-UK")}</span>
     </div>
     
-    ${pricePerUnit}
+   ${pricePerUnit}
     
     <button class="edit-item">&#128397;
       <span class="tooltip-text edit">Edit</span>
@@ -300,7 +302,7 @@ transactionsList.addEventListener("click", (e) => {
 
     editName.value = editTransaction.name;
     editAmount.value = editTransaction.itemPrice;
-    editType.type = editType.value;
+    editType.value = editTransaction.type;
     editDate.value = editTransaction.date;
     editQuantity.value = editTransaction.qty;
 
@@ -330,7 +332,7 @@ editForm.addEventListener("submit", (e) => {
 
   editTransaction.date = editDate.value;
   editTransaction.name = editName.value;
-  editType.type = editType.value;
+  editTransaction.type = editType.value;
   editTransaction.itemPrice = +editAmount.value;
   editTransaction.qty = +editQuantity.value;
 
