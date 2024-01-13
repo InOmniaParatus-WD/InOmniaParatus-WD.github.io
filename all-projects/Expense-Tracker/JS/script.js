@@ -1,5 +1,8 @@
-// Add new transaction modal button
-const newTransactionBtn = document.getElementById("new-transaction-btn");
+// Add new transaction modal buttons
+const incomeBtn = document.getElementById("income");
+const expenseBtn = document.getElementById("expense");
+
+// New transactions modal
 const newTransactionModal = document.querySelector(
   ".new-transaction-modal-container"
 );
@@ -9,12 +12,12 @@ const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
 const quantity = document.querySelector("#number");
 const transactionDate = document.querySelector("#transaction-date");
-const transactionType = document.getElementById("transaction-type");
+// const transactionType = document.getElementById("transaction-type");
 
 // Add new transaction form elements
 const balance = document.querySelector("#balance");
-const totalIncome = document.querySelector("#income");
-const totalExpenses = document.querySelector("#expenses");
+const totalIncome = document.querySelector("#total-income");
+const totalExpenses = document.querySelector("#total-expenses");
 
 const transactionsList = document.querySelector("#list");
 
@@ -24,7 +27,7 @@ const editForm = document.querySelector("#modal-form");
 const cancelChange = document.querySelector("#cancel-btn");
 const editDate = document.querySelector("#edit-date");
 const editName = document.querySelector("#edit-name");
-const editType = document.getElementById("edit-type");
+// const editType = document.getElementById("edit-type");
 const editAmount = document.querySelector("#edit-amount");
 const editQuantity = document.querySelector("#edit-qty");
 
@@ -32,6 +35,11 @@ const editQuantity = document.querySelector("#edit-qty");
 const deleteItemModal = document.querySelector(".undo-modal-container");
 const confirmDelete = document.querySelector("#delete-btn");
 const cancelDelete = document.querySelector("#cancel-delete-btn");
+
+// Modal header to be updated depending on the transaction type chosen
+const transactionModalHeader = document.getElementById("new-transaction-title");
+
+// ---------------- FUNCTIONALITY ---------------- //
 
 // Default value for date input
 const fullDate = new Date();
@@ -42,10 +50,7 @@ let displayMonth = month < 10 ? `0${month}` : `${month}`;
 let displayDay = day < 10 ? `0${day}` : `${day}`;
 
 const displayDate = `${fullDate.getFullYear()}-${displayMonth}-${fullDate.getDate()}`;
-
 transactionDate.setAttribute("value", `${displayDate}`);
-
-// ---------------- FUNCTIONALITY ---------------- //
 
 //Show Input Error Message
 const showError = (input, message, isError) => {
@@ -72,15 +77,17 @@ let balanceValue = 0;
 let nextTransactionId =
   allTransactions.length === 0
     ? 1
-    : Math.max(allTransactions.map((tran) => tran.id)) + 1;
+    : Math.max(...allTransactions.map((tran) => tran.id)) + 1;
+
+let newTransBtnId = "";
 
 // Add new transaction to array
-const newTransaction = (date, name, type, itemPrice, qty) => {
+const newTransaction = (date, name, itemPrice, qty) => {
   let transaction = {
     id: nextTransactionId++,
     date,
     name,
-    type,
+    type: newTransBtnId,
     itemPrice: +itemPrice,
     qty: +qty,
   };
@@ -89,7 +96,7 @@ const newTransaction = (date, name, type, itemPrice, qty) => {
 };
 
 // User side validation
-const validateInput = (dateEl, nameEl, typeEl, amountEl, quantityEl) => {
+const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
   // validate quantity - can only be an integer from 1 upwards, no decimals accepted
 
   let result = true;
@@ -98,34 +105,35 @@ const validateInput = (dateEl, nameEl, typeEl, amountEl, quantityEl) => {
   let name = nameEl.value;
   let amount = +amountEl.value;
   let qty = +quantityEl.value;
-  let type = typeEl.value;
+
+  let successMsg = "&check; Looks good";
 
   if (amount === 0 || isNaN(amount)) {
     result = false;
     showError(amountEl, "&#x2717; Enter a number", true);
   } else {
-    showError(amountEl, "&check; Looks good", false);
+    showError(amountEl, successMsg, false);
   }
   if (!name) {
     result = false;
     showError(nameEl, "&#x2717; Can't be empty", true);
   } else {
-    showError(nameEl, "&check; Looks good", false);
+    showError(nameEl, successMsg, false);
   }
 
   if (!date) {
     result = false;
     showError(dateEl, "&#x2717; Please enter a valid date", true);
   } else {
-    showError(dateEl, "&check; Looks good", false);
+    showError(dateEl, successMsg, false);
   }
 
-  if (type === "") {
-    result = false;
-    showError(typeEl, "&#x2717; Select a type", true);
-  } else {
-    showError(typeEl, "&check; Looks good", false);
-  }
+  // if (type === "") {
+  //   result = false;
+  //   showError(typeEl, "&#x2717; Select a type", true);
+  // } else {
+  //   showError(typeEl, successMsg, false);
+  // }
 
   if (quantityEl.value === "") {
     result = false;
@@ -135,7 +143,7 @@ const validateInput = (dateEl, nameEl, typeEl, amountEl, quantityEl) => {
       qty = 1;
       quantityEl.value = String(qty);
     } else {
-      showError(quantityEl, "&check; Looks good", false);
+      showError(quantityEl, successMsg, false);
     }
   }
 
@@ -227,9 +235,8 @@ const updateDOM = () => {
 
   transactionName.value = "";
   transactionAmount.value = "";
-  transactionType.value = "";
+  // transactionType.value = "";
   quantity.value = "";
-  transactionType.value = "";
 
   updateLocalStorage();
 };
@@ -256,7 +263,7 @@ form.addEventListener("submit", (e) => {
     !validateInput(
       transactionDate,
       transactionName,
-      transactionType,
+      // transactionType,
       transactionAmount,
       quantity
     )
@@ -266,7 +273,7 @@ form.addEventListener("submit", (e) => {
   newTransaction(
     transactionDate.value,
     transactionName.value,
-    transactionType.value,
+    // transactionType.value,
     transactionAmount.value,
     quantity.value
   );
@@ -277,7 +284,7 @@ form.addEventListener("submit", (e) => {
   showError(transactionName, "", false);
   showError(transactionAmount, "", false);
   showError(quantity, "", false);
-  showError(transactionType, "", false);
+  // showError(transactionType, "", false);
 
   calculate();
   updateDOM();
@@ -302,7 +309,9 @@ transactionsList.addEventListener("click", (e) => {
 
     editName.value = editTransaction.name;
     editAmount.value = editTransaction.itemPrice;
-    editType.value = editTransaction.type;
+    document.querySelector(
+      `input[value=${editTransaction.type}]`
+    ).checked = true;
     editDate.value = editTransaction.date;
     editQuantity.value = editTransaction.qty;
 
@@ -310,7 +319,7 @@ transactionsList.addEventListener("click", (e) => {
     showError(editName, "", false);
     showError(editAmount, "", false);
     showError(editQuantity, "", false);
-    showError(editType, "", false);
+    // showError(editType, "", false);
 
     editItemModal.dataset["toEdit"] = itemId;
     editItemModal.classList.add("show-modal");
@@ -324,15 +333,17 @@ transactionsList.addEventListener("click", (e) => {
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!validateInput(editDate, editName, editType, editAmount, editQuantity))
+  if (!validateInput(editDate, editName, editAmount, editQuantity))
     return;
 
   let itemId = +editItemModal.dataset["toEdit"];
   let editTransaction = allTransactions.filter((item) => item.id === itemId)[0];
 
+  const editTransType = document.querySelector("input[name=type]:checked");
+
   editTransaction.date = editDate.value;
   editTransaction.name = editName.value;
-  editTransaction.type = editType.value;
+  editTransaction.type = editTransType.value;
   editTransaction.itemPrice = +editAmount.value;
   editTransaction.qty = +editQuantity.value;
 
@@ -367,10 +378,20 @@ cancelDelete.addEventListener("click", (e) => {
   deleteItemModal.classList.remove("show-modal");
 });
 
-newTransactionBtn.addEventListener("click", () =>
-  newTransactionModal.classList.add("show-modal")
-);
+incomeBtn.addEventListener("click", (e) => {
+  newTransBtnId = e.target.id;
+  transactionModalHeader.innerText = "Income";
+  newTransactionModal.classList.add("show-modal");
+});
+
+expenseBtn.addEventListener("click", (e) => {
+  newTransBtnId = e.target.id;
+  transactionModalHeader.innerText = "Expense";
+  newTransactionModal.classList.add("show-modal");
+});
 
 closeModal.addEventListener("click", () =>
   newTransactionModal.classList.remove("show-modal")
 );
+
+console.log(newTransBtnId);
