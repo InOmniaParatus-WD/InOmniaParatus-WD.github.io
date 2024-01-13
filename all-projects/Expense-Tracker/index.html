@@ -21,10 +21,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
+    <!-- <link rel="manifest" href="manifest.json" />
     <script>
         navigator.serviceWorker.register('serviceWorker.js');
-    </script>
+    </script> -->
 
     <!-- iOS icon compatibility -->
 
@@ -45,11 +45,11 @@
             <section class="totals-section">
                 <div>
                     <h4>Income</h4>
-                    <p id="income" class="money plus">0.00</p>
+                    <p id="total-income" class="money plus">0.00</p>
                 </div>
                 <div>
                     <h4>Expenses</h4>
-                    <p id="expenses" class=" money minus">0.00</p>
+                    <p id="total-expenses" class=" money minus">0.00</p>
                 </div>
             </section>
 
@@ -57,7 +57,11 @@
 
             <ul id="list"></ul>
 
-            <button class="add-btn" id="new-transaction-btn">New transaction</button>
+            <div class="add-transactions-buttons">
+                <button class="add-btn" id="income">Income</button>
+                <button class="add-btn" id="expense">Expense</button>
+            </div>
+
             <hr>
             <footer>
                 <p class="copyright"><span>&copy;</span> Ioana Popa, 2023</p>
@@ -69,7 +73,7 @@
     <div class="new-transaction-modal-container">
         <div class="new-transaction-modal">
             <div class="modal-header">
-                <h2>New transaction <span>&#128397;</span></h2>
+                <h2 id="new-transaction-title"></h2>
                 <button class="close-modal" id="close-modal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -95,7 +99,7 @@
                     </fieldset>
 
                     <fieldset class="transaction-cost">
-                        <div class="form-control">
+                        <!-- <div class="form-control">
                             <label for="transaction-type">Type <sup>*</sup></label>
                             <select name="type" id="transaction-type">
                                 <option value=""></option>
@@ -103,7 +107,7 @@
                                 <option value="expense">Expense</option>
                             </select>
                             <small></small>
-                        </div>
+                        </div> -->
                         <div class="form-control">
                             <label for="number">Quantity <sup>*</sup></label>
                             <input type="text" name="number" id="number">
@@ -147,12 +151,17 @@
                         <small></small>
                     </div>
                     <div class="form-control">
-                        <label for="edit-type">Type</label>
-                        <select name="edit-type" id="edit-type">
-                            <option value=""></option>
-                            <option value="income">Income</option>
-                            <option value="expense">Expense</option>
-                        </select>
+                        <fieldset id="transaction-type">
+                            <legend>Transaction type</legend>
+                            <div>
+                                <input type="radio" name="type" id="edit-type-income" value="income">
+                                <label for="edit-type-income">Income</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="type" id="edit-type-expense" value="expense">
+                                <label for="edit-type-expense">Expense</label>
+                            </div>
+                        </fieldset>
                         <small></small>
                     </div>
 
