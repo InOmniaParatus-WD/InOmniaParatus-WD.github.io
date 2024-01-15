@@ -209,7 +209,7 @@ const updateDOM = () => {
     transactionsList.appendChild(listItem);
   });
 
-  balance.innerHTML = `&#128176;${Number(
+  balance.innerHTML = `${Number(
     balanceValue.toFixed(2)
   ).toLocaleString("en-IN")}`;
   totalIncome.innerHTML = `${Number(totalIncomeValue.toFixed(2)).toLocaleString(

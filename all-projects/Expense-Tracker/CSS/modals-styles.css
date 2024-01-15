@@ -32,6 +32,7 @@
     justify-content: space-between;
   }
 }
+
 fieldset {
   border: none;
   display: flex;
@@ -40,21 +41,52 @@ fieldset {
   width: 100%;
 }
 
-.form-control {
+/* .form-control {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 1rem;
+} */
+
+.transaction-info {
+  div {
+    margin-bottom: 1rem;
+  }
+
+  .transaction-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .form-control {
+      width: 30%;
+    }
+  }
 }
 
-.transaction-cost .form-control {
-  width: 30%;
+.buttons {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-.transaction-info .form-control {
-  width: 45%;
+button.action-btn {
+  text-align: center;
+  padding: 2px 15px;
+  width: 50%;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: transparent;
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+  background-color: var(--green);
+  color: var(--white);
 }
-
 input,
 select {
   padding: 10px;
