@@ -12,8 +12,8 @@
     rgba(0, 0, 0, 0.23) 0px 6px 6px;
   --corners-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  --white: #e5e3e3;
-  --faded-white: #ffffff8a;
+  --white: #f9f4f4;
+  --faded-white: #ffffffc8;
   --green: #16683f;
   --red: #d3070a;
   --blue: #577590;
@@ -51,8 +51,7 @@ body {
 
 .container {
   width: 40rem;
-  height: fit-content;
-  min-height: 35rem;
+  height: auto;
   padding: 2rem;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
@@ -103,45 +102,101 @@ p.minus {
 
 ul {
   list-style: none;
-  margin: 1.2rem 0;
+  margin: 1.5rem 0;
   padding-right: 0.2rem;
-  max-height: 50vh;
+  max-height: 80vh;
   overflow-y: auto;
   width: 100%;
 }
 
-li.transaction {
-  position: relative;
+li {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   padding-top: 1rem;
   letter-spacing: 1px;
   margin-bottom: 1rem;
-  position: relative;
   cursor: pointer;
+
+  section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .display-date {
+      width: 50%;
+    }
+
+    .dropdown {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      button {
+        border: none;
+        font-size: 1rem;
+        padding: 0 5px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: var(--white);
+      }
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: row;
+      align-items: flex-end;
+      position: absolute;
+      right: 35px;
+      top: 0px;
+      overflow: hidden;
+      height: auto;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: var(--white);
+      box-shadow: 0px 10px 10px 0px rgba(163, 160, 160, 0.8);
+      cursor: pointer;
+
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: 0.9rem;
+      }
+
+      .delete-item {
+        color: var(--red);
+      }
+    }
+
+    /* .dropdown:hover .dropdown-content {
+      display: flex;
+    } */
+  } 
 }
 
-li.transaction .display-date {
-  align-self: start;
-}
-
-li section.transaction-details {
+li {
   background-color: var(--faded-white);
   box-shadow: var(--box-shadow);
   width: 100%;
   padding: 1rem 1rem;
   border-radius: 5px;
+
+  section:first-child {
+    margin-bottom: 0.5rem;
+  }
 }
 
-li section.transaction-details.minus {
+li.minus {
   border-left: 10px solid var(--red);
 }
-li section.transaction-details.plus {
+li.plus {
   border-left: 10px solid var(--green);
 }
+
 li div.item-details {
   width: 100%;
   display: flex;
@@ -154,44 +209,6 @@ li p.price-per-unit {
   font-size: 0.8rem;
   text-align: right;
   font-weight: 400;
-}
-
-li button.delete-item,
-li button.edit-item {
-  background-color: transparent;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.5rem;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  margin-right: 0.5rem;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-}
-
-li button.delete-item {
-  top: 12px;
-  right: 5px;
-}
-
-li button.edit-item {
-  top: 12px;
-  right: 30px;
-}
-
-li:hover button.edit-item,
-li:hover button.delete-item {
-  opacity: 1;
-}
-
-button.delete-item:hover {
-  color: var(--red);
-}
-
-button.edit-item:hover {
-  color: #f3722c;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -222,6 +239,7 @@ hr {
 
 footer {
   text-align: center;
+  height: auto;
 }
 
 footer .copyright {
@@ -262,12 +280,6 @@ footer .copyright {
     margin: 0;
     padding: 0.8rem;
   }
-
-  /* .image {
-    width: 6rem;
-    left: calc(65%);
-    top: -10px;
-  } */
 
   .display-date {
     font-size: 1rem;

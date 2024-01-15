@@ -168,6 +168,8 @@ const updateDOM = () => {
     const sign = tran.type === "expense" ? "-" : "";
 
     const listItem = document.createElement("li");
+    listItem.setAttribute("id", tran.id);
+    listItem.classList.add(`${tran.type === "expense" ? "minus" : "plus"}`);
 
     let pricePerUnit = "";
     if (tran.qty > 1) {
@@ -178,40 +180,40 @@ const updateDOM = () => {
     listItem.classList.add("transaction");
 
     listItem.innerHTML = `
-    <time class="display-date">&#128198; ${tran.date
-      .split("-")
-      .reverse()
-      .join("-")}
-    </time>
-  
-   <section class="transaction-details ${
-     tran.type === "expense" ? "minus" : "plus"
-   }" id=${tran.id}>
-    <div class="item-details">
-      <span class="item-name">${tran.name}</span>  
-      <span class="value"> ${sign}${Number(
+    <section>    
+      <time class="display-date">&#128198; ${tran.date
+        .split("-")
+        .reverse()
+        .join("-")}
+      </time> 
+      
+      <div class="dropdown">
+        <button class="dropdown-btns">...</button>
+        <div class="dropdown-content">
+          <button class="edit-item">Edit </button>
+          <button class="delete-item">Delete </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="transaction-details">
+      <div class="item-details">
+        <span class="item-name">${tran.name}</span>  
+        <span class="value"> ${sign}${Number(
       tran.totalAmount.toFixed(2)
     ).toLocaleString("en-UK")}</span>
-    </div>
+      </div>
     
-   ${pricePerUnit}
+    <span>${pricePerUnit}</span>
     
-    <button class="edit-item">&#128397;
-      <span class="tooltip-text edit">Edit</span>
-    </button>
-
-    <button class="delete-item">&#128465;
-      <span class="tooltip-text delete">Delete</span>
-    </button>
-  </section>
-    `;
+    </section>`;
 
     transactionsList.appendChild(listItem);
   });
 
-  balance.innerHTML = `${Number(
-    balanceValue.toFixed(2)
-  ).toLocaleString("en-IN")}`;
+  balance.innerHTML = `${Number(balanceValue.toFixed(2)).toLocaleString(
+    "en-IN"
+  )}`;
   totalIncome.innerHTML = `${Number(totalIncomeValue.toFixed(2)).toLocaleString(
     "en-IN"
   )}`;
@@ -292,7 +294,12 @@ transactionsList.addEventListener("click", (e) => {
   // If user clicks on list, do nothing
   if (e.target.nodeName !== "BUTTON") return;
 
-  let itemId = +e.target.parentNode.id;
+  let itemId = +e.target.parentNode.parentNode.parentNode.parentNode.id;
+  if (e.target.classList.contains("dropdown-btns")) {
+    let dropMenu = e.target.nextElementSibling;
+    dropMenu.style.display = dropMenu.style.display === "flex" ? "none" : "flex";
+    return
+  }
   // If user clicks on the "Delete" button ...
   if (e.target.classList.contains("delete-item")) {
     deleteItemModal.dataset["toDelete"] = itemId;
