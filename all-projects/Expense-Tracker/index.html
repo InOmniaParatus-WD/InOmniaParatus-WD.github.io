@@ -74,9 +74,7 @@
         <div class="new-transaction-modal">
             <div class="modal-header">
                 <h2 id="new-transaction-title"></h2>
-                <button class="close-modal" id="close-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+
             </div>
             <div class="modal-content">
                 <form id="form">
@@ -121,8 +119,11 @@
 
                     </fieldset>
 
-                    <!-- <sub>(negative number = expense | positive number = income)</sub> -->
-                    <button class="add-btn" id="add-btn">Add transaction</button>
+                    <div class="add-transaction-btn">
+                        <button type="submit" class="add-btn" id="add-btn">Add </button>
+                        <button type="reset" class="cancel-btn" id="cancel-add">Cancel</button>
+                    </div>
+
                 </form>
 
             </div>
@@ -138,7 +139,6 @@
             </div>
             <div class="modal-content">
                 <form class="modal-form" id="modal-form">
-
                     <div class="form-control">
                         <label for="edit-date">Date</label>
                         <input type="date" name="edit-date" id="edit-date">
