@@ -6,13 +6,11 @@ const expenseBtn = document.getElementById("expense");
 const newTransactionModal = document.querySelector(
   ".new-transaction-modal-container"
 );
-const cancelAddBtn = document.getElementById("cancel-add");
-const form = document.querySelector("#form");
+const newTransactionForm = document.querySelector("#form");
 const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
 const transactionDate = document.querySelector("#transaction-date");
 const transactionQty = document.querySelector("#number");
-// const transactionType = document.getElementById("transaction-type");
 
 // Add new transaction form elements
 const balance = document.querySelector("#balance");
@@ -24,10 +22,8 @@ const transactionsList = document.querySelector("#list");
 // Edit existing transaction form elements (modal)
 const editItemModal = document.querySelector(".modal-container");
 const editForm = document.querySelector("#modal-form");
-const cancelChange = document.querySelector("#cancel-btn");
 const editDate = document.querySelector("#edit-date");
 const editName = document.querySelector("#edit-name");
-// const editType = document.getElementById("edit-type");
 const editAmount = document.querySelector("#edit-amount");
 const editQuantity = document.querySelector("#edit-qty");
 
@@ -102,7 +98,6 @@ const newTransaction = (date, name, itemPrice, qty) => {
 // User side validation
 const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
   // validate quantity - can only be an integer from 1 upwards, no decimals accepted
-
   let result = true;
 
   let date = dateEl.value;
@@ -132,13 +127,6 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
     showError(dateEl, successMsg, false);
   }
 
-  // if (type === "") {
-  //   result = false;
-  //   showError(typeEl, "&#x2717; Select a type", true);
-  // } else {
-  //   showError(typeEl, successMsg, false);
-  // }
-
   if (quantityEl.value === "") {
     result = false;
     showError(quantityEl, "&#x2717; Enter a number", true);
@@ -155,7 +143,6 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
 };
 
 // Calculate total income / expenses when a new transaction is added
-
 const calculate = () => {
   totalIncomeValue = 0;
   totalExpensesValue = 0;
@@ -239,7 +226,6 @@ const updateDOM = () => {
 
   transactionName.value = "";
   transactionAmount.value = "";
-  // transactionType.value = "";
   transactionQty.value = "";
 
   updateLocalStorage();
@@ -260,14 +246,13 @@ init();
 
 // ---------------- EVENTS ---------------- //
 // Add a new transaction to the list
-form.addEventListener("submit", (e) => {
+newTransactionForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (
     !validateInput(
       transactionDate,
       transactionName,
-      // transactionType,
       transactionAmount,
       transactionQty
     )
@@ -277,7 +262,6 @@ form.addEventListener("submit", (e) => {
   newTransaction(
     transactionDate.value,
     transactionName.value,
-    // transactionType.value,
     transactionAmount.value,
     transactionQty.value
   );
@@ -288,14 +272,13 @@ form.addEventListener("submit", (e) => {
   showError(transactionName, "", false);
   showError(transactionAmount, "", false);
   showError(transactionQty, "", false);
-  // showError(transactionType, "", false);
 
   calculate();
   updateDOM();
 });
 
-form.addEventListener("reset", () => {
-  form.reset();
+newTransactionForm.addEventListener("reset", () => {
+  newTransactionForm.reset();
 
   document.querySelectorAll("#form input").forEach((childEl) => {
     showError(childEl);
@@ -333,7 +316,6 @@ transactionsList.addEventListener("click", (e) => {
     showError(editName, "", false);
     showError(editAmount, "", false);
     showError(editQuantity, "", false);
-    // showError(editType, "", false);
 
     editItemModal.dataset["toEdit"] = itemId;
     editItemModal.classList.add("show-modal");
@@ -368,7 +350,7 @@ editForm.addEventListener("submit", (e) => {
 });
 
 // Cancel edit
-cancelChange.addEventListener("click", (e) => {
+editForm.addEventListener("reset", (e) => {
   e.preventDefault();
   editItemModal.classList.remove("show-modal");
 });
