@@ -6,12 +6,12 @@ const expenseBtn = document.getElementById("expense");
 const newTransactionModal = document.querySelector(
   ".new-transaction-modal-container"
 );
-const closeModal = document.getElementById("close-modal");
+const cancelAddBtn = document.getElementById("cancel-add");
 const form = document.querySelector("#form");
 const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
-const quantity = document.querySelector("#number");
 const transactionDate = document.querySelector("#transaction-date");
+const transactionQty = document.querySelector("#number");
 // const transactionType = document.getElementById("transaction-type");
 
 // Add new transaction form elements
@@ -57,10 +57,14 @@ const showError = (input, message, isError) => {
   const formControl = input.parentElement;
   const errMsg = formControl.querySelector("small");
 
-  formControl.classList.add(`${isError ? "error" : "success"}`);
-  formControl.classList.remove(`${isError ? "success" : "error"}`);
-
-  errMsg.innerHTML = message;
+  if (isError === undefined) {
+    formControl.className = "form-control";
+    errMsg.innerHTML = "";
+  } else {
+    formControl.classList.add(`${isError ? "error" : "success"}`);
+    formControl.classList.remove(`${isError ? "success" : "error"}`);
+    errMsg.innerHTML = message;
+  }
 };
 
 // Get items from localstorage
@@ -236,7 +240,7 @@ const updateDOM = () => {
   transactionName.value = "";
   transactionAmount.value = "";
   // transactionType.value = "";
-  quantity.value = "";
+  transactionQty.value = "";
 
   updateLocalStorage();
 };
@@ -265,7 +269,7 @@ form.addEventListener("submit", (e) => {
       transactionName,
       // transactionType,
       transactionAmount,
-      quantity
+      transactionQty
     )
   )
     return;
@@ -275,7 +279,7 @@ form.addEventListener("submit", (e) => {
     transactionName.value,
     // transactionType.value,
     transactionAmount.value,
-    quantity.value
+    transactionQty.value
   );
 
   transactionDate.classList.remove("success");
@@ -283,11 +287,21 @@ form.addEventListener("submit", (e) => {
   showError(transactionDate, "", false);
   showError(transactionName, "", false);
   showError(transactionAmount, "", false);
-  showError(quantity, "", false);
+  showError(transactionQty, "", false);
   // showError(transactionType, "", false);
 
   calculate();
   updateDOM();
+});
+
+form.addEventListener("reset", () => {
+  form.reset();
+
+  document.querySelectorAll("#form input").forEach((childEl) => {
+    showError(childEl);
+  });
+
+  newTransactionModal.classList.remove("show-modal");
 });
 
 // Edit and deleting a transactions from the list
@@ -333,8 +347,7 @@ transactionsList.addEventListener("click", (e) => {
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!validateInput(editDate, editName, editAmount, editQuantity))
-    return;
+  if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
 
   let itemId = +editItemModal.dataset["toEdit"];
   let editTransaction = allTransactions.filter((item) => item.id === itemId)[0];
@@ -389,9 +402,3 @@ expenseBtn.addEventListener("click", (e) => {
   transactionModalHeader.innerText = "Expense";
   newTransactionModal.classList.add("show-modal");
 });
-
-closeModal.addEventListener("click", () =>
-  newTransactionModal.classList.remove("show-modal")
-);
-
-console.log(newTransBtnId);
