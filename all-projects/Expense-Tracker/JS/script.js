@@ -311,11 +311,16 @@ transactionsList.addEventListener("click", (e) => {
       (item) => itemId === item.id
     )[0];
 
-    editName.value = editTransaction.name;
-    editAmount.value = editTransaction.itemPrice;
+    document.getElementById(
+      "edit-form-header"
+    ).innerHTML = `Edit ${editTransaction.type} entry`;
     document.querySelector(
       `input[value=${editTransaction.type}]`
     ).checked = true;
+
+    editName.value = editTransaction.name;
+    editAmount.value = editTransaction.itemPrice;
+
     editDate.value = editTransaction.date;
     editQuantity.value = editTransaction.qty;
 
