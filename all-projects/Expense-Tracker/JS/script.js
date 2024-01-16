@@ -311,9 +311,11 @@ transactionsList.addEventListener("click", (e) => {
       (item) => itemId === item.id
     )[0];
 
+    // add header to edit modal
     document.getElementById(
       "edit-form-header"
-    ).innerHTML = `Edit ${editTransaction.type} entry`;
+    ).innerHTML = `Edit ${editTransaction.type}`;
+
     document.querySelector(
       `input[value=${editTransaction.type}]`
     ).checked = true;
@@ -387,12 +389,12 @@ cancelDelete.addEventListener("click", (e) => {
 
 incomeBtn.addEventListener("click", (e) => {
   newTransBtnId = e.target.id;
-  transactionModalHeader.innerText = "Income";
+  transactionModalHeader.innerText = "Add Income";
   newTransactionModal.classList.add("show-modal");
 });
 
 expenseBtn.addEventListener("click", (e) => {
   newTransBtnId = e.target.id;
-  transactionModalHeader.innerText = "Expense";
+  transactionModalHeader.innerText = "Add Expense";
   newTransactionModal.classList.add("show-modal");
 });
