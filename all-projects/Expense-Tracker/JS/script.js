@@ -290,8 +290,6 @@ newTransactionForm.addEventListener("reset", () => {
   newTransactionModal.classList.remove("show-modal");
 });
 
-const dropdownBtn = document.querySelectorAll(".dropdown-content");
-
 // Edit and deleting a transactions from the list
 transactionsList.addEventListener("click", (e) => {
   // If user clicks on list, do nothing
@@ -301,7 +299,7 @@ transactionsList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dropdown-btns")) {
     let dropMenu = e.target.nextElementSibling;
 
-    dropdownBtn.forEach((el) => {
+    document.querySelectorAll(".dropdown-content").forEach((el) => {
       if (el !== dropMenu) return (el.style.display = "none");
     });
 
@@ -411,9 +409,10 @@ expenseBtn.addEventListener("click", (e) => {
   newTransactionModal.classList.add("show-modal");
 });
 
-
-// ----- Window events -----
+// // ----- Window events -----
 window.addEventListener("click", (e) => {
+  const dropdownBtns = document.querySelectorAll(".dropdown-content");
+  
   if (!e.target.classList.contains("dropdown-btns"))
-    dropdownBtn.forEach((el) => (el.style.display = "none"));
+    dropdownBtns.forEach((el) => (el.style.display = "none"));
 });
