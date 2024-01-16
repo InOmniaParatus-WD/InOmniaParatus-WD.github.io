@@ -291,15 +291,27 @@ newTransactionForm.addEventListener("reset", () => {
 // Edit and deleting a transactions from the list
 transactionsList.addEventListener("click", (e) => {
   // If user clicks on list, do nothing
-  if (e.target.nodeName !== "BUTTON") return;
 
-  let itemId = +e.target.parentNode.parentNode.parentNode.parentNode.id;
-  if (e.target.classList.contains("dropdown-btns")) {
-    let dropMenu = e.target.nextElementSibling;
-    dropMenu.style.display =
-      dropMenu.style.display === "flex" ? "none" : "flex";
+  if (e.target.nodeName !== "BUTTON") {
     return;
   }
+
+  let itemId = +e.target.parentNode.parentNode.parentNode.parentNode.id;
+
+  if (e.target.classList.contains("dropdown-btns")) {
+    let dropMenu = e.target.nextElementSibling;
+
+    document.querySelectorAll(".dropdown-content").forEach((el) => {
+      if (el !== dropMenu) return (el.style.display = "none");
+    });
+
+    dropMenu.style.display =
+      dropMenu.style.display !== "flex" ? "flex" : "none";
+
+    console.log("we're getting somewhere", dropMenu.style.display === "flex");
+    return;
+  }
+
   // If user clicks on the "Delete" button ...
   if (e.target.classList.contains("delete-item")) {
     deleteItemModal.dataset["toDelete"] = itemId;
