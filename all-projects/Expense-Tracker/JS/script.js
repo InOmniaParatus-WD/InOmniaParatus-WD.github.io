@@ -164,6 +164,13 @@ const calculate = () => {
 const updateDOM = () => {
   transactionsList.replaceChildren();
 
+  // Sort the transaction list based on date
+  let sortedList = JSON.parse(JSON.stringify(allTransactions));
+
+  sortedList.sort((a, b) => a.date - b.date);
+
+  console.log(sortedList);
+
   allTransactions.forEach((tran) => {
     const listItem = document.createElement("li");
     listItem.setAttribute("id", tran.id);
@@ -179,10 +186,7 @@ const updateDOM = () => {
 
     listItem.innerHTML = `
     <section>    
-      <time class="display-date">${tran.date
-        .split("-")
-        .reverse()
-        .join("-")}
+      <time class="display-date">${tran.date.split("-").reverse().join("-")}
       </time> 
       
       <div class="dropdown">
