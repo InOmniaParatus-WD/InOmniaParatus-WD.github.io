@@ -197,14 +197,13 @@ const updateDOM = () => {
     </section>
 
     <section class="transaction-details">
+      <span class="item-name">${tran.name}</span>  
       <div class="item-details">
-        <span class="item-name">${tran.name}</span>  
-        <span class="value"> ${sign}${Number(
-      tran.totalAmount.toFixed(2)
-    ).toLocaleString("en-UK")}</span>
+        <span class="value">
+          ${sign}${Number(tran.totalAmount.toFixed(2)).toLocaleString("en-UK")}
+        </span>
+        <span>${pricePerUnit}</span>
       </div>
-    
-    <span>${pricePerUnit}</span>
     
     </section>`;
 
@@ -297,8 +296,9 @@ transactionsList.addEventListener("click", (e) => {
   let itemId = +e.target.parentNode.parentNode.parentNode.parentNode.id;
   if (e.target.classList.contains("dropdown-btns")) {
     let dropMenu = e.target.nextElementSibling;
-    dropMenu.style.display = dropMenu.style.display === "flex" ? "none" : "flex";
-    return
+    dropMenu.style.display =
+      dropMenu.style.display === "flex" ? "none" : "flex";
+    return;
   }
   // If user clicks on the "Delete" button ...
   if (e.target.classList.contains("delete-item")) {

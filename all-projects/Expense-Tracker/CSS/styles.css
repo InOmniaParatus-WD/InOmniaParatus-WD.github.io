@@ -175,7 +175,7 @@ li {
     /* .dropdown:hover .dropdown-content {
       display: flex;
     } */
-  } 
+  }
 }
 
 li {
@@ -187,6 +187,22 @@ li {
 
   section:first-child {
     margin-bottom: 0.5rem;
+  }
+  .transaction-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .item-name {
+      width: 80%;
+      font-weight: bold;
+    }
+    .item-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 20%;
+    }
   }
 }
 
