@@ -34,27 +34,29 @@
 </head>
 
 <body>
-  
+
     <div class="container">
         <header class="total-amounts">
-            <p>
-                <span>Balance</span>
-                <span id="balance">0.00</span>
-            </p>
-            <p>
-                <span>Income</span>
-                <span id="total-income" class="money plus">0.00</span>
-            </p>
-            <p>
-                <span>Expenses</span>
-                <span id="total-expenses" class=" money minus">0.00</span>
-            </p>
+            <h1>
+                Available budget: <span id="balance">0.00</span>
+            </h1>
+            <h2>
+                <p>
+                    <span>Income:</span>
+                    <span id="total-income" class="money plus">0.00</span>
+
+                </p>
+                <p>
+                    <span>Expenses:</span>
+                    <span id="total-expenses" class=" money minus">0.00</span>
+                </p>
+            </h2>
         </header>
 
         <ul id="list"></ul>
 
         <div class="new-transactions-btns">
-            <p>Add a new transaction </p>
+            <h3>Add a new transaction </h3>
             <div class="buttons">
                 <button class="action-btn" type="button" id="income">Income</button>
                 <button class="action-btn" type="button" id="expense">Expense</button>
