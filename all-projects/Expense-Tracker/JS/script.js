@@ -188,7 +188,9 @@ const updateDOM = () => {
       </time> 
       
       <div class="dropdown">
-        <button class="dropdown-btns">...</button>
+        <button class="dropdown-btns">
+          <i class="fa-solid fa-ellipsis"></i>
+       </button>
         <div class="dropdown-content">
           <button class="edit-item">Edit </button>
           <button class="delete-item">Delete </button>
@@ -288,20 +290,18 @@ newTransactionForm.addEventListener("reset", () => {
   newTransactionModal.classList.remove("show-modal");
 });
 
+const dropdownBtn = document.querySelectorAll(".dropdown-content");
+
 // Edit and deleting a transactions from the list
 transactionsList.addEventListener("click", (e) => {
   // If user clicks on list, do nothing
-
-  if (e.target.nodeName !== "BUTTON") {
-    return;
-  }
 
   let itemId = +e.target.parentNode.parentNode.parentNode.parentNode.id;
 
   if (e.target.classList.contains("dropdown-btns")) {
     let dropMenu = e.target.nextElementSibling;
 
-    document.querySelectorAll(".dropdown-content").forEach((el) => {
+    dropdownBtn.forEach((el) => {
       if (el !== dropMenu) return (el.style.display = "none");
     });
 
@@ -409,4 +409,11 @@ expenseBtn.addEventListener("click", (e) => {
   newTransBtnId = e.target.id;
   transactionModalHeader.innerText = "Add Expense";
   newTransactionModal.classList.add("show-modal");
+});
+
+
+// ----- Window events -----
+window.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("dropdown-btns"))
+    dropdownBtn.forEach((el) => (el.style.display = "none"));
 });

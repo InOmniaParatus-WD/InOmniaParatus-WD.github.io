@@ -136,13 +136,28 @@ li {
       position: relative;
 
       button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
-        font-size: 1rem;
-        padding: 0 5px;
+        font-size: 1.2rem;
+        font-weight: normal;
+        padding: 0 7px;
+        border-radius: 50%;
         text-align: center;
         cursor: pointer;
-        border-radius: 5px;
-        background-color: var(--white);
+        background-color: var(--faded-white);
+        /* box-shadow: var(--box-shadow); */
+        i {
+          pointer-events: none;
+        }
+      }
+      button:hover {
+        /* background-color: var(--yellow); */
+        i {
+         text-shadow: var(--text-shadow);
+         color: var(--yellow);
+        }
       }
     }
 
@@ -171,10 +186,6 @@ li {
         color: var(--red);
       }
     }
-
-    /* .dropdown:hover .dropdown-content {
-      display: flex;
-    } */
   }
 }
 
@@ -227,15 +238,6 @@ li p.price-per-unit {
   font-weight: 400;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .add-transaction-btns {
-    button:hover {
-      background-color: var(--yellow);
-      color: var(--dark-grey);
-    }
-  }
-}
-
 button:active {
   transform: scale(0.9);
 }
@@ -256,13 +258,22 @@ hr {
 footer {
   text-align: center;
   height: auto;
+
+  .copyright {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0;
+  }
 }
 
-footer .copyright {
-  margin-top: 5px;
-  font-size: 0.8rem;
-  font-weight: 400;
-  padding: 0;
+@media (hover: hover) and (pointer: fine) {
+  .add-transaction-btns {
+    button:hover {
+      background-color: var(--yellow);
+      color: var(--dark-grey);
+    }
+  }
 }
 
 @media (max-width: 640px) {
@@ -315,6 +326,9 @@ footer .copyright {
   li button.delete-item,
   li button.edit-item {
     font-size: 1.2rem;
+    .fa-solid {
+      pointer-events: none;
+    }
   }
 
   .transaction-cost {
