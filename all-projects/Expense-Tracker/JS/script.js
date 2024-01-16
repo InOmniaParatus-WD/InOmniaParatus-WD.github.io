@@ -306,7 +306,6 @@ transactionsList.addEventListener("click", (e) => {
     dropMenu.style.display =
       dropMenu.style.display !== "flex" ? "flex" : "none";
 
-    console.log("we're getting somewhere", dropMenu.style.display === "flex");
     return;
   }
 
@@ -412,7 +411,7 @@ expenseBtn.addEventListener("click", (e) => {
 // // ----- Window events -----
 window.addEventListener("click", (e) => {
   const dropdownBtns = document.querySelectorAll(".dropdown-content");
-  
+
   if (!e.target.classList.contains("dropdown-btns"))
     dropdownBtns.forEach((el) => (el.style.display = "none"));
 });
