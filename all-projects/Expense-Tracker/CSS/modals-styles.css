@@ -1,6 +1,6 @@
 /* New transaction modal */
 .new-transaction-modal-container {
-  background-color: #4a4d3eef;
+  background-image: var(--gradient-color);
   display: none;
   position: fixed;
   top: 0;
@@ -84,32 +84,9 @@ sub {
   letter-spacing: 0.5px;
 }
 
-.buttons {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  gap: 10px;
-  width: 100%;
-  margin-bottom: 2rem;
-
-  button {
-    text-align: center;
-    padding: 2px 15px;
-    width: 50%;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    border: transparent;
-    box-shadow: var(--button-shadow);
-    cursor: pointer;
-    background-color: var(--green);
-    color: var(--white);
-  }
-}
-
 /* Edit entries modal */
 .modal-container {
-  background-color: #4a4d3eef;
+  background-image: var(--gradient-color);
   display: none;
   position: fixed;
   top: 0;
@@ -126,7 +103,7 @@ sub {
   background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
-  width: 30rem;
+  width: 35rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -199,19 +176,19 @@ sub {
   width: 100%;
   margin-bottom: 1rem;
 }
+
 .buttons {
+  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 15px;
 
   button {
-    background-color: var(--green);
+    background-color: var(--blue);
     color: var(--white);
     box-shadow: var(--button-shadow);
-    text-shadow: var(--text-shadow);
     padding: 5px 0;
-    margin: 1.2rem 0;
     border-radius: 5px;
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -289,6 +266,7 @@ button.delete-btn {
 @media (hover: hover) and (pointer: fine) {
   .buttons {
     button:hover {
+      background-image: none;
       background-color: var(--yellow);
       color: var(--dark-grey);
     }
@@ -353,7 +331,7 @@ button.delete-btn {
 @media (min-width: 391px) and (max-width: 640px) {
   .edit-modal,
   .new-transaction-modal {
-    max-width: 25rem;
+    max-width: 30rem;
   }
 
   .undo-modal-container p {

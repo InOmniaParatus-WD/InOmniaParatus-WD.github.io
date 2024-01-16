@@ -35,31 +35,35 @@
 
 <body>
 
-    <div class="container">
-        <header class="total-amounts">
-            <h1>
-                Available budget: <span id="balance">0.00</span>
-            </h1>
-            <h2>
-                <p>
-                    <span>Income:</span>
-                    <span id="total-income" class="money plus">0.00</span>
+    <main class="container">
 
-                </p>
-                <p>
-                    <span>Expenses:</span>
-                    <span id="total-expenses" class=" money minus">0.00</span>
-                </p>
-            </h2>
+        <header class="total-amounts">
+            <nav class="navbar">
+                <h1>
+                    Available budget: <span id="balance">0.00</span>
+                </h1>
+                <h2>
+                    <p>
+                        <span>Income:</span>
+                        <span id="total-income" class="money plus">0.00</span>
+
+                    </p>
+                    <p>
+                        <span>Expenses:</span>
+                        <span id="total-expenses" class=" money minus">0.00</span>
+                    </p>
+                </h2>
+            </nav>
+            <img src="images/expense-tracker.png" alt="">
+
         </header>
 
         <ul id="list"></ul>
 
         <div class="new-transactions-btns">
-            <h3>Add a new transaction </h3>
             <div class="buttons">
-                <button class="action-btn" type="button" id="income">Income</button>
-                <button class="action-btn" type="button" id="expense">Expense</button>
+                <button class="action-btn" type="button" id="income">Add Income</button>
+                <button class="action-btn" type="button" id="expense">Add Expense</button>
             </div>
         </div>
 
@@ -67,119 +71,120 @@
         <footer>
             <p class="copyright"><span>&copy;</span> Ioana Popa, 2023</p>
         </footer>
-    </div>
+        </div>
 
 
-    <!-- Modal Add New Transaction -->
-    <div class="new-transaction-modal-container">
-        <div class="new-transaction-modal">
-            <div class="modal-header">
-                <h2 id="new-transaction-title"></h2>
+        <!-- Modal Add New Transaction -->
+        <div class="new-transaction-modal-container">
+            <div class="new-transaction-modal">
+                <div class="modal-header">
+                    <h2 id="new-transaction-title"></h2>
+                </div>
+                <div class="modal-content">
+                    <form id="form">
+                        <div class="transaction-info">
+                            <div class="form-control transaction-name">
+                                <label for="transaction">Transaction name<sup>*</sup></label>
+                                <input type="text" name="transaction" id="transaction">
+                                <small></small>
+                            </div>
+
+                            <div class="transaction-details">
+                                <div class="form-control">
+                                    <label for="transaction-date">Date<sup>*</sup></label>
+                                    <input type="date" name="transaction-date" id="transaction-date">
+                                    <small></small>
+                                </div>
+                                <div class="form-control">
+                                    <label for="number">Quantity <sup>*</sup></label>
+                                    <input type="text" name="number" id="number">
+                                    <small></small>
+                                </div>
+                                <div class="form-control">
+                                    <label for="amount">Unit price <sup>*</sup></label>
+                                    <input type="text" name="amount" id="amount">
+                                    <small></small>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button class="action-btn" type="submit">Add</button>
+                                <button class="action-btn" type="reset">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-            <div class="modal-content">
-                <form id="form">
-                    <div class="transaction-info">
-                        <div class="form-control transaction-name">
-                            <label for="transaction">Transaction name<sup>*</sup></label>
-                            <input type="text" name="transaction" id="transaction">
+        </div>
+
+        <!-- Modal Edit Entries -->
+        <div class="modal-container">
+            <div class="edit-modal">
+                <div class="modal-header">
+                    <h2 id="edit-form-header"></h2>
+                </div>
+                <div class="modal-content">
+                    <form class="modal-form" id="modal-form">
+                        <div class="form-control">
+                            <fieldset class="transaction-type" id="transaction-type">
+                                <legend>Transaction type <sup>*</sup></legend>
+                                <div>
+                                    <input type="radio" name="type" id="edit-type-income" value="income">
+                                    <label for="edit-type-income">Income</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="type" id="edit-type-expense" value="expense">
+                                    <label for="edit-type-expense">Expense</label>
+                                </div>
+                            </fieldset>
+                            <small></small>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="edit-name">Transaction name <sup>*</sup></label>
+                            <input type="text" name="edit-name" id="edit-name">
                             <small></small>
                         </div>
 
                         <div class="transaction-details">
                             <div class="form-control">
-                                <label for="transaction-date">Date<sup>*</sup></label>
-                                <input type="date-local" name="transaction-date" id="transaction-date">
+                                <label for="edit-date">Date <sup>*</sup></label>
+                                <input type="date" name="edit-date" id="edit-date">
                                 <small></small>
                             </div>
                             <div class="form-control">
-                                <label for="number">Quantity <sup>*</sup></label>
-                                <input type="text" name="number" id="number">
+                                <label for="edit-qty">Quantity <sup>*</sup></label>
+                                <input type="text" name="edit-qty" id="edit-qty">
                                 <small></small>
                             </div>
                             <div class="form-control">
-                                <label for="amount">Unit price <sup>*</sup></label>
-                                <input type="text" name="amount" id="amount">
+                                <label for="edit-amount">Unit price <sup>*</sup></label>
+                                <input type="text" name="edit-amount" id="edit-amount">
                                 <small></small>
                             </div>
                         </div>
+
                         <div class="buttons">
-                            <button class="action-btn" type="submit">Add</button>
-                            <button class="action-btn" type="reset">Cancel</button>
+                            <button class="action-btn" type="submit" class="save-btn" id="save-btn">Save</button>
+                            <button class="action-btn" type="reset" class="cancel-btn" id="cancel-btn">Cancel</button>
                         </div>
-                    </div>
-                </form>
-
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Modal Edit Entries -->
-    <div class="modal-container">
-        <div class="edit-modal">
-            <div class="modal-header">
-                <h2 id="edit-form-header"></h2>
+        <!-- Modal Delete -->
+        <div class="undo-modal-container">
+            <div class="undo-modal">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> Are you sure you want to delete this item? This
+                    action
+                    will remove this item and its content forever.</p>
+                <div class="buttons">
+                    <button class="action-btn" type="button" id="delete-btn">Delete</button>
+                    <button class="action-btn" type="button" id="cancel-delete-btn">Cancel</button>
+                </div>
             </div>
-            <div class="modal-content">
-                <form class="modal-form" id="modal-form">
-                    <div class="form-control">
-                        <fieldset class="transaction-type" id="transaction-type">
-                            <legend>Transaction type <sup>*</sup></legend>
-                            <div>
-                                <input type="radio" name="type" id="edit-type-income" value="income">
-                                <label for="edit-type-income">Income</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="type" id="edit-type-expense" value="expense">
-                                <label for="edit-type-expense">Expense</label>
-                            </div>
-                        </fieldset>
-                        <small></small>
-                    </div>
-
-                    <div class="form-control">
-                        <label for="edit-name">Transaction name <sup>*</sup></label>
-                        <input type="text" name="edit-name" id="edit-name">
-                        <small></small>
-                    </div>
-
-                    <div class="transaction-details">
-                        <div class="form-control">
-                            <label for="edit-date">Date <sup>*</sup></label>
-                            <input type="date-local" name="edit-date" id="edit-date">
-                            <small></small>
-                        </div>
-                        <div class="form-control">
-                            <label for="edit-qty">Quantity <sup>*</sup></label>
-                            <input type="text" name="edit-qty" id="edit-qty">
-                            <small></small>
-                        </div>
-                        <div class="form-control">
-                            <label for="edit-amount">Unit price <sup>*</sup></label>
-                            <input type="text" name="edit-amount" id="edit-amount">
-                            <small></small>
-                        </div>
-                    </div>
-
-                    <div class="buttons">
-                        <button class="action-btn" type="submit" class="save-btn" id="save-btn">Save</button>
-                        <button class="action-btn" type="reset" class="cancel-btn" id="cancel-btn">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Delete -->
-    <div class="undo-modal-container">
-        <div class="undo-modal">
-            <p><i class="fa-solid fa-triangle-exclamation"></i> Are you sure you want to delete this item? This action
-                will remove this item and its content forever.</p>
-            <div class="buttons">
-                <button class="action-btn" type="button" id="delete-btn">Delete</button>
-                <button class="action-btn" type="button" id="cancel-delete-btn">Cancel</button>
-            </div>
-        </div>
-    </div>
+    </main>
     <script src="JS/script.js"></script>
 </body>
 
