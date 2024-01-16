@@ -26,11 +26,6 @@
   transform: translate(-50%, -50%);
   animation-name: modalopen;
   animation-duration: 0.5s;
-
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
 fieldset {
@@ -41,13 +36,6 @@ fieldset {
   width: 100%;
 }
 
-/* .form-control {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1rem;
-} */
-
 .transaction-info {
   div {
     margin-bottom: 1rem;
@@ -56,11 +44,12 @@ fieldset {
   .transaction-details {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     width: 100%;
     margin-bottom: 1rem;
 
     .form-control {
-      width: 30%;
+      width: max-content;
     }
   }
 }
@@ -107,7 +96,8 @@ select:focus {
 }
 
 label {
-  font-weight: 700;
+  font-weight: bolder;
+  font-size: 1rem;
   letter-spacing: 1px;
 }
 
@@ -306,7 +296,27 @@ button.delete-btn {
   }
 }
 
-@media (min-width: 320px) and (max-width: 500px) {
+@media (max-width: 390px) {
+  .modal,
+  .new-transaction-modal {
+    width: 100%;
+  }
+  .transaction-info {
+    .transaction-details {
+      flex-direction: column;
+      .form-control {
+        width: 100%;
+      }
+    }
+  }
+  .buttons {
+    .action-btn {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 391px) and (max-width: 640px) {
   .modal,
   .new-transaction-modal {
     max-width: 25rem;
