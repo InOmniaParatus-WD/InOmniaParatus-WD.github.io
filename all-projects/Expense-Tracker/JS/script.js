@@ -165,8 +165,6 @@ const updateDOM = () => {
   transactionsList.replaceChildren();
 
   allTransactions.forEach((tran) => {
-    const sign = tran.type === "expense" ? "-" : "";
-
     const listItem = document.createElement("li");
     listItem.setAttribute("id", tran.id);
     listItem.classList.add(`${tran.type === "expense" ? "minus" : "plus"}`);
@@ -181,7 +179,7 @@ const updateDOM = () => {
 
     listItem.innerHTML = `
     <section>    
-      <time class="display-date">&#128198; ${tran.date
+      <time class="display-date">${tran.date
         .split("-")
         .reverse()
         .join("-")}
@@ -198,11 +196,11 @@ const updateDOM = () => {
       </div>
     </section>
 
-    <section class="transaction-details">
+    <section class="details">
       <span class="item-name">${tran.name}</span>  
       <div class="item-details">
         <span class="value">
-          ${sign}${Number(tran.totalAmount.toFixed(2)).toLocaleString("en-UK")}
+          ${Number(tran.totalAmount.toFixed(2)).toLocaleString("en-UK")}
         </span>
         <span>${pricePerUnit}</span>
       </div>
