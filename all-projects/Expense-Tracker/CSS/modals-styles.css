@@ -301,10 +301,10 @@ button.delete-btn {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
   .edit-modal,
   .new-transaction-modal {
-    width: 100%;
+    max-width: 95%;
   }
 
   .transaction-details {
@@ -328,7 +328,7 @@ button.delete-btn {
   }
 }
 
-@media (min-width: 391px) and (max-width: 640px) {
+@media (min-width:501px) and (max-width: 640px) {
   .edit-modal,
   .new-transaction-modal {
     max-width: 30rem;
