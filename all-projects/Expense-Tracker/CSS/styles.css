@@ -55,49 +55,65 @@ body {
   padding: 2rem;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
-  background-color: #f2f8f8f5;
+  background-color: #f2f8f8;
   position: relative;
 }
 
 header {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
+  letter-spacing: 2px;
 
-  p {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+  h1 {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--blue);
+    font-weight: normal;
     span {
-      font-size: 1.1rem;
-      text-transform: uppercase;
+      font-weight: bold;
     }
   }
-  p {
-    span:nth-child(2) {
-      font-size: 1.5rem;
-      font-weight: bolder;
+
+  h2 {
+    width: 100%;
+    p {
+      width: 40%;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+
+      span {
+        width: 50%;
+        color: var(--blue);
+      }
+    }
+    p {
+      span:nth-child(2) {
+        font-size: 1.5rem;
+        font-weight: bolder;
+      }
+
+      #total-income {
+        color: var(--green);
+      }
+      #total-expenses {
+        color: var(--red);
+      }
     }
 
-    #total-income {
+    p.plus {
       color: var(--green);
     }
-    #total-expenses {
+
+    p.minus {
       color: var(--red);
     }
   }
-}
-
-p.plus {
-  color: var(--green);
-}
-
-p.minus {
-  color: var(--red);
 }
 
 ul {
@@ -115,10 +131,12 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1rem;
-  letter-spacing: 1px;
   margin-bottom: 1rem;
-  cursor: pointer;
+  letter-spacing: 2px;
+  background-color: var(--faded-white);
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  border-radius: 5px;
 
   section {
     width: 100%;
@@ -143,21 +161,18 @@ li {
         font-size: 1.2rem;
         font-weight: normal;
         padding: 0 7px;
-        border-radius: 50%;
+        border-radius: 5px;
         text-align: center;
         cursor: pointer;
         background-color: var(--faded-white);
-        /* box-shadow: var(--box-shadow); */
         i {
           pointer-events: none;
         }
       }
+
       button:hover {
-        /* background-color: var(--yellow); */
-        i {
-         text-shadow: var(--text-shadow);
-         color: var(--yellow);
-        }
+        box-shadow: var(--box-shadow);
+        background-color: #f9e5b7;
       }
     }
 
@@ -179,26 +194,26 @@ li {
       button {
         border: none;
         background-color: transparent;
+        border-radius: 5px;
+        padding: 3px 6px;
         font-size: 0.9rem;
       }
 
       .delete-item {
         color: var(--red);
       }
+
+      button:hover {
+        box-shadow: var(--box-shadow);
+        background-color: #f9e5b7;
+      }
     }
   }
-}
-
-li {
-  background-color: var(--faded-white);
-  box-shadow: var(--box-shadow);
-  width: 100%;
-  padding: 1rem 1rem;
-  border-radius: 5px;
 
   section:first-child {
     margin-bottom: 0.5rem;
   }
+
   .transaction-details {
     width: 100%;
     display: flex;
@@ -213,22 +228,21 @@ li {
       flex-direction: column;
       align-items: flex-end;
       width: 20%;
+
+      span {
+        font-weight: bold;
+      }
     }
   }
 }
 
 li.minus {
-  border-left: 10px solid var(--red);
+  /* border-left: 10px solid var(--red); */
+  background-color: rgba(211, 7, 10, 0.1);
 }
 li.plus {
-  border-left: 10px solid var(--green);
-}
-
-li div.item-details {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
+  /* border-left: 10px solid var(--green); */
+  background-color: rgba(22, 104, 63, 0.1);
 }
 
 li p.price-per-unit {
@@ -318,17 +332,6 @@ footer {
   li span.item-name {
     width: fit-content;
     margin-left: 0;
-    font-size: 0.8rem;
-  }
-  li span.value {
-    font-size: 0.8rem;
-  }
-  li button.delete-item,
-  li button.edit-item {
-    font-size: 1.2rem;
-    .fa-solid {
-      pointer-events: none;
-    }
   }
 
   .transaction-cost {
