@@ -76,7 +76,6 @@
             </div>
             <div class="modal-content">
                 <form id="form">
-
                     <div class="transaction-info">
                         <div class="form-control transaction-name">
                             <label for="transaction">Transaction name<sup>*</sup></label>
@@ -114,27 +113,15 @@
 
     <!-- Modal Edit Entries -->
     <div class="modal-container">
-        <div class="modal">
+        <div class="edit-modal">
             <div class="modal-header">
-                <h2></h2>
+                <h2 id="edit-form-header"></h2>
             </div>
             <div class="modal-content">
                 <form class="modal-form" id="modal-form">
-
                     <div class="form-control">
-                        <label for="edit-date">Date</label>
-                        <input type="date" name="edit-date" id="edit-date">
-                        <small></small>
-                    </div>
-
-                    <div class="form-control">
-                        <label for="edit-name">Transaction name</label>
-                        <input type="text" name="edit-name" id="edit-name">
-                        <small></small>
-                    </div>
-                    <div class="form-control">
-                        <fieldset id="transaction-type">
-                            <legend>Transaction type</legend>
+                        <fieldset class="transaction-type" id="transaction-type">
+                            <legend>Transaction type <sup>*</sup></legend>
                             <div>
                                 <input type="radio" name="type" id="edit-type-income" value="income">
                                 <label for="edit-type-income">Income</label>
@@ -148,16 +135,29 @@
                     </div>
 
                     <div class="form-control">
-                        <label for="edit-qty">Quantity</label>
-                        <input type="text" name="edit-qty" id="edit-qty">
+                        <label for="edit-name">Transaction name <sup>*</sup></label>
+                        <input type="text" name="edit-name" id="edit-name">
                         <small></small>
                     </div>
 
-                    <div class="form-control">
-                        <label for="edit-amount">Transaction amount</label>
-                        <input type="text" name="edit-amount" id="edit-amount">
-                        <small></small>
+                    <div class="transaction-details">
+                        <div class="form-control">
+                            <label for="edit-date">Date <sup>*</sup></label>
+                            <input type="date-local" name="edit-date" id="edit-date">
+                            <small></small>
+                        </div>
+                        <div class="form-control">
+                            <label for="edit-qty">Quantity <sup>*</sup></label>
+                            <input type="text" name="edit-qty" id="edit-qty">
+                            <small></small>
+                        </div>
+                        <div class="form-control">
+                            <label for="edit-amount">Unit price <sup>*</sup></label>
+                            <input type="text" name="edit-amount" id="edit-amount">
+                            <small></small>
+                        </div>
                     </div>
+
                     <div class="buttons">
                         <button class="action-btn" type="submit" class="save-btn" id="save-btn">Save</button>
                         <button class="action-btn" type="reset" class="cancel-btn" id="cancel-btn">Cancel</button>

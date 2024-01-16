@@ -28,56 +28,20 @@
   animation-duration: 0.5s;
 }
 
-fieldset {
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  width: 100%;
-}
-
 .transaction-info {
   div {
     margin-bottom: 1rem;
   }
-
-  .transaction-details {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 1rem;
-
-    .form-control {
-      width: max-content;
-    }
-  }
 }
-
-.buttons {
+.transaction-details {
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: space-between;
   gap: 10px;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-button.action-btn {
-  text-align: center;
-  padding: 2px 15px;
-  width: 50%;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  border: transparent;
-  box-shadow: var(--button-shadow);
-  cursor: pointer;
-  background-color: var(--green);
-  color: var(--white);
-}
-input,
-select {
+input {
   padding: 10px;
   margin: 0.5rem 0;
   font-size: 1rem;
@@ -90,9 +54,17 @@ select {
   color: var(--dark-grey);
 }
 
-input:focus,
-select:focus {
+input:focus {
   outline: 1px solid;
+}
+
+input[type="radio"] {
+  width: fit-content;
+  box-shadow: none;
+}
+
+input[type="radio"]:focus {
+  outline: none;
 }
 
 label {
@@ -112,19 +84,27 @@ sub {
   letter-spacing: 0.5px;
 }
 
-button.close-modal {
-  width: 40px;
-  height: 40px;
+.buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8rem;
-  border-radius: 50%;
-  border: transparent;
-  box-shadow: var(--button-shadow);
-  background-color: var(--green);
-  color: var(--white);
-  cursor: pointer;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  button {
+    text-align: center;
+    padding: 2px 15px;
+    width: 50%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border: transparent;
+    box-shadow: var(--button-shadow);
+    cursor: pointer;
+    background-color: var(--green);
+    color: var(--white);
+  }
 }
 
 /* Edit entries modal */
@@ -142,7 +122,7 @@ button.close-modal {
   display: block;
 }
 
-.modal {
+.edit-modal {
   background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
@@ -155,6 +135,51 @@ button.close-modal {
   transform: translate(-50%, -50%);
   animation-name: modalopen;
   animation-duration: 0.5s;
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .transaction-type {
+    display: flex;
+    border: none;
+    gap: 10px;
+
+    legend {
+      padding-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bolder;
+    }
+
+    div {
+      width: 50%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0.5rem;
+
+      border-radius: 5px;
+      box-shadow: rgb(212, 229, 245) 3px 3px 6px 0px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      border: transparent;
+      background-color: var(--faded-white);
+      color: var(--dark-grey);
+
+      label {
+        font-weight: normal;
+        letter-spacing: normal;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.modal-content {
+  padding: 20px;
 }
 
 .modal-header {
@@ -162,53 +187,38 @@ button.close-modal {
   color: var(--dark-grey);
   padding: 1.2rem;
   letter-spacing: 1px;
+  span {
+    font-size: 1.5rem;
+  }
 }
 
-.modal-header span {
-  font-size: 1.5rem;
-}
-
-.modal-content {
-  padding: 20px;
-}
-.modal-form {
+.form-control {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
 }
-
-.modal-form .form-control {
-  padding: 0 1rem;
-}
-
-div.edit-btns {
+.buttons {
   display: flex;
   flex-direction: row;
-}
+  justify-content: space-between;
+  gap: 15px;
 
-.modal-form div {
-  width: 100%;
-}
-
-button.save-btn,
-button.cancel-btn {
-  background-color: var(--green);
-  color: var(--white);
-  box-shadow: var(--button-shadow);
-  text-shadow: var(--text-shadow);
-  padding: 10px 15px;
-  margin: 1.2rem 0;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  border: transparent;
-  cursor: pointer;
-  width: 50%;
-}
-
-button.save-btn {
-  margin-right: 2rem;
+  button {
+    background-color: var(--green);
+    color: var(--white);
+    box-shadow: var(--button-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 5px 0;
+    margin: 1.2rem 0;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border: transparent;
+    cursor: pointer;
+    width: 50%;
+  }
 }
 
 /*  Delete entries modal */
@@ -277,10 +287,13 @@ button.delete-btn {
 
 /*  All modals */
 @media (hover: hover) and (pointer: fine) {
-  button:hover {
-    background-color: var(--yellow);
-    color: var(--dark-grey);
+  .buttons {
+    button:hover {
+      background-color: var(--yellow);
+      color: var(--dark-grey);
+    }
   }
+
   button.close-modal:hover {
     background-color: var(--dark-grey);
     color: var(--yellow);
@@ -296,19 +309,40 @@ button.delete-btn {
   }
 }
 
-@media (max-width: 390px) {
-  .modal,
-  .new-transaction-modal {
-    width: 100%;
-  }
-  .transaction-info {
-    .transaction-details {
+@media (max-width: 250px) {
+  .edit-modal {
+    .transaction-type {
+      width: 100%;
       flex-direction: column;
-      .form-control {
+      justify-content: flex-start;
+
+      div {
         width: 100%;
       }
     }
   }
+}
+
+@media (max-width: 390px) {
+  .edit-modal,
+  .new-transaction-modal {
+    width: 100%;
+  }
+
+  .transaction-details {
+    flex-direction: column;
+    .form-control {
+      width: 100%;
+    }
+  }
+  .edit-modal {
+    .transaction-type {
+      div {
+        width: 100%;
+      }
+    }
+  }
+
   .buttons {
     .action-btn {
       font-size: 1rem;
@@ -317,7 +351,7 @@ button.delete-btn {
 }
 
 @media (min-width: 391px) and (max-width: 640px) {
-  .modal,
+  .edit-modal,
   .new-transaction-modal {
     max-width: 25rem;
   }
