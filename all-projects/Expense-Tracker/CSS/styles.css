@@ -58,7 +58,7 @@ body {
   background-color: #f7fbf2;
   position: relative;
   padding: 2rem;
-  margin: auto;
+  margin: 5rem auto;
 }
 
 header {
@@ -134,7 +134,7 @@ ul {
   list-style: none;
   margin: 1.5rem 0;
   height: auto;
-  max-height: 50svh;
+  max-height: 25rem;
   overflow-y: auto;
 
   li {

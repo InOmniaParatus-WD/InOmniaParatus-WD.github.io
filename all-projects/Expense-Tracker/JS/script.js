@@ -166,12 +166,10 @@ const updateDOM = () => {
 
   // Sort the transaction list based on date
   let sortedList = JSON.parse(JSON.stringify(allTransactions));
+  sortedList.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  sortedList.sort((a, b) => a.date - b.date);
-
-  console.log(sortedList);
-
-  allTransactions.forEach((tran) => {
+  // Display transaction items in descending order
+  sortedList.forEach((tran) => {
     const listItem = document.createElement("li");
     listItem.setAttribute("id", tran.id);
     listItem.classList.add(`${tran.type === "expense" ? "minus" : "plus"}`);
@@ -206,10 +204,10 @@ const updateDOM = () => {
         <span class="value">
           ${Number(tran.totalAmount.toFixed(2)).toLocaleString("en-UK")}
         </span>
-        <span>${pricePerUnit}</span>
+ 
       </div>
-    
-    </section>`;
+    </section>
+    ${pricePerUnit}`;
 
     transactionsList.appendChild(listItem);
   });
