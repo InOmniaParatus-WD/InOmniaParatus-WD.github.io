@@ -58,6 +58,7 @@ body {
   background-color: #f7fbf2;
   position: relative;
   padding: 2rem;
+  margin: auto;
 }
 
 header {
@@ -325,6 +326,9 @@ footer {
 }
 
 @media (min-width: 200px) and (max-width: 640px) {
+  body{
+    background-image: none
+  };
   header {
     nav {
       h1 {
@@ -339,8 +343,10 @@ footer {
     }
   }
   .container {
-    height: 100svh;
+    height: 100vh;
     padding: auto 1rem;
+    margin: 0;
+    border-radius: 0;
   }
 
   .display-date {
@@ -364,11 +370,5 @@ footer {
   }
   footer {
     padding-top: 0.5rem;
-  }
-}
-
-@media (min-width: 641px) {
-  .container {
-    margin: 2.5rem;
   }
 }
