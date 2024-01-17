@@ -17,7 +17,7 @@
   background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
-  width: 30rem;
+  max-width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -73,6 +73,12 @@ label {
   letter-spacing: 1px;
 }
 
+legend {
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
 sup {
   font-weight: normal;
   font-size: 0.7rem;
@@ -106,7 +112,7 @@ sub {
   width: 35rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
-  overflow: hidden;
+  /* overflow: hidden; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -125,31 +131,26 @@ sub {
     border: none;
     gap: 10px;
 
-    legend {
-      padding-bottom: 0.5rem;
-      font-size: 1rem;
-      font-weight: bolder;
-    }
-
     div {
       width: 50%;
       height: auto;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 5px;
       padding: 0.5rem;
 
       border-radius: 5px;
-      box-shadow: rgb(212, 229, 245) 3px 3px 6px 0px inset,
-        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-      border: transparent;
-      background-color: var(--faded-white);
       color: var(--dark-grey);
 
       label {
         font-weight: normal;
         letter-spacing: normal;
         font-size: 1rem;
+      }
+      input[type="radio"] {
+        height: 1.2rem;
+        width: 1.2rem;
       }
     }
   }
@@ -286,52 +287,79 @@ button.delete-btn {
     opacity: 1;
   }
 }
-
-@media (max-width: 250px) {
+@media (max-width: 370px) {
+  .edit-modal {
+   
+      .transaction-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+   
+  }
+}
+@media (max-width: 370px) {
+  .edit-modal,
+  .new-transaction-modal {
+    width: 98%;
+  }
   .edit-modal {
     .transaction-type {
       width: 100%;
-      flex-direction: column;
-      justify-content: flex-start;
 
       div {
         width: 100%;
       }
     }
+
+    .transaction-details {
+      /* display: flex;
+      flex-direction: column; */
+      width: 100%;
+
+      .form-control {
+        width: 100%;
+      }
+    }
+  }
+
+  .modal-content {
+    .form-control {
+      margin: 0.3rem;
+    }
+  }
+
+  input {
+    padding: 0.3rem 0.5rem;
   }
 }
 
-@media (max-width: 500px) {
+@media (min-width: 371px) and (max-width: 640px) {
   .edit-modal,
   .new-transaction-modal {
-    max-width: 95%;
+    width: 98%;
+    max-width: 30rem;
   }
 
-  .transaction-details {
-    flex-direction: column;
-    .form-control {
+  .transaction-type {
+    div {
       width: 100%;
     }
   }
-  .edit-modal {
-    .transaction-type {
-      div {
-        width: 100%;
-      }
-    }
+
+  label,
+  legend {
+    font-size: 0.8rem;
+  }
+
+  input {
+    font-size: 0.9rem;
   }
 
   .buttons {
     .action-btn {
       font-size: 1rem;
     }
-  }
-}
-
-@media (min-width:501px) and (max-width: 640px) {
-  .edit-modal,
-  .new-transaction-modal {
-    max-width: 30rem;
   }
 
   .undo-modal-container p {
