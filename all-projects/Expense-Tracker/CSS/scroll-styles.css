@@ -1,16 +1,15 @@
 /* Styles for the ul scrollbar*/
 ul::-webkit-scrollbar {
-    width: 10px;
-    border-radius: 5px;
-    box-shadow: none;
-  }
-  ul::-webkit-scrollbar-track {
-    background: transparent;
-    box-shadow: none;
-  }
-  ul::-webkit-scrollbar-thumb {
-    background-color: var(--blue);
-    border: 1px solid var(--white);
-    border-radius: 5px;
-    box-shadow: var(--box-shadow);
-  } 
+  width: 7px;
+  border-radius: 5px;
+  box-shadow: none;
+}
+ul::-webkit-scrollbar-track {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 5px;
+}
+ul::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  border-radius: 5px;
+}
