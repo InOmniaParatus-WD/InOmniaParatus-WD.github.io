@@ -166,11 +166,9 @@ const updateDOM = () => {
 
   // Sort the transaction list based on date
   let sortedList = JSON.parse(JSON.stringify(allTransactions));
-
   sortedList.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  console.log(sortedList);
-
+  // Display transaction items in descending order
   sortedList.forEach((tran) => {
     const listItem = document.createElement("li");
     listItem.setAttribute("id", tran.id);
