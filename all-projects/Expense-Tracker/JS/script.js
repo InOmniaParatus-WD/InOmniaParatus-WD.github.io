@@ -40,12 +40,14 @@ const transactionModalHeader = document.getElementById("new-transaction-title");
 // Default value for date input
 const fullDate = new Date();
 const month = fullDate.getMonth() + 1;
-const day = fullDate.getDate();
+const date = fullDate.getDate();
+
+const year = fullDate.getFullYear();
 
 let displayMonth = month < 10 ? `0${month}` : `${month}`;
-let displayDay = day < 10 ? `0${day}` : `${day}`;
+let displayDay = date < 10 ? `0${date}` : `${date}`;
 
-const displayDate = `${fullDate.getFullYear()}-${displayMonth}-${fullDate.getDate()}`;
+const displayDate = `${year}-${displayMonth}-${date}`;
 transactionDate.setAttribute("value", `${displayDate}`);
 
 //Show Input Error Message
@@ -178,13 +180,31 @@ const updateDOM = () => {
     if (tran.qty > 1) {
       pricePerUnit = `<p class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</p>`;
     }
+   
+    // Determins the name of the day
+    const day = new Intl.DateTimeFormat("en-AU", { weekday: "long" }).format(
+      new Date(tran.date)
+    );
 
-    // listItem.setAttribute("id", `${tran.id}`);
+    // formatting the displayed date so that I can make use of date and year according to display goals
+    const dateElements = tran.date.split("-").reverse();
+    dateElements[1] = new Date(dateElements[1]).toLocaleDateString("en-AU", {
+      month: "short",
+    });
+    const year = dateElements.pop();
+
     listItem.classList.add("transaction");
 
     listItem.innerHTML = `
     <section>    
-      <time class="display-date">${tran.date.split("-").reverse().join("-")}
+      <time class="display-date">
+        ${
+          tran.date === transactionDate.value
+            ? `TODAY, ${dateElements.join(" ")}`
+            : new Date(tran.date).getDay() === fullDate.getDay() - 1
+            ? `YESTERDAY, ${dateElements.join(" ")}`
+            : `${day.toUpperCase()}, ${dateElements.join(" ")} ${year}`
+        }
       </time> 
       
       <div class="dropdown">
