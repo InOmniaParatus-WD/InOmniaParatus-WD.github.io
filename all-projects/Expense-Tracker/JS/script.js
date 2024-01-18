@@ -133,7 +133,7 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
 
   if (isNaN(qty) || !qty) {
     result = false;
-    showError(quantityEl, "Must be a number", true);
+    showError(quantityEl, "Invalid number", true);
   } else if (+qty === 0) {
     showError(quantityEl, "Can't be 0", true);
   } else {
