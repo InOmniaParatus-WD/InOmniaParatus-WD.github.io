@@ -104,40 +104,40 @@ const validateInput = (dateEl, nameEl, amountEl, quantityEl) => {
   let date = dateEl.value;
   let name = nameEl.value;
   let amount = +amountEl.value;
-  let qty = +quantityEl.value;
+  let qty = quantityEl.value;
 
-  let successMsg = "&check; Looks good";
+  let successMsg = "&check;";
+  let errMsg = "Can't be empty";
 
-  if (amount === 0 || isNaN(amount)) {
+  if (isNaN(amount)) {
     result = false;
-    showError(amountEl, "&#x2717; Enter a number", true);
+    showError(amountEl, "Must be a number", true);
+  } else if (amount === 0) {
+    showError(amountEl, "Can't be 0", true);
   } else {
     showError(amountEl, successMsg, false);
   }
   if (!name) {
     result = false;
-    showError(nameEl, "&#x2717; Can't be empty", true);
+    showError(nameEl, errMsg, true);
   } else {
     showError(nameEl, successMsg, false);
   }
 
   if (!date) {
     result = false;
-    showError(dateEl, "&#x2717; Please enter a valid date", true);
+    showError(dateEl, "Add a date", true);
   } else {
     showError(dateEl, successMsg, false);
   }
 
-  if (quantityEl.value === "") {
+  if (isNaN(qty) || !qty) {
     result = false;
-    showError(quantityEl, "&#x2717; Enter a number", true);
+    showError(quantityEl, "Must be a number", true);
+  } else if (+qty === 0) {
+    showError(quantityEl, "Can't be 0", true);
   } else {
-    if (qty <= 0 || isNaN(qty)) {
-      qty = 1;
-      quantityEl.value = String(qty);
-    } else {
-      showError(quantityEl, successMsg, false);
-    }
+    showError(quantityEl, successMsg, false);
   }
 
   return result;
@@ -192,7 +192,7 @@ const updateDOM = () => {
     });
 
     const tranYear = dateElements.pop();
-    console.log(+tranYear === +year);
+ 
     listItem.classList.add("transaction");
 
     listItem.innerHTML = `
