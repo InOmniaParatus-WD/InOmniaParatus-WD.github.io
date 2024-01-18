@@ -63,6 +63,47 @@ input[type="radio"] {
   box-shadow: none;
 }
 
+input[type="radio"] {
+  opacity: 0;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  background-color: var(--white);
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0;
+  left: -3rem;
+}
+
+input[type="radio"] + label::after {
+  content: "";
+  background-color: var(--blue);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.15rem;
+  left: -2.85rem;
+  transition: transform 0.2s ease;
+}
+
+input[type="radio"]:checked + label::before {
+  background-color: var(--green);
+}
+
+input[type="radio"]:checked + label::after {
+  transform: translate(80%);
+  background-color: var(--white);
+}
+
 input[type="radio"]:focus {
   outline: none;
 }
@@ -282,10 +323,10 @@ button.delete-btn {
   .edit-modal {
     .transaction-type {
       align-items: left;
-      width: 80%;
+      width: 100%;
 
       div {
-        width: 100%;
+        width: 50%;
       }
     }
 
@@ -299,7 +340,7 @@ button.delete-btn {
     }
   }
 
-  .modal-content {
+  .tra .modal-content {
     .form-control {
       margin: 0.3rem;
     }

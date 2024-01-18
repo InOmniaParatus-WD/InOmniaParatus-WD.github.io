@@ -381,7 +381,7 @@ editForm.addEventListener("submit", (e) => {
   let itemId = +editItemModal.dataset["toEdit"];
   let editTransaction = allTransactions.filter((item) => item.id === itemId)[0];
 
-  const editTransType = document.querySelector("input[name=type]:checked");
+  const editTransType = document.querySelector("input[type=radio]:checked");
 
   editTransaction.date = editDate.value;
   editTransaction.name = editName.value;
