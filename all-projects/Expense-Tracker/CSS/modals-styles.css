@@ -17,7 +17,7 @@
   background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
-  max-width: 30rem;
+  width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -221,7 +221,6 @@ sub {
   width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
-  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -233,6 +232,7 @@ sub {
 .undo-modal-container p {
   font-size: 1.2rem;
   letter-spacing: 2px;
+  margin: 1rem 0;
 }
 
 .undo-modal-container p span {
@@ -272,25 +272,17 @@ button.delete-btn {
     opacity: 1;
   }
 }
-@media (max-width: 370px) {
-  .edit-modal {
-   
-      .transaction-details {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-   
-  }
-}
+
 @media (max-width: 370px) {
   .edit-modal,
   .new-transaction-modal {
-    width: 98%;
+    max-width: 98%;
   }
+
   .edit-modal {
     .transaction-type {
-      width: 100%;
+      align-items: left;
+      width: 80%;
 
       div {
         width: 100%;
@@ -298,8 +290,7 @@ button.delete-btn {
     }
 
     .transaction-details {
-      /* display: flex;
-      flex-direction: column; */
+      flex-direction: column;
       width: 100%;
 
       .form-control {
@@ -313,7 +304,13 @@ button.delete-btn {
       margin: 0.3rem;
     }
   }
-
+  .new-transaction-modal {
+    .transaction-details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
   input {
     padding: 0.3rem 0.5rem;
   }
@@ -322,7 +319,7 @@ button.delete-btn {
 @media (min-width: 371px) and (max-width: 640px) {
   .edit-modal,
   .new-transaction-modal {
-    width: 98%;
+    width: 100%;
     max-width: 30rem;
   }
 
