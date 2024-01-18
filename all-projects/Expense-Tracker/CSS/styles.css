@@ -291,6 +291,7 @@ ul {
     cursor: pointer;
     background-color: var(--blue);
     color: var(--white);
+    transition: background-color 0.3s ease;
   }
 }
 
@@ -320,7 +321,7 @@ footer {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .add-transaction-btns {
+  .buttons {
     button:hover {
       background-color: var(--yellow);
       color: var(--dark-grey);

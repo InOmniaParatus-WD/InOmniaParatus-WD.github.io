@@ -264,21 +264,6 @@ button.delete-btn {
 }
 
 /*  All modals */
-@media (hover: hover) and (pointer: fine) {
-  .buttons {
-    button:hover {
-      background-image: none;
-      background-color: var(--yellow);
-      color: var(--dark-grey);
-    }
-  }
-
-  button.close-modal:hover {
-    background-color: var(--dark-grey);
-    color: var(--yellow);
-  }
-}
-
 @keyframes modalopen {
   from {
     opacity: 0;
