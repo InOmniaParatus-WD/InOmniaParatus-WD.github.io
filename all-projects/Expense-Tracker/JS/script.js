@@ -41,7 +41,6 @@ const transactionModalHeader = document.getElementById("new-transaction-title");
 const fullDate = new Date();
 const month = fullDate.getMonth() + 1;
 const date = fullDate.getDate();
-
 const year = fullDate.getFullYear();
 
 let displayMonth = month < 10 ? `0${month}` : `${month}`;
@@ -180,7 +179,7 @@ const updateDOM = () => {
     if (tran.qty > 1) {
       pricePerUnit = `<p class="price-per-unit">${tran.qty} @ ${tran.itemPrice} each</p>`;
     }
-   
+
     // Determins the name of the day
     const day = new Intl.DateTimeFormat("en-AU", { weekday: "long" }).format(
       new Date(tran.date)
@@ -191,19 +190,24 @@ const updateDOM = () => {
     dateElements[1] = new Date(dateElements[1]).toLocaleDateString("en-AU", {
       month: "short",
     });
-    const year = dateElements.pop();
 
+    const tranYear = dateElements.pop();
+    console.log(+tranYear === +year);
     listItem.classList.add("transaction");
 
     listItem.innerHTML = `
     <section>    
       <time class="display-date">
         ${
+          // Needs rewritting but for the time being the logic works to display days as intended
           tran.date === transactionDate.value
             ? `TODAY, ${dateElements.join(" ")}`
-            : new Date(tran.date).getDay() === fullDate.getDay() - 1
+            : new Date(tran.date).getDay() === fullDate.getDay() - 1 &&
+              +tranYear === +year
             ? `YESTERDAY, ${dateElements.join(" ")}`
-            : `${day.toUpperCase()}, ${dateElements.join(" ")} ${year}`
+            : +tranYear === +year
+            ? `${day.toUpperCase()}, ${dateElements.join(" ")}`
+            : `${day.toUpperCase()}, ${dateElements.join(" ")} ${tranYear}`
         }
       </time> 
       
@@ -377,7 +381,7 @@ editForm.addEventListener("submit", (e) => {
   let itemId = +editItemModal.dataset["toEdit"];
   let editTransaction = allTransactions.filter((item) => item.id === itemId)[0];
 
-  const editTransType = document.querySelector("input[name=type]:checked");
+  const editTransType = document.querySelector("input[type=radio]:checked");
 
   editTransaction.date = editDate.value;
   editTransaction.name = editName.value;

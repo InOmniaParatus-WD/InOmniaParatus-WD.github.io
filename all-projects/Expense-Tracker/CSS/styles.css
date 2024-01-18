@@ -277,7 +277,6 @@ ul {
   align-items: left;
   gap: 10px;
   width: 100%;
-  margin-bottom: 2rem;
 
   button {
     text-align: center;
@@ -291,6 +290,7 @@ ul {
     cursor: pointer;
     background-color: var(--blue);
     color: var(--white);
+    transition: background-color 0.3s ease;
   }
 }
 
@@ -304,7 +304,7 @@ ul {
 
 hr {
   width: 30%;
-  margin: auto;
+  margin: 2rem auto 0 auto;
 }
 
 footer {
@@ -312,7 +312,7 @@ footer {
   height: auto;
 
   .copyright {
-    margin-top: 5px;
+    margin-top: 0.3rem;
     font-size: 0.8rem;
     font-weight: 400;
     padding: 0;
@@ -320,7 +320,7 @@ footer {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .add-transaction-btns {
+  .buttons {
     button:hover {
       background-color: var(--yellow);
       color: var(--dark-grey);

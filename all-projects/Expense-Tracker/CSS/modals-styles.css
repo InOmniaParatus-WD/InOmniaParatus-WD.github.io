@@ -17,7 +17,7 @@
   background-color: #d4dbcd;
   color: var(--dark-grey);
   border-radius: 5px;
-  max-width: 30rem;
+  width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -61,6 +61,47 @@ input:focus {
 input[type="radio"] {
   width: fit-content;
   box-shadow: none;
+}
+
+input[type="radio"] {
+  opacity: 0;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  background-color: var(--white);
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0;
+  left: -3rem;
+}
+
+input[type="radio"] + label::after {
+  content: "";
+  background-color: var(--blue);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.15rem;
+  left: -2.85rem;
+  transition: transform 0.2s ease;
+}
+
+input[type="radio"]:checked + label::before {
+  background-color: var(--green);
+}
+
+input[type="radio"]:checked + label::after {
+  transform: translate(80%);
+  background-color: var(--white);
 }
 
 input[type="radio"]:focus {
@@ -221,7 +262,6 @@ sub {
   width: 30rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
-  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -233,6 +273,7 @@ sub {
 .undo-modal-container p {
   font-size: 1.2rem;
   letter-spacing: 2px;
+  margin: 1rem 0;
 }
 
 .undo-modal-container p span {
@@ -264,21 +305,6 @@ button.delete-btn {
 }
 
 /*  All modals */
-@media (hover: hover) and (pointer: fine) {
-  .buttons {
-    button:hover {
-      background-image: none;
-      background-color: var(--yellow);
-      color: var(--dark-grey);
-    }
-  }
-
-  button.close-modal:hover {
-    background-color: var(--dark-grey);
-    color: var(--yellow);
-  }
-}
-
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -287,34 +313,25 @@ button.delete-btn {
     opacity: 1;
   }
 }
-@media (max-width: 370px) {
-  .edit-modal {
-   
-      .transaction-details {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-   
-  }
-}
+
 @media (max-width: 370px) {
   .edit-modal,
   .new-transaction-modal {
-    width: 98%;
+    max-width: 98%;
   }
+
   .edit-modal {
     .transaction-type {
+      align-items: left;
       width: 100%;
 
       div {
-        width: 100%;
+        width: 50%;
       }
     }
 
     .transaction-details {
-      /* display: flex;
-      flex-direction: column; */
+      flex-direction: column;
       width: 100%;
 
       .form-control {
@@ -323,12 +340,18 @@ button.delete-btn {
     }
   }
 
-  .modal-content {
+  .tra .modal-content {
     .form-control {
       margin: 0.3rem;
     }
   }
-
+  .new-transaction-modal {
+    .transaction-details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
   input {
     padding: 0.3rem 0.5rem;
   }
@@ -337,7 +360,7 @@ button.delete-btn {
 @media (min-width: 371px) and (max-width: 640px) {
   .edit-modal,
   .new-transaction-modal {
-    width: 98%;
+    width: 100%;
     max-width: 30rem;
   }
 
