@@ -80,12 +80,18 @@ header {
     align-items: flex-start;
     letter-spacing: 2px;
 
+    .bottom-nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
     h1 {
       width: 100%;
       font-size: 1.5rem;
       margin-bottom: 2rem;
       color: var(--blue);
       font-weight: normal;
+
       span {
         font-weight: bold;
         color: #242323;
@@ -94,8 +100,9 @@ header {
 
     h2 {
       display: flex;
-      /* width: 100%; */
+      width: 50%;
       font-size: 1rem;
+
       span {
         width: 50%;
         display: flex;
@@ -104,7 +111,6 @@ header {
       }
       span:nth-child(1) {
         color: var(--blue);
-        margin-right: 2rem;
       }
 
       span:nth-child(2) {
@@ -328,9 +334,20 @@ footer {
   }
 }
 
-@media (min-width: 200px) and (max-width: 640px) {
+@media (max-width: 250px) {
+  .buttons {
+    width: 100%;
+    button {
+      padding: 0.3rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (min-width: 250px) and (max-width: 500px) {
   body {
     background-image: none;
+    overflow: auto;
   }
   header {
     nav {
@@ -346,21 +363,28 @@ footer {
     }
   }
   .container {
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     padding: 1rem;
     margin: 0;
     border-radius: 0;
   }
 
+  .buttons {
+    button {
+      font-size: 1rem;
+    }
+  }
   .display-date {
     font-size: 1rem;
   }
   .display-date span {
     font-size: 0.8rem;
   }
-  
-  ul{
-    padding: 0.2rem
+
+  ul {
+    padding: 0.2rem;
   }
   li {
     span.item-name {
