@@ -11,12 +11,12 @@ const transactionName = document.querySelector("#transaction");
 const transactionAmount = document.querySelector("#amount");
 const transactionDate = document.querySelector("#transaction-date");
 const transactionQty = document.querySelector("#number");
+const closeForm = document.getElementById("close-new-tran");
 
 // Add new transaction form elements
 const balance = document.querySelector("#balance");
 const totalIncome = document.querySelector("#total-income");
 const totalExpenses = document.querySelector("#total-expenses");
-
 const transactionsList = document.querySelector("#list");
 
 // Edit existing transaction form elements (modal)
@@ -306,11 +306,13 @@ newTransactionForm.addEventListener("submit", (e) => {
 
 newTransactionForm.addEventListener("reset", () => {
   newTransactionForm.reset();
-
   document.querySelectorAll("#form input").forEach((childEl) => {
     showError(childEl);
   });
+});
 
+closeForm.addEventListener("click", () => {
+  newTransactionForm.reset();
   newTransactionModal.classList.remove("show-modal");
 });
 

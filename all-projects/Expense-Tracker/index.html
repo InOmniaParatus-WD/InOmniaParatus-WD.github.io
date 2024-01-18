@@ -42,19 +42,18 @@
                 <h1>
                     Available budget: <span id="balance">0.00</span>
                 </h1>
-
-                <h2>
-                    <span>Income:</span>
-                    <span id="total-income" class="money plus">0.00</span>
-                </h2>
-                <h2>
-                    <span>Expenses:</span>
-                    <span id="total-expenses" class=" money minus">0.00</span>
-                </h2>
-
+                <section class="bottom-nav">
+                    <h2>
+                        <span>Income:</span>
+                        <span id="total-income" class="money plus">0.00</span>
+                    </h2>
+                    <h2>
+                        <span>Expenses:</span>
+                        <span id="total-expenses" class=" money minus">0.00</span>
+                    </h2>
+              
+                </section>
             </nav>
-            <img src="images/expense-tracker.png" alt="">
-
         </header>
 
         <ul id="list"></ul>
@@ -107,7 +106,8 @@
                             </div>
                             <div class="buttons">
                                 <button class="action-btn" type="submit">Add</button>
-                                <button class="action-btn" type="reset">Cancel</button>
+                                <button class="action-btn" type="reset">Clear</button>
+                                <button class="action-btn" type="button" id="close-new-tran">Close</button>
                             </div>
                         </div>
                     </form>
