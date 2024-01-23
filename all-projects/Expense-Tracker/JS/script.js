@@ -192,7 +192,7 @@ const updateDOM = () => {
     });
 
     const tranYear = dateElements.pop();
- 
+
     listItem.classList.add("transaction");
 
     listItem.innerHTML = `
@@ -271,9 +271,57 @@ const init = () => {
 };
 init();
 
+const dropdownBtns = (target) => {
+  let dropMenu = target.nextElementSibling;
+
+  document.querySelectorAll(".dropdown-content").forEach((el) => {
+    if (el !== dropMenu) el.style.display = "none";
+    else el.style.display = el.style.display !== "flex" ? "flex" : "none";
+  });
+};
+
+// Edit / Delete a list item
+const deleteOrEditItem = (target) => {
+  let itemId = +target.parentNode.parentNode.parentNode.parentNode.id;
+
+  // If user clicks on the "Delete" button ...
+  if (target.classList.contains("delete-item")) {
+    deleteItemModal.dataset["toDelete"] = itemId;
+    deleteItemModal.classList.add("show-modal");
+  }
+  // If user clicks on the "Edit" button ...
+  if (target.classList.contains("edit-item")) {
+    let editTransaction = allTransactions.filter(
+      (item) => itemId === item.id
+    )[0];
+
+    // add header to edit modal
+    document.getElementById(
+      "edit-form-header"
+    ).innerHTML = `Edit ${editTransaction.type}`;
+
+    document.querySelector(
+      `input[value=${editTransaction.type}]`
+    ).checked = true;
+
+    editName.value = editTransaction.name;
+    editAmount.value = editTransaction.itemPrice;
+
+    editDate.value = editTransaction.date;
+    editQuantity.value = editTransaction.qty;
+
+    showError(editDate, "", false);
+    showError(editName, "", false);
+    showError(editAmount, "", false);
+    showError(editQuantity, "", false);
+
+    editItemModal.dataset["toEdit"] = itemId;
+    editItemModal.classList.add("show-modal");
+  }
+};
 // ---------------- EVENTS ---------------- //
 // Add a new transaction to the list
-newTransactionForm.addEventListener("submit", (e) => {
+newTransactionForm.onsubmit = (e) => {
   e.preventDefault();
 
   if (
@@ -302,80 +350,33 @@ newTransactionForm.addEventListener("submit", (e) => {
 
   calculate();
   updateDOM();
-});
+}
 
-newTransactionForm.addEventListener("reset", () => {
+newTransactionForm.onreset = () => {
   newTransactionForm.reset();
   document.querySelectorAll("#form input").forEach((childEl) => {
     showError(childEl);
   });
-});
+};
 
-closeForm.addEventListener("click", () => {
+closeForm.onclick = () => {
   newTransactionForm.reset();
   newTransactionModal.classList.remove("show-modal");
-});
+};
 
 // Edit and deleting a transactions from the list
-transactionsList.addEventListener("click", (e) => {
-  // If user clicks on list, do nothing
-
-  let itemId = +e.target.parentNode.parentNode.parentNode.parentNode.id;
-
+transactionsList.onclick = (e) => {
   if (e.target.classList.contains("dropdown-btns")) {
-    let dropMenu = e.target.nextElementSibling;
-
-    document.querySelectorAll(".dropdown-content").forEach((el) => {
-      if (el !== dropMenu) return (el.style.display = "none");
-    });
-
-    dropMenu.style.display =
-      dropMenu.style.display !== "flex" ? "flex" : "none";
-
-    return;
+    dropdownBtns(e.target);
+  } else {
+    deleteOrEditItem(e.target);
+    calculate();
+    updateDOM();
   }
-
-  // If user clicks on the "Delete" button ...
-  if (e.target.classList.contains("delete-item")) {
-    deleteItemModal.dataset["toDelete"] = itemId;
-    deleteItemModal.classList.add("show-modal");
-  }
-  // If user clicks on the "Edit" button ...
-  if (e.target.classList.contains("edit-item")) {
-    let editTransaction = allTransactions.filter(
-      (item) => itemId === item.id
-    )[0];
-
-    // add header to edit modal
-    document.getElementById(
-      "edit-form-header"
-    ).innerHTML = `Edit ${editTransaction.type}`;
-
-    document.querySelector(
-      `input[value=${editTransaction.type}]`
-    ).checked = true;
-
-    editName.value = editTransaction.name;
-    editAmount.value = editTransaction.itemPrice;
-
-    editDate.value = editTransaction.date;
-    editQuantity.value = editTransaction.qty;
-
-    showError(editDate, "", false);
-    showError(editName, "", false);
-    showError(editAmount, "", false);
-    showError(editQuantity, "", false);
-
-    editItemModal.dataset["toEdit"] = itemId;
-    editItemModal.classList.add("show-modal");
-  }
-
-  calculate();
-  updateDOM();
-});
+};
 
 // Modal form - save edited entries
-editForm.addEventListener("submit", (e) => {
+editForm.onsubmit = (e) => {
   e.preventDefault();
 
   if (!validateInput(editDate, editName, editAmount, editQuantity)) return;
@@ -396,16 +397,16 @@ editForm.addEventListener("submit", (e) => {
   updateDOM();
 
   editItemModal.classList.remove("show-modal");
-});
+};
 
 // Cancel edit
-editForm.addEventListener("reset", (e) => {
+editForm.onreset = (e) => {
   e.preventDefault();
   editItemModal.classList.remove("show-modal");
-});
+};
 
 // Modal form - delete item
-confirmDelete.addEventListener("click", (e) => {
+confirmDelete.onclick = (e) => {
   e.preventDefault();
   let itemId = +deleteItemModal.dataset["toDelete"];
   allTransactions = allTransactions.filter((item) => item.id !== itemId);
@@ -415,29 +416,29 @@ confirmDelete.addEventListener("click", (e) => {
   updateDOM();
 
   deleteItemModal.classList.remove("show-modal");
-});
+};
 
-cancelDelete.addEventListener("click", (e) => {
+cancelDelete.onclick = (e) => {
   e.preventDefault();
   deleteItemModal.classList.remove("show-modal");
-});
+};
 
-incomeBtn.addEventListener("click", (e) => {
+incomeBtn.onclick = (e) => {
   newTransBtnId = e.target.id;
   transactionModalHeader.innerText = "Add Income";
   newTransactionModal.classList.add("show-modal");
-});
+};
 
-expenseBtn.addEventListener("click", (e) => {
+expenseBtn.onclick = (e) => {
   newTransBtnId = e.target.id;
   transactionModalHeader.innerText = "Add Expense";
   newTransactionModal.classList.add("show-modal");
-});
+};
 
 // // ----- Window events -----
-window.addEventListener("click", (e) => {
+window.onclick = (e) => {
   const dropdownBtns = document.querySelectorAll(".dropdown-content");
 
   if (!e.target.classList.contains("dropdown-btns"))
     dropdownBtns.forEach((el) => (el.style.display = "none"));
-});
+};
