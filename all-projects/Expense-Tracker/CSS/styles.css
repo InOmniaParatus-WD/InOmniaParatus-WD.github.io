@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap");
 @import url("modals-styles.css");
 @import url("scroll-styles.css");
-@import url("tooltip-styles.css");
 
 :root {
   --box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
