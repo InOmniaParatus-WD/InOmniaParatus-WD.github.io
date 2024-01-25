@@ -4,7 +4,8 @@ const assets = [
   "index.html",
   "script.js",
   "css/styles.css",
-  "images/expense-tracker.png"
+  "css/modals-styles.css",
+  "css/scroll-styles.css"
 ];
 
 
