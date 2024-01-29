@@ -107,11 +107,5 @@
         "projectLink": "../all-projects/Buttons-Hover-Effects/",
         "photo": "images/Projects-Photos/Buttons_Hover_Effects.jpg",
         "altText": "different hovering effects on buttons"
-    },
-    {
-        "projectName": "Feed My Dog",
-        "projectLink": "../all-projects/Feed-Cheerpy/",
-        "photo": "images/Projects-Photos/cheerpy.png",
-        "altText": "feeding my dog Cheerpy while I am away"
     }
 ]
