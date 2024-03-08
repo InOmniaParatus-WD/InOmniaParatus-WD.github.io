@@ -36,18 +36,6 @@
         "altText": "Recipies finder with third party API"
     },
     {
-        "projectName": "Clickable Squares Challange",
-        "projectLink": "../all-projects/Six-Clickable-Squares/",
-        "photo": "images/Projects-Photos/Six_Squares.jpg",
-        "altText": "six squares to change colors when clicked"
-    },
-    {
-        "projectName": "Random Quotes Machine with jQuery",
-        "projectLink": "../all-projects/Random-Quote-Machine/",
-        "photo": "images/Projects-Photos/Random_Quote_Machine.jpg",
-        "altText": "random quote generator"
-    },
-    {
         "projectName": "Hangman",
         "projectLink": "../all-projects//Hangman-Game/",
         "photo": "images/Projects-Photos/Hangman_Game.jpg",
@@ -60,52 +48,15 @@
         "altText": "Rotating Squares"
     },
     {
-        "projectName": "Wealth Calculator",
-        "projectLink": "../all-projects/Wealth-Calculator/",
-        "photo": "images/Projects-Photos/Wealth_Calculator.jpg",
-        "altText": "wealth calculator"
-    },
-    {
         "projectName": "Form Validation JavaScript",
         "projectLink": "../all-projects/Form-Validator/",
         "photo": "images/Projects-Photos//Form_Validator.jpg",
         "altText": "form validation with vanilla JavaScript"
-    },
- 
-    {
-        "projectName": "Landing Page",
-        "projectLink": "../all-projects/Product-Landing-Page/",
-        "photo": "images/Projects-Photos/Product_Landing_Page.jpg",
-        "altText": "product landing page"
-    },
-    
-    {
-        "projectName": "Technical Docs",
-        "projectLink": "../all-projects/Technical-Docs-Page/",
-        "photo": "images/Projects-Photos/Technical_Doc_Page.jpg",
-        "altText": "technical documentation page"
     },
     {
         "projectName": "Survey Form with Bootstrap",
         "projectLink": "../all-projects/Survey-Form-Bootstrap/",
         "photo": "images/Projects-Photos/Bootstrap_Survey.jpg",
         "altText": "survey form with bootstrap library"
-    },
-    {
-        "projectName": "Survey Form",
-        "projectLink": "../all-projects/FCC-Survey-Form/",
-        "photo": "images/Projects-Photos/FCC_Survey_Form.jpg",
-        "altText": "freecodecamp survey form"
-    },
-    {
-        "projectName": "Tribute Page",
-        "projectLink": "../all-projects/Tribute-Page/",
-        "photo": "images/Projects-Photos/Tribute_Page.jpg",
-        "altText": "tribute page"
-    }, {
-        "projectName": "Hover Effects on Buttons",
-        "projectLink": "../all-projects/Buttons-Hover-Effects/",
-        "photo": "images/Projects-Photos/Buttons_Hover_Effects.jpg",
-        "altText": "different hovering effects on buttons"
     }
 ]
