@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+        rgba(0, 0, 0, 0.06) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    --dark-blue: rgb(3, 62, 101);
+    --light-blue: rgb(5, 150, 203);
+    --orange: rgb(201, 141, 1);
+    --yellow: rgb(252, 211, 49);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(83, 26, 51) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+#rotate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    animation: spin 5s linear infinite;
+    position: absolute;
+    top: 400px;
+}
+
+#center {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: var(--yellow-petals);
+    background: radial-gradient(var(--yellow) 10%, var(--dark-blue) 60%, yellow 75%);
+    border-radius: 50%;
+}
+
+#center div:not(#stick) {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 10px 100px;
+    box-shadow: var(--shadow);
+    transform-origin: top left;
+}
+
+#five,
+#six,
+#seven,
+#eight {
+    top: 50px;
+    left: 50px;
+}
+
+#one {
+    top: 80px;
+    left: 30px;
+    transform: rotate(90deg);
+    background-color: var(--light-blue);
+}
+
+#two {
+    top: 30px;
+    left: 30px;
+    transform: rotate(180deg);
+    background-color: var(--dark-blue);
+}
+
+#three {
+    top: 30px;
+    left: 80px;
+    transform: rotate(270deg);
+    background-color: var(--light-blue);
+}
+
+#four {
+    top: 80px;
+    left: 80px;
+    transform: rotate(0deg);
+    background-color: var(--dark-blue);
+}
+
+#five {
+    transform: rotate(135deg);
+    background-color: var(--orange);
+}
+
+#six {
+    transform: rotate(225deg);
+    background-color: var(--yellow);
+}
+
+#seven {
+    transform: rotate(315deg);
+    background-color: var(--orange);
+}
+
+#eight {
+    transform: rotate(45deg);
+    background-color: var(--yellow);
+}
+
+#stick {
+    height: 500px;
+    width: 45px;
+    position: absolute;
+    top: 500px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -2;
+    background-color: black;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    background: linear-gradient(45deg, black, var(--dark-blue), var(--light-blue), var(--orange), black, rgba(238, 174, 202, 1));
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (min-width: 400px) and (max-width: 1800px) {
+    #rotate {
+        top: 250px;
+    }
+
+    #stick {
+        height: 400px;
+        top: 380px;
+    }
+
+}
