@@ -32,7 +32,6 @@ body {
     align-items: center;
     justify-content: center;
     transform-origin: center;
-    animation: spin 5s linear infinite;
     position: absolute;
     top: 400px;
 }
@@ -42,73 +41,64 @@ body {
     height: 100px;
     position: relative;
     background-color: var(--yellow-petals);
-    background: radial-gradient(var(--yellow) 10%, var(--dark-blue) 60%, yellow 75%);
+    background: repeating-radial-gradient(farthest-corner at 30% 30%, var(--yellow) 20%, var(--dark-blue) 50%, var(--light-blue) 60%, var(--orange) 10%);
     border-radius: 50%;
+    box-shadow: var(--shadow);
 }
 
-#center div:not(#stick) {
+#rotate:hover {
+    animation: spin 4s linear infinite;
+}
+
+#center div {
     width: 150px;
     height: 200px;
     position: absolute;
+    top: 50px;
+    left: 50px;
     z-index: -1;
     border-radius: 10px 100px;
     box-shadow: var(--shadow);
     transform-origin: top left;
 }
 
-#five,
-#six,
-#seven,
-#eight {
-    top: 50px;
-    left: 50px;
-}
-
 #one {
-    top: 80px;
-    left: 30px;
     transform: rotate(90deg);
     background-color: var(--light-blue);
 }
 
 #two {
-    top: 30px;
-    left: 30px;
-    transform: rotate(180deg);
+    transform: rotate(135deg);
     background-color: var(--dark-blue);
 }
 
 #three {
-    top: 30px;
-    left: 80px;
-    transform: rotate(270deg);
+    transform: rotate(170deg);
     background-color: var(--light-blue);
 }
 
 #four {
-    top: 80px;
-    left: 80px;
-    transform: rotate(0deg);
+    transform: rotate(215deg);
     background-color: var(--dark-blue);
 }
 
 #five {
-    transform: rotate(135deg);
+    transform: rotate(260deg);
     background-color: var(--orange);
 }
 
 #six {
-    transform: rotate(225deg);
+    transform: rotate(305deg);
     background-color: var(--yellow);
 }
 
 #seven {
-    transform: rotate(315deg);
+    transform: rotate(350deg);
     background-color: var(--orange);
 }
 
 #eight {
-    transform: rotate(45deg);
+    transform: rotate(395deg);
     background-color: var(--yellow);
 }
 
@@ -144,7 +134,20 @@ body {
 
     #stick {
         height: 400px;
+        width: 35px;
         top: 380px;
+    }
+
+    #center {
+        width: 80px;
+        height: 80px;
+    }
+
+    #center div {
+        width: 110px;
+        height: 180px;
+        top: 40px;
+        left: 40px;
     }
 
 }
