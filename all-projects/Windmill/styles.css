@@ -46,10 +46,6 @@ body {
     box-shadow: var(--shadow);
 }
 
-#rotate:hover {
-    animation: spin 4s linear infinite;
-}
-
 #center div {
     width: 150px;
     height: 200px;
@@ -64,22 +60,22 @@ body {
 
 #one {
     transform: rotate(90deg);
-    background-color: var(--light-blue);
+    background-color: var(--orange);
 }
 
 #two {
     transform: rotate(135deg);
-    background-color: var(--dark-blue);
+    background-color: var(--light-blue);
 }
 
 #three {
     transform: rotate(170deg);
-    background-color: var(--light-blue);
+    background-color: var(--dark-blue);
 }
 
 #four {
     transform: rotate(215deg);
-    background-color: var(--dark-blue);
+    background-color: var(--yellow);
 }
 
 #five {
@@ -89,12 +85,12 @@ body {
 
 #six {
     transform: rotate(305deg);
-    background-color: var(--yellow);
+    background-color: var(--light-blue);
 }
 
 #seven {
     transform: rotate(350deg);
-    background-color: var(--orange);
+    background-color: var(--dark-blue);
 }
 
 #eight {
@@ -114,7 +110,7 @@ body {
     background-color: black;
     box-shadow: var(--shadow);
     border-radius: 10px;
-    background: linear-gradient(45deg, black, var(--dark-blue), var(--light-blue), var(--orange), black, rgba(238, 174, 202, 1));
+    background: linear-gradient(45deg, rgba(238, 174, 202, 1), black, var(--dark-blue), var(--light-blue), var(--orange), black, rgba(238, 174, 202, 1));
 }
 
 @keyframes spin {
@@ -134,8 +130,8 @@ body {
 
     #stick {
         height: 400px;
-        width: 35px;
-        top: 380px;
+        width: 30px;
+        top: 350px;
     }
 
     #center {
